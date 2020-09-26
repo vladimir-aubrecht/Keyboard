@@ -11,6 +11,7 @@ void keyboard_post_init_user(void) {
 
 bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
 
+/*
     dprintf("row: %02X column: %02X direction: %s time: %u\r\n", record->event.key.row, record->event.key.col, (record->event.pressed ? "down" : "up"), record->event.time);
     dprintf("Expected keycode: %10X\r\n", pgm_read_word(&keymaps[(0)][(1)][(1)]));
     dprintf("Actual keycode: %10X\r\n", keycode);
@@ -66,6 +67,6 @@ bool process_record_kb(uint16_t keycode, keyrecord_t *record) {
     }
     dprintf("[%X:%02X]", action.kind.param >> 8, action.kind.param & 0xff);
     dprint("\r\n");
-
+*/
     return process_record_user(keycode, record);
 }

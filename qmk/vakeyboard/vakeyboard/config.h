@@ -15,8 +15,25 @@
 #define MATRIX_COLS 18
 
 /* key matrix pins */
+
+#define EXP_A1 0xD0
+#define EXP_A2 0xD1
+#define EXP_A3 0xD2
+#define EXP_A4 0xD3
+#define EXP_A5 0xD4
+#define EXP_A6 0xD5
+#define EXP_A7 0xD6
+#define EXP_B1 0xE0
+#define EXP_B2 0xE1
+#define EXP_B3 0xE2
+#define EXP_B4 0xE3
+#define EXP_B5 0xE4
+#define EXP_B6 0xE5
+#define EXP_B7 0xE6
+
 #define MATRIX_ROW_PINS { F7, F6, F5, F4, F1, F0 }
-#define MATRIX_COL_PINS { D6, B7, B6, B5, B4, E6, D7, C6, D4, D0, D1, C7, C7, C7, C7, C7, C7, C7 }
+#define MATRIX_COL_PINS { D6, B7, B6, B5, B4, E6, D7, C6, D4, D0, D1, EXP_A1, EXP_A2, EXP_A3, EXP_A4, EXP_A5, EXP_A6, EXP_A7 }
+
 #define UNUSED_PINS
 
 /* COL2ROW or ROW2COL */

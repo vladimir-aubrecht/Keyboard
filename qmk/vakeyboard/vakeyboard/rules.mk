@@ -25,3 +25,10 @@ SLEEP_LED_ENABLE = no   # Breathing sleep LED during USB suspend
 UNICODE_ENABLE = yes
 TAP_DANCE_ENABLE = no
 BLUETOOTH_ENABLE = no   # Enable Bluetooth with the Adafruit EZ-Key HID
+CUSTOM_MATRIX = lite
+
+SRC += \
+		matrix.c \
+		expander.c \
+		matrix_expander.c
+QUANTUM_LIB_SRC += i2c_master.c
