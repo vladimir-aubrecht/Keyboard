@@ -1,0 +1,2975 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L keyboard_parts:KEYSW K_ESC1
+U 1 1 5FD55184
+P 2850 3750
+F 0 "K_ESC1" H 2850 3983 60  0000 C CNN
+F 1 "KEYSW" H 2850 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 2850 3750 60  0001 C CNN
+F 3 "" H 2850 3750 60  0000 C CNN
+	1    2850 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_ESC1
+U 1 1 5FD55AA0
+P 2550 4050
+F 0 "D_ESC1" V 2596 3970 50  0000 R CNN
+F 1 "D" V 2505 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 4050 50  0001 C CNN
+F 3 "~" H 2550 4050 50  0001 C CNN
+	1    2550 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F2
+U 1 1 5FD64385
+P 4800 3750
+F 0 "K_F2" H 4800 3983 60  0000 C CNN
+F 1 "KEYSW" H 4800 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4800 3750 60  0001 C CNN
+F 3 "" H 4800 3750 60  0000 C CNN
+	1    4800 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F3
+U 1 1 5FD721A9
+P 5450 3750
+F 0 "K_F3" H 5450 3983 60  0000 C CNN
+F 1 "KEYSW" H 5450 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 5450 3750 60  0001 C CNN
+F 3 "" H 5450 3750 60  0000 C CNN
+	1    5450 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F3
+U 1 1 5FD72263
+P 5150 4050
+F 0 "D_F3" V 5196 3970 50  0000 R CNN
+F 1 "D" V 5105 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5150 4050 50  0001 C CNN
+F 3 "~" H 5150 4050 50  0001 C CNN
+	1    5150 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F4
+U 1 1 5FD7226D
+P 6100 3750
+F 0 "K_F4" H 6100 3983 60  0000 C CNN
+F 1 "KEYSW" H 6100 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6100 3750 60  0001 C CNN
+F 3 "" H 6100 3750 60  0000 C CNN
+	1    6100 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F4
+U 1 1 5FD72277
+P 5800 4050
+F 0 "D_F4" V 5846 3970 50  0000 R CNN
+F 1 "D" V 5755 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5800 4050 50  0001 C CNN
+F 3 "~" H 5800 4050 50  0001 C CNN
+	1    5800 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F5
+U 1 1 5FD72281
+P 6750 3750
+F 0 "K_F5" H 6750 3983 60  0000 C CNN
+F 1 "KEYSW" H 6750 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6750 3750 60  0001 C CNN
+F 3 "" H 6750 3750 60  0000 C CNN
+	1    6750 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F5
+U 1 1 5FD7228B
+P 6450 4050
+F 0 "D_F5" V 6496 3970 50  0000 R CNN
+F 1 "D" V 6405 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 4050 50  0001 C CNN
+F 3 "~" H 6450 4050 50  0001 C CNN
+	1    6450 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F6
+U 1 1 5FD72295
+P 7400 3750
+F 0 "K_F6" H 7400 3983 60  0000 C CNN
+F 1 "KEYSW" H 7400 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 7400 3750 60  0001 C CNN
+F 3 "" H 7400 3750 60  0000 C CNN
+	1    7400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F6
+U 1 1 5FD7229F
+P 7100 4050
+F 0 "D_F6" V 7146 3970 50  0000 R CNN
+F 1 "D" V 7055 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7100 4050 50  0001 C CNN
+F 3 "~" H 7100 4050 50  0001 C CNN
+	1    7100 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_F2
+U 1 1 5FD6438F
+P 4500 4050
+F 0 "D_F2" V 4546 3970 50  0000 R CNN
+F 1 "D" V 4455 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 4500 4050 50  0001 C CNN
+F 3 "~" H 4500 4050 50  0001 C CNN
+	1    4500 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_F1
+U 1 1 5FD6437B
+P 3850 4050
+F 0 "D_F1" V 3896 3970 50  0000 R CNN
+F 1 "D" V 3805 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 4050 50  0001 C CNN
+F 3 "~" H 3850 4050 50  0001 C CNN
+	1    3850 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F1
+U 1 1 5FD64311
+P 4150 3750
+F 0 "K_F1" H 4150 3983 60  0000 C CNN
+F 1 "KEYSW" H 4150 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 3750 60  0001 C CNN
+F 3 "" H 4150 3750 60  0000 C CNN
+	1    4150 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F7
+U 1 1 5FDB5855
+P 8050 3750
+F 0 "K_F7" H 8050 3983 60  0000 C CNN
+F 1 "KEYSW" H 8050 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8050 3750 60  0001 C CNN
+F 3 "" H 8050 3750 60  0000 C CNN
+	1    8050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F7
+U 1 1 5FDB59AF
+P 7750 4050
+F 0 "D_F7" V 7796 3970 50  0000 R CNN
+F 1 "D" V 7705 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7750 4050 50  0001 C CNN
+F 3 "~" H 7750 4050 50  0001 C CNN
+	1    7750 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F8
+U 1 1 5FDB59B9
+P 8700 3750
+F 0 "K_F8" H 8700 3983 60  0000 C CNN
+F 1 "KEYSW" H 8700 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8700 3750 60  0001 C CNN
+F 3 "" H 8700 3750 60  0000 C CNN
+	1    8700 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F8
+U 1 1 5FDB59C3
+P 8400 4050
+F 0 "D_F8" V 8446 3970 50  0000 R CNN
+F 1 "D" V 8355 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 8400 4050 50  0001 C CNN
+F 3 "~" H 8400 4050 50  0001 C CNN
+	1    8400 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F10
+U 1 1 5FDB59CD
+P 10000 3750
+F 0 "K_F10" H 10000 3983 60  0000 C CNN
+F 1 "KEYSW" H 10000 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10000 3750 60  0001 C CNN
+F 3 "" H 10000 3750 60  0000 C CNN
+	1    10000 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F11
+U 1 1 5FDB59D7
+P 10650 3750
+F 0 "K_F11" H 10650 3983 60  0000 C CNN
+F 1 "KEYSW" H 10650 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10650 3750 60  0001 C CNN
+F 3 "" H 10650 3750 60  0000 C CNN
+	1    10650 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F11
+U 1 1 5FDB59E1
+P 10350 4050
+F 0 "D_F11" V 10396 3970 50  0000 R CNN
+F 1 "D" V 10305 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 10350 4050 50  0001 C CNN
+F 3 "~" H 10350 4050 50  0001 C CNN
+	1    10350 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F12
+U 1 1 5FDB59EB
+P 11300 3750
+F 0 "K_F12" H 11300 3983 60  0000 C CNN
+F 1 "KEYSW" H 11300 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 11300 3750 60  0001 C CNN
+F 3 "" H 11300 3750 60  0000 C CNN
+	1    11300 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F12
+U 1 1 5FDB59F5
+P 11000 4050
+F 0 "D_F12" V 11046 3970 50  0000 R CNN
+F 1 "D" V 10955 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 4050 50  0001 C CNN
+F 3 "~" H 11000 4050 50  0001 C CNN
+	1    11000 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_PRNT1
+U 1 1 5FDB59FF
+P 12700 3750
+F 0 "K_PRNT1" H 12700 3983 60  0000 C CNN
+F 1 "KEYSW" H 12700 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 12700 3750 60  0001 C CNN
+F 3 "" H 12700 3750 60  0000 C CNN
+	1    12700 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_PRNT1
+U 1 1 5FDB5A09
+P 12400 4050
+F 0 "D_PRNT1" V 12446 3970 50  0000 R CNN
+F 1 "D" V 12355 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 12400 4050 50  0001 C CNN
+F 3 "~" H 12400 4050 50  0001 C CNN
+	1    12400 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_SCRL1
+U 1 1 5FDB5A13
+P 13350 3750
+F 0 "K_SCRL1" H 13350 3983 60  0000 C CNN
+F 1 "KEYSW" H 13350 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 13350 3750 60  0001 C CNN
+F 3 "" H 13350 3750 60  0000 C CNN
+	1    13350 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_SCRL1
+U 1 1 5FDB5A1D
+P 13050 4050
+F 0 "D_SCRL1" V 13096 3970 50  0000 R CNN
+F 1 "D" V 13005 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13050 4050 50  0001 C CNN
+F 3 "~" H 13050 4050 50  0001 C CNN
+	1    13050 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_F10
+U 1 1 5FDB5A27
+P 9700 4050
+F 0 "D_F10" V 9746 3970 50  0000 R CNN
+F 1 "D" V 9655 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9700 4050 50  0001 C CNN
+F 3 "~" H 9700 4050 50  0001 C CNN
+	1    9700 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_F9
+U 1 1 5FDB5A31
+P 9050 4050
+F 0 "D_F9" V 9096 3970 50  0000 R CNN
+F 1 "D" V 9005 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 4050 50  0001 C CNN
+F 3 "~" H 9050 4050 50  0001 C CNN
+	1    9050 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F9
+U 1 1 5FDB5A3B
+P 9350 3750
+F 0 "K_F9" H 9350 3983 60  0000 C CNN
+F 1 "KEYSW" H 9350 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 3750 60  0001 C CNN
+F 3 "" H 9350 3750 60  0000 C CNN
+	1    9350 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_TILDA1
+U 1 1 5FE1B385
+P 2850 4450
+F 0 "K_TILDA1" H 2850 4683 60  0000 C CNN
+F 1 "KEYSW" H 2850 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 2850 4450 60  0001 C CNN
+F 3 "" H 2850 4450 60  0000 C CNN
+	1    2850 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_TILDA1
+U 1 1 5FE1B61F
+P 2550 4750
+F 0 "D_TILDA1" V 2596 4670 50  0000 R CNN
+F 1 "D" V 2505 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 4750 50  0001 C CNN
+F 3 "~" H 2550 4750 50  0001 C CNN
+	1    2550 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_1
+U 1 1 5FE1B629
+P 3500 4450
+F 0 "K_1" H 3500 4683 60  0000 C CNN
+F 1 "KEYSW" H 3500 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 3500 4450 60  0001 C CNN
+F 3 "" H 3500 4450 60  0000 C CNN
+	1    3500 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_1
+U 1 1 5FE1B633
+P 3200 4750
+F 0 "D_1" V 3246 4670 50  0000 R CNN
+F 1 "D" V 3155 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3200 4750 50  0001 C CNN
+F 3 "~" H 3200 4750 50  0001 C CNN
+	1    3200 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_3
+U 1 1 5FE1B63D
+P 4800 4450
+F 0 "K_3" H 4800 4683 60  0000 C CNN
+F 1 "KEYSW" H 4800 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4800 4450 60  0001 C CNN
+F 3 "" H 4800 4450 60  0000 C CNN
+	1    4800 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_4
+U 1 1 5FE1B647
+P 5450 4450
+F 0 "K_4" H 5450 4683 60  0000 C CNN
+F 1 "KEYSW" H 5450 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 5450 4450 60  0001 C CNN
+F 3 "" H 5450 4450 60  0000 C CNN
+	1    5450 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_4
+U 1 1 5FE1B651
+P 5150 4750
+F 0 "D_4" V 5196 4670 50  0000 R CNN
+F 1 "D" V 5105 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5150 4750 50  0001 C CNN
+F 3 "~" H 5150 4750 50  0001 C CNN
+	1    5150 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_5
+U 1 1 5FE1B65B
+P 6100 4450
+F 0 "K_5" H 6100 4683 60  0000 C CNN
+F 1 "KEYSW" H 6100 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6100 4450 60  0001 C CNN
+F 3 "" H 6100 4450 60  0000 C CNN
+	1    6100 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_5
+U 1 1 5FE1B665
+P 5800 4750
+F 0 "D_5" V 5846 4670 50  0000 R CNN
+F 1 "D" V 5755 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5800 4750 50  0001 C CNN
+F 3 "~" H 5800 4750 50  0001 C CNN
+	1    5800 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_6
+U 1 1 5FE1B66F
+P 6750 4450
+F 0 "K_6" H 6750 4683 60  0000 C CNN
+F 1 "KEYSW" H 6750 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6750 4450 60  0001 C CNN
+F 3 "" H 6750 4450 60  0000 C CNN
+	1    6750 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_6
+U 1 1 5FE1B679
+P 6450 4750
+F 0 "D_6" V 6496 4670 50  0000 R CNN
+F 1 "D" V 6405 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 4750 50  0001 C CNN
+F 3 "~" H 6450 4750 50  0001 C CNN
+	1    6450 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_7
+U 1 1 5FE1B683
+P 7400 4450
+F 0 "K_7" H 7400 4683 60  0000 C CNN
+F 1 "KEYSW" H 7400 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 7400 4450 60  0001 C CNN
+F 3 "" H 7400 4450 60  0000 C CNN
+	1    7400 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_7
+U 1 1 5FE1B68D
+P 7100 4750
+F 0 "D_7" V 7146 4670 50  0000 R CNN
+F 1 "D" V 7055 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7100 4750 50  0001 C CNN
+F 3 "~" H 7100 4750 50  0001 C CNN
+	1    7100 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_3
+U 1 1 5FE1B697
+P 4500 4750
+F 0 "D_3" V 4546 4670 50  0000 R CNN
+F 1 "D" V 4455 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 4500 4750 50  0001 C CNN
+F 3 "~" H 4500 4750 50  0001 C CNN
+	1    4500 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_2
+U 1 1 5FE1B6A1
+P 3850 4750
+F 0 "D_2" V 3896 4670 50  0000 R CNN
+F 1 "D" V 3805 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 4750 50  0001 C CNN
+F 3 "~" H 3850 4750 50  0001 C CNN
+	1    3850 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_2
+U 1 1 5FE1B6AB
+P 4150 4450
+F 0 "K_2" H 4150 4683 60  0000 C CNN
+F 1 "KEYSW" H 4150 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 4450 60  0001 C CNN
+F 3 "" H 4150 4450 60  0000 C CNN
+	1    4150 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_8
+U 1 1 5FE1B6B5
+P 8050 4450
+F 0 "K_8" H 8050 4683 60  0000 C CNN
+F 1 "KEYSW" H 8050 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8050 4450 60  0001 C CNN
+F 3 "" H 8050 4450 60  0000 C CNN
+	1    8050 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_8
+U 1 1 5FE1B6BF
+P 7750 4750
+F 0 "D_8" V 7796 4670 50  0000 R CNN
+F 1 "D" V 7705 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7750 4750 50  0001 C CNN
+F 3 "~" H 7750 4750 50  0001 C CNN
+	1    7750 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_9
+U 1 1 5FE1B6C9
+P 8700 4450
+F 0 "K_9" H 8700 4683 60  0000 C CNN
+F 1 "KEYSW" H 8700 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8700 4450 60  0001 C CNN
+F 3 "" H 8700 4450 60  0000 C CNN
+	1    8700 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_9
+U 1 1 5FE1B6D3
+P 8400 4750
+F 0 "D_9" V 8446 4670 50  0000 R CNN
+F 1 "D" V 8355 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 8400 4750 50  0001 C CNN
+F 3 "~" H 8400 4750 50  0001 C CNN
+	1    8400 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_MINUS1
+U 1 1 5FE1B6DD
+P 10000 4450
+F 0 "K_MINUS1" H 10000 4683 60  0000 C CNN
+F 1 "KEYSW" H 10000 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10000 4450 60  0001 C CNN
+F 3 "" H 10000 4450 60  0000 C CNN
+	1    10000 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_BCKSP1
+U 1 1 5FE1B6FB
+P 11300 4450
+F 0 "K_BCKSP1" H 11300 4683 60  0000 C CNN
+F 1 "KEYSW" H 11300 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_2u" H 11300 4450 60  0001 C CNN
+F 3 "" H 11300 4450 60  0000 C CNN
+	1    11300 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_BCKSP1
+U 1 1 5FE1B705
+P 11000 4750
+F 0 "D_BCKSP1" V 11046 4670 50  0000 R CNN
+F 1 "D" V 10955 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 4750 50  0001 C CNN
+F 3 "~" H 11000 4750 50  0001 C CNN
+	1    11000 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_INS1
+U 1 1 5FE1B70F
+P 12700 4450
+F 0 "K_INS1" H 12700 4683 60  0000 C CNN
+F 1 "KEYSW" H 12700 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 12700 4450 60  0001 C CNN
+F 3 "" H 12700 4450 60  0000 C CNN
+	1    12700 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_INS1
+U 1 1 5FE1B719
+P 12400 4750
+F 0 "D_INS1" V 12446 4670 50  0000 R CNN
+F 1 "D" V 12355 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 12400 4750 50  0001 C CNN
+F 3 "~" H 12400 4750 50  0001 C CNN
+	1    12400 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_HOME1
+U 1 1 5FE1B723
+P 13350 4450
+F 0 "K_HOME1" H 13350 4683 60  0000 C CNN
+F 1 "KEYSW" H 13350 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 13350 4450 60  0001 C CNN
+F 3 "" H 13350 4450 60  0000 C CNN
+	1    13350 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_HOME1
+U 1 1 5FE1B72D
+P 13050 4750
+F 0 "D_HOME1" V 13096 4670 50  0000 R CNN
+F 1 "D" V 13005 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13050 4750 50  0001 C CNN
+F 3 "~" H 13050 4750 50  0001 C CNN
+	1    13050 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_MINUS1
+U 1 1 5FE1B737
+P 9700 4750
+F 0 "D_MINUS1" V 9746 4670 50  0000 R CNN
+F 1 "D" V 9655 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9700 4750 50  0001 C CNN
+F 3 "~" H 9700 4750 50  0001 C CNN
+	1    9700 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_10
+U 1 1 5FE1B741
+P 9050 4750
+F 0 "D_10" V 9096 4670 50  0000 R CNN
+F 1 "D" V 9005 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 4750 50  0001 C CNN
+F 3 "~" H 9050 4750 50  0001 C CNN
+	1    9050 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_0
+U 1 1 5FE1B74B
+P 9350 4450
+F 0 "K_0" H 9350 4683 60  0000 C CNN
+F 1 "KEYSW" H 9350 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 4450 60  0001 C CNN
+F 3 "" H 9350 4450 60  0000 C CNN
+	1    9350 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_TAB1
+U 1 1 5FE381E7
+P 2850 5150
+F 0 "K_TAB1" H 2850 5383 60  0000 C CNN
+F 1 "KEYSW" H 2850 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 2850 5150 60  0001 C CNN
+F 3 "" H 2850 5150 60  0000 C CNN
+	1    2850 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_TAB1
+U 1 1 5FE38701
+P 2550 5450
+F 0 "D_TAB1" V 2596 5370 50  0000 R CNN
+F 1 "D" V 2505 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 5450 50  0001 C CNN
+F 3 "~" H 2550 5450 50  0001 C CNN
+	1    2550 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_Q1
+U 1 1 5FE3870B
+P 3500 5150
+F 0 "K_Q1" H 3500 5383 60  0000 C CNN
+F 1 "KEYSW" H 3500 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 3500 5150 60  0001 C CNN
+F 3 "" H 3500 5150 60  0000 C CNN
+	1    3500 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_Q1
+U 1 1 5FE38715
+P 3200 5450
+F 0 "D_Q1" V 3246 5370 50  0000 R CNN
+F 1 "D" V 3155 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3200 5450 50  0001 C CNN
+F 3 "~" H 3200 5450 50  0001 C CNN
+	1    3200 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_E1
+U 1 1 5FE3871F
+P 4800 5150
+F 0 "K_E1" H 4800 5383 60  0000 C CNN
+F 1 "KEYSW" H 4800 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4800 5150 60  0001 C CNN
+F 3 "" H 4800 5150 60  0000 C CNN
+	1    4800 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_R1
+U 1 1 5FE38729
+P 5450 5150
+F 0 "K_R1" H 5450 5383 60  0000 C CNN
+F 1 "KEYSW" H 5450 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 5450 5150 60  0001 C CNN
+F 3 "" H 5450 5150 60  0000 C CNN
+	1    5450 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_R1
+U 1 1 5FE38733
+P 5150 5450
+F 0 "D_R1" V 5196 5370 50  0000 R CNN
+F 1 "D" V 5105 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5150 5450 50  0001 C CNN
+F 3 "~" H 5150 5450 50  0001 C CNN
+	1    5150 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_T1
+U 1 1 5FE3873D
+P 6100 5150
+F 0 "K_T1" H 6100 5383 60  0000 C CNN
+F 1 "KEYSW" H 6100 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6100 5150 60  0001 C CNN
+F 3 "" H 6100 5150 60  0000 C CNN
+	1    6100 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_T1
+U 1 1 5FE38747
+P 5800 5450
+F 0 "D_T1" V 5846 5370 50  0000 R CNN
+F 1 "D" V 5755 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5800 5450 50  0001 C CNN
+F 3 "~" H 5800 5450 50  0001 C CNN
+	1    5800 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_Y1
+U 1 1 5FE38751
+P 6750 5150
+F 0 "K_Y1" H 6750 5383 60  0000 C CNN
+F 1 "KEYSW" H 6750 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6750 5150 60  0001 C CNN
+F 3 "" H 6750 5150 60  0000 C CNN
+	1    6750 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_Y1
+U 1 1 5FE3875B
+P 6450 5450
+F 0 "D_Y1" V 6496 5370 50  0000 R CNN
+F 1 "D" V 6405 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 5450 50  0001 C CNN
+F 3 "~" H 6450 5450 50  0001 C CNN
+	1    6450 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_U1
+U 1 1 5FE38765
+P 7400 5150
+F 0 "K_U1" H 7400 5383 60  0000 C CNN
+F 1 "KEYSW" H 7400 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 7400 5150 60  0001 C CNN
+F 3 "" H 7400 5150 60  0000 C CNN
+	1    7400 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_U1
+U 1 1 5FE3876F
+P 7100 5450
+F 0 "D_U1" V 7146 5370 50  0000 R CNN
+F 1 "D" V 7055 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7100 5450 50  0001 C CNN
+F 3 "~" H 7100 5450 50  0001 C CNN
+	1    7100 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_E1
+U 1 1 5FE38779
+P 4500 5450
+F 0 "D_E1" V 4546 5370 50  0000 R CNN
+F 1 "D" V 4455 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 4500 5450 50  0001 C CNN
+F 3 "~" H 4500 5450 50  0001 C CNN
+	1    4500 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_W1
+U 1 1 5FE38783
+P 3850 5450
+F 0 "D_W1" V 3896 5370 50  0000 R CNN
+F 1 "D" V 3805 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 5450 50  0001 C CNN
+F 3 "~" H 3850 5450 50  0001 C CNN
+	1    3850 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_W1
+U 1 1 5FE3878D
+P 4150 5150
+F 0 "K_W1" H 4150 5383 60  0000 C CNN
+F 1 "KEYSW" H 4150 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 5150 60  0001 C CNN
+F 3 "" H 4150 5150 60  0000 C CNN
+	1    4150 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_I1
+U 1 1 5FE38797
+P 8050 5150
+F 0 "K_I1" H 8050 5383 60  0000 C CNN
+F 1 "KEYSW" H 8050 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8050 5150 60  0001 C CNN
+F 3 "" H 8050 5150 60  0000 C CNN
+	1    8050 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_I1
+U 1 1 5FE387A1
+P 7750 5450
+F 0 "D_I1" V 7796 5370 50  0000 R CNN
+F 1 "D" V 7705 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7750 5450 50  0001 C CNN
+F 3 "~" H 7750 5450 50  0001 C CNN
+	1    7750 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_O1
+U 1 1 5FE387AB
+P 8700 5150
+F 0 "K_O1" H 8700 5383 60  0000 C CNN
+F 1 "KEYSW" H 8700 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8700 5150 60  0001 C CNN
+F 3 "" H 8700 5150 60  0000 C CNN
+	1    8700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_O1
+U 1 1 5FE387B5
+P 8400 5450
+F 0 "D_O1" V 8446 5370 50  0000 R CNN
+F 1 "D" V 8355 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 8400 5450 50  0001 C CNN
+F 3 "~" H 8400 5450 50  0001 C CNN
+	1    8400 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_[1
+U 1 1 5FE387BF
+P 10000 5150
+F 0 "K_[1" H 10000 5383 60  0000 C CNN
+F 1 "KEYSW" H 10000 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10000 5150 60  0001 C CNN
+F 3 "" H 10000 5150 60  0000 C CNN
+	1    10000 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_]1
+U 1 1 5FE387C9
+P 10650 5150
+F 0 "K_]1" H 10650 5383 60  0000 C CNN
+F 1 "KEYSW" H 10650 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10650 5150 60  0001 C CNN
+F 3 "" H 10650 5150 60  0000 C CNN
+	1    10650 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_]1
+U 1 1 5FE387D3
+P 10350 5450
+F 0 "D_]1" V 10396 5370 50  0000 R CNN
+F 1 "D" V 10305 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 10350 5450 50  0001 C CNN
+F 3 "~" H 10350 5450 50  0001 C CNN
+	1    10350 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_\1
+U 1 1 5FE387DD
+P 11300 5150
+F 0 "K_\\1" H 11300 5383 60  0000 C CNN
+F 1 "KEYSW" H 11300 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 11300 5150 60  0001 C CNN
+F 3 "" H 11300 5150 60  0000 C CNN
+	1    11300 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_\1
+U 1 1 5FE387E7
+P 11000 5450
+F 0 "D_\\1" V 11046 5370 50  0000 R CNN
+F 1 "D" V 10955 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 5450 50  0001 C CNN
+F 3 "~" H 11000 5450 50  0001 C CNN
+	1    11000 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_DEL1
+U 1 1 5FE387F1
+P 12700 5150
+F 0 "K_DEL1" H 12700 5383 60  0000 C CNN
+F 1 "KEYSW" H 12700 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 12700 5150 60  0001 C CNN
+F 3 "" H 12700 5150 60  0000 C CNN
+	1    12700 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_DEL1
+U 1 1 5FE387FB
+P 12400 5450
+F 0 "D_DEL1" V 12446 5370 50  0000 R CNN
+F 1 "D" V 12355 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 12400 5450 50  0001 C CNN
+F 3 "~" H 12400 5450 50  0001 C CNN
+	1    12400 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_END1
+U 1 1 5FE38805
+P 13350 5150
+F 0 "K_END1" H 13350 5383 60  0000 C CNN
+F 1 "KEYSW" H 13350 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 13350 5150 60  0001 C CNN
+F 3 "" H 13350 5150 60  0000 C CNN
+	1    13350 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_END1
+U 1 1 5FE3880F
+P 13050 5450
+F 0 "D_END1" V 13096 5370 50  0000 R CNN
+F 1 "D" V 13005 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13050 5450 50  0001 C CNN
+F 3 "~" H 13050 5450 50  0001 C CNN
+	1    13050 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_[1
+U 1 1 5FE38819
+P 9700 5450
+F 0 "D_[1" V 9746 5370 50  0000 R CNN
+F 1 "D" V 9655 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9700 5450 50  0001 C CNN
+F 3 "~" H 9700 5450 50  0001 C CNN
+	1    9700 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_P1
+U 1 1 5FE38823
+P 9050 5450
+F 0 "D_P1" V 9096 5370 50  0000 R CNN
+F 1 "D" V 9005 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 5450 50  0001 C CNN
+F 3 "~" H 9050 5450 50  0001 C CNN
+	1    9050 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_P1
+U 1 1 5FE3882D
+P 9350 5150
+F 0 "K_P1" H 9350 5383 60  0000 C CNN
+F 1 "KEYSW" H 9350 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 5150 60  0001 C CNN
+F 3 "" H 9350 5150 60  0000 C CNN
+	1    9350 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_CAPSL1
+U 1 1 5FE38837
+P 2850 5850
+F 0 "K_CAPSL1" H 2850 6083 60  0000 C CNN
+F 1 "KEYSW" H 2850 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 2850 5850 60  0001 C CNN
+F 3 "" H 2850 5850 60  0000 C CNN
+	1    2850 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_CAPSL1
+U 1 1 5FE38841
+P 2550 6150
+F 0 "D_CAPSL1" V 2596 6070 50  0000 R CNN
+F 1 "D" V 2505 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 6150 50  0001 C CNN
+F 3 "~" H 2550 6150 50  0001 C CNN
+	1    2550 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_A1
+U 1 1 5FE3884B
+P 3500 5850
+F 0 "K_A1" H 3500 6083 60  0000 C CNN
+F 1 "KEYSW" H 3500 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 3500 5850 60  0001 C CNN
+F 3 "" H 3500 5850 60  0000 C CNN
+	1    3500 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_A1
+U 1 1 5FE38855
+P 3200 6150
+F 0 "D_A1" V 3246 6070 50  0000 R CNN
+F 1 "D" V 3155 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3200 6150 50  0001 C CNN
+F 3 "~" H 3200 6150 50  0001 C CNN
+	1    3200 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_D1
+U 1 1 5FE3885F
+P 4800 5850
+F 0 "K_D1" H 4800 6083 60  0000 C CNN
+F 1 "KEYSW" H 4800 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4800 5850 60  0001 C CNN
+F 3 "" H 4800 5850 60  0000 C CNN
+	1    4800 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_F_1
+U 1 1 5FE38869
+P 5450 5850
+F 0 "K_F_1" H 5450 6083 60  0000 C CNN
+F 1 "KEYSW" H 5450 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 5450 5850 60  0001 C CNN
+F 3 "" H 5450 5850 60  0000 C CNN
+	1    5450 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_F_1
+U 1 1 5FE38873
+P 5150 6150
+F 0 "D_F_1" V 5196 6070 50  0000 R CNN
+F 1 "D" V 5105 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5150 6150 50  0001 C CNN
+F 3 "~" H 5150 6150 50  0001 C CNN
+	1    5150 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_G1
+U 1 1 5FE3887D
+P 6100 5850
+F 0 "K_G1" H 6100 6083 60  0000 C CNN
+F 1 "KEYSW" H 6100 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6100 5850 60  0001 C CNN
+F 3 "" H 6100 5850 60  0000 C CNN
+	1    6100 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_G1
+U 1 1 5FE38887
+P 5800 6150
+F 0 "D_G1" V 5846 6070 50  0000 R CNN
+F 1 "D" V 5755 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5800 6150 50  0001 C CNN
+F 3 "~" H 5800 6150 50  0001 C CNN
+	1    5800 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_H1
+U 1 1 5FE38891
+P 6750 5850
+F 0 "K_H1" H 6750 6083 60  0000 C CNN
+F 1 "KEYSW" H 6750 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6750 5850 60  0001 C CNN
+F 3 "" H 6750 5850 60  0000 C CNN
+	1    6750 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_H1
+U 1 1 5FE3889B
+P 6450 6150
+F 0 "D_H1" V 6496 6070 50  0000 R CNN
+F 1 "D" V 6405 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 6150 50  0001 C CNN
+F 3 "~" H 6450 6150 50  0001 C CNN
+	1    6450 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_J1
+U 1 1 5FE388A5
+P 7400 5850
+F 0 "K_J1" H 7400 6083 60  0000 C CNN
+F 1 "KEYSW" H 7400 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 7400 5850 60  0001 C CNN
+F 3 "" H 7400 5850 60  0000 C CNN
+	1    7400 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_J1
+U 1 1 5FE388AF
+P 7100 6150
+F 0 "D_J1" V 7146 6070 50  0000 R CNN
+F 1 "D" V 7055 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7100 6150 50  0001 C CNN
+F 3 "~" H 7100 6150 50  0001 C CNN
+	1    7100 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_D1
+U 1 1 5FE388B9
+P 4500 6150
+F 0 "D_D1" V 4546 6070 50  0000 R CNN
+F 1 "D" V 4455 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 4500 6150 50  0001 C CNN
+F 3 "~" H 4500 6150 50  0001 C CNN
+	1    4500 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_S1
+U 1 1 5FE388C3
+P 3850 6150
+F 0 "D_S1" V 3896 6070 50  0000 R CNN
+F 1 "D" V 3805 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 6150 50  0001 C CNN
+F 3 "~" H 3850 6150 50  0001 C CNN
+	1    3850 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_S1
+U 1 1 5FE388CD
+P 4150 5850
+F 0 "K_S1" H 4150 6083 60  0000 C CNN
+F 1 "KEYSW" H 4150 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 5850 60  0001 C CNN
+F 3 "" H 4150 5850 60  0000 C CNN
+	1    4150 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_K1
+U 1 1 5FE388D7
+P 8050 5850
+F 0 "K_K1" H 8050 6083 60  0000 C CNN
+F 1 "KEYSW" H 8050 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8050 5850 60  0001 C CNN
+F 3 "" H 8050 5850 60  0000 C CNN
+	1    8050 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_K1
+U 1 1 5FE388E1
+P 7750 6150
+F 0 "D_K1" V 7796 6070 50  0000 R CNN
+F 1 "D" V 7705 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7750 6150 50  0001 C CNN
+F 3 "~" H 7750 6150 50  0001 C CNN
+	1    7750 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_L1
+U 1 1 5FE388EB
+P 8700 5850
+F 0 "K_L1" H 8700 6083 60  0000 C CNN
+F 1 "KEYSW" H 8700 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8700 5850 60  0001 C CNN
+F 3 "" H 8700 5850 60  0000 C CNN
+	1    8700 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_L1
+U 1 1 5FE388F5
+P 8400 6150
+F 0 "D_L1" V 8446 6070 50  0000 R CNN
+F 1 "D" V 8355 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 8400 6150 50  0001 C CNN
+F 3 "~" H 8400 6150 50  0001 C CNN
+	1    8400 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_'1
+U 1 1 5FE388FF
+P 10000 5850
+F 0 "K_'1" H 10000 6083 60  0000 C CNN
+F 1 "KEYSW" H 10000 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10000 5850 60  0001 C CNN
+F 3 "" H 10000 5850 60  0000 C CNN
+	1    10000 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_ENTER1
+U 1 1 5FE38909
+P 11300 5850
+F 0 "K_ENTER1" H 11300 6083 60  0000 C CNN
+F 1 "KEYSW" H 11300 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_2.25u" H 11300 5850 60  0001 C CNN
+F 3 "" H 11300 5850 60  0000 C CNN
+	1    11300 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_ENTER1
+U 1 1 5FE38913
+P 11000 6150
+F 0 "D_ENTER1" V 11046 6070 50  0000 R CNN
+F 1 "D" V 10955 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 6150 50  0001 C CNN
+F 3 "~" H 11000 6150 50  0001 C CNN
+	1    11000 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_'1
+U 1 1 5FE38959
+P 9700 6150
+F 0 "D_'1" V 9746 6070 50  0000 R CNN
+F 1 "D" V 9655 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9700 6150 50  0001 C CNN
+F 3 "~" H 9700 6150 50  0001 C CNN
+	1    9700 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_;1
+U 1 1 5FE38963
+P 9050 6150
+F 0 "D_;1" V 9096 6070 50  0000 R CNN
+F 1 "D" V 9005 6070 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 6150 50  0001 C CNN
+F 3 "~" H 9050 6150 50  0001 C CNN
+	1    9050 6150
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_;1
+U 1 1 5FE3896D
+P 9350 5850
+F 0 "K_;1" H 9350 6083 60  0000 C CNN
+F 1 "KEYSW" H 9350 5750 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 5850 60  0001 C CNN
+F 3 "" H 9350 5850 60  0000 C CNN
+	1    9350 5850
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_LSHIFT1
+U 1 1 5FF0061B
+P 2850 6550
+F 0 "K_LSHIFT1" H 2850 6783 60  0000 C CNN
+F 1 "KEYSW" H 2850 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_2.25u" H 2850 6550 60  0001 C CNN
+F 3 "" H 2850 6550 60  0000 C CNN
+	1    2850 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_LSHIFT1
+U 1 1 5FF01035
+P 2550 6850
+F 0 "D_LSHIFT1" V 2596 6770 50  0000 R CNN
+F 1 "D" V 2505 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 6850 50  0001 C CNN
+F 3 "~" H 2550 6850 50  0001 C CNN
+	1    2550 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_Z1
+U 1 1 5FF0103F
+P 3500 6550
+F 0 "K_Z1" H 3500 6783 60  0000 C CNN
+F 1 "KEYSW" H 3500 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 3500 6550 60  0001 C CNN
+F 3 "" H 3500 6550 60  0000 C CNN
+	1    3500 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_Z1
+U 1 1 5FF01049
+P 3200 6850
+F 0 "D_Z1" V 3246 6770 50  0000 R CNN
+F 1 "D" V 3155 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3200 6850 50  0001 C CNN
+F 3 "~" H 3200 6850 50  0001 C CNN
+	1    3200 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_C1
+U 1 1 5FF01053
+P 4800 6550
+F 0 "K_C1" H 4800 6783 60  0000 C CNN
+F 1 "KEYSW" H 4800 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4800 6550 60  0001 C CNN
+F 3 "" H 4800 6550 60  0000 C CNN
+	1    4800 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_V1
+U 1 1 5FF0105D
+P 5450 6550
+F 0 "K_V1" H 5450 6783 60  0000 C CNN
+F 1 "KEYSW" H 5450 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 5450 6550 60  0001 C CNN
+F 3 "" H 5450 6550 60  0000 C CNN
+	1    5450 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_V1
+U 1 1 5FF01067
+P 5150 6850
+F 0 "D_V1" V 5196 6770 50  0000 R CNN
+F 1 "D" V 5105 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5150 6850 50  0001 C CNN
+F 3 "~" H 5150 6850 50  0001 C CNN
+	1    5150 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_B1
+U 1 1 5FF01071
+P 6100 6550
+F 0 "K_B1" H 6100 6783 60  0000 C CNN
+F 1 "KEYSW" H 6100 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6100 6550 60  0001 C CNN
+F 3 "" H 6100 6550 60  0000 C CNN
+	1    6100 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_B1
+U 1 1 5FF0107B
+P 5800 6850
+F 0 "D_B1" V 5846 6770 50  0000 R CNN
+F 1 "D" V 5755 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 5800 6850 50  0001 C CNN
+F 3 "~" H 5800 6850 50  0001 C CNN
+	1    5800 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_N1
+U 1 1 5FF01085
+P 6750 6550
+F 0 "K_N1" H 6750 6783 60  0000 C CNN
+F 1 "KEYSW" H 6750 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 6750 6550 60  0001 C CNN
+F 3 "" H 6750 6550 60  0000 C CNN
+	1    6750 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_N1
+U 1 1 5FF0108F
+P 6450 6850
+F 0 "D_N1" V 6496 6770 50  0000 R CNN
+F 1 "D" V 6405 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 6850 50  0001 C CNN
+F 3 "~" H 6450 6850 50  0001 C CNN
+	1    6450 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_M1
+U 1 1 5FF01099
+P 7400 6550
+F 0 "K_M1" H 7400 6783 60  0000 C CNN
+F 1 "KEYSW" H 7400 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 7400 6550 60  0001 C CNN
+F 3 "" H 7400 6550 60  0000 C CNN
+	1    7400 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_M1
+U 1 1 5FF010A3
+P 7100 6850
+F 0 "D_M1" V 7146 6770 50  0000 R CNN
+F 1 "D" V 7055 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7100 6850 50  0001 C CNN
+F 3 "~" H 7100 6850 50  0001 C CNN
+	1    7100 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_C1
+U 1 1 5FF010AD
+P 4500 6850
+F 0 "D_C1" V 4546 6770 50  0000 R CNN
+F 1 "D" V 4455 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 4500 6850 50  0001 C CNN
+F 3 "~" H 4500 6850 50  0001 C CNN
+	1    4500 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_X1
+U 1 1 5FF010B7
+P 3850 6850
+F 0 "D_X1" V 3896 6770 50  0000 R CNN
+F 1 "D" V 3805 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 6850 50  0001 C CNN
+F 3 "~" H 3850 6850 50  0001 C CNN
+	1    3850 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_X1
+U 1 1 5FF010C1
+P 4150 6550
+F 0 "K_X1" H 4150 6783 60  0000 C CNN
+F 1 "KEYSW" H 4150 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 6550 60  0001 C CNN
+F 3 "" H 4150 6550 60  0000 C CNN
+	1    4150 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_,1
+U 1 1 5FF010CB
+P 8050 6550
+F 0 "K_,1" H 8050 6783 60  0000 C CNN
+F 1 "KEYSW" H 8050 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8050 6550 60  0001 C CNN
+F 3 "" H 8050 6550 60  0000 C CNN
+	1    8050 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_,1
+U 1 1 5FF010D5
+P 7750 6850
+F 0 "D_,1" V 7796 6770 50  0000 R CNN
+F 1 "D" V 7705 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 7750 6850 50  0001 C CNN
+F 3 "~" H 7750 6850 50  0001 C CNN
+	1    7750 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_.1
+U 1 1 5FF010DF
+P 8700 6550
+F 0 "K_.1" H 8700 6783 60  0000 C CNN
+F 1 "KEYSW" H 8700 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 8700 6550 60  0001 C CNN
+F 3 "" H 8700 6550 60  0000 C CNN
+	1    8700 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_.1
+U 1 1 5FF010E9
+P 8400 6850
+F 0 "D_.1" V 8446 6770 50  0000 R CNN
+F 1 "D" V 8355 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 8400 6850 50  0001 C CNN
+F 3 "~" H 8400 6850 50  0001 C CNN
+	1    8400 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_UP1
+U 1 1 5FF0111B
+P 13050 6850
+F 0 "D_UP1" V 13096 6770 50  0000 R CNN
+F 1 "D" V 13005 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13050 6850 50  0001 C CNN
+F 3 "~" H 13050 6850 50  0001 C CNN
+	1    13050 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_/1
+U 1 1 5FF01157
+P 9050 6850
+F 0 "D_/1" V 9096 6770 50  0000 R CNN
+F 1 "D" V 9005 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 6850 50  0001 C CNN
+F 3 "~" H 9050 6850 50  0001 C CNN
+	1    9050 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_/1
+U 1 1 5FF01161
+P 9350 6550
+F 0 "K_/1" H 9350 6783 60  0000 C CNN
+F 1 "KEYSW" H 9350 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 6550 60  0001 C CNN
+F 3 "" H 9350 6550 60  0000 C CNN
+	1    9350 6550
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_LCTRL1
+U 1 1 5FF0116B
+P 2850 7250
+F 0 "K_LCTRL1" H 2850 7483 60  0000 C CNN
+F 1 "KEYSW" H 2850 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 2850 7250 60  0001 C CNN
+F 3 "" H 2850 7250 60  0000 C CNN
+	1    2850 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_LCTRL1
+U 1 1 5FF01175
+P 2550 7550
+F 0 "D_LCTRL1" V 2596 7470 50  0000 R CNN
+F 1 "D" V 2505 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 2550 7550 50  0001 C CNN
+F 3 "~" H 2550 7550 50  0001 C CNN
+	1    2550 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_LALT1
+U 1 1 5FF0117F
+P 3500 7250
+F 0 "K_LALT1" H 3500 7483 60  0000 C CNN
+F 1 "KEYSW" H 3500 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 3500 7250 60  0001 C CNN
+F 3 "" H 3500 7250 60  0000 C CNN
+	1    3500 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_LALT1
+U 1 1 5FF01189
+P 3200 7550
+F 0 "D_LALT1" V 3246 7470 50  0000 R CNN
+F 1 "D" V 3155 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3200 7550 50  0001 C CNN
+F 3 "~" H 3200 7550 50  0001 C CNN
+	1    3200 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_SPACE1
+U 1 1 5FF011C5
+P 6750 7250
+F 0 "K_SPACE1" H 6750 7483 60  0000 C CNN
+F 1 "KEYSW" H 6750 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_6.25u" H 6750 7250 60  0001 C CNN
+F 3 "" H 6750 7250 60  0000 C CNN
+	1    6750 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_SPACE1
+U 1 1 5FF011CF
+P 6450 7550
+F 0 "D_SPACE1" V 6496 7470 50  0000 R CNN
+F 1 "D" V 6405 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 6450 7550 50  0001 C CNN
+F 3 "~" H 6450 7550 50  0001 C CNN
+	1    6450 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_LWIN1
+U 1 1 5FF011F7
+P 3850 7550
+F 0 "D_LWIN1" V 3896 7470 50  0000 R CNN
+F 1 "D" V 3805 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 3850 7550 50  0001 C CNN
+F 3 "~" H 3850 7550 50  0001 C CNN
+	1    3850 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_LWIN1
+U 1 1 5FF01201
+P 4150 7250
+F 0 "K_LWIN1" H 4150 7483 60  0000 C CNN
+F 1 "KEYSW" H 4150 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 4150 7250 60  0001 C CNN
+F 3 "" H 4150 7250 60  0000 C CNN
+	1    4150 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_RALT1
+U 1 1 5FF01233
+P 10000 7250
+F 0 "K_RALT1" H 10000 7483 60  0000 C CNN
+F 1 "KEYSW" H 10000 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10000 7250 60  0001 C CNN
+F 3 "" H 10000 7250 60  0000 C CNN
+	1    10000 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_FN1
+U 1 1 5FF0123D
+P 10650 7250
+F 0 "K_FN1" H 10650 7483 60  0000 C CNN
+F 1 "KEYSW" H 10650 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10650 7250 60  0001 C CNN
+F 3 "" H 10650 7250 60  0000 C CNN
+	1    10650 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_FN1
+U 1 1 5FF01247
+P 10350 7550
+F 0 "D_FN1" V 10396 7470 50  0000 R CNN
+F 1 "D" V 10305 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 10350 7550 50  0001 C CNN
+F 3 "~" H 10350 7550 50  0001 C CNN
+	1    10350 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_RCTRL1
+U 1 1 5FF01251
+P 11300 7250
+F 0 "K_RCTRL1" H 11300 7483 60  0000 C CNN
+F 1 "KEYSW" H 11300 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 11300 7250 60  0001 C CNN
+F 3 "" H 11300 7250 60  0000 C CNN
+	1    11300 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_RCTRL1
+U 1 1 5FF0125B
+P 11000 7550
+F 0 "D_RCTRL1" V 11046 7470 50  0000 R CNN
+F 1 "D" V 10955 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 7550 50  0001 C CNN
+F 3 "~" H 11000 7550 50  0001 C CNN
+	1    11000 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_LEFT1
+U 1 1 5FF01265
+P 12700 7250
+F 0 "K_LEFT1" H 12700 7483 60  0000 C CNN
+F 1 "KEYSW" H 12700 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 12700 7250 60  0001 C CNN
+F 3 "" H 12700 7250 60  0000 C CNN
+	1    12700 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_LEFT1
+U 1 1 5FF0126F
+P 12400 7550
+F 0 "D_LEFT1" V 12446 7470 50  0000 R CNN
+F 1 "D" V 12355 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 12400 7550 50  0001 C CNN
+F 3 "~" H 12400 7550 50  0001 C CNN
+	1    12400 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_DOWN1
+U 1 1 5FF01279
+P 13350 7250
+F 0 "K_DOWN1" H 13350 7483 60  0000 C CNN
+F 1 "KEYSW" H 13350 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 13350 7250 60  0001 C CNN
+F 3 "" H 13350 7250 60  0000 C CNN
+	1    13350 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_DOWN1
+U 1 1 5FF01283
+P 13050 7550
+F 0 "D_DOWN1" V 13096 7470 50  0000 R CNN
+F 1 "D" V 13005 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13050 7550 50  0001 C CNN
+F 3 "~" H 13050 7550 50  0001 C CNN
+	1    13050 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_RALT1
+U 1 1 5FF0128D
+P 9700 7550
+F 0 "D_RALT1" V 9746 7470 50  0000 R CNN
+F 1 "D" V 9655 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9700 7550 50  0001 C CNN
+F 3 "~" H 9700 7550 50  0001 C CNN
+	1    9700 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_RWIN1
+U 1 1 5FF01297
+P 9050 7550
+F 0 "D_RWIN1" V 9096 7470 50  0000 R CNN
+F 1 "D" V 9005 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 9050 7550 50  0001 C CNN
+F 3 "~" H 9050 7550 50  0001 C CNN
+	1    9050 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_RWIN1
+U 1 1 5FF012A1
+P 9350 7250
+F 0 "K_RWIN1" H 9350 7483 60  0000 C CNN
+F 1 "KEYSW" H 9350 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 9350 7250 60  0001 C CNN
+F 3 "" H 9350 7250 60  0000 C CNN
+	1    9350 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3850 4200 4500 4200
+Connection ~ 4500 4200
+Wire Wire Line
+	4500 4200 5150 4200
+Connection ~ 5150 4200
+Wire Wire Line
+	5150 4200 5800 4200
+Connection ~ 5800 4200
+Wire Wire Line
+	5800 4200 6450 4200
+Connection ~ 6450 4200
+Wire Wire Line
+	6450 4200 7100 4200
+Wire Wire Line
+	7100 4200 7750 4200
+Connection ~ 7100 4200
+Connection ~ 7750 4200
+Wire Wire Line
+	7750 4200 8400 4200
+Connection ~ 8400 4200
+Wire Wire Line
+	8400 4200 9050 4200
+Connection ~ 9050 4200
+Wire Wire Line
+	9050 4200 9700 4200
+Connection ~ 9700 4200
+Wire Wire Line
+	9700 4200 10350 4200
+Connection ~ 10350 4200
+Wire Wire Line
+	10350 4200 11000 4200
+Connection ~ 12400 4200
+Wire Wire Line
+	12400 4200 13050 4200
+Wire Wire Line
+	3150 3750 3150 4450
+Connection ~ 3150 4450
+Wire Wire Line
+	3150 4450 3150 5150
+Connection ~ 3150 5150
+Wire Wire Line
+	3150 5150 3150 5850
+Connection ~ 3150 5850
+Wire Wire Line
+	3150 5850 3150 6550
+Connection ~ 3150 6550
+Wire Wire Line
+	3150 6550 3150 7250
+$Comp
+L keyboard_parts:KEYSW K_PGDOWN1
+U 1 1 5FF923FC
+P 14000 5150
+F 0 "K_PGDOWN1" H 14000 5383 60  0000 C CNN
+F 1 "KEYSW" H 14000 5050 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 14000 5150 60  0001 C CNN
+F 3 "" H 14000 5150 60  0000 C CNN
+	1    14000 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_PGDOWN1
+U 1 1 5FF92406
+P 13700 5450
+F 0 "D_PGDOWN1" V 13746 5370 50  0000 R CNN
+F 1 "D" V 13655 5370 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13700 5450 50  0001 C CNN
+F 3 "~" H 13700 5450 50  0001 C CNN
+	1    13700 5450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_RIGHT1
+U 1 1 5FF92438
+P 14000 7250
+F 0 "K_RIGHT1" H 14000 7483 60  0000 C CNN
+F 1 "KEYSW" H 14000 7150 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 14000 7250 60  0001 C CNN
+F 3 "" H 14000 7250 60  0000 C CNN
+	1    14000 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_RIGHT1
+U 1 1 5FF92442
+P 13700 7550
+F 0 "D_RIGHT1" V 13746 7470 50  0000 R CNN
+F 1 "D" V 13655 7470 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13700 7550 50  0001 C CNN
+F 3 "~" H 13700 7550 50  0001 C CNN
+	1    13700 7550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D_PGUP1
+U 1 1 5FF923F2
+P 13700 4750
+F 0 "D_PGUP1" V 13746 4670 50  0000 R CNN
+F 1 "D" V 13655 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13700 4750 50  0001 C CNN
+F 3 "~" H 13700 4750 50  0001 C CNN
+	1    13700 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_PGUP1
+U 1 1 5FF923E8
+P 14000 4450
+F 0 "K_PGUP1" H 14000 4683 60  0000 C CNN
+F 1 "KEYSW" H 14000 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 14000 4450 60  0001 C CNN
+F 3 "" H 14000 4450 60  0000 C CNN
+	1    14000 4450
+	1    0    0    -1  
+$EndComp
+Connection ~ 13050 4200
+Wire Wire Line
+	13050 4200 13700 4200
+$Comp
+L Device:D D_PAUSE1
+U 1 1 5FF923DE
+P 13700 4050
+F 0 "D_PAUSE1" V 13746 3970 50  0000 R CNN
+F 1 "D" V 13655 3970 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 13700 4050 50  0001 C CNN
+F 3 "~" H 13700 4050 50  0001 C CNN
+	1    13700 4050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_PAUSE1
+U 1 1 5FF914C4
+P 14000 3750
+F 0 "K_PAUSE1" H 14000 3983 60  0000 C CNN
+F 1 "KEYSW" H 14000 3650 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 14000 3750 60  0001 C CNN
+F 3 "" H 14000 3750 60  0000 C CNN
+	1    14000 3750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 4200 3850 4200
+Connection ~ 3850 4200
+$Comp
+L Device:D D_EQUAL1
+U 1 1 5FE1B6F1
+P 10350 4750
+F 0 "D_EQUAL1" V 10396 4670 50  0000 R CNN
+F 1 "D" V 10305 4670 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 10350 4750 50  0001 C CNN
+F 3 "~" H 10350 4750 50  0001 C CNN
+	1    10350 4750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_EQUAL1
+U 1 1 5FE1B6E7
+P 10650 4450
+F 0 "K_EQUAL1" H 10650 4683 60  0000 C CNN
+F 1 "KEYSW" H 10650 4350 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 10650 4450 60  0001 C CNN
+F 3 "" H 10650 4450 60  0000 C CNN
+	1    10650 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:D D_RSHIFT1
+U 1 1 5FF01107
+P 11000 6850
+F 0 "D_RSHIFT1" V 11046 6770 50  0000 R CNN
+F 1 "D" V 10955 6770 50  0000 R CNN
+F 2 "Footprints:D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp" H 11000 6850 50  0001 C CNN
+F 3 "~" H 11000 6850 50  0001 C CNN
+	1    11000 6850
+	0    -1   -1   0   
+$EndComp
+$Comp
+L keyboard_parts:KEYSW K_RSHIFT1
+U 1 1 5FF010FD
+P 11300 6550
+F 0 "K_RSHIFT1" H 11300 6783 60  0000 C CNN
+F 1 "KEYSW" H 11300 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_2.75u" H 11300 6550 60  0001 C CNN
+F 3 "" H 11300 6550 60  0000 C CNN
+	1    11300 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2550 4900 3200 4900
+Connection ~ 3200 4900
+Wire Wire Line
+	3200 4900 3850 4900
+Connection ~ 3850 4900
+Wire Wire Line
+	3850 4900 4500 4900
+Connection ~ 4500 4900
+Wire Wire Line
+	4500 4900 5150 4900
+Connection ~ 5150 4900
+Wire Wire Line
+	5150 4900 5800 4900
+Connection ~ 5800 4900
+Wire Wire Line
+	5800 4900 6450 4900
+Connection ~ 6450 4900
+Wire Wire Line
+	6450 4900 7100 4900
+Connection ~ 7100 4900
+Wire Wire Line
+	7100 4900 7750 4900
+Connection ~ 7750 4900
+Wire Wire Line
+	7750 4900 8400 4900
+Connection ~ 8400 4900
+Wire Wire Line
+	8400 4900 9050 4900
+Connection ~ 9050 4900
+Wire Wire Line
+	9050 4900 9700 4900
+Connection ~ 9700 4900
+Wire Wire Line
+	9700 4900 10350 4900
+Connection ~ 10350 4900
+Wire Wire Line
+	10350 4900 11000 4900
+Connection ~ 12400 4900
+Wire Wire Line
+	12400 4900 13050 4900
+Connection ~ 13050 4900
+Wire Wire Line
+	13050 4900 13700 4900
+Wire Wire Line
+	2550 5600 3200 5600
+Connection ~ 3200 5600
+Wire Wire Line
+	3200 5600 3850 5600
+Connection ~ 3850 5600
+Wire Wire Line
+	3850 5600 4500 5600
+Connection ~ 4500 5600
+Wire Wire Line
+	4500 5600 5150 5600
+Connection ~ 5150 5600
+Wire Wire Line
+	5150 5600 5800 5600
+Connection ~ 5800 5600
+Wire Wire Line
+	5800 5600 6450 5600
+Connection ~ 6450 5600
+Wire Wire Line
+	6450 5600 7100 5600
+Connection ~ 7100 5600
+Wire Wire Line
+	7100 5600 7750 5600
+Connection ~ 7750 5600
+Wire Wire Line
+	7750 5600 8400 5600
+Connection ~ 8400 5600
+Wire Wire Line
+	8400 5600 9050 5600
+Connection ~ 9050 5600
+Wire Wire Line
+	9050 5600 9700 5600
+Connection ~ 9700 5600
+Wire Wire Line
+	9700 5600 10350 5600
+Connection ~ 10350 5600
+Wire Wire Line
+	10350 5600 11000 5600
+Connection ~ 12400 5600
+Wire Wire Line
+	12400 5600 13050 5600
+Connection ~ 13050 5600
+Wire Wire Line
+	13050 5600 13700 5600
+Wire Wire Line
+	2550 6300 3200 6300
+Connection ~ 3200 6300
+Wire Wire Line
+	3200 6300 3850 6300
+Connection ~ 3850 6300
+Wire Wire Line
+	3850 6300 4500 6300
+Connection ~ 4500 6300
+Wire Wire Line
+	4500 6300 5150 6300
+Connection ~ 5150 6300
+Wire Wire Line
+	5150 6300 5800 6300
+Connection ~ 5800 6300
+Wire Wire Line
+	5800 6300 6450 6300
+Connection ~ 6450 6300
+Wire Wire Line
+	6450 6300 7100 6300
+Connection ~ 7100 6300
+Wire Wire Line
+	7100 6300 7750 6300
+Connection ~ 7750 6300
+Wire Wire Line
+	7750 6300 8400 6300
+Connection ~ 8400 6300
+Wire Wire Line
+	8400 6300 9050 6300
+Connection ~ 9050 6300
+Wire Wire Line
+	9050 6300 9700 6300
+Connection ~ 9700 6300
+Wire Wire Line
+	9700 6300 11000 6300
+Wire Wire Line
+	2550 7000 3200 7000
+Connection ~ 3200 7000
+Wire Wire Line
+	3200 7000 3850 7000
+Connection ~ 3850 7000
+Wire Wire Line
+	3850 7000 4500 7000
+Connection ~ 4500 7000
+Wire Wire Line
+	4500 7000 5150 7000
+Connection ~ 5150 7000
+Wire Wire Line
+	5150 7000 5800 7000
+Connection ~ 5800 7000
+Wire Wire Line
+	5800 7000 6450 7000
+Connection ~ 6450 7000
+Wire Wire Line
+	6450 7000 7100 7000
+Connection ~ 7100 7000
+Wire Wire Line
+	7100 7000 7750 7000
+Connection ~ 7750 7000
+Wire Wire Line
+	7750 7000 8400 7000
+Connection ~ 8400 7000
+Wire Wire Line
+	8400 7000 9050 7000
+Connection ~ 9050 7000
+Wire Wire Line
+	9050 7000 11000 7000
+Wire Wire Line
+	13700 7700 13050 7700
+Connection ~ 3200 7700
+Wire Wire Line
+	3200 7700 2550 7700
+Connection ~ 3850 7700
+Wire Wire Line
+	3850 7700 3200 7700
+Connection ~ 6450 7700
+Wire Wire Line
+	6450 7700 3850 7700
+Connection ~ 9050 7700
+Wire Wire Line
+	9050 7700 6450 7700
+Connection ~ 9700 7700
+Wire Wire Line
+	9700 7700 9050 7700
+Connection ~ 10350 7700
+Wire Wire Line
+	10350 7700 9700 7700
+Wire Wire Line
+	11000 7700 10350 7700
+Connection ~ 13050 7700
+Wire Wire Line
+	4450 3750 4450 4450
+Connection ~ 4450 4450
+Wire Wire Line
+	4450 4450 4450 5150
+Connection ~ 4450 5150
+Wire Wire Line
+	4450 5150 4450 5850
+Connection ~ 4450 5850
+Wire Wire Line
+	4450 5850 4450 6550
+Connection ~ 4450 6550
+Wire Wire Line
+	4450 6550 4450 7250
+Wire Wire Line
+	5100 3750 5100 4450
+Connection ~ 5100 4450
+Wire Wire Line
+	5100 4450 5100 5150
+Connection ~ 5100 5150
+Wire Wire Line
+	5100 5150 5100 5850
+Connection ~ 5100 5850
+Wire Wire Line
+	5100 5850 5100 6550
+Wire Wire Line
+	5750 3750 5750 4450
+Connection ~ 5750 4450
+Wire Wire Line
+	5750 4450 5750 5150
+Connection ~ 5750 5150
+Wire Wire Line
+	5750 5150 5750 5850
+Connection ~ 5750 5850
+Wire Wire Line
+	5750 5850 5750 6550
+Wire Wire Line
+	6400 3750 6400 4450
+Connection ~ 6400 4450
+Wire Wire Line
+	6400 4450 6400 5150
+Connection ~ 6400 5150
+Wire Wire Line
+	6400 5150 6400 5850
+Connection ~ 6400 5850
+Wire Wire Line
+	6400 5850 6400 6550
+Wire Wire Line
+	7050 3750 7050 4450
+Connection ~ 7050 4450
+Wire Wire Line
+	7050 4450 7050 5150
+Connection ~ 7050 5150
+Wire Wire Line
+	7050 5150 7050 5850
+Connection ~ 7050 5850
+Wire Wire Line
+	7050 5850 7050 6550
+Connection ~ 7050 6550
+Wire Wire Line
+	7050 6550 7050 7250
+Wire Wire Line
+	7700 3750 7700 4450
+Connection ~ 7700 4450
+Wire Wire Line
+	7700 4450 7700 5150
+Connection ~ 7700 5150
+Wire Wire Line
+	7700 5150 7700 5850
+Connection ~ 7700 5850
+Wire Wire Line
+	7700 5850 7700 6550
+Wire Wire Line
+	8350 3750 8350 4450
+Connection ~ 8350 4450
+Wire Wire Line
+	8350 4450 8350 5150
+Connection ~ 8350 5150
+Wire Wire Line
+	8350 5150 8350 5850
+Connection ~ 8350 5850
+Wire Wire Line
+	8350 5850 8350 6550
+Wire Wire Line
+	9000 3750 9000 4450
+Connection ~ 9000 4450
+Wire Wire Line
+	9000 4450 9000 5150
+Connection ~ 9000 5150
+Wire Wire Line
+	9000 5150 9000 5850
+Connection ~ 9000 5850
+Wire Wire Line
+	9000 5850 9000 6550
+Wire Wire Line
+	9650 3750 9650 4450
+Connection ~ 9650 4450
+Wire Wire Line
+	9650 4450 9650 5150
+Connection ~ 9650 5150
+Wire Wire Line
+	9650 5150 9650 5850
+Connection ~ 9650 5850
+Wire Wire Line
+	9650 5850 9650 6550
+Connection ~ 9650 6550
+Wire Wire Line
+	9650 6550 9650 7250
+Wire Wire Line
+	10300 3750 10300 4450
+Connection ~ 10300 4450
+Wire Wire Line
+	10300 4450 10300 5150
+Connection ~ 10300 5150
+Wire Wire Line
+	10300 5150 10300 5850
+Connection ~ 10300 5850
+Wire Wire Line
+	10300 5850 10300 7250
+Wire Wire Line
+	10950 3750 10950 4450
+Connection ~ 10950 4450
+Wire Wire Line
+	10950 4450 10950 5150
+Connection ~ 10950 5150
+Wire Wire Line
+	10950 5150 10950 7250
+Wire Wire Line
+	11600 3750 11600 4450
+Connection ~ 11600 4450
+Wire Wire Line
+	11600 4450 11600 5150
+Connection ~ 11600 5150
+Wire Wire Line
+	11600 5150 11600 5850
+Connection ~ 11600 5850
+Wire Wire Line
+	11600 5850 11600 6550
+Connection ~ 11600 6550
+Wire Wire Line
+	11600 6550 11600 7250
+Wire Wire Line
+	13000 3750 13000 4450
+Connection ~ 13000 4450
+Wire Wire Line
+	13000 4450 13000 5150
+Connection ~ 12400 7700
+Wire Wire Line
+	12400 7700 13050 7700
+Wire Wire Line
+	13000 5150 13000 7250
+Connection ~ 13000 5150
+Wire Wire Line
+	13650 3750 13650 4450
+Connection ~ 13650 4450
+Wire Wire Line
+	13650 4450 13650 5150
+Connection ~ 13650 5150
+Wire Wire Line
+	14300 3750 14300 4450
+Connection ~ 14300 4450
+Wire Wire Line
+	14300 4450 14300 5150
+Connection ~ 14300 5150
+Wire Wire Line
+	14300 5150 14300 7250
+Wire Wire Line
+	13700 3750 13700 3900
+Wire Wire Line
+	13700 4450 13700 4600
+Wire Wire Line
+	13700 5150 13700 5300
+Wire Wire Line
+	13700 7250 13700 7400
+Wire Wire Line
+	13050 7400 13050 7250
+Wire Wire Line
+	12400 7400 12400 7250
+Wire Wire Line
+	13050 5300 13050 5150
+Wire Wire Line
+	13050 4600 13050 4450
+Wire Wire Line
+	13050 3900 13050 3750
+Wire Wire Line
+	12400 3750 12400 3900
+Wire Wire Line
+	12400 4450 12400 4600
+Wire Wire Line
+	12400 5150 12400 5300
+Wire Wire Line
+	11000 3750 11000 3900
+Wire Wire Line
+	11000 4450 11000 4600
+Wire Wire Line
+	11000 5150 11000 5300
+Wire Wire Line
+	11000 5850 11000 6000
+Wire Wire Line
+	11000 6550 11000 6700
+Wire Wire Line
+	11000 7250 11000 7400
+Wire Wire Line
+	10350 7400 10350 7250
+Wire Wire Line
+	9700 7400 9700 7250
+Wire Wire Line
+	9050 7400 9050 7250
+Wire Wire Line
+	10350 5300 10350 5150
+Wire Wire Line
+	10350 4600 10350 4450
+Wire Wire Line
+	10350 3900 10350 3750
+Wire Wire Line
+	9700 3750 9700 3900
+Wire Wire Line
+	9700 4450 9700 4600
+Wire Wire Line
+	9700 5150 9700 5300
+Wire Wire Line
+	9700 5850 9700 6000
+Wire Wire Line
+	9050 6700 9050 6550
+Wire Wire Line
+	9050 6000 9050 5850
+Wire Wire Line
+	9050 5300 9050 5150
+Wire Wire Line
+	9050 4600 9050 4450
+Wire Wire Line
+	9050 3900 9050 3750
+Wire Wire Line
+	8400 3750 8400 3900
+Wire Wire Line
+	8400 4450 8400 4600
+Wire Wire Line
+	8400 5150 8400 5300
+Wire Wire Line
+	8400 5850 8400 6000
+Wire Wire Line
+	8400 6550 8400 6700
+Wire Wire Line
+	7750 6700 7750 6550
+Wire Wire Line
+	7750 6000 7750 5850
+Wire Wire Line
+	7750 5300 7750 5150
+Wire Wire Line
+	7750 4600 7750 4450
+Wire Wire Line
+	7750 3900 7750 3750
+Wire Wire Line
+	7100 3750 7100 3900
+Wire Wire Line
+	7100 4450 7100 4600
+Wire Wire Line
+	7100 5150 7100 5300
+Wire Wire Line
+	7100 5850 7100 6000
+Wire Wire Line
+	7100 6550 7100 6700
+Wire Wire Line
+	6450 7400 6450 7250
+Wire Wire Line
+	6450 6700 6450 6550
+Wire Wire Line
+	6450 6000 6450 5850
+Wire Wire Line
+	6450 5300 6450 5150
+Wire Wire Line
+	6450 4600 6450 4450
+Wire Wire Line
+	6450 3900 6450 3750
+Wire Wire Line
+	5800 3750 5800 3900
+Wire Wire Line
+	5800 4450 5800 4600
+Wire Wire Line
+	5800 5150 5800 5300
+Wire Wire Line
+	5800 5850 5800 6000
+Wire Wire Line
+	5800 6550 5800 6700
+Wire Wire Line
+	5150 6700 5150 6550
+Wire Wire Line
+	5150 6000 5150 5850
+Wire Wire Line
+	5150 5300 5150 5150
+Wire Wire Line
+	5150 4600 5150 4450
+Wire Wire Line
+	5150 3900 5150 3750
+Wire Wire Line
+	4500 3750 4500 3900
+Wire Wire Line
+	4500 4450 4500 4600
+Wire Wire Line
+	4500 5150 4500 5300
+Wire Wire Line
+	4500 5850 4500 6000
+Wire Wire Line
+	4500 6550 4500 6700
+Wire Wire Line
+	3850 7400 3850 7250
+Wire Wire Line
+	3800 7250 3800 6550
+Connection ~ 3800 5150
+Wire Wire Line
+	3800 5150 3800 4450
+Connection ~ 3800 5850
+Wire Wire Line
+	3800 5850 3800 5150
+Connection ~ 3800 6550
+Wire Wire Line
+	3800 6550 3800 5850
+Wire Wire Line
+	3850 3750 3850 3900
+Wire Wire Line
+	3850 4450 3850 4600
+Wire Wire Line
+	3850 5150 3850 5300
+Wire Wire Line
+	3850 5850 3850 6000
+Wire Wire Line
+	3850 6550 3850 6700
+Wire Wire Line
+	3200 7400 3200 7250
+Wire Wire Line
+	3200 6700 3200 6550
+Wire Wire Line
+	3200 6000 3200 5850
+Wire Wire Line
+	3200 5300 3200 5150
+Wire Wire Line
+	3200 4600 3200 4450
+Wire Wire Line
+	2550 7400 2550 7250
+Wire Wire Line
+	2550 6700 2550 6550
+Wire Wire Line
+	2550 6000 2550 5850
+Wire Wire Line
+	2550 5300 2550 5150
+Wire Wire Line
+	2550 4600 2550 4450
+Wire Wire Line
+	2550 3900 2550 3750
+Connection ~ 2550 7700
+Connection ~ 4450 3750
+Connection ~ 5100 3750
+Connection ~ 5750 3750
+Connection ~ 6400 3750
+Connection ~ 3800 4450
+Connection ~ 7050 3750
+Connection ~ 7700 3750
+Connection ~ 8350 3750
+Connection ~ 9000 3750
+Connection ~ 9650 3750
+Connection ~ 10300 3750
+Connection ~ 10950 3750
+Connection ~ 11600 3750
+Connection ~ 13000 3750
+Connection ~ 13650 3750
+Connection ~ 14300 3750
+$Comp
+L Connector_Generic:Conn_01x30 J1
+U 1 1 5FEB2A54
+P 850 6300
+F 0 "J1" H 768 4575 50  0000 C CNN
+F 1 "Conn_01x30" H 768 4666 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x30_P2.54mm_Vertical" H 850 6300 50  0001 C CNN
+F 3 "~" H 850 6300 50  0001 C CNN
+	1    850  6300
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2550 7000 2450 7000
+Wire Wire Line
+	2450 7000 2450 7600
+Connection ~ 2550 7000
+Wire Wire Line
+	2550 6300 2400 6300
+Wire Wire Line
+	2400 6300 2400 7500
+Connection ~ 2550 6300
+Wire Wire Line
+	2550 5600 2350 5600
+Wire Wire Line
+	2350 5600 2350 7400
+Connection ~ 2550 5600
+Wire Wire Line
+	2550 4900 2300 4900
+Wire Wire Line
+	2300 4900 2300 7300
+Connection ~ 2550 4900
+Wire Wire Line
+	2550 4200 2250 4200
+Wire Wire Line
+	2250 4200 2250 7200
+Connection ~ 2550 4200
+Wire Wire Line
+	3150 3750 3150 3450
+Wire Wire Line
+	3150 3450 2200 3450
+Wire Wire Line
+	2200 3450 2200 7100
+Connection ~ 3150 3750
+Wire Wire Line
+	3800 3400 2150 3400
+Wire Wire Line
+	2150 3400 2150 7000
+Wire Wire Line
+	3800 3400 3800 4450
+Wire Wire Line
+	4450 3350 2100 3350
+Wire Wire Line
+	2100 3350 2100 6900
+Wire Wire Line
+	4450 3350 4450 3750
+Wire Wire Line
+	5100 3300 2050 3300
+Wire Wire Line
+	2050 3300 2050 6800
+Wire Wire Line
+	5100 3300 5100 3750
+Wire Wire Line
+	5750 3250 2000 3250
+Wire Wire Line
+	2000 3250 2000 6700
+Wire Wire Line
+	5750 3250 5750 3750
+Wire Wire Line
+	6400 3200 1950 3200
+Wire Wire Line
+	1950 3200 1950 6600
+Wire Wire Line
+	6400 3200 6400 3750
+Wire Wire Line
+	7050 3150 1900 3150
+Wire Wire Line
+	1900 3150 1900 6500
+Wire Wire Line
+	7050 3150 7050 3750
+Wire Wire Line
+	7700 3100 1850 3100
+Wire Wire Line
+	1850 3100 1850 6400
+Wire Wire Line
+	7700 3100 7700 3750
+Wire Wire Line
+	8350 3050 1800 3050
+Wire Wire Line
+	1800 3050 1800 6300
+Wire Wire Line
+	8350 3050 8350 3750
+Wire Wire Line
+	9000 3000 1750 3000
+Wire Wire Line
+	1750 3000 1750 6200
+Wire Wire Line
+	9000 3000 9000 3750
+Wire Wire Line
+	9650 2950 1700 2950
+Wire Wire Line
+	1700 2950 1700 6100
+Wire Wire Line
+	9650 2950 9650 3750
+Wire Wire Line
+	10300 2900 1650 2900
+Wire Wire Line
+	1650 2900 1650 6000
+Wire Wire Line
+	10300 2900 10300 3750
+Wire Wire Line
+	10950 2850 1600 2850
+Wire Wire Line
+	1600 2850 1600 5900
+Wire Wire Line
+	10950 2850 10950 3750
+Wire Wire Line
+	11600 2800 1550 2800
+Wire Wire Line
+	1550 2800 1550 5800
+Wire Wire Line
+	11600 2800 11600 3750
+Wire Wire Line
+	1500 2750 1500 5700
+Wire Wire Line
+	13000 2750 13000 3750
+Wire Wire Line
+	1450 2700 1450 5600
+Wire Wire Line
+	13650 2700 13650 3750
+Wire Wire Line
+	1400 2650 1400 5500
+Wire Wire Line
+	14300 2650 14300 3750
+$Comp
+L Device:LED_RGBA D_LED_POWER1
+U 1 1 5FF90422
+P 12400 6000
+F 0 "D_LED_POWER1" H 12400 6405 50  0000 C CNN
+F 1 "D" H 12400 6406 50  0001 C CNN
+F 2 "LED_SMD:LED_Lumex_SML-LX0303SIUPGUSB" H 12400 5950 50  0001 C CNN
+F 3 "~" H 12400 5950 50  0001 C CNN
+	1    12400 6000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1300 2550 1300 5300
+Wire Wire Line
+	1350 2600 1350 5400
+Wire Wire Line
+	14750 2600 14750 6000
+Wire Wire Line
+	1050 7700 2550 7700
+Wire Wire Line
+	1050 7600 2450 7600
+Wire Wire Line
+	1050 7500 2400 7500
+Wire Wire Line
+	1050 7400 2350 7400
+Wire Wire Line
+	1050 7300 2300 7300
+Wire Wire Line
+	1050 7200 2250 7200
+Wire Wire Line
+	1050 7100 2200 7100
+Wire Wire Line
+	1050 7000 2150 7000
+Wire Wire Line
+	1050 6900 2100 6900
+Wire Wire Line
+	1050 6800 2050 6800
+Wire Wire Line
+	1050 6700 2000 6700
+Wire Wire Line
+	1050 6600 1950 6600
+Wire Wire Line
+	1050 6500 1900 6500
+Wire Wire Line
+	1050 6400 1850 6400
+Wire Wire Line
+	1050 6300 1800 6300
+Wire Wire Line
+	1050 6200 1750 6200
+Wire Wire Line
+	1050 6100 1700 6100
+Wire Wire Line
+	1050 6000 1650 6000
+Wire Wire Line
+	1050 5900 1600 5900
+Wire Wire Line
+	1050 5800 1550 5800
+Wire Wire Line
+	1050 5700 1500 5700
+Wire Wire Line
+	1050 5600 1450 5600
+Wire Wire Line
+	1050 5500 1400 5500
+Wire Wire Line
+	1050 5400 1350 5400
+Wire Wire Line
+	1050 5300 1300 5300
+Wire Wire Line
+	1250 5200 1050 5200
+Wire Wire Line
+	1250 2500 1250 5200
+Wire Wire Line
+	1200 2450 1200 5100
+Wire Wire Line
+	1200 5100 1050 5100
+Wire Wire Line
+	1150 2400 1150 5000
+Wire Wire Line
+	1150 5000 1050 5000
+Wire Wire Line
+	13050 6550 13050 6700
+Wire Wire Line
+	14950 2400 14950 6500
+Wire Wire Line
+	1100 2350 1100 4900
+Wire Wire Line
+	1100 4900 1050 4900
+Wire Wire Line
+	15000 2350 15000 6600
+Wire Wire Line
+	1050 2300 1050 4800
+$Comp
+L Device:R R_LED_POWER_R1
+U 1 1 607DA976
+P 12050 5800
+F 0 "R_LED_POWER_R1" V 12165 5800 50  0000 C CNN
+F 1 "300" V 12166 5800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 11980 5800 50  0001 C CNN
+F 3 "~" H 12050 5800 50  0001 C CNN
+	1    12050 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_POWER_G1
+U 1 1 6085E570
+P 12050 6000
+F 0 "R_LED_POWER_G1" V 12165 6000 50  0000 C CNN
+F 1 "300" V 12166 6000 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 11980 6000 50  0001 C CNN
+F 3 "~" H 12050 6000 50  0001 C CNN
+	1    12050 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_POWER_B1
+U 1 1 6088BD77
+P 12050 6200
+F 0 "R_LED_POWER_B1" V 12165 6200 50  0000 C CNN
+F 1 "300" V 12166 6200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 11980 6200 50  0001 C CNN
+F 3 "~" H 12050 6200 50  0001 C CNN
+	1    12050 6200
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED_RGBA D_LED_CAPSLOCK1
+U 1 1 608BC4AF
+P 13350 6000
+F 0 "D_LED_CAPSLOCK1" H 13350 6405 50  0000 C CNN
+F 1 "D" H 13350 6406 50  0001 C CNN
+F 2 "LED_SMD:LED_Lumex_SML-LX0303SIUPGUSB" H 13350 5950 50  0001 C CNN
+F 3 "~" H 13350 5950 50  0001 C CNN
+	1    13350 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R_LED_CAPSLOCK_R1
+U 1 1 608BD429
+P 13000 5800
+F 0 "R_LED_CAPSLOCK_R1" V 13115 5800 50  0000 C CNN
+F 1 "R" V 13116 5800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 12930 5800 50  0001 C CNN
+F 3 "~" H 13000 5800 50  0001 C CNN
+	1    13000 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_CAPSLOCK_G1
+U 1 1 608BD433
+P 13000 6000
+F 0 "R_LED_CAPSLOCK_G1" V 13115 6000 50  0000 C CNN
+F 1 "R" V 13116 6000 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 12930 6000 50  0001 C CNN
+F 3 "~" H 13000 6000 50  0001 C CNN
+	1    13000 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_CAPSLOCK_B1
+U 1 1 608BD43D
+P 13000 6200
+F 0 "R_LED_CAPSLOCK_B1" V 13115 6200 50  0000 C CNN
+F 1 "R" V 13116 6200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 12930 6200 50  0001 C CNN
+F 3 "~" H 13000 6200 50  0001 C CNN
+	1    13000 6200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	13650 6550 13650 7250
+Wire Wire Line
+	13650 5150 13650 6550
+Connection ~ 13650 6550
+$Comp
+L keyboard_parts:KEYSW K_UP1
+U 1 1 5FF01111
+P 13350 6550
+F 0 "K_UP1" H 13350 6783 60  0000 C CNN
+F 1 "KEYSW" H 13350 6450 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_LED_1u" H 13350 6550 60  0001 C CNN
+F 3 "" H 13350 6550 60  0000 C CNN
+	1    13350 6550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	11000 7700 12400 7700
+Connection ~ 11000 7700
+Wire Wire Line
+	11000 7000 13050 7000
+Connection ~ 11000 7000
+Wire Wire Line
+	11000 5600 12400 5600
+Connection ~ 11000 5600
+Wire Wire Line
+	11000 4900 12400 4900
+Connection ~ 11000 4900
+Wire Wire Line
+	11000 4200 12400 4200
+Connection ~ 11000 4200
+Wire Wire Line
+	1500 2750 13000 2750
+Wire Wire Line
+	1450 2700 13650 2700
+Wire Wire Line
+	1400 2650 14300 2650
+$Comp
+L Device:LED_RGBA D_LED_CUSTOM1
+U 1 1 60C944E7
+P 14350 6000
+F 0 "D_LED_CUSTOM1" H 14350 6405 50  0000 C CNN
+F 1 "D" H 14350 6406 50  0001 C CNN
+F 2 "LED_SMD:LED_Lumex_SML-LX0303SIUPGUSB" H 14350 5950 50  0001 C CNN
+F 3 "~" H 14350 5950 50  0001 C CNN
+	1    14350 6000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R_LED_CUSTOM_R1
+U 1 1 60C95491
+P 14000 5800
+F 0 "R_LED_CUSTOM_R1" V 14115 5800 50  0000 C CNN
+F 1 "R" V 14116 5800 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 13930 5800 50  0001 C CNN
+F 3 "~" H 14000 5800 50  0001 C CNN
+	1    14000 5800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_CUSTOM_G1
+U 1 1 60C9549B
+P 14000 6000
+F 0 "R_LED_CUSTOM_G1" V 14115 6000 50  0000 C CNN
+F 1 "R" V 14116 6000 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 13930 6000 50  0001 C CNN
+F 3 "~" H 14000 6000 50  0001 C CNN
+	1    14000 6000
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R_LED_CUSTOM_B1
+U 1 1 60C954A5
+P 14000 6200
+F 0 "R_LED_CUSTOM_B1" V 14115 6200 50  0000 C CNN
+F 1 "R" V 14116 6200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0201_0603Metric_Pad0.64x0.40mm_HandSolder" V 13930 6200 50  0001 C CNN
+F 3 "~" H 14000 6200 50  0001 C CNN
+	1    14000 6200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	14750 6000 14550 6000
+Wire Wire Line
+	13850 6350 14800 6350
+Wire Wire Line
+	14800 6350 14800 2550
+Wire Wire Line
+	13850 6000 13800 6000
+Wire Wire Line
+	13800 6400 14850 6400
+Wire Wire Line
+	14850 6400 14850 2500
+Wire Wire Line
+	13850 5800 13750 5800
+Wire Wire Line
+	14900 6450 14900 2450
+Wire Wire Line
+	13750 6450 14900 6450
+Wire Wire Line
+	13550 6000 13550 5650
+Wire Wire Line
+	13550 5650 14550 5650
+Wire Wire Line
+	14550 5650 14550 6000
+Connection ~ 14550 6000
+Wire Wire Line
+	13550 5650 12600 5650
+Wire Wire Line
+	12600 5650 12600 6000
+Connection ~ 13550 5650
+Wire Wire Line
+	15050 2300 15050 6650
+Wire Wire Line
+	12750 6500 12750 6000
+Wire Wire Line
+	12750 6500 14950 6500
+Wire Wire Line
+	12750 6000 12850 6000
+Wire Wire Line
+	12700 6600 12700 5800
+Wire Wire Line
+	12700 6600 15000 6600
+Wire Wire Line
+	12700 5800 12850 5800
+Wire Wire Line
+	11900 6650 11900 6200
+Wire Wire Line
+	11900 6650 15050 6650
+Wire Wire Line
+	11900 6200 11900 6000
+Connection ~ 11900 6200
+Wire Wire Line
+	11900 6000 11900 5800
+Connection ~ 11900 6000
+NoConn ~ 12850 6200
+Wire Wire Line
+	13850 6350 13850 6200
+Wire Wire Line
+	13800 6400 13800 6000
+Wire Wire Line
+	13750 6450 13750 5800
+Wire Wire Line
+	1350 2600 14750 2600
+Wire Wire Line
+	1300 2550 14800 2550
+Wire Wire Line
+	1250 2500 14850 2500
+Wire Wire Line
+	1200 2450 14900 2450
+Wire Wire Line
+	1150 2400 14950 2400
+Wire Wire Line
+	1100 2350 15000 2350
+Wire Wire Line
+	1050 2300 15050 2300
+$EndSCHEMATC
