@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\Users\vladi\source\repos\vladimir-aubrecht\Keyboard\pcb\vakeyboard.sch)
-    (date "19.12.2020 18:23:41")
+    (date "19.12.2020 19:05:00")
     (tool "Eeschema (5.1.8)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
