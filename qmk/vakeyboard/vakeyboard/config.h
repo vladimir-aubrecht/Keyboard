@@ -12,7 +12,7 @@
 
 /* key matrix size */
 #define MATRIX_ROWS 6
-#define MATRIX_COLS 18
+#define MATRIX_COLS 17
 
 /* key matrix pins */
 
@@ -34,7 +34,7 @@
 #define EXP_B7 0xE7
 
 #define MATRIX_ROW_PINS { F7, F6, F5, F4, F1, F0 }
-#define MATRIX_COL_PINS { D6, B7, B6, B5, B4, D7, EXP_A0, EXP_A1, EXP_A2, EXP_A3, EXP_A4, EXP_A5, EXP_A6, EXP_A7, EXP_B0, EXP_B1, EXP_B2, EXP_B3 }
+#define MATRIX_COL_PINS { D6, EXP_A0, EXP_A1, EXP_A2, EXP_A3, EXP_A4, EXP_A5, EXP_A6, EXP_A7, EXP_B0, EXP_B1, EXP_B2, EXP_B3, EXP_B4, EXP_B5, EXP_B6, EXP_B7 }
 
 #define UNUSED_PINS
 
