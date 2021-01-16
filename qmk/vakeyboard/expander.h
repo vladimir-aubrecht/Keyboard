@@ -41,10 +41,5 @@ void expander_init(void);
 void expander_scan(void);
 uint8_t expander_write(uint8_t reg, uint8_t data);
 uint8_t expander_read(uint8_t reg, uint8_t *data);
-//void expander_read_cols(void);
-//uint8_t expander_get_col(uint8_t col);
-//matrix_row_t expander_read_row(void);
-//void expander_unselect_rows(void);
-//void expander_select_row(uint8_t row);
 
 #endif

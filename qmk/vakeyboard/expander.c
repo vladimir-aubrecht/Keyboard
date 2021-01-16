@@ -34,14 +34,26 @@ void expander_scan(void)
       clear_keyboard();
     }
   }
-  //dprintf("%d\n", expander_status);
 }
 
 void expander_config(void)
 {
+  // polarity
   expander_write(EXPANDER_REG_IPOLA, 0xFF);
+  expander_write(EXPANDER_REG_IPOLB, 0xFF);
+
+
+  // turn on pull-ups
   expander_write(EXPANDER_REG_GPPUA, 0xFF);
-  expander_write(EXPANDER_REG_IODIRB, 0xFF);
+  expander_write(EXPANDER_REG_GPPUB, 0xFF);
+
+  // set everything to output
+  //expander_write(EXPANDER_REG_IODIRA, 0x0);
+  //expander_write(EXPANDER_REG_IODIRB, 0x0);
+
+  // disable interrupts
+  //expander_write(EXPANDER_REG_GPINTENA, 0x0);
+  //expander_write(EXPANDER_REG_GPINTENB, 0x0);
 }
 
 uint8_t expander_write(uint8_t reg, uint8_t data)

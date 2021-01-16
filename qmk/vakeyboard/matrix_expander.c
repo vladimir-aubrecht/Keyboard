@@ -16,6 +16,7 @@ static matrix_row_t read_columns(void)
     static uint8_t matrix_row_b = 0;
     expander_read(EXPANDER_REG_GPIOA, &matrix_row_a);
     expander_read(EXPANDER_REG_GPIOB, &matrix_row_b);
+
     return matrix_row_a | (matrix_row_b << 8);
 }
 
@@ -32,18 +33,17 @@ void matrix_init_custom(void) {
 
 uint8_t readPinCustom(pin_t pin)
 {
-    if (pin >= 0xD0 && pin <= 0xEF)
+    if (pin >= EXP_A0 && pin <= EXP_B7)
     {
         uint8_t pin_number = 0;
-        if (pin >= 0xE0)
+        if (pin >= EXP_B0)
         {
-            pin_number = 8 + (pin - 0xE0);
+            pin_number = 8 + (pin - EXP_B0);
         }
         else
         {
-            pin_number = (pin - 0xD0);
+            pin_number = (pin - EXP_A0);
         }
-
         matrix_row_t data = read_columns();
 
         uint8_t result = ((data & ( 1 << pin_number )) >> pin_number) == 0 ? 1 : 0;
