@@ -5,12 +5,8 @@
 #include "matrix.h"
 
 #define MCP23017
-#define MCP23017_A0 0
-#define MCP23017_A1 0
-#define MCP23017_A2 0
-
-#ifdef MCP23017
-#define EXPANDER_ADDR ((0x20|(MCP23017_A0<<0)|(MCP23017_A1<<1)|(MCP23017_A2<<2)) << 1)
+#define EXPANDER_ADDR0 ((0x20|(0<<0)|(0<<1)|(0<<2)) << 1)
+#define EXPANDER_ADDR1 ((0x20|(1<<0)|(1<<1)|(1<<2)) << 1)
 enum EXPANDER_REG_BANK0 {
   EXPANDER_REG_IODIRA = 0,
   EXPANDER_REG_IODIRB,
@@ -35,11 +31,9 @@ enum EXPANDER_REG_BANK0 {
   EXPANDER_REG_OLATA,
   EXPANDER_REG_OLATB
 };
-#endif
 
 void expander_init(void);
-void expander_scan(void);
-uint8_t expander_write(uint8_t reg, uint8_t data);
-uint8_t expander_read(uint8_t reg, uint8_t *data);
+uint8_t expander_write(uint8_t expander_address, uint8_t reg, uint8_t data);
+uint8_t expander_read(uint8_t expander_address, uint8_t reg, uint8_t *data);
 
 #endif

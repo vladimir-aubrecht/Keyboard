@@ -16,25 +16,42 @@
 
 /* key matrix pins */
 
-#define EXP_A0 0xD0
-#define EXP_A1 0xD1
-#define EXP_A2 0xD2
-#define EXP_A3 0xD3
-#define EXP_A4 0xD4
-#define EXP_A5 0xD5
-#define EXP_A6 0xD6
-#define EXP_A7 0xD7
-#define EXP_B0 0xE0
-#define EXP_B1 0xE1
-#define EXP_B2 0xE2
-#define EXP_B3 0xE3
-#define EXP_B4 0xE4
-#define EXP_B5 0xE5
-#define EXP_B6 0xE6
-#define EXP_B7 0xE7
+#define EXP1_A0 0xC0
+#define EXP1_A1 0xC1
+#define EXP1_A2 0xC2
+#define EXP1_A3 0xC3
+#define EXP1_A4 0xC4
+#define EXP1_A5 0xC5
+#define EXP1_A6 0xC6
+#define EXP1_A7 0xC7
+#define EXP1_B0 0xC8
+#define EXP1_B1 0xC9
+#define EXP1_B2 0xCA
+#define EXP1_B3 0xCB
+#define EXP1_B4 0xCC
+#define EXP1_B5 0xCD
+#define EXP1_B6 0xCE
+#define EXP1_B7 0xCF
 
-#define MATRIX_ROW_PINS { F7, F6, F5, F4, F1, F0 }
-#define MATRIX_COL_PINS { D6, EXP_A0, EXP_A1, EXP_A2, EXP_A3, EXP_A4, EXP_A5, EXP_A6, EXP_A7, EXP_B0, EXP_B1, EXP_B2, EXP_B3, EXP_B4, EXP_B5, EXP_B6, EXP_B7 }
+#define EXP2_A0 0xD0
+#define EXP2_A1 0xD1
+#define EXP2_A2 0xD2
+#define EXP2_A3 0xD3
+#define EXP2_A4 0xE4
+#define EXP2_A5 0xE5
+#define EXP2_A6 0xE6
+#define EXP2_A7 0xE7
+#define EXP2_B0 0xE8
+#define EXP2_B1 0xE9
+#define EXP2_B2 0xEA
+#define EXP2_B3 0xEB
+#define EXP2_B4 0xEC
+#define EXP2_B5 0xED
+#define EXP2_B6 0xEE
+#define EXP2_B7 0xEF
+
+#define MATRIX_ROW_PINS { EXP2_B0, EXP2_B1, EXP2_B2, EXP2_B3, EXP2_B4, EXP2_B5 } // not used, hardcoded second expander for now
+#define MATRIX_COL_PINS { EXP1_A0, EXP1_A1, EXP1_A2, EXP1_A3, EXP1_A4, EXP1_A5, EXP1_A6, EXP1_A7, EXP1_B0, EXP1_B1, EXP1_B2, EXP1_B3, EXP1_B4, EXP1_B5, EXP1_B6, EXP1_B7, EXP2_A0 }
 
 #define UNUSED_PINS
 

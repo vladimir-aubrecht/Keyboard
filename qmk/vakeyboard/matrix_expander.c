@@ -9,17 +9,16 @@
 
 static matrix_row_t previous_states[MATRIX_ROWS];
 
-static matrix_row_t read_columns(void);
-static matrix_row_t read_columns(void)
+void select_row_custom(uint8_t row)
 {
-    static uint8_t matrix_row_a = 0;
-    static uint8_t matrix_row_b = 0;
-    expander_read(EXPANDER_REG_GPIOA, &matrix_row_a);
-    expander_read(EXPANDER_REG_GPIOB, &matrix_row_b);
-
-    return matrix_row_a | (matrix_row_b << 8);
+    row = 0xFF & ~(1<<row);
+    expander_write(EXPANDER_ADDR1, EXPANDER_REG_GPIOB, row);
 }
 
+void unselect_row_custom(uint8_t row)
+{
+    expander_write(EXPANDER_ADDR1, EXPANDER_REG_GPIOB, 0xFF);
+}
 
 void matrix_init_custom(void) {
 
@@ -31,20 +30,27 @@ void matrix_init_custom(void) {
     expander_init();
 }
 
-uint8_t readPinCustom(pin_t pin)
+uint8_t read_pin_custom(pin_t pin)
 {
-    if (pin >= EXP_A0 && pin <= EXP_B7)
+    if (pin >= EXP1_A0 && pin <= EXP2_B7)
     {
+        static uint8_t data = 0;
         uint8_t pin_number = 0;
-        if (pin >= EXP_B0)
+        if (pin >= EXP2_A0)
         {
-            pin_number = 8 + (pin - EXP_B0);
+            pin_number = (pin - EXP2_A0);
+            expander_read(EXPANDER_ADDR1, EXPANDER_REG_GPIOA, &data);
+        }
+        else if (pin >= EXP1_B0)
+        {
+            pin_number = (pin - EXP1_B0);
+            expander_read(EXPANDER_ADDR0, EXPANDER_REG_GPIOB, &data);
         }
         else
         {
-            pin_number = (pin - EXP_A0);
+            pin_number = (pin - EXP1_A0);
+            expander_read(EXPANDER_ADDR0, EXPANDER_REG_GPIOA, &data);
         }
-        matrix_row_t data = read_columns();
 
         uint8_t result = ((data & ( 1 << pin_number )) >> pin_number) == 0 ? 1 : 0;
         return result;

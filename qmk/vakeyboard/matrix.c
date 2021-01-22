@@ -27,8 +27,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debounce.h"
 #include "quantum.h"
 
+static void select_row(uint8_t row);
+static void unselect_row(uint8_t row);
 __attribute__((weak)) void matrix_init_custom(void) {}
-__attribute__((weak)) uint8_t readPinCustom(pin_t pin) { return readPin(pin); }
+__attribute__((weak)) uint8_t read_pin_custom(pin_t pin) { return readPin(pin); }
+__attribute__((weak)) void select_row_custom(uint8_t row) { select_row(row); }
+__attribute__((weak)) void unselect_row_custom(uint8_t row) { unselect_row(row); }
 
 #ifdef DIRECT_PINS
 static pin_t direct_pins[MATRIX_ROWS][MATRIX_COLS] = DIRECT_PINS;
@@ -87,7 +91,7 @@ static void unselect_row(uint8_t row) { setPinInputHigh(row_pins[row]); }
 
 static void unselect_rows(void) {
     for (uint8_t x = 0; x < MATRIX_ROWS; x++) {
-        setPinInputHigh(row_pins[x]);
+        unselect_row_custom(row_pins[x]);
     }
 }
 
@@ -103,20 +107,20 @@ static bool read_cols_on_row(matrix_row_t current_matrix[], uint8_t current_row)
     matrix_row_t current_row_value = 0;
 
     // Select row and wait for row selecton to stabilize
-    select_row(current_row);
+    select_row_custom(current_row);
     matrix_io_delay();
 
     // For each col...
     for (uint8_t col_index = 0; col_index < MATRIX_COLS; col_index++) {
         // Select the col pin to read (active low)
-        uint8_t pin_state = readPinCustom(col_pins[col_index]);
+        uint8_t pin_state = read_pin_custom(col_pins[col_index]);
 
         // Populate the matrix row with the state of the col pin
         current_row_value |= pin_state ? 0 : (MATRIX_ROW_SHIFTER << col_index);
     }
 
     // Unselect row
-    unselect_row(current_row);
+    unselect_row_custom(current_row);
 
     // If the row has changed, store the row and return the changed flag.
     if (current_matrix[current_row] != current_row_value) {
