@@ -87,14 +87,14 @@ module TabRow()
     
     for (i = [0:1:12])
     {
-       switch1u(escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(escPaddingX + i * keycapSize, rowPositionY);
     }
     
-    switch2u(escPaddingX + 13 * switchSize + (13-1) * switchMargin, rowPositionY);
+    switch2u(escPaddingX + 13 * keycapSize, rowPositionY);
     
     for (i = [14:1:16])
     {
-       switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * keycapSize, rowPositionY);
     }
 }
 
@@ -105,10 +105,10 @@ module CapsLockRow()
     
     for (i = [0:1:12])
     {
-       switch1u(escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(escPaddingX + i * keycapSize, rowPositionY);
     }
     
-    switch2u(escPaddingX + 13 * switchSize + (13-1) * switchMargin, rowPositionY);
+    switch2u(escPaddingX + 13 * keycapSize, rowPositionY);
 }
 
 module ShiftRow()
@@ -118,13 +118,13 @@ module ShiftRow()
     
     for (i = [0:1:12])
     {
-       switch1u(escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(escPaddingX + i * keycapSize, rowPositionY);
     }
     
-    switch2u(escPaddingX + 13 * switchSize + (13-1) * switchMargin, rowPositionY);
+    switch2u(escPaddingX + 13 * keycapSize, rowPositionY);
     
     i = 15;
-    switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+    switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * keycapSize, rowPositionY);
 }
 
 module CtrlRow()
@@ -134,13 +134,13 @@ module CtrlRow()
     
     for (i = [0:1:12])
     {
-       switch1u(escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(escPaddingX + i * keycapSize, rowPositionY);
     }
     
-    switch2u(escPaddingX + 13 * switchSize + (13-1) * switchMargin, rowPositionY);
+    switch2u(escPaddingX + 13 * keycapSize, rowPositionY);
     
     for (i = [14:1:16])
     {
-       switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * switchSize + (i-1) * switchMargin, rowPositionY);
+       switch1u(3 * navigationBlockMargin - switchMargin + escPaddingX + i * keycapSize, rowPositionY);
     }
 }
