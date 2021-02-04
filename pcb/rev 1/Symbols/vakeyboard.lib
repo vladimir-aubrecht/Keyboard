@@ -1,0 +1,20 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# KEYSW
+#
+DEF KEYSW K? 0 40 Y Y 1 F N
+F0 "K?" -50 0 60 H V C CNN
+F1 "KEYSW" 0 -100 60 H I C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+C -200 0 50 0 1 0 N
+C 200 0 50 0 1 0 N
+P 2 0 1 10 -200 50 150 150 N
+X ~ 1 300 0 50 L 60 60 1 1 P
+X ~ 2 -300 0 50 R 60 60 1 1 P
+ENDDRAW
+ENDDEF
+#
+#End Library

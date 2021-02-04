@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L keyboard_parts:KEYSW K_ESC1
+L vakeyboard:KEYSW K_ESC1
 U 1 1 5FD55184
 P 2950 5375
 F 0 "K_ESC1" H 2950 5608 60  0000 C CNN
@@ -37,7 +37,7 @@ F 4 "C414017" H 2650 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F2
+L vakeyboard:KEYSW K_F2
 U 1 1 5FD64385
 P 4900 5375
 F 0 "K_F2" H 4900 5608 60  0000 C CNN
@@ -48,7 +48,7 @@ F 3 "" H 4900 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F3
+L vakeyboard:KEYSW K_F3
 U 1 1 5FD721A9
 P 5550 5375
 F 0 "K_F3" H 5550 5608 60  0000 C CNN
@@ -71,7 +71,7 @@ F 4 "C414017" H 5250 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F4
+L vakeyboard:KEYSW K_F4
 U 1 1 5FD7226D
 P 6200 5375
 F 0 "K_F4" H 6200 5608 60  0000 C CNN
@@ -94,7 +94,7 @@ F 4 "C414017" H 5900 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F5
+L vakeyboard:KEYSW K_F5
 U 1 1 5FD72281
 P 6850 5375
 F 0 "K_F5" H 6850 5608 60  0000 C CNN
@@ -117,7 +117,7 @@ F 4 "C414017" H 6550 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F6
+L vakeyboard:KEYSW K_F6
 U 1 1 5FD72295
 P 7500 5375
 F 0 "K_F6" H 7500 5608 60  0000 C CNN
@@ -164,7 +164,7 @@ F 4 "C414017" H 3950 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F1
+L vakeyboard:KEYSW K_F1
 U 1 1 5FD64311
 P 4250 5375
 F 0 "K_F1" H 4250 5608 60  0000 C CNN
@@ -175,7 +175,7 @@ F 3 "" H 4250 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F7
+L vakeyboard:KEYSW K_F7
 U 1 1 5FDB5855
 P 8150 5375
 F 0 "K_F7" H 8150 5608 60  0000 C CNN
@@ -198,7 +198,7 @@ F 4 "C414017" H 7850 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F8
+L vakeyboard:KEYSW K_F8
 U 1 1 5FDB59B9
 P 8800 5375
 F 0 "K_F8" H 8800 5608 60  0000 C CNN
@@ -221,7 +221,7 @@ F 4 "C414017" H 8500 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F10
+L vakeyboard:KEYSW K_F10
 U 1 1 5FDB59CD
 P 10100 5375
 F 0 "K_F10" H 10100 5608 60  0000 C CNN
@@ -232,7 +232,7 @@ F 3 "" H 10100 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F11
+L vakeyboard:KEYSW K_F11
 U 1 1 5FDB59D7
 P 10750 5375
 F 0 "K_F11" H 10750 5608 60  0000 C CNN
@@ -255,7 +255,7 @@ F 4 "C414017" H 10450 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F12
+L vakeyboard:KEYSW K_F12
 U 1 1 5FDB59EB
 P 11400 5375
 F 0 "K_F12" H 11400 5608 60  0000 C CNN
@@ -278,7 +278,7 @@ F 4 "C414017" H 11100 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_PRNT1
+L vakeyboard:KEYSW K_PRNT1
 U 1 1 5FDB59FF
 P 12800 5375
 F 0 "K_PRNT1" H 12800 5608 60  0000 C CNN
@@ -301,7 +301,7 @@ F 4 "C414017" H 12500 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_SCRL1
+L vakeyboard:KEYSW K_SCRL1
 U 1 1 5FDB5A13
 P 13450 5375
 F 0 "K_SCRL1" H 13450 5608 60  0000 C CNN
@@ -348,7 +348,7 @@ F 4 "C414017" H 9150 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F9
+L vakeyboard:KEYSW K_F9
 U 1 1 5FDB5A3B
 P 9450 5375
 F 0 "K_F9" H 9450 5608 60  0000 C CNN
@@ -359,7 +359,7 @@ F 3 "" H 9450 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_TILDA1
+L vakeyboard:KEYSW K_TILDA1
 U 1 1 5FE1B385
 P 2950 6075
 F 0 "K_TILDA1" H 2950 6308 60  0000 C CNN
@@ -382,7 +382,7 @@ F 4 "C414017" H 2650 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_1
+L vakeyboard:KEYSW K_1
 U 1 1 5FE1B629
 P 3600 6075
 F 0 "K_1" H 3600 6308 60  0000 C CNN
@@ -405,7 +405,7 @@ F 4 "C414017" H 3300 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_3
+L vakeyboard:KEYSW K_3
 U 1 1 5FE1B63D
 P 4900 6075
 F 0 "K_3" H 4900 6308 60  0000 C CNN
@@ -416,7 +416,7 @@ F 3 "" H 4900 6075 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_4
+L vakeyboard:KEYSW K_4
 U 1 1 5FE1B647
 P 5550 6075
 F 0 "K_4" H 5550 6308 60  0000 C CNN
@@ -439,7 +439,7 @@ F 4 "C414017" H 5250 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_5
+L vakeyboard:KEYSW K_5
 U 1 1 5FE1B65B
 P 6200 6075
 F 0 "K_5" H 6200 6308 60  0000 C CNN
@@ -462,7 +462,7 @@ F 4 "C414017" H 5900 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_6
+L vakeyboard:KEYSW K_6
 U 1 1 5FE1B66F
 P 6850 6075
 F 0 "K_6" H 6850 6308 60  0000 C CNN
@@ -485,7 +485,7 @@ F 4 "C414017" H 6550 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_7
+L vakeyboard:KEYSW K_7
 U 1 1 5FE1B683
 P 7500 6075
 F 0 "K_7" H 7500 6308 60  0000 C CNN
@@ -532,7 +532,7 @@ F 4 "C414017" H 3950 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_2
+L vakeyboard:KEYSW K_2
 U 1 1 5FE1B6AB
 P 4250 6075
 F 0 "K_2" H 4250 6308 60  0000 C CNN
@@ -543,7 +543,7 @@ F 3 "" H 4250 6075 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_8
+L vakeyboard:KEYSW K_8
 U 1 1 5FE1B6B5
 P 8150 6075
 F 0 "K_8" H 8150 6308 60  0000 C CNN
@@ -566,7 +566,7 @@ F 4 "C414017" H 7850 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_9
+L vakeyboard:KEYSW K_9
 U 1 1 5FE1B6C9
 P 8800 6075
 F 0 "K_9" H 8800 6308 60  0000 C CNN
@@ -589,7 +589,7 @@ F 4 "C414017" H 8500 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_MINUS1
+L vakeyboard:KEYSW K_MINUS1
 U 1 1 5FE1B6DD
 P 10100 6075
 F 0 "K_MINUS1" H 10100 6308 60  0000 C CNN
@@ -600,7 +600,7 @@ F 3 "" H 10100 6075 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_BCKSP1
+L vakeyboard:KEYSW K_BCKSP1
 U 1 1 5FE1B6FB
 P 11400 6075
 F 0 "K_BCKSP1" H 11400 6308 60  0000 C CNN
@@ -623,7 +623,7 @@ F 4 "C414017" H 11100 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_INS1
+L vakeyboard:KEYSW K_INS1
 U 1 1 5FE1B70F
 P 12800 6075
 F 0 "K_INS1" H 12800 6308 60  0000 C CNN
@@ -646,7 +646,7 @@ F 4 "C414017" H 12500 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_HOME1
+L vakeyboard:KEYSW K_HOME1
 U 1 1 5FE1B723
 P 13450 6075
 F 0 "K_HOME1" H 13450 6308 60  0000 C CNN
@@ -693,7 +693,7 @@ F 4 "C414017" H 9150 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_0
+L vakeyboard:KEYSW K_0
 U 1 1 5FE1B74B
 P 9450 6075
 F 0 "K_0" H 9450 6308 60  0000 C CNN
@@ -704,7 +704,7 @@ F 3 "" H 9450 6075 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_TAB1
+L vakeyboard:KEYSW K_TAB1
 U 1 1 5FE381E7
 P 2950 6775
 F 0 "K_TAB1" H 2950 7008 60  0000 C CNN
@@ -727,7 +727,7 @@ F 4 "C414017" H 2650 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_Q1
+L vakeyboard:KEYSW K_Q1
 U 1 1 5FE3870B
 P 3600 6775
 F 0 "K_Q1" H 3600 7008 60  0000 C CNN
@@ -750,7 +750,7 @@ F 4 "C414017" H 3300 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_E1
+L vakeyboard:KEYSW K_E1
 U 1 1 5FE3871F
 P 4900 6775
 F 0 "K_E1" H 4900 7008 60  0000 C CNN
@@ -761,7 +761,7 @@ F 3 "" H 4900 6775 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_R1
+L vakeyboard:KEYSW K_R1
 U 1 1 5FE38729
 P 5550 6775
 F 0 "K_R1" H 5550 7008 60  0000 C CNN
@@ -784,7 +784,7 @@ F 4 "C414017" H 5250 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_T1
+L vakeyboard:KEYSW K_T1
 U 1 1 5FE3873D
 P 6200 6775
 F 0 "K_T1" H 6200 7008 60  0000 C CNN
@@ -807,7 +807,7 @@ F 4 "C414017" H 5900 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_Y1
+L vakeyboard:KEYSW K_Y1
 U 1 1 5FE38751
 P 6850 6775
 F 0 "K_Y1" H 6850 7008 60  0000 C CNN
@@ -830,7 +830,7 @@ F 4 "C414017" H 6550 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_U1
+L vakeyboard:KEYSW K_U1
 U 1 1 5FE38765
 P 7500 6775
 F 0 "K_U1" H 7500 7008 60  0000 C CNN
@@ -877,7 +877,7 @@ F 4 "C414017" H 3950 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_W1
+L vakeyboard:KEYSW K_W1
 U 1 1 5FE3878D
 P 4250 6775
 F 0 "K_W1" H 4250 7008 60  0000 C CNN
@@ -888,7 +888,7 @@ F 3 "" H 4250 6775 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_I1
+L vakeyboard:KEYSW K_I1
 U 1 1 5FE38797
 P 8150 6775
 F 0 "K_I1" H 8150 7008 60  0000 C CNN
@@ -911,7 +911,7 @@ F 4 "C414017" H 7850 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_O1
+L vakeyboard:KEYSW K_O1
 U 1 1 5FE387AB
 P 8800 6775
 F 0 "K_O1" H 8800 7008 60  0000 C CNN
@@ -934,7 +934,7 @@ F 4 "C414017" H 8500 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_[1
+L vakeyboard:KEYSW K_[1
 U 1 1 5FE387BF
 P 10100 6775
 F 0 "K_[1" H 10100 7008 60  0000 C CNN
@@ -945,7 +945,7 @@ F 3 "" H 10100 6775 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_]1
+L vakeyboard:KEYSW K_]1
 U 1 1 5FE387C9
 P 10750 6775
 F 0 "K_]1" H 10750 7008 60  0000 C CNN
@@ -968,7 +968,7 @@ F 4 "C414017" H 10450 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_\1
+L vakeyboard:KEYSW K_\1
 U 1 1 5FE387DD
 P 11400 6775
 F 0 "K_\\1" H 11400 7008 60  0000 C CNN
@@ -991,7 +991,7 @@ F 4 "C414017" H 11100 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_DEL1
+L vakeyboard:KEYSW K_DEL1
 U 1 1 5FE387F1
 P 12800 6775
 F 0 "K_DEL1" H 12800 7008 60  0000 C CNN
@@ -1014,7 +1014,7 @@ F 4 "C414017" H 12500 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_END1
+L vakeyboard:KEYSW K_END1
 U 1 1 5FE38805
 P 13450 6775
 F 0 "K_END1" H 13450 7008 60  0000 C CNN
@@ -1061,7 +1061,7 @@ F 4 "C414017" H 9150 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_P1
+L vakeyboard:KEYSW K_P1
 U 1 1 5FE3882D
 P 9450 6775
 F 0 "K_P1" H 9450 7008 60  0000 C CNN
@@ -1072,7 +1072,7 @@ F 3 "" H 9450 6775 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_CAPSL1
+L vakeyboard:KEYSW K_CAPSL1
 U 1 1 5FE38837
 P 2950 7475
 F 0 "K_CAPSL1" H 2950 7708 60  0000 C CNN
@@ -1095,7 +1095,7 @@ F 4 "C414017" H 2650 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_A1
+L vakeyboard:KEYSW K_A1
 U 1 1 5FE3884B
 P 3600 7475
 F 0 "K_A1" H 3600 7708 60  0000 C CNN
@@ -1118,7 +1118,7 @@ F 4 "C414017" H 3300 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_D1
+L vakeyboard:KEYSW K_D1
 U 1 1 5FE3885F
 P 4900 7475
 F 0 "K_D1" H 4900 7708 60  0000 C CNN
@@ -1129,7 +1129,7 @@ F 3 "" H 4900 7475 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F_1
+L vakeyboard:KEYSW K_F_1
 U 1 1 5FE38869
 P 5550 7475
 F 0 "K_F_1" H 5550 7708 60  0000 C CNN
@@ -1152,7 +1152,7 @@ F 4 "C414017" H 5250 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_G1
+L vakeyboard:KEYSW K_G1
 U 1 1 5FE3887D
 P 6200 7475
 F 0 "K_G1" H 6200 7708 60  0000 C CNN
@@ -1175,7 +1175,7 @@ F 4 "C414017" H 5900 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_H1
+L vakeyboard:KEYSW K_H1
 U 1 1 5FE38891
 P 6850 7475
 F 0 "K_H1" H 6850 7708 60  0000 C CNN
@@ -1198,7 +1198,7 @@ F 4 "C414017" H 6550 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_J1
+L vakeyboard:KEYSW K_J1
 U 1 1 5FE388A5
 P 7500 7475
 F 0 "K_J1" H 7500 7708 60  0000 C CNN
@@ -1245,7 +1245,7 @@ F 4 "C414017" H 3950 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_S1
+L vakeyboard:KEYSW K_S1
 U 1 1 5FE388CD
 P 4250 7475
 F 0 "K_S1" H 4250 7708 60  0000 C CNN
@@ -1256,7 +1256,7 @@ F 3 "" H 4250 7475 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_K1
+L vakeyboard:KEYSW K_K1
 U 1 1 5FE388D7
 P 8150 7475
 F 0 "K_K1" H 8150 7708 60  0000 C CNN
@@ -1279,7 +1279,7 @@ F 4 "C414017" H 7850 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_L1
+L vakeyboard:KEYSW K_L1
 U 1 1 5FE388EB
 P 8800 7475
 F 0 "K_L1" H 8800 7708 60  0000 C CNN
@@ -1302,7 +1302,7 @@ F 4 "C414017" H 8500 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_'1
+L vakeyboard:KEYSW K_'1
 U 1 1 5FE388FF
 P 10100 7475
 F 0 "K_'1" H 10100 7708 60  0000 C CNN
@@ -1313,7 +1313,7 @@ F 3 "" H 10100 7475 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_ENTER1
+L vakeyboard:KEYSW K_ENTER1
 U 1 1 5FE38909
 P 11400 7475
 F 0 "K_ENTER1" H 11400 7708 60  0000 C CNN
@@ -1360,7 +1360,7 @@ F 4 "C414017" H 9150 7775 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_;1
+L vakeyboard:KEYSW K_;1
 U 1 1 5FE3896D
 P 9450 7475
 F 0 "K_;1" H 9450 7708 60  0000 C CNN
@@ -1371,7 +1371,7 @@ F 3 "" H 9450 7475 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_LSHIFT1
+L vakeyboard:KEYSW K_LSHIFT1
 U 1 1 5FF0061B
 P 2950 8175
 F 0 "K_LSHIFT1" H 2950 8408 60  0000 C CNN
@@ -1394,7 +1394,7 @@ F 4 "C414017" H 2650 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_Z1
+L vakeyboard:KEYSW K_Z1
 U 1 1 5FF0103F
 P 3600 8175
 F 0 "K_Z1" H 3600 8408 60  0000 C CNN
@@ -1417,7 +1417,7 @@ F 4 "C414017" H 3300 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_C1
+L vakeyboard:KEYSW K_C1
 U 1 1 5FF01053
 P 4900 8175
 F 0 "K_C1" H 4900 8408 60  0000 C CNN
@@ -1428,7 +1428,7 @@ F 3 "" H 4900 8175 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_V1
+L vakeyboard:KEYSW K_V1
 U 1 1 5FF0105D
 P 5550 8175
 F 0 "K_V1" H 5550 8408 60  0000 C CNN
@@ -1451,7 +1451,7 @@ F 4 "C414017" H 5250 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_B1
+L vakeyboard:KEYSW K_B1
 U 1 1 5FF01071
 P 6200 8175
 F 0 "K_B1" H 6200 8408 60  0000 C CNN
@@ -1474,7 +1474,7 @@ F 4 "C414017" H 5900 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_N1
+L vakeyboard:KEYSW K_N1
 U 1 1 5FF01085
 P 6850 8175
 F 0 "K_N1" H 6850 8408 60  0000 C CNN
@@ -1497,7 +1497,7 @@ F 4 "C414017" H 6550 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_M1
+L vakeyboard:KEYSW K_M1
 U 1 1 5FF01099
 P 7500 8175
 F 0 "K_M1" H 7500 8408 60  0000 C CNN
@@ -1544,7 +1544,7 @@ F 4 "C414017" H 3950 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_X1
+L vakeyboard:KEYSW K_X1
 U 1 1 5FF010C1
 P 4250 8175
 F 0 "K_X1" H 4250 8408 60  0000 C CNN
@@ -1555,7 +1555,7 @@ F 3 "" H 4250 8175 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_Coma1
+L vakeyboard:KEYSW K_Coma1
 U 1 1 5FF010CB
 P 8150 8175
 F 0 "K_Coma1" H 8150 8408 60  0000 C CNN
@@ -1578,7 +1578,7 @@ F 4 "C414017" H 7850 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_.1
+L vakeyboard:KEYSW K_.1
 U 1 1 5FF010DF
 P 8800 8175
 F 0 "K_.1" H 8800 8408 60  0000 C CNN
@@ -1625,7 +1625,7 @@ F 4 "C414017" H 9150 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_/1
+L vakeyboard:KEYSW K_/1
 U 1 1 5FF01161
 P 9450 8175
 F 0 "K_/1" H 9450 8408 60  0000 C CNN
@@ -1636,7 +1636,7 @@ F 3 "" H 9450 8175 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_LCTRL1
+L vakeyboard:KEYSW K_LCTRL1
 U 1 1 5FF0116B
 P 2950 8875
 F 0 "K_LCTRL1" H 2950 9108 60  0000 C CNN
@@ -1659,7 +1659,7 @@ F 4 "C414017" H 2650 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_LALT1
+L vakeyboard:KEYSW K_LALT1
 U 1 1 5FF0117F
 P 3600 8875
 F 0 "K_LALT1" H 3600 9108 60  0000 C CNN
@@ -1682,7 +1682,7 @@ F 4 "C414017" H 3300 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_SPACE1
+L vakeyboard:KEYSW K_SPACE1
 U 1 1 5FF011C5
 P 6850 8875
 F 0 "K_SPACE1" H 6850 9108 60  0000 C CNN
@@ -1717,7 +1717,7 @@ F 4 "C414017" H 3950 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_LWIN1
+L vakeyboard:KEYSW K_LWIN1
 U 1 1 5FF01201
 P 4250 8875
 F 0 "K_LWIN1" H 4250 9108 60  0000 C CNN
@@ -1728,7 +1728,7 @@ F 3 "" H 4250 8875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_RALT1
+L vakeyboard:KEYSW K_RALT1
 U 1 1 5FF01233
 P 10100 8875
 F 0 "K_RALT1" H 10100 9108 60  0000 C CNN
@@ -1739,7 +1739,7 @@ F 3 "" H 10100 8875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_FN1
+L vakeyboard:KEYSW K_FN1
 U 1 1 5FF0123D
 P 10750 8875
 F 0 "K_FN1" H 10750 9108 60  0000 C CNN
@@ -1762,7 +1762,7 @@ F 4 "C414017" H 10450 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_RCTRL1
+L vakeyboard:KEYSW K_RCTRL1
 U 1 1 5FF01251
 P 11400 8875
 F 0 "K_RCTRL1" H 11400 9108 60  0000 C CNN
@@ -1785,7 +1785,7 @@ F 4 "C414017" H 11100 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_LEFT1
+L vakeyboard:KEYSW K_LEFT1
 U 1 1 5FF01265
 P 12800 8875
 F 0 "K_LEFT1" H 12800 9108 60  0000 C CNN
@@ -1808,7 +1808,7 @@ F 4 "C414017" H 12500 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_DOWN1
+L vakeyboard:KEYSW K_DOWN1
 U 1 1 5FF01279
 P 13450 8875
 F 0 "K_DOWN1" H 13450 9108 60  0000 C CNN
@@ -1855,7 +1855,7 @@ F 4 "C414017" H 9150 9175 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_RWIN1
+L vakeyboard:KEYSW K_RWIN1
 U 1 1 5FF012A1
 P 9450 8875
 F 0 "K_RWIN1" H 9450 9108 60  0000 C CNN
@@ -1915,7 +1915,7 @@ Connection ~ 3250 8175
 Wire Wire Line
 	3250 8175 3250 8875
 $Comp
-L keyboard_parts:KEYSW K_PGDOWN1
+L vakeyboard:KEYSW K_PGDOWN1
 U 1 1 5FF923FC
 P 14100 6775
 F 0 "K_PGDOWN1" H 14100 7008 60  0000 C CNN
@@ -1938,7 +1938,7 @@ F 4 "C414017" H 13800 7075 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_RIGHT1
+L vakeyboard:KEYSW K_RIGHT1
 U 1 1 5FF92438
 P 14100 8875
 F 0 "K_RIGHT1" H 14100 9108 60  0000 C CNN
@@ -1973,7 +1973,7 @@ F 4 "C414017" H 13800 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_PGUP1
+L vakeyboard:KEYSW K_PGUP1
 U 1 1 5FF923E8
 P 14100 6075
 F 0 "K_PGUP1" H 14100 6308 60  0000 C CNN
@@ -1999,7 +1999,7 @@ F 4 "C414017" H 13800 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_PAUSE1
+L vakeyboard:KEYSW K_PAUSE1
 U 1 1 5FF914C4
 P 14100 5375
 F 0 "K_PAUSE1" H 14100 5608 60  0000 C CNN
@@ -2025,7 +2025,7 @@ F 4 "C414017" H 10450 6375 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_EQUAL1
+L vakeyboard:KEYSW K_EQUAL1
 U 1 1 5FE1B6E7
 P 10750 6075
 F 0 "K_EQUAL1" H 10750 6308 60  0000 C CNN
@@ -2048,7 +2048,7 @@ F 4 "C414017" H 11100 8475 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_RSHIFT1
+L vakeyboard:KEYSW K_RSHIFT1
 U 1 1 5FF010FD
 P 11400 8175
 F 0 "K_RSHIFT1" H 11400 8408 60  0000 C CNN
@@ -2621,7 +2621,7 @@ Wire Wire Line
 	13750 8175 13750 8875
 Connection ~ 13750 8175
 $Comp
-L keyboard_parts:KEYSW K_UP1
+L vakeyboard:KEYSW K_UP1
 U 1 1 5FF01111
 P 13450 8175
 F 0 "K_UP1" H 13450 8408 60  0000 C CNN

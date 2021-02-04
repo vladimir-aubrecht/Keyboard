@@ -1,3 +1,0 @@
-[submodule "pcb/submodules/kicad_lib_tmk"]
-	path = pcb/submodules/kicad_lib_tmk
-	url = https://github.com/tmk/kicad_lib_tmk
