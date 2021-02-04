@@ -1,5 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ARGB_LED
+F https://datasheet.lcsc.com/szlcsc/1901151203_Everlight-Elec-MT19-237-R6GHBHC-B01-2T_C264517.pdf
+$ENDCMP
+#
 $CMP D
 D Diode
 K diode
