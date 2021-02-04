@@ -1,7 +1,7 @@
 EESchema Schematic File Version 4
 EELAYER 30 0
 EELAYER END
-$Descr A3 16535 11693
+$Descr A0 46811 33110
 encoding utf-8
 Sheet 1 1
 Title ""
@@ -14,7 +14,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L keyboard_parts:KEYSW K_ESC1
+L vakeyboard:KEYSW K_ESC1
 U 1 1 5FD55184
 P 2950 5375
 F 0 "K_ESC1" H 2950 5608 60  0000 C CNN
@@ -25,11 +25,11 @@ F 3 "" H 2950 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_ESC1
+L vakeyboard:D D_ESC1
 U 1 1 5FD55AA0
 P 2650 5675
-F 0 "D_ESC1" V 2696 5595 50  0000 R CNN
-F 1 "D" V 2605 5595 50  0000 R CNN
+F 0 "D_ESC1" V 2696 5595 50  0001 R CNN
+F 1 "D" V 2605 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 2650 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 5675 50  0001 C CNN
 F 4 "C414017" H 2650 5675 50  0001 C CNN "LCSC"
@@ -37,7 +37,7 @@ F 4 "C414017" H 2650 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F2
+L vakeyboard:KEYSW K_F2
 U 1 1 5FD64385
 P 4900 5375
 F 0 "K_F2" H 4900 5608 60  0000 C CNN
@@ -48,7 +48,7 @@ F 3 "" H 4900 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F3
+L vakeyboard:KEYSW K_F3
 U 1 1 5FD721A9
 P 5550 5375
 F 0 "K_F3" H 5550 5608 60  0000 C CNN
@@ -59,11 +59,11 @@ F 3 "" H 5550 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F3
+L vakeyboard:D D_F3
 U 1 1 5FD72263
 P 5250 5675
-F 0 "D_F3" V 5296 5595 50  0000 R CNN
-F 1 "D" V 5205 5595 50  0000 R CNN
+F 0 "D_F3" V 5296 5595 50  0001 R CNN
+F 1 "D" V 5205 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 5250 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 5675 50  0001 C CNN
 F 4 "C414017" H 5250 5675 50  0001 C CNN "LCSC"
@@ -71,7 +71,7 @@ F 4 "C414017" H 5250 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F4
+L vakeyboard:KEYSW K_F4
 U 1 1 5FD7226D
 P 6200 5375
 F 0 "K_F4" H 6200 5608 60  0000 C CNN
@@ -82,11 +82,11 @@ F 3 "" H 6200 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F4
+L vakeyboard:D D_F4
 U 1 1 5FD72277
 P 5900 5675
-F 0 "D_F4" V 5946 5595 50  0000 R CNN
-F 1 "D" V 5855 5595 50  0000 R CNN
+F 0 "D_F4" V 5946 5595 50  0001 R CNN
+F 1 "D" V 5855 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 5900 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 5675 50  0001 C CNN
 F 4 "C414017" H 5900 5675 50  0001 C CNN "LCSC"
@@ -94,7 +94,7 @@ F 4 "C414017" H 5900 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F5
+L vakeyboard:KEYSW K_F5
 U 1 1 5FD72281
 P 6850 5375
 F 0 "K_F5" H 6850 5608 60  0000 C CNN
@@ -105,11 +105,11 @@ F 3 "" H 6850 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F5
+L vakeyboard:D D_F5
 U 1 1 5FD7228B
 P 6550 5675
-F 0 "D_F5" V 6596 5595 50  0000 R CNN
-F 1 "D" V 6505 5595 50  0000 R CNN
+F 0 "D_F5" V 6596 5595 50  0001 R CNN
+F 1 "D" V 6505 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 6550 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 5675 50  0001 C CNN
 F 4 "C414017" H 6550 5675 50  0001 C CNN "LCSC"
@@ -117,7 +117,7 @@ F 4 "C414017" H 6550 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F6
+L vakeyboard:KEYSW K_F6
 U 1 1 5FD72295
 P 7500 5375
 F 0 "K_F6" H 7500 5608 60  0000 C CNN
@@ -128,11 +128,11 @@ F 3 "" H 7500 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F6
+L vakeyboard:D D_F6
 U 1 1 5FD7229F
 P 7200 5675
-F 0 "D_F6" V 7246 5595 50  0000 R CNN
-F 1 "D" V 7155 5595 50  0000 R CNN
+F 0 "D_F6" V 7246 5595 50  0001 R CNN
+F 1 "D" V 7155 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 7200 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 5675 50  0001 C CNN
 F 4 "C414017" H 7200 5675 50  0001 C CNN "LCSC"
@@ -140,11 +140,11 @@ F 4 "C414017" H 7200 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D_F2
+L vakeyboard:D D_F2
 U 1 1 5FD6438F
 P 4600 5675
-F 0 "D_F2" V 4646 5595 50  0000 R CNN
-F 1 "D" V 4555 5595 50  0000 R CNN
+F 0 "D_F2" V 4646 5595 50  0001 R CNN
+F 1 "D" V 4555 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 4600 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 5675 50  0001 C CNN
 F 4 "C414017" H 4600 5675 50  0001 C CNN "LCSC"
@@ -152,11 +152,11 @@ F 4 "C414017" H 4600 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D_F1
+L vakeyboard:D D_F1
 U 1 1 5FD6437B
 P 3950 5675
-F 0 "D_F1" V 3996 5595 50  0000 R CNN
-F 1 "D" V 3905 5595 50  0000 R CNN
+F 0 "D_F1" V 3996 5595 50  0001 R CNN
+F 1 "D" V 3905 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 3950 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 5675 50  0001 C CNN
 F 4 "C414017" H 3950 5675 50  0001 C CNN "LCSC"
@@ -164,7 +164,7 @@ F 4 "C414017" H 3950 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F1
+L vakeyboard:KEYSW K_F1
 U 1 1 5FD64311
 P 4250 5375
 F 0 "K_F1" H 4250 5608 60  0000 C CNN
@@ -175,7 +175,7 @@ F 3 "" H 4250 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F7
+L vakeyboard:KEYSW K_F7
 U 1 1 5FDB5855
 P 8150 5375
 F 0 "K_F7" H 8150 5608 60  0000 C CNN
@@ -186,11 +186,11 @@ F 3 "" H 8150 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F7
+L vakeyboard:D D_F7
 U 1 1 5FDB59AF
 P 7850 5675
-F 0 "D_F7" V 7896 5595 50  0000 R CNN
-F 1 "D" V 7805 5595 50  0000 R CNN
+F 0 "D_F7" V 7896 5595 50  0001 R CNN
+F 1 "D" V 7805 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 7850 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 5675 50  0001 C CNN
 F 4 "C414017" H 7850 5675 50  0001 C CNN "LCSC"
@@ -198,7 +198,7 @@ F 4 "C414017" H 7850 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F8
+L vakeyboard:KEYSW K_F8
 U 1 1 5FDB59B9
 P 8800 5375
 F 0 "K_F8" H 8800 5608 60  0000 C CNN
@@ -209,11 +209,11 @@ F 3 "" H 8800 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F8
+L vakeyboard:D D_F8
 U 1 1 5FDB59C3
 P 8500 5675
-F 0 "D_F8" V 8546 5595 50  0000 R CNN
-F 1 "D" V 8455 5595 50  0000 R CNN
+F 0 "D_F8" V 8546 5595 50  0001 R CNN
+F 1 "D" V 8455 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 8500 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 5675 50  0001 C CNN
 F 4 "C414017" H 8500 5675 50  0001 C CNN "LCSC"
@@ -221,7 +221,7 @@ F 4 "C414017" H 8500 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F10
+L vakeyboard:KEYSW K_F10
 U 1 1 5FDB59CD
 P 10100 5375
 F 0 "K_F10" H 10100 5608 60  0000 C CNN
@@ -232,7 +232,7 @@ F 3 "" H 10100 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F11
+L vakeyboard:KEYSW K_F11
 U 1 1 5FDB59D7
 P 10750 5375
 F 0 "K_F11" H 10750 5608 60  0000 C CNN
@@ -243,11 +243,11 @@ F 3 "" H 10750 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F11
+L vakeyboard:D D_F11
 U 1 1 5FDB59E1
 P 10450 5675
-F 0 "D_F11" V 10496 5595 50  0000 R CNN
-F 1 "D" V 10405 5595 50  0000 R CNN
+F 0 "D_F11" V 10496 5595 50  0001 R CNN
+F 1 "D" V 10405 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 10450 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 5675 50  0001 C CNN
 F 4 "C414017" H 10450 5675 50  0001 C CNN "LCSC"
@@ -255,7 +255,7 @@ F 4 "C414017" H 10450 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F12
+L vakeyboard:KEYSW K_F12
 U 1 1 5FDB59EB
 P 11400 5375
 F 0 "K_F12" H 11400 5608 60  0000 C CNN
@@ -266,11 +266,11 @@ F 3 "" H 11400 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_F12
+L vakeyboard:D D_F12
 U 1 1 5FDB59F5
 P 11100 5675
-F 0 "D_F12" V 11146 5595 50  0000 R CNN
-F 1 "D" V 11055 5595 50  0000 R CNN
+F 0 "D_F12" V 11146 5595 50  0001 R CNN
+F 1 "D" V 11055 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 11100 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 5675 50  0001 C CNN
 F 4 "C414017" H 11100 5675 50  0001 C CNN "LCSC"
@@ -278,7 +278,7 @@ F 4 "C414017" H 11100 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_PRNT1
+L vakeyboard:KEYSW K_PRNT1
 U 1 1 5FDB59FF
 P 12800 5375
 F 0 "K_PRNT1" H 12800 5608 60  0000 C CNN
@@ -289,11 +289,11 @@ F 3 "" H 12800 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_PRNT1
+L vakeyboard:D D_PRNT1
 U 1 1 5FDB5A09
 P 12500 5675
-F 0 "D_PRNT1" V 12546 5595 50  0000 R CNN
-F 1 "D" V 12455 5595 50  0000 R CNN
+F 0 "D_PRNT1" V 12546 5595 50  0001 R CNN
+F 1 "D" V 12455 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 12500 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 5675 50  0001 C CNN
 F 4 "C414017" H 12500 5675 50  0001 C CNN "LCSC"
@@ -301,7 +301,7 @@ F 4 "C414017" H 12500 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_SCRL1
+L vakeyboard:KEYSW K_SCRL1
 U 1 1 5FDB5A13
 P 13450 5375
 F 0 "K_SCRL1" H 13450 5608 60  0000 C CNN
@@ -312,11 +312,11 @@ F 3 "" H 13450 5375 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D D_SCRL1
+L vakeyboard:D D_SCRL1
 U 1 1 5FDB5A1D
 P 13150 5675
-F 0 "D_SCRL1" V 13196 5595 50  0000 R CNN
-F 1 "D" V 13105 5595 50  0000 R CNN
+F 0 "D_SCRL1" V 13196 5595 50  0001 R CNN
+F 1 "D" V 13105 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 13150 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 5675 50  0001 C CNN
 F 4 "C414017" H 13150 5675 50  0001 C CNN "LCSC"
@@ -324,11 +324,11 @@ F 4 "C414017" H 13150 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D_F10
+L vakeyboard:D D_F10
 U 1 1 5FDB5A27
 P 9800 5675
-F 0 "D_F10" V 9846 5595 50  0000 R CNN
-F 1 "D" V 9755 5595 50  0000 R CNN
+F 0 "D_F10" V 9846 5595 50  0001 R CNN
+F 1 "D" V 9755 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 9800 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 5675 50  0001 C CNN
 F 4 "C414017" H 9800 5675 50  0001 C CNN "LCSC"
@@ -336,11 +336,11 @@ F 4 "C414017" H 9800 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:D D_F9
+L vakeyboard:D D_F9
 U 1 1 5FDB5A31
 P 9150 5675
-F 0 "D_F9" V 9196 5595 50  0000 R CNN
-F 1 "D" V 9105 5595 50  0000 R CNN
+F 0 "D_F9" V 9196 5595 50  0001 R CNN
+F 1 "D" V 9105 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 9150 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 5675 50  0001 C CNN
 F 4 "C414017" H 9150 5675 50  0001 C CNN "LCSC"
@@ -348,7 +348,7 @@ F 4 "C414017" H 9150 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_F9
+L vakeyboard:KEYSW K_F9
 U 1 1 5FDB5A3B
 P 9450 5375
 F 0 "K_F9" H 9450 5608 60  0000 C CNN
@@ -356,1513 +356,6 @@ F 1 "KEYSW" H 9450 5275 60  0001 C CNN
 F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 5375 60  0001 C CNN
 F 3 "" H 9450 5375 60  0000 C CNN
 	1    9450 5375
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_TILDA1
-U 1 1 5FE1B385
-P 2950 6075
-F 0 "K_TILDA1" H 2950 6308 60  0000 C CNN
-F 1 "KEYSW" H 2950 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 6075 60  0001 C CNN
-F 3 "" H 2950 6075 60  0000 C CNN
-	1    2950 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_TILDA1
-U 1 1 5FE1B61F
-P 2650 6375
-F 0 "D_TILDA1" V 2696 6295 50  0000 R CNN
-F 1 "D" V 2605 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 2650 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 6375 50  0001 C CNN
-F 4 "C414017" H 2650 6375 50  0001 C CNN "LCSC"
-	1    2650 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_1
-U 1 1 5FE1B629
-P 3600 6075
-F 0 "K_1" H 3600 6308 60  0000 C CNN
-F 1 "KEYSW" H 3600 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 6075 60  0001 C CNN
-F 3 "" H 3600 6075 60  0000 C CNN
-	1    3600 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_1
-U 1 1 5FE1B633
-P 3300 6375
-F 0 "D_1" V 3346 6295 50  0000 R CNN
-F 1 "D" V 3255 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3300 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 6375 50  0001 C CNN
-F 4 "C414017" H 3300 6375 50  0001 C CNN "LCSC"
-	1    3300 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_3
-U 1 1 5FE1B63D
-P 4900 6075
-F 0 "K_3" H 4900 6308 60  0000 C CNN
-F 1 "KEYSW" H 4900 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 6075 60  0001 C CNN
-F 3 "" H 4900 6075 60  0000 C CNN
-	1    4900 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_4
-U 1 1 5FE1B647
-P 5550 6075
-F 0 "K_4" H 5550 6308 60  0000 C CNN
-F 1 "KEYSW" H 5550 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 6075 60  0001 C CNN
-F 3 "" H 5550 6075 60  0000 C CNN
-	1    5550 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_4
-U 1 1 5FE1B651
-P 5250 6375
-F 0 "D_4" V 5296 6295 50  0000 R CNN
-F 1 "D" V 5205 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5250 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 6375 50  0001 C CNN
-F 4 "C414017" H 5250 6375 50  0001 C CNN "LCSC"
-	1    5250 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_5
-U 1 1 5FE1B65B
-P 6200 6075
-F 0 "K_5" H 6200 6308 60  0000 C CNN
-F 1 "KEYSW" H 6200 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 6075 60  0001 C CNN
-F 3 "" H 6200 6075 60  0000 C CNN
-	1    6200 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_5
-U 1 1 5FE1B665
-P 5900 6375
-F 0 "D_5" V 5946 6295 50  0000 R CNN
-F 1 "D" V 5855 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5900 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 6375 50  0001 C CNN
-F 4 "C414017" H 5900 6375 50  0001 C CNN "LCSC"
-	1    5900 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_6
-U 1 1 5FE1B66F
-P 6850 6075
-F 0 "K_6" H 6850 6308 60  0000 C CNN
-F 1 "KEYSW" H 6850 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 6075 60  0001 C CNN
-F 3 "" H 6850 6075 60  0000 C CNN
-	1    6850 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_6
-U 1 1 5FE1B679
-P 6550 6375
-F 0 "D_6" V 6596 6295 50  0000 R CNN
-F 1 "D" V 6505 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 6550 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 6375 50  0001 C CNN
-F 4 "C414017" H 6550 6375 50  0001 C CNN "LCSC"
-	1    6550 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_7
-U 1 1 5FE1B683
-P 7500 6075
-F 0 "K_7" H 7500 6308 60  0000 C CNN
-F 1 "KEYSW" H 7500 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 6075 60  0001 C CNN
-F 3 "" H 7500 6075 60  0000 C CNN
-	1    7500 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_7
-U 1 1 5FE1B68D
-P 7200 6375
-F 0 "D_7" V 7246 6295 50  0000 R CNN
-F 1 "D" V 7155 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7200 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 6375 50  0001 C CNN
-F 4 "C414017" H 7200 6375 50  0001 C CNN "LCSC"
-	1    7200 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_3
-U 1 1 5FE1B697
-P 4600 6375
-F 0 "D_3" V 4646 6295 50  0000 R CNN
-F 1 "D" V 4555 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 4600 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 6375 50  0001 C CNN
-F 4 "C414017" H 4600 6375 50  0001 C CNN "LCSC"
-	1    4600 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_2
-U 1 1 5FE1B6A1
-P 3950 6375
-F 0 "D_2" V 3996 6295 50  0000 R CNN
-F 1 "D" V 3905 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3950 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 6375 50  0001 C CNN
-F 4 "C414017" H 3950 6375 50  0001 C CNN "LCSC"
-	1    3950 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_2
-U 1 1 5FE1B6AB
-P 4250 6075
-F 0 "K_2" H 4250 6308 60  0000 C CNN
-F 1 "KEYSW" H 4250 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 6075 60  0001 C CNN
-F 3 "" H 4250 6075 60  0000 C CNN
-	1    4250 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_8
-U 1 1 5FE1B6B5
-P 8150 6075
-F 0 "K_8" H 8150 6308 60  0000 C CNN
-F 1 "KEYSW" H 8150 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 6075 60  0001 C CNN
-F 3 "" H 8150 6075 60  0000 C CNN
-	1    8150 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_8
-U 1 1 5FE1B6BF
-P 7850 6375
-F 0 "D_8" V 7896 6295 50  0000 R CNN
-F 1 "D" V 7805 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7850 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 6375 50  0001 C CNN
-F 4 "C414017" H 7850 6375 50  0001 C CNN "LCSC"
-	1    7850 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_9
-U 1 1 5FE1B6C9
-P 8800 6075
-F 0 "K_9" H 8800 6308 60  0000 C CNN
-F 1 "KEYSW" H 8800 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 6075 60  0001 C CNN
-F 3 "" H 8800 6075 60  0000 C CNN
-	1    8800 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_9
-U 1 1 5FE1B6D3
-P 8500 6375
-F 0 "D_9" V 8546 6295 50  0000 R CNN
-F 1 "D" V 8455 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 8500 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 6375 50  0001 C CNN
-F 4 "C414017" H 8500 6375 50  0001 C CNN "LCSC"
-	1    8500 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_MINUS1
-U 1 1 5FE1B6DD
-P 10100 6075
-F 0 "K_MINUS1" H 10100 6308 60  0000 C CNN
-F 1 "KEYSW" H 10100 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 6075 60  0001 C CNN
-F 3 "" H 10100 6075 60  0000 C CNN
-	1    10100 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_BCKSP1
-U 1 1 5FE1B6FB
-P 11400 6075
-F 0 "K_BCKSP1" H 11400 6308 60  0000 C CNN
-F 1 "KEYSW" H 11400 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_2u" H 11400 6075 60  0001 C CNN
-F 3 "" H 11400 6075 60  0000 C CNN
-	1    11400 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_BCKSP1
-U 1 1 5FE1B705
-P 11100 6375
-F 0 "D_BCKSP1" V 11146 6295 50  0000 R CNN
-F 1 "D" V 11055 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 11100 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 6375 50  0001 C CNN
-F 4 "C414017" H 11100 6375 50  0001 C CNN "LCSC"
-	1    11100 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_INS1
-U 1 1 5FE1B70F
-P 12800 6075
-F 0 "K_INS1" H 12800 6308 60  0000 C CNN
-F 1 "KEYSW" H 12800 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 6075 60  0001 C CNN
-F 3 "" H 12800 6075 60  0000 C CNN
-	1    12800 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_INS1
-U 1 1 5FE1B719
-P 12500 6375
-F 0 "D_INS1" V 12546 6295 50  0000 R CNN
-F 1 "D" V 12455 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 12500 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 6375 50  0001 C CNN
-F 4 "C414017" H 12500 6375 50  0001 C CNN "LCSC"
-	1    12500 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_HOME1
-U 1 1 5FE1B723
-P 13450 6075
-F 0 "K_HOME1" H 13450 6308 60  0000 C CNN
-F 1 "KEYSW" H 13450 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 6075 60  0001 C CNN
-F 3 "" H 13450 6075 60  0000 C CNN
-	1    13450 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_HOME1
-U 1 1 5FE1B72D
-P 13150 6375
-F 0 "D_HOME1" V 13196 6295 50  0000 R CNN
-F 1 "D" V 13105 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13150 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 6375 50  0001 C CNN
-F 4 "C414017" H 13150 6375 50  0001 C CNN "LCSC"
-	1    13150 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_MINUS1
-U 1 1 5FE1B737
-P 9800 6375
-F 0 "D_MINUS1" V 9846 6295 50  0000 R CNN
-F 1 "D" V 9755 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9800 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 6375 50  0001 C CNN
-F 4 "C414017" H 9800 6375 50  0001 C CNN "LCSC"
-	1    9800 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_10
-U 1 1 5FE1B741
-P 9150 6375
-F 0 "D_10" V 9196 6295 50  0000 R CNN
-F 1 "D" V 9105 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9150 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 6375 50  0001 C CNN
-F 4 "C414017" H 9150 6375 50  0001 C CNN "LCSC"
-	1    9150 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_0
-U 1 1 5FE1B74B
-P 9450 6075
-F 0 "K_0" H 9450 6308 60  0000 C CNN
-F 1 "KEYSW" H 9450 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 6075 60  0001 C CNN
-F 3 "" H 9450 6075 60  0000 C CNN
-	1    9450 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_TAB1
-U 1 1 5FE381E7
-P 2950 6775
-F 0 "K_TAB1" H 2950 7008 60  0000 C CNN
-F 1 "KEYSW" H 2950 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 6775 60  0001 C CNN
-F 3 "" H 2950 6775 60  0000 C CNN
-	1    2950 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_TAB1
-U 1 1 5FE38701
-P 2650 7075
-F 0 "D_TAB1" V 2696 6995 50  0000 R CNN
-F 1 "D" V 2605 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 2650 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 7075 50  0001 C CNN
-F 4 "C414017" H 2650 7075 50  0001 C CNN "LCSC"
-	1    2650 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_Q1
-U 1 1 5FE3870B
-P 3600 6775
-F 0 "K_Q1" H 3600 7008 60  0000 C CNN
-F 1 "KEYSW" H 3600 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 6775 60  0001 C CNN
-F 3 "" H 3600 6775 60  0000 C CNN
-	1    3600 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_Q1
-U 1 1 5FE38715
-P 3300 7075
-F 0 "D_Q1" V 3346 6995 50  0000 R CNN
-F 1 "D" V 3255 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3300 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 7075 50  0001 C CNN
-F 4 "C414017" H 3300 7075 50  0001 C CNN "LCSC"
-	1    3300 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_E1
-U 1 1 5FE3871F
-P 4900 6775
-F 0 "K_E1" H 4900 7008 60  0000 C CNN
-F 1 "KEYSW" H 4900 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 6775 60  0001 C CNN
-F 3 "" H 4900 6775 60  0000 C CNN
-	1    4900 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_R1
-U 1 1 5FE38729
-P 5550 6775
-F 0 "K_R1" H 5550 7008 60  0000 C CNN
-F 1 "KEYSW" H 5550 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 6775 60  0001 C CNN
-F 3 "" H 5550 6775 60  0000 C CNN
-	1    5550 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_R1
-U 1 1 5FE38733
-P 5250 7075
-F 0 "D_R1" V 5296 6995 50  0000 R CNN
-F 1 "D" V 5205 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5250 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 7075 50  0001 C CNN
-F 4 "C414017" H 5250 7075 50  0001 C CNN "LCSC"
-	1    5250 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_T1
-U 1 1 5FE3873D
-P 6200 6775
-F 0 "K_T1" H 6200 7008 60  0000 C CNN
-F 1 "KEYSW" H 6200 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 6775 60  0001 C CNN
-F 3 "" H 6200 6775 60  0000 C CNN
-	1    6200 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_T1
-U 1 1 5FE38747
-P 5900 7075
-F 0 "D_T1" V 5946 6995 50  0000 R CNN
-F 1 "D" V 5855 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5900 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 7075 50  0001 C CNN
-F 4 "C414017" H 5900 7075 50  0001 C CNN "LCSC"
-	1    5900 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_Y1
-U 1 1 5FE38751
-P 6850 6775
-F 0 "K_Y1" H 6850 7008 60  0000 C CNN
-F 1 "KEYSW" H 6850 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 6775 60  0001 C CNN
-F 3 "" H 6850 6775 60  0000 C CNN
-	1    6850 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_Y1
-U 1 1 5FE3875B
-P 6550 7075
-F 0 "D_Y1" V 6596 6995 50  0000 R CNN
-F 1 "D" V 6505 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 6550 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 7075 50  0001 C CNN
-F 4 "C414017" H 6550 7075 50  0001 C CNN "LCSC"
-	1    6550 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_U1
-U 1 1 5FE38765
-P 7500 6775
-F 0 "K_U1" H 7500 7008 60  0000 C CNN
-F 1 "KEYSW" H 7500 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 6775 60  0001 C CNN
-F 3 "" H 7500 6775 60  0000 C CNN
-	1    7500 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_U1
-U 1 1 5FE3876F
-P 7200 7075
-F 0 "D_U1" V 7246 6995 50  0000 R CNN
-F 1 "D" V 7155 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7200 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 7075 50  0001 C CNN
-F 4 "C414017" H 7200 7075 50  0001 C CNN "LCSC"
-	1    7200 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_E1
-U 1 1 5FE38779
-P 4600 7075
-F 0 "D_E1" V 4646 6995 50  0000 R CNN
-F 1 "D" V 4555 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 4600 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 7075 50  0001 C CNN
-F 4 "C414017" H 4600 7075 50  0001 C CNN "LCSC"
-	1    4600 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_W1
-U 1 1 5FE38783
-P 3950 7075
-F 0 "D_W1" V 3996 6995 50  0000 R CNN
-F 1 "D" V 3905 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3950 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 7075 50  0001 C CNN
-F 4 "C414017" H 3950 7075 50  0001 C CNN "LCSC"
-	1    3950 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_W1
-U 1 1 5FE3878D
-P 4250 6775
-F 0 "K_W1" H 4250 7008 60  0000 C CNN
-F 1 "KEYSW" H 4250 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 6775 60  0001 C CNN
-F 3 "" H 4250 6775 60  0000 C CNN
-	1    4250 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_I1
-U 1 1 5FE38797
-P 8150 6775
-F 0 "K_I1" H 8150 7008 60  0000 C CNN
-F 1 "KEYSW" H 8150 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 6775 60  0001 C CNN
-F 3 "" H 8150 6775 60  0000 C CNN
-	1    8150 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_I1
-U 1 1 5FE387A1
-P 7850 7075
-F 0 "D_I1" V 7896 6995 50  0000 R CNN
-F 1 "D" V 7805 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7850 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 7075 50  0001 C CNN
-F 4 "C414017" H 7850 7075 50  0001 C CNN "LCSC"
-	1    7850 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_O1
-U 1 1 5FE387AB
-P 8800 6775
-F 0 "K_O1" H 8800 7008 60  0000 C CNN
-F 1 "KEYSW" H 8800 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 6775 60  0001 C CNN
-F 3 "" H 8800 6775 60  0000 C CNN
-	1    8800 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_O1
-U 1 1 5FE387B5
-P 8500 7075
-F 0 "D_O1" V 8546 6995 50  0000 R CNN
-F 1 "D" V 8455 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 8500 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 7075 50  0001 C CNN
-F 4 "C414017" H 8500 7075 50  0001 C CNN "LCSC"
-	1    8500 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_[1
-U 1 1 5FE387BF
-P 10100 6775
-F 0 "K_[1" H 10100 7008 60  0000 C CNN
-F 1 "KEYSW" H 10100 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 6775 60  0001 C CNN
-F 3 "" H 10100 6775 60  0000 C CNN
-	1    10100 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_]1
-U 1 1 5FE387C9
-P 10750 6775
-F 0 "K_]1" H 10750 7008 60  0000 C CNN
-F 1 "KEYSW" H 10750 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 6775 60  0001 C CNN
-F 3 "" H 10750 6775 60  0000 C CNN
-	1    10750 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_]1
-U 1 1 5FE387D3
-P 10450 7075
-F 0 "D_]1" V 10496 6995 50  0000 R CNN
-F 1 "D" V 10405 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 10450 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 7075 50  0001 C CNN
-F 4 "C414017" H 10450 7075 50  0001 C CNN "LCSC"
-	1    10450 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_\1
-U 1 1 5FE387DD
-P 11400 6775
-F 0 "K_\\1" H 11400 7008 60  0000 C CNN
-F 1 "KEYSW" H 11400 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 11400 6775 60  0001 C CNN
-F 3 "" H 11400 6775 60  0000 C CNN
-	1    11400 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_\1
-U 1 1 5FE387E7
-P 11100 7075
-F 0 "D_\\1" V 11146 6995 50  0000 R CNN
-F 1 "D" V 11055 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 11100 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 7075 50  0001 C CNN
-F 4 "C414017" H 11100 7075 50  0001 C CNN "LCSC"
-	1    11100 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_DEL1
-U 1 1 5FE387F1
-P 12800 6775
-F 0 "K_DEL1" H 12800 7008 60  0000 C CNN
-F 1 "KEYSW" H 12800 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 6775 60  0001 C CNN
-F 3 "" H 12800 6775 60  0000 C CNN
-	1    12800 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_DEL1
-U 1 1 5FE387FB
-P 12500 7075
-F 0 "D_DEL1" V 12546 6995 50  0000 R CNN
-F 1 "D" V 12455 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 12500 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 7075 50  0001 C CNN
-F 4 "C414017" H 12500 7075 50  0001 C CNN "LCSC"
-	1    12500 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_END1
-U 1 1 5FE38805
-P 13450 6775
-F 0 "K_END1" H 13450 7008 60  0000 C CNN
-F 1 "KEYSW" H 13450 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 6775 60  0001 C CNN
-F 3 "" H 13450 6775 60  0000 C CNN
-	1    13450 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_END1
-U 1 1 5FE3880F
-P 13150 7075
-F 0 "D_END1" V 13196 6995 50  0000 R CNN
-F 1 "D" V 13105 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13150 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 7075 50  0001 C CNN
-F 4 "C414017" H 13150 7075 50  0001 C CNN "LCSC"
-	1    13150 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_[1
-U 1 1 5FE38819
-P 9800 7075
-F 0 "D_[1" V 9846 6995 50  0000 R CNN
-F 1 "D" V 9755 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9800 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 7075 50  0001 C CNN
-F 4 "C414017" H 9800 7075 50  0001 C CNN "LCSC"
-	1    9800 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_P1
-U 1 1 5FE38823
-P 9150 7075
-F 0 "D_P1" V 9196 6995 50  0000 R CNN
-F 1 "D" V 9105 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9150 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 7075 50  0001 C CNN
-F 4 "C414017" H 9150 7075 50  0001 C CNN "LCSC"
-	1    9150 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_P1
-U 1 1 5FE3882D
-P 9450 6775
-F 0 "K_P1" H 9450 7008 60  0000 C CNN
-F 1 "KEYSW" H 9450 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 6775 60  0001 C CNN
-F 3 "" H 9450 6775 60  0000 C CNN
-	1    9450 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_CAPSL1
-U 1 1 5FE38837
-P 2950 7475
-F 0 "K_CAPSL1" H 2950 7708 60  0000 C CNN
-F 1 "KEYSW" H 2950 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 7475 60  0001 C CNN
-F 3 "" H 2950 7475 60  0000 C CNN
-	1    2950 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_CAPSL1
-U 1 1 5FE38841
-P 2650 7775
-F 0 "D_CAPSL1" V 2696 7695 50  0000 R CNN
-F 1 "D" V 2605 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 2650 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 7775 50  0001 C CNN
-F 4 "C414017" H 2650 7775 50  0001 C CNN "LCSC"
-	1    2650 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_A1
-U 1 1 5FE3884B
-P 3600 7475
-F 0 "K_A1" H 3600 7708 60  0000 C CNN
-F 1 "KEYSW" H 3600 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 7475 60  0001 C CNN
-F 3 "" H 3600 7475 60  0000 C CNN
-	1    3600 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_A1
-U 1 1 5FE38855
-P 3300 7775
-F 0 "D_A1" V 3346 7695 50  0000 R CNN
-F 1 "D" V 3255 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3300 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 7775 50  0001 C CNN
-F 4 "C414017" H 3300 7775 50  0001 C CNN "LCSC"
-	1    3300 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_D1
-U 1 1 5FE3885F
-P 4900 7475
-F 0 "K_D1" H 4900 7708 60  0000 C CNN
-F 1 "KEYSW" H 4900 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 7475 60  0001 C CNN
-F 3 "" H 4900 7475 60  0000 C CNN
-	1    4900 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_F_1
-U 1 1 5FE38869
-P 5550 7475
-F 0 "K_F_1" H 5550 7708 60  0000 C CNN
-F 1 "KEYSW" H 5550 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 7475 60  0001 C CNN
-F 3 "" H 5550 7475 60  0000 C CNN
-	1    5550 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_F_1
-U 1 1 5FE38873
-P 5250 7775
-F 0 "D_F_1" V 5296 7695 50  0000 R CNN
-F 1 "D" V 5205 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5250 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 7775 50  0001 C CNN
-F 4 "C414017" H 5250 7775 50  0001 C CNN "LCSC"
-	1    5250 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_G1
-U 1 1 5FE3887D
-P 6200 7475
-F 0 "K_G1" H 6200 7708 60  0000 C CNN
-F 1 "KEYSW" H 6200 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 7475 60  0001 C CNN
-F 3 "" H 6200 7475 60  0000 C CNN
-	1    6200 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_G1
-U 1 1 5FE38887
-P 5900 7775
-F 0 "D_G1" V 5946 7695 50  0000 R CNN
-F 1 "D" V 5855 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5900 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 7775 50  0001 C CNN
-F 4 "C414017" H 5900 7775 50  0001 C CNN "LCSC"
-	1    5900 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_H1
-U 1 1 5FE38891
-P 6850 7475
-F 0 "K_H1" H 6850 7708 60  0000 C CNN
-F 1 "KEYSW" H 6850 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 7475 60  0001 C CNN
-F 3 "" H 6850 7475 60  0000 C CNN
-	1    6850 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_H1
-U 1 1 5FE3889B
-P 6550 7775
-F 0 "D_H1" V 6596 7695 50  0000 R CNN
-F 1 "D" V 6505 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 6550 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 7775 50  0001 C CNN
-F 4 "C414017" H 6550 7775 50  0001 C CNN "LCSC"
-	1    6550 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_J1
-U 1 1 5FE388A5
-P 7500 7475
-F 0 "K_J1" H 7500 7708 60  0000 C CNN
-F 1 "KEYSW" H 7500 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 7475 60  0001 C CNN
-F 3 "" H 7500 7475 60  0000 C CNN
-	1    7500 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_J1
-U 1 1 5FE388AF
-P 7200 7775
-F 0 "D_J1" V 7246 7695 50  0000 R CNN
-F 1 "D" V 7155 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7200 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 7775 50  0001 C CNN
-F 4 "C414017" H 7200 7775 50  0001 C CNN "LCSC"
-	1    7200 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_D1
-U 1 1 5FE388B9
-P 4600 7775
-F 0 "D_D1" V 4646 7695 50  0000 R CNN
-F 1 "D" V 4555 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 4600 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 7775 50  0001 C CNN
-F 4 "C414017" H 4600 7775 50  0001 C CNN "LCSC"
-	1    4600 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_S1
-U 1 1 5FE388C3
-P 3950 7775
-F 0 "D_S1" V 3996 7695 50  0000 R CNN
-F 1 "D" V 3905 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3950 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 7775 50  0001 C CNN
-F 4 "C414017" H 3950 7775 50  0001 C CNN "LCSC"
-	1    3950 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_S1
-U 1 1 5FE388CD
-P 4250 7475
-F 0 "K_S1" H 4250 7708 60  0000 C CNN
-F 1 "KEYSW" H 4250 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 7475 60  0001 C CNN
-F 3 "" H 4250 7475 60  0000 C CNN
-	1    4250 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_K1
-U 1 1 5FE388D7
-P 8150 7475
-F 0 "K_K1" H 8150 7708 60  0000 C CNN
-F 1 "KEYSW" H 8150 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 7475 60  0001 C CNN
-F 3 "" H 8150 7475 60  0000 C CNN
-	1    8150 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_K1
-U 1 1 5FE388E1
-P 7850 7775
-F 0 "D_K1" V 7896 7695 50  0000 R CNN
-F 1 "D" V 7805 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7850 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 7775 50  0001 C CNN
-F 4 "C414017" H 7850 7775 50  0001 C CNN "LCSC"
-	1    7850 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_L1
-U 1 1 5FE388EB
-P 8800 7475
-F 0 "K_L1" H 8800 7708 60  0000 C CNN
-F 1 "KEYSW" H 8800 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 7475 60  0001 C CNN
-F 3 "" H 8800 7475 60  0000 C CNN
-	1    8800 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_L1
-U 1 1 5FE388F5
-P 8500 7775
-F 0 "D_L1" V 8546 7695 50  0000 R CNN
-F 1 "D" V 8455 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 8500 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 7775 50  0001 C CNN
-F 4 "C414017" H 8500 7775 50  0001 C CNN "LCSC"
-	1    8500 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_'1
-U 1 1 5FE388FF
-P 10100 7475
-F 0 "K_'1" H 10100 7708 60  0000 C CNN
-F 1 "KEYSW" H 10100 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 7475 60  0001 C CNN
-F 3 "" H 10100 7475 60  0000 C CNN
-	1    10100 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_ENTER1
-U 1 1 5FE38909
-P 11400 7475
-F 0 "K_ENTER1" H 11400 7708 60  0000 C CNN
-F 1 "KEYSW" H 11400 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.25u" H 11400 7475 60  0001 C CNN
-F 3 "" H 11400 7475 60  0000 C CNN
-	1    11400 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_ENTER1
-U 1 1 5FE38913
-P 11100 7775
-F 0 "D_ENTER1" V 11146 7695 50  0000 R CNN
-F 1 "D" V 11055 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 11100 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 7775 50  0001 C CNN
-F 4 "C414017" H 11100 7775 50  0001 C CNN "LCSC"
-	1    11100 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_'1
-U 1 1 5FE38959
-P 9800 7775
-F 0 "D_'1" V 9846 7695 50  0000 R CNN
-F 1 "D" V 9755 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9800 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 7775 50  0001 C CNN
-F 4 "C414017" H 9800 7775 50  0001 C CNN "LCSC"
-	1    9800 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_;1
-U 1 1 5FE38963
-P 9150 7775
-F 0 "D_;1" V 9196 7695 50  0000 R CNN
-F 1 "D" V 9105 7695 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9150 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 7775 50  0001 C CNN
-F 4 "C414017" H 9150 7775 50  0001 C CNN "LCSC"
-	1    9150 7775
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_;1
-U 1 1 5FE3896D
-P 9450 7475
-F 0 "K_;1" H 9450 7708 60  0000 C CNN
-F 1 "KEYSW" H 9450 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 7475 60  0001 C CNN
-F 3 "" H 9450 7475 60  0000 C CNN
-	1    9450 7475
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_LSHIFT1
-U 1 1 5FF0061B
-P 2950 8175
-F 0 "K_LSHIFT1" H 2950 8408 60  0000 C CNN
-F 1 "KEYSW" H 2950 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.25u" H 2950 8175 60  0001 C CNN
-F 3 "" H 2950 8175 60  0000 C CNN
-	1    2950 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_LSHIFT1
-U 1 1 5FF01035
-P 2650 8475
-F 0 "D_LSHIFT1" V 2696 8395 50  0000 R CNN
-F 1 "D" V 2605 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 2650 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 8475 50  0001 C CNN
-F 4 "C414017" H 2650 8475 50  0001 C CNN "LCSC"
-	1    2650 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_Z1
-U 1 1 5FF0103F
-P 3600 8175
-F 0 "K_Z1" H 3600 8408 60  0000 C CNN
-F 1 "KEYSW" H 3600 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 8175 60  0001 C CNN
-F 3 "" H 3600 8175 60  0000 C CNN
-	1    3600 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_Z1
-U 1 1 5FF01049
-P 3300 8475
-F 0 "D_Z1" V 3346 8395 50  0000 R CNN
-F 1 "D" V 3255 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3300 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 8475 50  0001 C CNN
-F 4 "C414017" H 3300 8475 50  0001 C CNN "LCSC"
-	1    3300 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_C1
-U 1 1 5FF01053
-P 4900 8175
-F 0 "K_C1" H 4900 8408 60  0000 C CNN
-F 1 "KEYSW" H 4900 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 8175 60  0001 C CNN
-F 3 "" H 4900 8175 60  0000 C CNN
-	1    4900 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_V1
-U 1 1 5FF0105D
-P 5550 8175
-F 0 "K_V1" H 5550 8408 60  0000 C CNN
-F 1 "KEYSW" H 5550 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 8175 60  0001 C CNN
-F 3 "" H 5550 8175 60  0000 C CNN
-	1    5550 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_V1
-U 1 1 5FF01067
-P 5250 8475
-F 0 "D_V1" V 5296 8395 50  0000 R CNN
-F 1 "D" V 5205 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5250 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 8475 50  0001 C CNN
-F 4 "C414017" H 5250 8475 50  0001 C CNN "LCSC"
-	1    5250 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_B1
-U 1 1 5FF01071
-P 6200 8175
-F 0 "K_B1" H 6200 8408 60  0000 C CNN
-F 1 "KEYSW" H 6200 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 8175 60  0001 C CNN
-F 3 "" H 6200 8175 60  0000 C CNN
-	1    6200 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_B1
-U 1 1 5FF0107B
-P 5900 8475
-F 0 "D_B1" V 5946 8395 50  0000 R CNN
-F 1 "D" V 5855 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 5900 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 8475 50  0001 C CNN
-F 4 "C414017" H 5900 8475 50  0001 C CNN "LCSC"
-	1    5900 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_N1
-U 1 1 5FF01085
-P 6850 8175
-F 0 "K_N1" H 6850 8408 60  0000 C CNN
-F 1 "KEYSW" H 6850 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 8175 60  0001 C CNN
-F 3 "" H 6850 8175 60  0000 C CNN
-	1    6850 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_N1
-U 1 1 5FF0108F
-P 6550 8475
-F 0 "D_N1" V 6596 8395 50  0000 R CNN
-F 1 "D" V 6505 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 6550 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 8475 50  0001 C CNN
-F 4 "C414017" H 6550 8475 50  0001 C CNN "LCSC"
-	1    6550 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_M1
-U 1 1 5FF01099
-P 7500 8175
-F 0 "K_M1" H 7500 8408 60  0000 C CNN
-F 1 "KEYSW" H 7500 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 8175 60  0001 C CNN
-F 3 "" H 7500 8175 60  0000 C CNN
-	1    7500 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_M1
-U 1 1 5FF010A3
-P 7200 8475
-F 0 "D_M1" V 7246 8395 50  0000 R CNN
-F 1 "D" V 7155 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7200 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 8475 50  0001 C CNN
-F 4 "C414017" H 7200 8475 50  0001 C CNN "LCSC"
-	1    7200 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_C1
-U 1 1 5FF010AD
-P 4600 8475
-F 0 "D_C1" V 4646 8395 50  0000 R CNN
-F 1 "D" V 4555 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 4600 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 8475 50  0001 C CNN
-F 4 "C414017" H 4600 8475 50  0001 C CNN "LCSC"
-	1    4600 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_X1
-U 1 1 5FF010B7
-P 3950 8475
-F 0 "D_X1" V 3996 8395 50  0000 R CNN
-F 1 "D" V 3905 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3950 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 8475 50  0001 C CNN
-F 4 "C414017" H 3950 8475 50  0001 C CNN "LCSC"
-	1    3950 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_X1
-U 1 1 5FF010C1
-P 4250 8175
-F 0 "K_X1" H 4250 8408 60  0000 C CNN
-F 1 "KEYSW" H 4250 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 8175 60  0001 C CNN
-F 3 "" H 4250 8175 60  0000 C CNN
-	1    4250 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_Coma1
-U 1 1 5FF010CB
-P 8150 8175
-F 0 "K_Coma1" H 8150 8408 60  0000 C CNN
-F 1 "KEYSW" H 8150 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 8175 60  0001 C CNN
-F 3 "" H 8150 8175 60  0000 C CNN
-	1    8150 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_Coma1
-U 1 1 5FF010D5
-P 7850 8475
-F 0 "D_Coma1" V 7896 8395 50  0000 R CNN
-F 1 "D" V 7805 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 7850 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 8475 50  0001 C CNN
-F 4 "C414017" H 7850 8475 50  0001 C CNN "LCSC"
-	1    7850 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_.1
-U 1 1 5FF010DF
-P 8800 8175
-F 0 "K_.1" H 8800 8408 60  0000 C CNN
-F 1 "KEYSW" H 8800 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 8175 60  0001 C CNN
-F 3 "" H 8800 8175 60  0000 C CNN
-	1    8800 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_.1
-U 1 1 5FF010E9
-P 8500 8475
-F 0 "D_.1" V 8546 8395 50  0000 R CNN
-F 1 "D" V 8455 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 8500 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 8475 50  0001 C CNN
-F 4 "C414017" H 8500 8475 50  0001 C CNN "LCSC"
-	1    8500 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_UP1
-U 1 1 5FF0111B
-P 13150 8475
-F 0 "D_UP1" V 13196 8395 50  0000 R CNN
-F 1 "D" V 13105 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13150 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 8475 50  0001 C CNN
-F 4 "C414017" H 13150 8475 50  0001 C CNN "LCSC"
-	1    13150 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_/1
-U 1 1 5FF01157
-P 9150 8475
-F 0 "D_/1" V 9196 8395 50  0000 R CNN
-F 1 "D" V 9105 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9150 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 8475 50  0001 C CNN
-F 4 "C414017" H 9150 8475 50  0001 C CNN "LCSC"
-	1    9150 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_/1
-U 1 1 5FF01161
-P 9450 8175
-F 0 "K_/1" H 9450 8408 60  0000 C CNN
-F 1 "KEYSW" H 9450 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 8175 60  0001 C CNN
-F 3 "" H 9450 8175 60  0000 C CNN
-	1    9450 8175
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_LCTRL1
-U 1 1 5FF0116B
-P 2950 8875
-F 0 "K_LCTRL1" H 2950 9108 60  0000 C CNN
-F 1 "KEYSW" H 2950 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 8875 60  0001 C CNN
-F 3 "" H 2950 8875 60  0000 C CNN
-	1    2950 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_LCTRL1
-U 1 1 5FF01175
-P 2650 9175
-F 0 "D_LCTRL1" V 2696 9095 50  0000 R CNN
-F 1 "D" V 2605 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 2650 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 9175 50  0001 C CNN
-F 4 "C414017" H 2650 9175 50  0001 C CNN "LCSC"
-	1    2650 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_LALT1
-U 1 1 5FF0117F
-P 3600 8875
-F 0 "K_LALT1" H 3600 9108 60  0000 C CNN
-F 1 "KEYSW" H 3600 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 8875 60  0001 C CNN
-F 3 "" H 3600 8875 60  0000 C CNN
-	1    3600 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_LALT1
-U 1 1 5FF01189
-P 3300 9175
-F 0 "D_LALT1" V 3346 9095 50  0000 R CNN
-F 1 "D" V 3255 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3300 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 9175 50  0001 C CNN
-F 4 "C414017" H 3300 9175 50  0001 C CNN "LCSC"
-	1    3300 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_SPACE1
-U 1 1 5FF011C5
-P 6850 8875
-F 0 "K_SPACE1" H 6850 9108 60  0000 C CNN
-F 1 "KEYSW" H 6850 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_6.25u" H 6850 8875 60  0001 C CNN
-F 3 "" H 6850 8875 60  0000 C CNN
-	1    6850 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_SPACE1
-U 1 1 5FF011CF
-P 6550 9175
-F 0 "D_SPACE1" V 6596 9095 50  0000 R CNN
-F 1 "D" V 6505 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 6550 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 9175 50  0001 C CNN
-F 4 "C414017" H 6550 9175 50  0001 C CNN "LCSC"
-	1    6550 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_LWIN1
-U 1 1 5FF011F7
-P 3950 9175
-F 0 "D_LWIN1" V 3996 9095 50  0000 R CNN
-F 1 "D" V 3905 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 3950 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 9175 50  0001 C CNN
-F 4 "C414017" H 3950 9175 50  0001 C CNN "LCSC"
-	1    3950 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_LWIN1
-U 1 1 5FF01201
-P 4250 8875
-F 0 "K_LWIN1" H 4250 9108 60  0000 C CNN
-F 1 "KEYSW" H 4250 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 8875 60  0001 C CNN
-F 3 "" H 4250 8875 60  0000 C CNN
-	1    4250 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_RALT1
-U 1 1 5FF01233
-P 10100 8875
-F 0 "K_RALT1" H 10100 9108 60  0000 C CNN
-F 1 "KEYSW" H 10100 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 8875 60  0001 C CNN
-F 3 "" H 10100 8875 60  0000 C CNN
-	1    10100 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_FN1
-U 1 1 5FF0123D
-P 10750 8875
-F 0 "K_FN1" H 10750 9108 60  0000 C CNN
-F 1 "KEYSW" H 10750 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 8875 60  0001 C CNN
-F 3 "" H 10750 8875 60  0000 C CNN
-	1    10750 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_FN1
-U 1 1 5FF01247
-P 10450 9175
-F 0 "D_FN1" V 10496 9095 50  0000 R CNN
-F 1 "D" V 10405 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 10450 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 9175 50  0001 C CNN
-F 4 "C414017" H 10450 9175 50  0001 C CNN "LCSC"
-	1    10450 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_RCTRL1
-U 1 1 5FF01251
-P 11400 8875
-F 0 "K_RCTRL1" H 11400 9108 60  0000 C CNN
-F 1 "KEYSW" H 11400 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 11400 8875 60  0001 C CNN
-F 3 "" H 11400 8875 60  0000 C CNN
-	1    11400 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_RCTRL1
-U 1 1 5FF0125B
-P 11100 9175
-F 0 "D_RCTRL1" V 11146 9095 50  0000 R CNN
-F 1 "D" V 11055 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 11100 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 9175 50  0001 C CNN
-F 4 "C414017" H 11100 9175 50  0001 C CNN "LCSC"
-	1    11100 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_LEFT1
-U 1 1 5FF01265
-P 12800 8875
-F 0 "K_LEFT1" H 12800 9108 60  0000 C CNN
-F 1 "KEYSW" H 12800 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 8875 60  0001 C CNN
-F 3 "" H 12800 8875 60  0000 C CNN
-	1    12800 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_LEFT1
-U 1 1 5FF0126F
-P 12500 9175
-F 0 "D_LEFT1" V 12546 9095 50  0000 R CNN
-F 1 "D" V 12455 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 12500 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 9175 50  0001 C CNN
-F 4 "C414017" H 12500 9175 50  0001 C CNN "LCSC"
-	1    12500 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_DOWN1
-U 1 1 5FF01279
-P 13450 8875
-F 0 "K_DOWN1" H 13450 9108 60  0000 C CNN
-F 1 "KEYSW" H 13450 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 8875 60  0001 C CNN
-F 3 "" H 13450 8875 60  0000 C CNN
-	1    13450 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_DOWN1
-U 1 1 5FF01283
-P 13150 9175
-F 0 "D_DOWN1" V 13196 9095 50  0000 R CNN
-F 1 "D" V 13105 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13150 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 9175 50  0001 C CNN
-F 4 "C414017" H 13150 9175 50  0001 C CNN "LCSC"
-	1    13150 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_RALT1
-U 1 1 5FF0128D
-P 9800 9175
-F 0 "D_RALT1" V 9846 9095 50  0000 R CNN
-F 1 "D" V 9755 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9800 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 9175 50  0001 C CNN
-F 4 "C414017" H 9800 9175 50  0001 C CNN "LCSC"
-	1    9800 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_RWIN1
-U 1 1 5FF01297
-P 9150 9175
-F 0 "D_RWIN1" V 9196 9095 50  0000 R CNN
-F 1 "D" V 9105 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 9150 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 9175 50  0001 C CNN
-F 4 "C414017" H 9150 9175 50  0001 C CNN "LCSC"
-	1    9150 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_RWIN1
-U 1 1 5FF012A1
-P 9450 8875
-F 0 "K_RWIN1" H 9450 9108 60  0000 C CNN
-F 1 "KEYSW" H 9450 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 8875 60  0001 C CNN
-F 3 "" H 9450 8875 60  0000 C CNN
-	1    9450 8875
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1900,98 +393,15 @@ Wire Wire Line
 Connection ~ 12500 5825
 Wire Wire Line
 	12500 5825 13150 5825
-Wire Wire Line
-	3250 5375 3250 6075
-Connection ~ 3250 6075
-Wire Wire Line
-	3250 6075 3250 6775
-Connection ~ 3250 6775
-Wire Wire Line
-	3250 6775 3250 7475
-Connection ~ 3250 7475
-Wire Wire Line
-	3250 7475 3250 8175
-Connection ~ 3250 8175
-Wire Wire Line
-	3250 8175 3250 8875
-$Comp
-L keyboard_parts:KEYSW K_PGDOWN1
-U 1 1 5FF923FC
-P 14100 6775
-F 0 "K_PGDOWN1" H 14100 7008 60  0000 C CNN
-F 1 "KEYSW" H 14100 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 6775 60  0001 C CNN
-F 3 "" H 14100 6775 60  0000 C CNN
-	1    14100 6775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_PGDOWN1
-U 1 1 5FF92406
-P 13800 7075
-F 0 "D_PGDOWN1" V 13846 6995 50  0000 R CNN
-F 1 "D" V 13755 6995 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13800 7075 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 7075 50  0001 C CNN
-F 4 "C414017" H 13800 7075 50  0001 C CNN "LCSC"
-	1    13800 7075
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_RIGHT1
-U 1 1 5FF92438
-P 14100 8875
-F 0 "K_RIGHT1" H 14100 9108 60  0000 C CNN
-F 1 "KEYSW" H 14100 8775 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 8875 60  0001 C CNN
-F 3 "" H 14100 8875 60  0000 C CNN
-	1    14100 8875
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_RIGHT1
-U 1 1 5FF92442
-P 13800 9175
-F 0 "D_RIGHT1" V 13846 9095 50  0000 R CNN
-F 1 "D" V 13755 9095 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13800 9175 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 9175 50  0001 C CNN
-F 4 "C414017" H 13800 9175 50  0001 C CNN "LCSC"
-	1    13800 9175
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:D D_PGUP1
-U 1 1 5FF923F2
-P 13800 6375
-F 0 "D_PGUP1" V 13846 6295 50  0000 R CNN
-F 1 "D" V 13755 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 13800 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 6375 50  0001 C CNN
-F 4 "C414017" H 13800 6375 50  0001 C CNN "LCSC"
-	1    13800 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_PGUP1
-U 1 1 5FF923E8
-P 14100 6075
-F 0 "K_PGUP1" H 14100 6308 60  0000 C CNN
-F 1 "KEYSW" H 14100 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 6075 60  0001 C CNN
-F 3 "" H 14100 6075 60  0000 C CNN
-	1    14100 6075
-	1    0    0    -1  
-$EndComp
 Connection ~ 13150 5825
 Wire Wire Line
 	13150 5825 13800 5825
 $Comp
-L Device:D D_PAUSE1
+L vakeyboard:D D_PAUSE1
 U 1 1 5FF923DE
 P 13800 5675
-F 0 "D_PAUSE1" V 13846 5595 50  0000 R CNN
-F 1 "D" V 13755 5595 50  0000 R CNN
+F 0 "D_PAUSE1" V 13846 5595 50  0001 R CNN
+F 1 "D" V 13755 5595 50  0001 R CNN
 F 2 "Diode_SMD:D_SOD-523" H 13800 5675 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 5675 50  0001 C CNN
 F 4 "C414017" H 13800 5675 50  0001 C CNN "LCSC"
@@ -1999,7 +409,7 @@ F 4 "C414017" H 13800 5675 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L keyboard_parts:KEYSW K_PAUSE1
+L vakeyboard:KEYSW K_PAUSE1
 U 1 1 5FF914C4
 P 14100 5375
 F 0 "K_PAUSE1" H 14100 5608 60  0000 C CNN
@@ -2012,594 +422,38 @@ $EndComp
 Wire Wire Line
 	2650 5825 3950 5825
 Connection ~ 3950 5825
-$Comp
-L Device:D D_EQUAL1
-U 1 1 5FE1B6F1
-P 10450 6375
-F 0 "D_EQUAL1" V 10496 6295 50  0000 R CNN
-F 1 "D" V 10405 6295 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 10450 6375 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 6375 50  0001 C CNN
-F 4 "C414017" H 10450 6375 50  0001 C CNN "LCSC"
-	1    10450 6375
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_EQUAL1
-U 1 1 5FE1B6E7
-P 10750 6075
-F 0 "K_EQUAL1" H 10750 6308 60  0000 C CNN
-F 1 "KEYSW" H 10750 5975 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 6075 60  0001 C CNN
-F 3 "" H 10750 6075 60  0000 C CNN
-	1    10750 6075
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D D_RSHIFT1
-U 1 1 5FF01107
-P 11100 8475
-F 0 "D_RSHIFT1" V 11146 8395 50  0000 R CNN
-F 1 "D" V 11055 8395 50  0000 R CNN
-F 2 "Diode_SMD:D_SOD-523" H 11100 8475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 8475 50  0001 C CNN
-F 4 "C414017" H 11100 8475 50  0001 C CNN "LCSC"
-	1    11100 8475
-	0    -1   -1   0   
-$EndComp
-$Comp
-L keyboard_parts:KEYSW K_RSHIFT1
-U 1 1 5FF010FD
-P 11400 8175
-F 0 "K_RSHIFT1" H 11400 8408 60  0000 C CNN
-F 1 "KEYSW" H 11400 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.75u" H 11400 8175 60  0001 C CNN
-F 3 "" H 11400 8175 60  0000 C CNN
-	1    11400 8175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2650 6525 3300 6525
-Connection ~ 3300 6525
-Wire Wire Line
-	3300 6525 3950 6525
-Connection ~ 3950 6525
-Wire Wire Line
-	3950 6525 4600 6525
-Connection ~ 4600 6525
-Wire Wire Line
-	4600 6525 5250 6525
-Connection ~ 5250 6525
-Wire Wire Line
-	5250 6525 5900 6525
-Connection ~ 5900 6525
-Wire Wire Line
-	5900 6525 6550 6525
-Connection ~ 6550 6525
-Wire Wire Line
-	6550 6525 7200 6525
-Connection ~ 7200 6525
-Wire Wire Line
-	7200 6525 7850 6525
-Connection ~ 7850 6525
-Wire Wire Line
-	7850 6525 8500 6525
-Connection ~ 8500 6525
-Wire Wire Line
-	8500 6525 9150 6525
-Connection ~ 9150 6525
-Wire Wire Line
-	9150 6525 9800 6525
-Connection ~ 9800 6525
-Wire Wire Line
-	9800 6525 10450 6525
-Connection ~ 10450 6525
-Wire Wire Line
-	10450 6525 11100 6525
-Connection ~ 12500 6525
-Wire Wire Line
-	12500 6525 13150 6525
-Connection ~ 13150 6525
-Wire Wire Line
-	13150 6525 13800 6525
-Wire Wire Line
-	2650 7225 3300 7225
-Connection ~ 3300 7225
-Wire Wire Line
-	3300 7225 3950 7225
-Connection ~ 3950 7225
-Wire Wire Line
-	3950 7225 4600 7225
-Connection ~ 4600 7225
-Wire Wire Line
-	4600 7225 5250 7225
-Connection ~ 5250 7225
-Wire Wire Line
-	5250 7225 5900 7225
-Connection ~ 5900 7225
-Wire Wire Line
-	5900 7225 6550 7225
-Connection ~ 6550 7225
-Wire Wire Line
-	6550 7225 7200 7225
-Connection ~ 7200 7225
-Wire Wire Line
-	7200 7225 7850 7225
-Connection ~ 7850 7225
-Wire Wire Line
-	7850 7225 8500 7225
-Connection ~ 8500 7225
-Wire Wire Line
-	8500 7225 9150 7225
-Connection ~ 9150 7225
-Wire Wire Line
-	9150 7225 9800 7225
-Connection ~ 9800 7225
-Wire Wire Line
-	9800 7225 10450 7225
-Connection ~ 10450 7225
-Wire Wire Line
-	10450 7225 11100 7225
-Connection ~ 12500 7225
-Wire Wire Line
-	12500 7225 13150 7225
-Connection ~ 13150 7225
-Wire Wire Line
-	13150 7225 13800 7225
-Wire Wire Line
-	2650 7925 3300 7925
-Connection ~ 3300 7925
-Wire Wire Line
-	3300 7925 3950 7925
-Connection ~ 3950 7925
-Wire Wire Line
-	3950 7925 4600 7925
-Connection ~ 4600 7925
-Wire Wire Line
-	4600 7925 5250 7925
-Connection ~ 5250 7925
-Wire Wire Line
-	5250 7925 5900 7925
-Connection ~ 5900 7925
-Wire Wire Line
-	5900 7925 6550 7925
-Connection ~ 6550 7925
-Wire Wire Line
-	6550 7925 7200 7925
-Connection ~ 7200 7925
-Wire Wire Line
-	7200 7925 7850 7925
-Connection ~ 7850 7925
-Wire Wire Line
-	7850 7925 8500 7925
-Connection ~ 8500 7925
-Wire Wire Line
-	8500 7925 9150 7925
-Connection ~ 9150 7925
-Wire Wire Line
-	9150 7925 9800 7925
-Connection ~ 9800 7925
-Wire Wire Line
-	9800 7925 11100 7925
-Wire Wire Line
-	2650 8625 3300 8625
-Connection ~ 3300 8625
-Wire Wire Line
-	3300 8625 3950 8625
-Connection ~ 3950 8625
-Wire Wire Line
-	3950 8625 4600 8625
-Connection ~ 4600 8625
-Wire Wire Line
-	4600 8625 5250 8625
-Connection ~ 5250 8625
-Wire Wire Line
-	5250 8625 5900 8625
-Connection ~ 5900 8625
-Wire Wire Line
-	5900 8625 6550 8625
-Connection ~ 6550 8625
-Wire Wire Line
-	6550 8625 7200 8625
-Connection ~ 7200 8625
-Wire Wire Line
-	7200 8625 7850 8625
-Connection ~ 7850 8625
-Wire Wire Line
-	7850 8625 8500 8625
-Connection ~ 8500 8625
-Wire Wire Line
-	8500 8625 9150 8625
-Connection ~ 9150 8625
-Wire Wire Line
-	9150 8625 11100 8625
-Wire Wire Line
-	13800 9325 13150 9325
-Connection ~ 3300 9325
-Wire Wire Line
-	3300 9325 2650 9325
-Connection ~ 3950 9325
-Wire Wire Line
-	3950 9325 3300 9325
-Connection ~ 6550 9325
-Wire Wire Line
-	6550 9325 3950 9325
-Connection ~ 9150 9325
-Wire Wire Line
-	9150 9325 6550 9325
-Connection ~ 9800 9325
-Wire Wire Line
-	9800 9325 9150 9325
-Connection ~ 10450 9325
-Wire Wire Line
-	10450 9325 9800 9325
-Wire Wire Line
-	11100 9325 10450 9325
-Connection ~ 13150 9325
-Wire Wire Line
-	4550 5375 4550 6075
-Connection ~ 4550 6075
-Wire Wire Line
-	4550 6075 4550 6775
-Connection ~ 4550 6775
-Wire Wire Line
-	4550 6775 4550 7475
-Connection ~ 4550 7475
-Wire Wire Line
-	4550 7475 4550 8175
-Connection ~ 4550 8175
-Wire Wire Line
-	4550 8175 4550 8875
-Wire Wire Line
-	5200 5375 5200 6075
-Connection ~ 5200 6075
-Wire Wire Line
-	5200 6075 5200 6775
-Connection ~ 5200 6775
-Wire Wire Line
-	5200 6775 5200 7475
-Connection ~ 5200 7475
-Wire Wire Line
-	5200 7475 5200 8175
-Wire Wire Line
-	5850 5375 5850 6075
-Connection ~ 5850 6075
-Wire Wire Line
-	5850 6075 5850 6775
-Connection ~ 5850 6775
-Wire Wire Line
-	5850 6775 5850 7475
-Connection ~ 5850 7475
-Wire Wire Line
-	5850 7475 5850 8175
-Wire Wire Line
-	6500 5375 6500 6075
-Connection ~ 6500 6075
-Wire Wire Line
-	6500 6075 6500 6775
-Connection ~ 6500 6775
-Wire Wire Line
-	6500 6775 6500 7475
-Connection ~ 6500 7475
-Wire Wire Line
-	6500 7475 6500 8175
-Wire Wire Line
-	7150 5375 7150 6075
-Connection ~ 7150 6075
-Wire Wire Line
-	7150 6075 7150 6775
-Connection ~ 7150 6775
-Wire Wire Line
-	7150 6775 7150 7475
-Connection ~ 7150 7475
-Wire Wire Line
-	7150 7475 7150 8175
-Connection ~ 7150 8175
-Wire Wire Line
-	7150 8175 7150 8875
-Wire Wire Line
-	7800 5375 7800 6075
-Connection ~ 7800 6075
-Wire Wire Line
-	7800 6075 7800 6775
-Connection ~ 7800 6775
-Wire Wire Line
-	7800 6775 7800 7475
-Connection ~ 7800 7475
-Wire Wire Line
-	7800 7475 7800 8175
-Wire Wire Line
-	8450 5375 8450 6075
-Connection ~ 8450 6075
-Wire Wire Line
-	8450 6075 8450 6775
-Connection ~ 8450 6775
-Wire Wire Line
-	8450 6775 8450 7475
-Connection ~ 8450 7475
-Wire Wire Line
-	8450 7475 8450 8175
-Wire Wire Line
-	9100 5375 9100 6075
-Connection ~ 9100 6075
-Wire Wire Line
-	9100 6075 9100 6775
-Connection ~ 9100 6775
-Wire Wire Line
-	9100 6775 9100 7475
-Connection ~ 9100 7475
-Wire Wire Line
-	9100 7475 9100 8175
-Wire Wire Line
-	9750 5375 9750 6075
-Connection ~ 9750 6075
-Wire Wire Line
-	9750 6075 9750 6775
-Connection ~ 9750 6775
-Wire Wire Line
-	9750 6775 9750 7475
-Connection ~ 9750 7475
-Wire Wire Line
-	9750 7475 9750 8175
-Connection ~ 9750 8175
-Wire Wire Line
-	9750 8175 9750 8875
-Wire Wire Line
-	10400 5375 10400 6075
-Connection ~ 10400 6075
-Wire Wire Line
-	10400 6075 10400 6775
-Connection ~ 10400 6775
-Wire Wire Line
-	10400 6775 10400 7475
-Connection ~ 10400 7475
-Wire Wire Line
-	10400 7475 10400 8875
-Wire Wire Line
-	11050 5375 11050 6075
-Connection ~ 11050 6075
-Wire Wire Line
-	11050 6075 11050 6775
-Connection ~ 11050 6775
-Wire Wire Line
-	11050 6775 11050 8875
-Wire Wire Line
-	11700 5375 11700 6075
-Connection ~ 11700 6075
-Wire Wire Line
-	11700 6075 11700 6775
-Connection ~ 11700 6775
-Wire Wire Line
-	11700 6775 11700 7475
-Connection ~ 11700 7475
-Wire Wire Line
-	11700 7475 11700 8175
-Connection ~ 11700 8175
-Wire Wire Line
-	11700 8175 11700 8875
-Wire Wire Line
-	13100 5375 13100 6075
-Connection ~ 13100 6075
-Wire Wire Line
-	13100 6075 13100 6775
-Connection ~ 12500 9325
-Wire Wire Line
-	12500 9325 13150 9325
-Wire Wire Line
-	13100 6775 13100 8875
-Connection ~ 13100 6775
-Wire Wire Line
-	13750 5375 13750 6075
-Connection ~ 13750 6075
-Wire Wire Line
-	13750 6075 13750 6775
-Connection ~ 13750 6775
-Wire Wire Line
-	14400 5375 14400 6075
-Connection ~ 14400 6075
-Wire Wire Line
-	14400 6075 14400 6775
-Connection ~ 14400 6775
-Wire Wire Line
-	14400 6775 14400 8875
 Wire Wire Line
 	13800 5375 13800 5525
-Wire Wire Line
-	13800 6075 13800 6225
-Wire Wire Line
-	13800 6775 13800 6925
-Wire Wire Line
-	13800 8875 13800 9025
-Wire Wire Line
-	13150 9025 13150 8875
-Wire Wire Line
-	12500 9025 12500 8875
-Wire Wire Line
-	13150 6925 13150 6775
-Wire Wire Line
-	13150 6225 13150 6075
 Wire Wire Line
 	13150 5525 13150 5375
 Wire Wire Line
 	12500 5375 12500 5525
 Wire Wire Line
-	12500 6075 12500 6225
-Wire Wire Line
-	12500 6775 12500 6925
-Wire Wire Line
 	11100 5375 11100 5525
-Wire Wire Line
-	11100 6075 11100 6225
-Wire Wire Line
-	11100 6775 11100 6925
-Wire Wire Line
-	11100 7475 11100 7625
-Wire Wire Line
-	11100 8175 11100 8325
-Wire Wire Line
-	11100 8875 11100 9025
-Wire Wire Line
-	10450 9025 10450 8875
-Wire Wire Line
-	9800 9025 9800 8875
-Wire Wire Line
-	9150 9025 9150 8875
-Wire Wire Line
-	10450 6925 10450 6775
-Wire Wire Line
-	10450 6225 10450 6075
 Wire Wire Line
 	10450 5525 10450 5375
 Wire Wire Line
 	9800 5375 9800 5525
 Wire Wire Line
-	9800 6075 9800 6225
-Wire Wire Line
-	9800 6775 9800 6925
-Wire Wire Line
-	9800 7475 9800 7625
-Wire Wire Line
-	9150 8325 9150 8175
-Wire Wire Line
-	9150 7625 9150 7475
-Wire Wire Line
-	9150 6925 9150 6775
-Wire Wire Line
-	9150 6225 9150 6075
-Wire Wire Line
 	9150 5525 9150 5375
 Wire Wire Line
 	8500 5375 8500 5525
-Wire Wire Line
-	8500 6075 8500 6225
-Wire Wire Line
-	8500 6775 8500 6925
-Wire Wire Line
-	8500 7475 8500 7625
-Wire Wire Line
-	8500 8175 8500 8325
-Wire Wire Line
-	7850 8325 7850 8175
-Wire Wire Line
-	7850 7625 7850 7475
-Wire Wire Line
-	7850 6925 7850 6775
-Wire Wire Line
-	7850 6225 7850 6075
 Wire Wire Line
 	7850 5525 7850 5375
 Wire Wire Line
 	7200 5375 7200 5525
 Wire Wire Line
-	7200 6075 7200 6225
-Wire Wire Line
-	7200 6775 7200 6925
-Wire Wire Line
-	7200 7475 7200 7625
-Wire Wire Line
-	7200 8175 7200 8325
-Wire Wire Line
-	6550 9025 6550 8875
-Wire Wire Line
-	6550 8325 6550 8175
-Wire Wire Line
-	6550 7625 6550 7475
-Wire Wire Line
-	6550 6925 6550 6775
-Wire Wire Line
-	6550 6225 6550 6075
-Wire Wire Line
 	6550 5525 6550 5375
 Wire Wire Line
 	5900 5375 5900 5525
-Wire Wire Line
-	5900 6075 5900 6225
-Wire Wire Line
-	5900 6775 5900 6925
-Wire Wire Line
-	5900 7475 5900 7625
-Wire Wire Line
-	5900 8175 5900 8325
-Wire Wire Line
-	5250 8325 5250 8175
-Wire Wire Line
-	5250 7625 5250 7475
-Wire Wire Line
-	5250 6925 5250 6775
-Wire Wire Line
-	5250 6225 5250 6075
 Wire Wire Line
 	5250 5525 5250 5375
 Wire Wire Line
 	4600 5375 4600 5525
 Wire Wire Line
-	4600 6075 4600 6225
-Wire Wire Line
-	4600 6775 4600 6925
-Wire Wire Line
-	4600 7475 4600 7625
-Wire Wire Line
-	4600 8175 4600 8325
-Wire Wire Line
-	3950 9025 3950 8875
-Wire Wire Line
-	3900 8875 3900 8175
-Connection ~ 3900 6775
-Wire Wire Line
-	3900 6775 3900 6075
-Connection ~ 3900 7475
-Wire Wire Line
-	3900 7475 3900 6775
-Connection ~ 3900 8175
-Wire Wire Line
-	3900 8175 3900 7475
-Wire Wire Line
 	3950 5375 3950 5525
 Wire Wire Line
-	3950 6075 3950 6225
-Wire Wire Line
-	3950 6775 3950 6925
-Wire Wire Line
-	3950 7475 3950 7625
-Wire Wire Line
-	3950 8175 3950 8325
-Wire Wire Line
-	3300 9025 3300 8875
-Wire Wire Line
-	3300 8325 3300 8175
-Wire Wire Line
-	3300 7625 3300 7475
-Wire Wire Line
-	3300 6925 3300 6775
-Wire Wire Line
-	3300 6225 3300 6075
-Wire Wire Line
-	2650 9025 2650 8875
-Wire Wire Line
-	2650 8325 2650 8175
-Wire Wire Line
-	2650 7625 2650 7475
-Wire Wire Line
-	2650 6925 2650 6775
-Wire Wire Line
-	2650 6225 2650 6075
-Wire Wire Line
 	2650 5525 2650 5375
-Connection ~ 3900 6075
-Wire Wire Line
-	13150 8175 13150 8325
-Wire Wire Line
-	11100 9325 12500 9325
-Connection ~ 11100 9325
-Wire Wire Line
-	11100 8625 13150 8625
-Connection ~ 11100 8625
-Wire Wire Line
-	11100 7225 12500 7225
-Connection ~ 11100 7225
-Wire Wire Line
-	11100 6525 12500 6525
-Connection ~ 11100 6525
 Wire Wire Line
 	11100 5825 12500 5825
 Connection ~ 11100 5825
@@ -2616,43 +470,10 @@ F 4 "C47023" H 7525 1650 50  0001 C CNN "LCSC"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	13750 6775 13750 8175
-Wire Wire Line
-	13750 8175 13750 8875
-Connection ~ 13750 8175
-$Comp
-L keyboard_parts:KEYSW K_UP1
-U 1 1 5FF01111
-P 13450 8175
-F 0 "K_UP1" H 13450 8408 60  0000 C CNN
-F 1 "KEYSW" H 13450 8075 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 8175 60  0001 C CNN
-F 3 "" H 13450 8175 60  0000 C CNN
-	1    13450 8175
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	2650 5825 2100 5825
 Wire Wire Line
 	2100 5825 2100 1550
 Connection ~ 2650 5825
-Wire Wire Line
-	2650 6525 2075 6525
-Wire Wire Line
-	2075 6525 2075 1450
-Connection ~ 2650 6525
-Wire Wire Line
-	2650 7225 2050 7225
-Connection ~ 2650 7225
-Wire Wire Line
-	2650 7925 2025 7925
-Connection ~ 2650 7925
-Wire Wire Line
-	2650 8625 2000 8625
-Connection ~ 2650 8625
-Wire Wire Line
-	2650 9325 1975 9325
-Connection ~ 2650 9325
 Wire Wire Line
 	3825 550  4525 550 
 NoConn ~ 4525 1750
@@ -2686,19 +507,11 @@ Wire Wire Line
 Wire Wire Line
 	3125 1350 2050 1350
 Wire Wire Line
-	2050 1350 2050 7225
-Wire Wire Line
 	3125 1250 2025 1250
-Wire Wire Line
-	2025 1250 2025 7925
 Wire Wire Line
 	3125 1150 2000 1150
 Wire Wire Line
-	2000 1150 2000 8625
-Wire Wire Line
 	3125 1050 1975 1050
-Wire Wire Line
-	1975 1050 1975 9325
 Wire Wire Line
 	3250 5375 3250 4925
 Wire Wire Line
@@ -2707,15 +520,12 @@ Wire Wire Line
 	2650 4925 2650 1750
 Wire Wire Line
 	2650 1750 3125 1750
-Connection ~ 3250 5375
 Wire Wire Line
 	3900 4900 2675 4900
 Wire Wire Line
 	2675 4900 2675 1850
 Wire Wire Line
 	2675 1850 3125 1850
-Wire Wire Line
-	3900 4900 3900 6075
 Wire Wire Line
 	4550 5375 4550 4875
 Wire Wire Line
@@ -2724,7 +534,6 @@ Wire Wire Line
 	2700 4875 2700 1950
 Wire Wire Line
 	2700 1950 3125 1950
-Connection ~ 4550 5375
 Wire Wire Line
 	5200 5375 5200 4850
 Wire Wire Line
@@ -2733,7 +542,6 @@ Wire Wire Line
 	2725 4850 2725 2050
 Wire Wire Line
 	2725 2050 3125 2050
-Connection ~ 5200 5375
 Wire Wire Line
 	5850 5375 5850 4825
 Wire Wire Line
@@ -2742,12 +550,10 @@ Wire Wire Line
 	2750 4825 2750 2150
 Wire Wire Line
 	2750 2150 3125 2150
-Connection ~ 5850 5375
 Wire Wire Line
 	6500 5375 6500 4800
 Wire Wire Line
 	6500 4800 2775 4800
-Connection ~ 6500 5375
 Wire Wire Line
 	2775 4800 2775 2250
 Wire Wire Line
@@ -2760,7 +566,6 @@ Wire Wire Line
 	2800 4775 2800 2350
 Wire Wire Line
 	2800 2350 3125 2350
-Connection ~ 7150 5375
 Wire Wire Line
 	7800 5375 7800 4750
 Wire Wire Line
@@ -2769,7 +574,6 @@ Wire Wire Line
 	2825 4750 2825 2450
 Wire Wire Line
 	2825 2450 3125 2450
-Connection ~ 7800 5375
 NoConn ~ 6825 850 
 NoConn ~ 6825 1150
 NoConn ~ 6825 1450
@@ -2808,47 +612,38 @@ Wire Wire Line
 	8450 5375 8450 2450
 Wire Wire Line
 	8450 2450 8225 2450
-Connection ~ 8450 5375
 Wire Wire Line
 	9100 5375 9100 2350
 Wire Wire Line
 	9100 2350 8225 2350
-Connection ~ 9100 5375
 Wire Wire Line
 	9750 5375 9750 2250
 Wire Wire Line
 	9750 2250 8225 2250
-Connection ~ 9750 5375
 Wire Wire Line
 	10400 5375 10400 2150
 Wire Wire Line
 	10400 2150 8225 2150
-Connection ~ 10400 5375
 Wire Wire Line
 	11050 5375 11050 2050
 Wire Wire Line
 	11050 2050 8225 2050
-Connection ~ 11050 5375
 Wire Wire Line
 	11700 5375 11700 1950
 Wire Wire Line
 	11700 1950 8225 1950
-Connection ~ 11700 5375
 Wire Wire Line
 	13100 5375 13100 1850
 Wire Wire Line
 	13100 1850 8225 1850
-Connection ~ 13100 5375
 Wire Wire Line
 	13750 5375 13750 1750
 Wire Wire Line
 	13750 1750 8225 1750
-Connection ~ 13750 5375
 Wire Wire Line
 	14400 5375 14400 1550
 Wire Wire Line
 	14400 1550 8225 1550
-Connection ~ 14400 5375
 $Comp
 L Connector_Generic:Conn_01x04 J1
 U 1 1 612087D5
@@ -2985,6 +780,2211 @@ F 2 "Package_DFN_QFN:QFN-48-1EP_6x6mm_P0.4mm_EP4.2x4.2mm" H -2675 2475 50  0001 
 F 3 "http://www.issi.com/WW/pdf/IS31FL3733.pdf" H -2675 2475 50  0001 C CNN
 F 4 "C2678773" H -2675 2475 50  0001 C CNN "LCSC"
 	1    -2675 2475
+	1    0    0    -1  
+$EndComp
+Connection ~ 14400 5375
+Connection ~ 13750 5375
+Connection ~ 13100 5375
+Connection ~ 11700 5375
+Connection ~ 11050 5375
+Connection ~ 10400 5375
+Connection ~ 9750 5375
+Connection ~ 9100 5375
+Connection ~ 8450 5375
+Connection ~ 7800 5375
+Connection ~ 7150 5375
+Connection ~ 6500 5375
+Connection ~ 5850 5375
+Connection ~ 5200 5375
+Connection ~ 4550 5375
+Connection ~ 3250 5375
+Wire Wire Line
+	3900 4900 3900 6075
+Wire Wire Line
+	1975 1050 1975 9325
+Wire Wire Line
+	2000 1150 2000 8625
+Wire Wire Line
+	2025 1250 2025 7925
+Wire Wire Line
+	2050 1350 2050 7225
+Connection ~ 2650 9325
+Wire Wire Line
+	2650 9325 1975 9325
+Connection ~ 2650 8625
+Wire Wire Line
+	2650 8625 2000 8625
+Connection ~ 2650 7925
+Wire Wire Line
+	2650 7925 2025 7925
+Connection ~ 2650 7225
+Wire Wire Line
+	2650 7225 2050 7225
+Connection ~ 2650 6525
+Wire Wire Line
+	2075 6525 2075 1450
+Wire Wire Line
+	2650 6525 2075 6525
+$Comp
+L vakeyboard:KEYSW K_UP1
+U 1 1 5FF01111
+P 13450 8175
+F 0 "K_UP1" H 13450 8408 60  0000 C CNN
+F 1 "KEYSW" H 13450 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 8175 60  0001 C CNN
+F 3 "" H 13450 8175 60  0000 C CNN
+	1    13450 8175
+	1    0    0    -1  
+$EndComp
+Connection ~ 13750 8175
+Wire Wire Line
+	13750 8175 13750 8875
+Wire Wire Line
+	13750 6775 13750 8175
+Connection ~ 11100 6525
+Wire Wire Line
+	11100 6525 12500 6525
+Connection ~ 11100 7225
+Wire Wire Line
+	11100 7225 12500 7225
+Connection ~ 11100 8625
+Wire Wire Line
+	11100 8625 13150 8625
+Connection ~ 11100 9325
+Wire Wire Line
+	11100 9325 12500 9325
+Wire Wire Line
+	13150 8175 13150 8325
+Connection ~ 3900 6075
+Wire Wire Line
+	2650 6225 2650 6075
+Wire Wire Line
+	2650 6925 2650 6775
+Wire Wire Line
+	2650 7625 2650 7475
+Wire Wire Line
+	2650 8325 2650 8175
+Wire Wire Line
+	2650 9025 2650 8875
+Wire Wire Line
+	3300 6225 3300 6075
+Wire Wire Line
+	3300 6925 3300 6775
+Wire Wire Line
+	3300 7625 3300 7475
+Wire Wire Line
+	3300 8325 3300 8175
+Wire Wire Line
+	3300 9025 3300 8875
+Wire Wire Line
+	3950 8175 3950 8325
+Wire Wire Line
+	3950 7475 3950 7625
+Wire Wire Line
+	3950 6775 3950 6925
+Wire Wire Line
+	3950 6075 3950 6225
+Wire Wire Line
+	3900 8175 3900 7475
+Connection ~ 3900 8175
+Wire Wire Line
+	3900 7475 3900 6775
+Connection ~ 3900 7475
+Wire Wire Line
+	3900 6775 3900 6075
+Connection ~ 3900 6775
+Wire Wire Line
+	3900 8875 3900 8175
+Wire Wire Line
+	3950 9025 3950 8875
+Wire Wire Line
+	4600 8175 4600 8325
+Wire Wire Line
+	4600 7475 4600 7625
+Wire Wire Line
+	4600 6775 4600 6925
+Wire Wire Line
+	4600 6075 4600 6225
+Wire Wire Line
+	5250 6225 5250 6075
+Wire Wire Line
+	5250 6925 5250 6775
+Wire Wire Line
+	5250 7625 5250 7475
+Wire Wire Line
+	5250 8325 5250 8175
+Wire Wire Line
+	5900 8175 5900 8325
+Wire Wire Line
+	5900 7475 5900 7625
+Wire Wire Line
+	5900 6775 5900 6925
+Wire Wire Line
+	5900 6075 5900 6225
+Wire Wire Line
+	6550 6225 6550 6075
+Wire Wire Line
+	6550 6925 6550 6775
+Wire Wire Line
+	6550 7625 6550 7475
+Wire Wire Line
+	6550 8325 6550 8175
+Wire Wire Line
+	6550 9025 6550 8875
+Wire Wire Line
+	7200 8175 7200 8325
+Wire Wire Line
+	7200 7475 7200 7625
+Wire Wire Line
+	7200 6775 7200 6925
+Wire Wire Line
+	7200 6075 7200 6225
+Wire Wire Line
+	7850 6225 7850 6075
+Wire Wire Line
+	7850 6925 7850 6775
+Wire Wire Line
+	7850 7625 7850 7475
+Wire Wire Line
+	7850 8325 7850 8175
+Wire Wire Line
+	8500 8175 8500 8325
+Wire Wire Line
+	8500 7475 8500 7625
+Wire Wire Line
+	8500 6775 8500 6925
+Wire Wire Line
+	8500 6075 8500 6225
+Wire Wire Line
+	9150 6225 9150 6075
+Wire Wire Line
+	9150 6925 9150 6775
+Wire Wire Line
+	9150 7625 9150 7475
+Wire Wire Line
+	9150 8325 9150 8175
+Wire Wire Line
+	9800 7475 9800 7625
+Wire Wire Line
+	9800 6775 9800 6925
+Wire Wire Line
+	9800 6075 9800 6225
+Wire Wire Line
+	10450 6225 10450 6075
+Wire Wire Line
+	10450 6925 10450 6775
+Wire Wire Line
+	9150 9025 9150 8875
+Wire Wire Line
+	9800 9025 9800 8875
+Wire Wire Line
+	10450 9025 10450 8875
+Wire Wire Line
+	11100 8875 11100 9025
+Wire Wire Line
+	11100 8175 11100 8325
+Wire Wire Line
+	11100 7475 11100 7625
+Wire Wire Line
+	11100 6775 11100 6925
+Wire Wire Line
+	11100 6075 11100 6225
+Wire Wire Line
+	12500 6775 12500 6925
+Wire Wire Line
+	12500 6075 12500 6225
+Wire Wire Line
+	13150 6225 13150 6075
+Wire Wire Line
+	13150 6925 13150 6775
+Wire Wire Line
+	12500 9025 12500 8875
+Wire Wire Line
+	13150 9025 13150 8875
+Wire Wire Line
+	13800 8875 13800 9025
+Wire Wire Line
+	13800 6775 13800 6925
+Wire Wire Line
+	13800 6075 13800 6225
+Wire Wire Line
+	14400 6775 14400 8875
+Connection ~ 14400 6775
+Wire Wire Line
+	14400 6075 14400 6775
+Connection ~ 14400 6075
+Wire Wire Line
+	14400 5375 14400 6075
+Connection ~ 13750 6775
+Wire Wire Line
+	13750 6075 13750 6775
+Connection ~ 13750 6075
+Wire Wire Line
+	13750 5375 13750 6075
+Connection ~ 13100 6775
+Wire Wire Line
+	13100 6775 13100 8875
+Wire Wire Line
+	12500 9325 13150 9325
+Connection ~ 12500 9325
+Wire Wire Line
+	13100 6075 13100 6775
+Connection ~ 13100 6075
+Wire Wire Line
+	13100 5375 13100 6075
+Wire Wire Line
+	11700 8175 11700 8875
+Connection ~ 11700 8175
+Wire Wire Line
+	11700 7475 11700 8175
+Connection ~ 11700 7475
+Wire Wire Line
+	11700 6775 11700 7475
+Connection ~ 11700 6775
+Wire Wire Line
+	11700 6075 11700 6775
+Connection ~ 11700 6075
+Wire Wire Line
+	11700 5375 11700 6075
+Wire Wire Line
+	11050 6775 11050 8875
+Connection ~ 11050 6775
+Wire Wire Line
+	11050 6075 11050 6775
+Connection ~ 11050 6075
+Wire Wire Line
+	11050 5375 11050 6075
+Wire Wire Line
+	10400 7475 10400 8875
+Connection ~ 10400 7475
+Wire Wire Line
+	10400 6775 10400 7475
+Connection ~ 10400 6775
+Wire Wire Line
+	10400 6075 10400 6775
+Connection ~ 10400 6075
+Wire Wire Line
+	10400 5375 10400 6075
+Wire Wire Line
+	9750 8175 9750 8875
+Connection ~ 9750 8175
+Wire Wire Line
+	9750 7475 9750 8175
+Connection ~ 9750 7475
+Wire Wire Line
+	9750 6775 9750 7475
+Connection ~ 9750 6775
+Wire Wire Line
+	9750 6075 9750 6775
+Connection ~ 9750 6075
+Wire Wire Line
+	9750 5375 9750 6075
+Wire Wire Line
+	9100 7475 9100 8175
+Connection ~ 9100 7475
+Wire Wire Line
+	9100 6775 9100 7475
+Connection ~ 9100 6775
+Wire Wire Line
+	9100 6075 9100 6775
+Connection ~ 9100 6075
+Wire Wire Line
+	9100 5375 9100 6075
+Wire Wire Line
+	8450 7475 8450 8175
+Connection ~ 8450 7475
+Wire Wire Line
+	8450 6775 8450 7475
+Connection ~ 8450 6775
+Wire Wire Line
+	8450 6075 8450 6775
+Connection ~ 8450 6075
+Wire Wire Line
+	8450 5375 8450 6075
+Wire Wire Line
+	7800 7475 7800 8175
+Connection ~ 7800 7475
+Wire Wire Line
+	7800 6775 7800 7475
+Connection ~ 7800 6775
+Wire Wire Line
+	7800 6075 7800 6775
+Connection ~ 7800 6075
+Wire Wire Line
+	7800 5375 7800 6075
+Wire Wire Line
+	7150 8175 7150 8875
+Connection ~ 7150 8175
+Wire Wire Line
+	7150 7475 7150 8175
+Connection ~ 7150 7475
+Wire Wire Line
+	7150 6775 7150 7475
+Connection ~ 7150 6775
+Wire Wire Line
+	7150 6075 7150 6775
+Connection ~ 7150 6075
+Wire Wire Line
+	7150 5375 7150 6075
+Wire Wire Line
+	6500 7475 6500 8175
+Connection ~ 6500 7475
+Wire Wire Line
+	6500 6775 6500 7475
+Connection ~ 6500 6775
+Wire Wire Line
+	6500 6075 6500 6775
+Connection ~ 6500 6075
+Wire Wire Line
+	6500 5375 6500 6075
+Wire Wire Line
+	5850 7475 5850 8175
+Connection ~ 5850 7475
+Wire Wire Line
+	5850 6775 5850 7475
+Connection ~ 5850 6775
+Wire Wire Line
+	5850 6075 5850 6775
+Connection ~ 5850 6075
+Wire Wire Line
+	5850 5375 5850 6075
+Wire Wire Line
+	5200 7475 5200 8175
+Connection ~ 5200 7475
+Wire Wire Line
+	5200 6775 5200 7475
+Connection ~ 5200 6775
+Wire Wire Line
+	5200 6075 5200 6775
+Connection ~ 5200 6075
+Wire Wire Line
+	5200 5375 5200 6075
+Wire Wire Line
+	4550 8175 4550 8875
+Connection ~ 4550 8175
+Wire Wire Line
+	4550 7475 4550 8175
+Connection ~ 4550 7475
+Wire Wire Line
+	4550 6775 4550 7475
+Connection ~ 4550 6775
+Wire Wire Line
+	4550 6075 4550 6775
+Connection ~ 4550 6075
+Wire Wire Line
+	4550 5375 4550 6075
+Connection ~ 13150 9325
+Wire Wire Line
+	11100 9325 10450 9325
+Wire Wire Line
+	10450 9325 9800 9325
+Connection ~ 10450 9325
+Wire Wire Line
+	9800 9325 9150 9325
+Connection ~ 9800 9325
+Wire Wire Line
+	9150 9325 6550 9325
+Connection ~ 9150 9325
+Wire Wire Line
+	6550 9325 3950 9325
+Connection ~ 6550 9325
+Wire Wire Line
+	3950 9325 3300 9325
+Connection ~ 3950 9325
+Wire Wire Line
+	3300 9325 2650 9325
+Connection ~ 3300 9325
+Wire Wire Line
+	13800 9325 13150 9325
+Wire Wire Line
+	9150 8625 11100 8625
+Connection ~ 9150 8625
+Wire Wire Line
+	8500 8625 9150 8625
+Connection ~ 8500 8625
+Wire Wire Line
+	7850 8625 8500 8625
+Connection ~ 7850 8625
+Wire Wire Line
+	7200 8625 7850 8625
+Connection ~ 7200 8625
+Wire Wire Line
+	6550 8625 7200 8625
+Connection ~ 6550 8625
+Wire Wire Line
+	5900 8625 6550 8625
+Connection ~ 5900 8625
+Wire Wire Line
+	5250 8625 5900 8625
+Connection ~ 5250 8625
+Wire Wire Line
+	4600 8625 5250 8625
+Connection ~ 4600 8625
+Wire Wire Line
+	3950 8625 4600 8625
+Connection ~ 3950 8625
+Wire Wire Line
+	3300 8625 3950 8625
+Connection ~ 3300 8625
+Wire Wire Line
+	2650 8625 3300 8625
+Wire Wire Line
+	9800 7925 11100 7925
+Connection ~ 9800 7925
+Wire Wire Line
+	9150 7925 9800 7925
+Connection ~ 9150 7925
+Wire Wire Line
+	8500 7925 9150 7925
+Connection ~ 8500 7925
+Wire Wire Line
+	7850 7925 8500 7925
+Connection ~ 7850 7925
+Wire Wire Line
+	7200 7925 7850 7925
+Connection ~ 7200 7925
+Wire Wire Line
+	6550 7925 7200 7925
+Connection ~ 6550 7925
+Wire Wire Line
+	5900 7925 6550 7925
+Connection ~ 5900 7925
+Wire Wire Line
+	5250 7925 5900 7925
+Connection ~ 5250 7925
+Wire Wire Line
+	4600 7925 5250 7925
+Connection ~ 4600 7925
+Wire Wire Line
+	3950 7925 4600 7925
+Connection ~ 3950 7925
+Wire Wire Line
+	3300 7925 3950 7925
+Connection ~ 3300 7925
+Wire Wire Line
+	2650 7925 3300 7925
+Wire Wire Line
+	13150 7225 13800 7225
+Connection ~ 13150 7225
+Wire Wire Line
+	12500 7225 13150 7225
+Connection ~ 12500 7225
+Wire Wire Line
+	10450 7225 11100 7225
+Connection ~ 10450 7225
+Wire Wire Line
+	9800 7225 10450 7225
+Connection ~ 9800 7225
+Wire Wire Line
+	9150 7225 9800 7225
+Connection ~ 9150 7225
+Wire Wire Line
+	8500 7225 9150 7225
+Connection ~ 8500 7225
+Wire Wire Line
+	7850 7225 8500 7225
+Connection ~ 7850 7225
+Wire Wire Line
+	7200 7225 7850 7225
+Connection ~ 7200 7225
+Wire Wire Line
+	6550 7225 7200 7225
+Connection ~ 6550 7225
+Wire Wire Line
+	5900 7225 6550 7225
+Connection ~ 5900 7225
+Wire Wire Line
+	5250 7225 5900 7225
+Connection ~ 5250 7225
+Wire Wire Line
+	4600 7225 5250 7225
+Connection ~ 4600 7225
+Wire Wire Line
+	3950 7225 4600 7225
+Connection ~ 3950 7225
+Wire Wire Line
+	3300 7225 3950 7225
+Connection ~ 3300 7225
+Wire Wire Line
+	2650 7225 3300 7225
+Wire Wire Line
+	13150 6525 13800 6525
+Connection ~ 13150 6525
+Wire Wire Line
+	12500 6525 13150 6525
+Connection ~ 12500 6525
+Wire Wire Line
+	10450 6525 11100 6525
+Connection ~ 10450 6525
+Wire Wire Line
+	9800 6525 10450 6525
+Connection ~ 9800 6525
+Wire Wire Line
+	9150 6525 9800 6525
+Connection ~ 9150 6525
+Wire Wire Line
+	8500 6525 9150 6525
+Connection ~ 8500 6525
+Wire Wire Line
+	7850 6525 8500 6525
+Connection ~ 7850 6525
+Wire Wire Line
+	7200 6525 7850 6525
+Connection ~ 7200 6525
+Wire Wire Line
+	6550 6525 7200 6525
+Connection ~ 6550 6525
+Wire Wire Line
+	5900 6525 6550 6525
+Connection ~ 5900 6525
+Wire Wire Line
+	5250 6525 5900 6525
+Connection ~ 5250 6525
+Wire Wire Line
+	4600 6525 5250 6525
+Connection ~ 4600 6525
+Wire Wire Line
+	3950 6525 4600 6525
+Connection ~ 3950 6525
+Wire Wire Line
+	3300 6525 3950 6525
+Connection ~ 3300 6525
+Wire Wire Line
+	2650 6525 3300 6525
+$Comp
+L vakeyboard:KEYSW K_RSHIFT1
+U 1 1 5FF010FD
+P 11400 8175
+F 0 "K_RSHIFT1" H 11400 8408 60  0000 C CNN
+F 1 "KEYSW" H 11400 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.75u" H 11400 8175 60  0001 C CNN
+F 3 "" H 11400 8175 60  0000 C CNN
+	1    11400 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_RSHIFT1
+U 1 1 5FF01107
+P 11100 8475
+F 0 "D_RSHIFT1" V 11146 8395 50  0000 R CNN
+F 1 "D" V 11055 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 11100 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 8475 50  0001 C CNN
+F 4 "C414017" H 11100 8475 50  0001 C CNN "LCSC"
+	1    11100 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_EQUAL1
+U 1 1 5FE1B6E7
+P 10750 6075
+F 0 "K_EQUAL1" H 10750 6308 60  0000 C CNN
+F 1 "KEYSW" H 10750 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 6075 60  0001 C CNN
+F 3 "" H 10750 6075 60  0000 C CNN
+	1    10750 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_EQUAL1
+U 1 1 5FE1B6F1
+P 10450 6375
+F 0 "D_EQUAL1" V 10496 6295 50  0001 R CNN
+F 1 "D" V 10405 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 10450 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 6375 50  0001 C CNN
+F 4 "C414017" H 10450 6375 50  0001 C CNN "LCSC"
+	1    10450 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_PGUP1
+U 1 1 5FF923E8
+P 14100 6075
+F 0 "K_PGUP1" H 14100 6308 60  0000 C CNN
+F 1 "KEYSW" H 14100 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 6075 60  0001 C CNN
+F 3 "" H 14100 6075 60  0000 C CNN
+	1    14100 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_PGUP1
+U 1 1 5FF923F2
+P 13800 6375
+F 0 "D_PGUP1" V 13846 6295 50  0001 R CNN
+F 1 "D" V 13755 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13800 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 6375 50  0001 C CNN
+F 4 "C414017" H 13800 6375 50  0001 C CNN "LCSC"
+	1    13800 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_RIGHT1
+U 1 1 5FF92442
+P 13800 9175
+F 0 "D_RIGHT1" V 13846 9095 50  0000 R CNN
+F 1 "D" V 13755 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13800 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 9175 50  0001 C CNN
+F 4 "C414017" H 13800 9175 50  0001 C CNN "LCSC"
+	1    13800 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_RIGHT1
+U 1 1 5FF92438
+P 14100 8875
+F 0 "K_RIGHT1" H 14100 9108 60  0000 C CNN
+F 1 "KEYSW" H 14100 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 8875 60  0001 C CNN
+F 3 "" H 14100 8875 60  0000 C CNN
+	1    14100 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_PGDOWN1
+U 1 1 5FF92406
+P 13800 7075
+F 0 "D_PGDOWN1" V 13846 6995 50  0001 R CNN
+F 1 "D" V 13755 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13800 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13800 7075 50  0001 C CNN
+F 4 "C414017" H 13800 7075 50  0001 C CNN "LCSC"
+	1    13800 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_PGDOWN1
+U 1 1 5FF923FC
+P 14100 6775
+F 0 "K_PGDOWN1" H 14100 7008 60  0000 C CNN
+F 1 "KEYSW" H 14100 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 14100 6775 60  0001 C CNN
+F 3 "" H 14100 6775 60  0000 C CNN
+	1    14100 6775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3250 8175 3250 8875
+Connection ~ 3250 8175
+Wire Wire Line
+	3250 7475 3250 8175
+Connection ~ 3250 7475
+Wire Wire Line
+	3250 6775 3250 7475
+Connection ~ 3250 6775
+Wire Wire Line
+	3250 6075 3250 6775
+Connection ~ 3250 6075
+Wire Wire Line
+	3250 5375 3250 6075
+$Comp
+L vakeyboard:KEYSW K_RWIN1
+U 1 1 5FF012A1
+P 9450 8875
+F 0 "K_RWIN1" H 9450 9108 60  0000 C CNN
+F 1 "KEYSW" H 9450 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 8875 60  0001 C CNN
+F 3 "" H 9450 8875 60  0000 C CNN
+	1    9450 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_RWIN1
+U 1 1 5FF01297
+P 9150 9175
+F 0 "D_RWIN1" V 9196 9095 50  0000 R CNN
+F 1 "D" V 9105 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9150 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 9175 50  0001 C CNN
+F 4 "C414017" H 9150 9175 50  0001 C CNN "LCSC"
+	1    9150 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_RALT1
+U 1 1 5FF0128D
+P 9800 9175
+F 0 "D_RALT1" V 9846 9095 50  0000 R CNN
+F 1 "D" V 9755 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9800 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 9175 50  0001 C CNN
+F 4 "C414017" H 9800 9175 50  0001 C CNN "LCSC"
+	1    9800 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_DOWN1
+U 1 1 5FF01283
+P 13150 9175
+F 0 "D_DOWN1" V 13196 9095 50  0000 R CNN
+F 1 "D" V 13105 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13150 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 9175 50  0001 C CNN
+F 4 "C414017" H 13150 9175 50  0001 C CNN "LCSC"
+	1    13150 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_DOWN1
+U 1 1 5FF01279
+P 13450 8875
+F 0 "K_DOWN1" H 13450 9108 60  0000 C CNN
+F 1 "KEYSW" H 13450 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 8875 60  0001 C CNN
+F 3 "" H 13450 8875 60  0000 C CNN
+	1    13450 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_LEFT1
+U 1 1 5FF0126F
+P 12500 9175
+F 0 "D_LEFT1" V 12546 9095 50  0000 R CNN
+F 1 "D" V 12455 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 12500 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 9175 50  0001 C CNN
+F 4 "C414017" H 12500 9175 50  0001 C CNN "LCSC"
+	1    12500 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_LEFT1
+U 1 1 5FF01265
+P 12800 8875
+F 0 "K_LEFT1" H 12800 9108 60  0000 C CNN
+F 1 "KEYSW" H 12800 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 8875 60  0001 C CNN
+F 3 "" H 12800 8875 60  0000 C CNN
+	1    12800 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_RCTRL1
+U 1 1 5FF0125B
+P 11100 9175
+F 0 "D_RCTRL1" V 11146 9095 50  0000 R CNN
+F 1 "D" V 11055 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 11100 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 9175 50  0001 C CNN
+F 4 "C414017" H 11100 9175 50  0001 C CNN "LCSC"
+	1    11100 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_RCTRL1
+U 1 1 5FF01251
+P 11400 8875
+F 0 "K_RCTRL1" H 11400 9108 60  0000 C CNN
+F 1 "KEYSW" H 11400 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 11400 8875 60  0001 C CNN
+F 3 "" H 11400 8875 60  0000 C CNN
+	1    11400 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_FN1
+U 1 1 5FF01247
+P 10450 9175
+F 0 "D_FN1" V 10496 9095 50  0000 R CNN
+F 1 "D" V 10405 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 10450 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 9175 50  0001 C CNN
+F 4 "C414017" H 10450 9175 50  0001 C CNN "LCSC"
+	1    10450 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_FN1
+U 1 1 5FF0123D
+P 10750 8875
+F 0 "K_FN1" H 10750 9108 60  0000 C CNN
+F 1 "KEYSW" H 10750 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 8875 60  0001 C CNN
+F 3 "" H 10750 8875 60  0000 C CNN
+	1    10750 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_RALT1
+U 1 1 5FF01233
+P 10100 8875
+F 0 "K_RALT1" H 10100 9108 60  0000 C CNN
+F 1 "KEYSW" H 10100 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 8875 60  0001 C CNN
+F 3 "" H 10100 8875 60  0000 C CNN
+	1    10100 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_LWIN1
+U 1 1 5FF01201
+P 4250 8875
+F 0 "K_LWIN1" H 4250 9108 60  0000 C CNN
+F 1 "KEYSW" H 4250 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 8875 60  0001 C CNN
+F 3 "" H 4250 8875 60  0000 C CNN
+	1    4250 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_LWIN1
+U 1 1 5FF011F7
+P 3950 9175
+F 0 "D_LWIN1" V 3996 9095 50  0000 R CNN
+F 1 "D" V 3905 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 9175 50  0001 C CNN
+F 4 "C414017" H 3950 9175 50  0001 C CNN "LCSC"
+	1    3950 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_SPACE1
+U 1 1 5FF011CF
+P 6550 9175
+F 0 "D_SPACE1" V 6596 9095 50  0000 R CNN
+F 1 "D" V 6505 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 6550 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 9175 50  0001 C CNN
+F 4 "C414017" H 6550 9175 50  0001 C CNN "LCSC"
+	1    6550 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_SPACE1
+U 1 1 5FF011C5
+P 6850 8875
+F 0 "K_SPACE1" H 6850 9108 60  0000 C CNN
+F 1 "KEYSW" H 6850 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_6.25u" H 6850 8875 60  0001 C CNN
+F 3 "" H 6850 8875 60  0000 C CNN
+	1    6850 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_LALT1
+U 1 1 5FF01189
+P 3300 9175
+F 0 "D_LALT1" V 3346 9095 50  0000 R CNN
+F 1 "D" V 3255 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3300 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 9175 50  0001 C CNN
+F 4 "C414017" H 3300 9175 50  0001 C CNN "LCSC"
+	1    3300 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_LALT1
+U 1 1 5FF0117F
+P 3600 8875
+F 0 "K_LALT1" H 3600 9108 60  0000 C CNN
+F 1 "KEYSW" H 3600 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 8875 60  0001 C CNN
+F 3 "" H 3600 8875 60  0000 C CNN
+	1    3600 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_LCTRL1
+U 1 1 5FF01175
+P 2650 9175
+F 0 "D_LCTRL1" V 2696 9095 50  0000 R CNN
+F 1 "D" V 2605 9095 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 2650 9175 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 9175 50  0001 C CNN
+F 4 "C414017" H 2650 9175 50  0001 C CNN "LCSC"
+	1    2650 9175
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_LCTRL1
+U 1 1 5FF0116B
+P 2950 8875
+F 0 "K_LCTRL1" H 2950 9108 60  0000 C CNN
+F 1 "KEYSW" H 2950 8775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 8875 60  0001 C CNN
+F 3 "" H 2950 8875 60  0000 C CNN
+	1    2950 8875
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_/1
+U 1 1 5FF01161
+P 9450 8175
+F 0 "K_/1" H 9450 8408 60  0000 C CNN
+F 1 "KEYSW" H 9450 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 8175 60  0001 C CNN
+F 3 "" H 9450 8175 60  0000 C CNN
+	1    9450 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_/1
+U 1 1 5FF01157
+P 9150 8475
+F 0 "D_/1" V 9196 8395 50  0000 R CNN
+F 1 "D" V 9105 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9150 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 8475 50  0001 C CNN
+F 4 "C414017" H 9150 8475 50  0001 C CNN "LCSC"
+	1    9150 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_UP1
+U 1 1 5FF0111B
+P 13150 8475
+F 0 "D_UP1" V 13196 8395 50  0000 R CNN
+F 1 "D" V 13105 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13150 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 8475 50  0001 C CNN
+F 4 "C414017" H 13150 8475 50  0001 C CNN "LCSC"
+	1    13150 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_.1
+U 1 1 5FF010E9
+P 8500 8475
+F 0 "D_.1" V 8546 8395 50  0000 R CNN
+F 1 "D" V 8455 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 8500 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 8475 50  0001 C CNN
+F 4 "C414017" H 8500 8475 50  0001 C CNN "LCSC"
+	1    8500 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_.1
+U 1 1 5FF010DF
+P 8800 8175
+F 0 "K_.1" H 8800 8408 60  0000 C CNN
+F 1 "KEYSW" H 8800 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 8175 60  0001 C CNN
+F 3 "" H 8800 8175 60  0000 C CNN
+	1    8800 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_Coma1
+U 1 1 5FF010D5
+P 7850 8475
+F 0 "D_Coma1" V 7896 8395 50  0000 R CNN
+F 1 "D" V 7805 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7850 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 8475 50  0001 C CNN
+F 4 "C414017" H 7850 8475 50  0001 C CNN "LCSC"
+	1    7850 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_Coma1
+U 1 1 5FF010CB
+P 8150 8175
+F 0 "K_Coma1" H 8150 8408 60  0000 C CNN
+F 1 "KEYSW" H 8150 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 8175 60  0001 C CNN
+F 3 "" H 8150 8175 60  0000 C CNN
+	1    8150 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_X1
+U 1 1 5FF010C1
+P 4250 8175
+F 0 "K_X1" H 4250 8408 60  0000 C CNN
+F 1 "KEYSW" H 4250 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 8175 60  0001 C CNN
+F 3 "" H 4250 8175 60  0000 C CNN
+	1    4250 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_X1
+U 1 1 5FF010B7
+P 3950 8475
+F 0 "D_X1" V 3996 8395 50  0000 R CNN
+F 1 "D" V 3905 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 8475 50  0001 C CNN
+F 4 "C414017" H 3950 8475 50  0001 C CNN "LCSC"
+	1    3950 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_C1
+U 1 1 5FF010AD
+P 4600 8475
+F 0 "D_C1" V 4646 8395 50  0000 R CNN
+F 1 "D" V 4555 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 4600 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 8475 50  0001 C CNN
+F 4 "C414017" H 4600 8475 50  0001 C CNN "LCSC"
+	1    4600 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_M1
+U 1 1 5FF010A3
+P 7200 8475
+F 0 "D_M1" V 7246 8395 50  0000 R CNN
+F 1 "D" V 7155 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7200 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 8475 50  0001 C CNN
+F 4 "C414017" H 7200 8475 50  0001 C CNN "LCSC"
+	1    7200 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_M1
+U 1 1 5FF01099
+P 7500 8175
+F 0 "K_M1" H 7500 8408 60  0000 C CNN
+F 1 "KEYSW" H 7500 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 8175 60  0001 C CNN
+F 3 "" H 7500 8175 60  0000 C CNN
+	1    7500 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_N1
+U 1 1 5FF0108F
+P 6550 8475
+F 0 "D_N1" V 6596 8395 50  0000 R CNN
+F 1 "D" V 6505 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 6550 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 8475 50  0001 C CNN
+F 4 "C414017" H 6550 8475 50  0001 C CNN "LCSC"
+	1    6550 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_N1
+U 1 1 5FF01085
+P 6850 8175
+F 0 "K_N1" H 6850 8408 60  0000 C CNN
+F 1 "KEYSW" H 6850 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 8175 60  0001 C CNN
+F 3 "" H 6850 8175 60  0000 C CNN
+	1    6850 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_B1
+U 1 1 5FF0107B
+P 5900 8475
+F 0 "D_B1" V 5946 8395 50  0000 R CNN
+F 1 "D" V 5855 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5900 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 8475 50  0001 C CNN
+F 4 "C414017" H 5900 8475 50  0001 C CNN "LCSC"
+	1    5900 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_B1
+U 1 1 5FF01071
+P 6200 8175
+F 0 "K_B1" H 6200 8408 60  0000 C CNN
+F 1 "KEYSW" H 6200 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 8175 60  0001 C CNN
+F 3 "" H 6200 8175 60  0000 C CNN
+	1    6200 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_V1
+U 1 1 5FF01067
+P 5250 8475
+F 0 "D_V1" V 5296 8395 50  0000 R CNN
+F 1 "D" V 5205 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5250 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 8475 50  0001 C CNN
+F 4 "C414017" H 5250 8475 50  0001 C CNN "LCSC"
+	1    5250 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_V1
+U 1 1 5FF0105D
+P 5550 8175
+F 0 "K_V1" H 5550 8408 60  0000 C CNN
+F 1 "KEYSW" H 5550 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 8175 60  0001 C CNN
+F 3 "" H 5550 8175 60  0000 C CNN
+	1    5550 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_C1
+U 1 1 5FF01053
+P 4900 8175
+F 0 "K_C1" H 4900 8408 60  0000 C CNN
+F 1 "KEYSW" H 4900 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 8175 60  0001 C CNN
+F 3 "" H 4900 8175 60  0000 C CNN
+	1    4900 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_Z1
+U 1 1 5FF01049
+P 3300 8475
+F 0 "D_Z1" V 3346 8395 50  0000 R CNN
+F 1 "D" V 3255 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3300 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 8475 50  0001 C CNN
+F 4 "C414017" H 3300 8475 50  0001 C CNN "LCSC"
+	1    3300 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_Z1
+U 1 1 5FF0103F
+P 3600 8175
+F 0 "K_Z1" H 3600 8408 60  0000 C CNN
+F 1 "KEYSW" H 3600 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 8175 60  0001 C CNN
+F 3 "" H 3600 8175 60  0000 C CNN
+	1    3600 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_LSHIFT1
+U 1 1 5FF01035
+P 2650 8475
+F 0 "D_LSHIFT1" V 2696 8395 50  0000 R CNN
+F 1 "D" V 2605 8395 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 2650 8475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 8475 50  0001 C CNN
+F 4 "C414017" H 2650 8475 50  0001 C CNN "LCSC"
+	1    2650 8475
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_LSHIFT1
+U 1 1 5FF0061B
+P 2950 8175
+F 0 "K_LSHIFT1" H 2950 8408 60  0000 C CNN
+F 1 "KEYSW" H 2950 8075 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.25u" H 2950 8175 60  0001 C CNN
+F 3 "" H 2950 8175 60  0000 C CNN
+	1    2950 8175
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_;1
+U 1 1 5FE3896D
+P 9450 7475
+F 0 "K_;1" H 9450 7708 60  0000 C CNN
+F 1 "KEYSW" H 9450 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 7475 60  0001 C CNN
+F 3 "" H 9450 7475 60  0000 C CNN
+	1    9450 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_;1
+U 1 1 5FE38963
+P 9150 7775
+F 0 "D_;1" V 9196 7695 50  0000 R CNN
+F 1 "D" V 9105 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9150 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 7775 50  0001 C CNN
+F 4 "C414017" H 9150 7775 50  0001 C CNN "LCSC"
+	1    9150 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_'1
+U 1 1 5FE38959
+P 9800 7775
+F 0 "D_'1" V 9846 7695 50  0000 R CNN
+F 1 "D" V 9755 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9800 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 7775 50  0001 C CNN
+F 4 "C414017" H 9800 7775 50  0001 C CNN "LCSC"
+	1    9800 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_ENTER1
+U 1 1 5FE38913
+P 11100 7775
+F 0 "D_ENTER1" V 11146 7695 50  0000 R CNN
+F 1 "D" V 11055 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 11100 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 7775 50  0001 C CNN
+F 4 "C414017" H 11100 7775 50  0001 C CNN "LCSC"
+	1    11100 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_ENTER1
+U 1 1 5FE38909
+P 11400 7475
+F 0 "K_ENTER1" H 11400 7708 60  0000 C CNN
+F 1 "KEYSW" H 11400 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_2.25u" H 11400 7475 60  0001 C CNN
+F 3 "" H 11400 7475 60  0000 C CNN
+	1    11400 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_'1
+U 1 1 5FE388FF
+P 10100 7475
+F 0 "K_'1" H 10100 7708 60  0000 C CNN
+F 1 "KEYSW" H 10100 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 7475 60  0001 C CNN
+F 3 "" H 10100 7475 60  0000 C CNN
+	1    10100 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_L1
+U 1 1 5FE388F5
+P 8500 7775
+F 0 "D_L1" V 8546 7695 50  0000 R CNN
+F 1 "D" V 8455 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 8500 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 7775 50  0001 C CNN
+F 4 "C414017" H 8500 7775 50  0001 C CNN "LCSC"
+	1    8500 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_L1
+U 1 1 5FE388EB
+P 8800 7475
+F 0 "K_L1" H 8800 7708 60  0000 C CNN
+F 1 "KEYSW" H 8800 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 7475 60  0001 C CNN
+F 3 "" H 8800 7475 60  0000 C CNN
+	1    8800 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_K1
+U 1 1 5FE388E1
+P 7850 7775
+F 0 "D_K1" V 7896 7695 50  0000 R CNN
+F 1 "D" V 7805 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7850 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 7775 50  0001 C CNN
+F 4 "C414017" H 7850 7775 50  0001 C CNN "LCSC"
+	1    7850 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_K1
+U 1 1 5FE388D7
+P 8150 7475
+F 0 "K_K1" H 8150 7708 60  0000 C CNN
+F 1 "KEYSW" H 8150 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 7475 60  0001 C CNN
+F 3 "" H 8150 7475 60  0000 C CNN
+	1    8150 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_S1
+U 1 1 5FE388CD
+P 4250 7475
+F 0 "K_S1" H 4250 7708 60  0000 C CNN
+F 1 "KEYSW" H 4250 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 7475 60  0001 C CNN
+F 3 "" H 4250 7475 60  0000 C CNN
+	1    4250 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_S1
+U 1 1 5FE388C3
+P 3950 7775
+F 0 "D_S1" V 3996 7695 50  0000 R CNN
+F 1 "D" V 3905 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 7775 50  0001 C CNN
+F 4 "C414017" H 3950 7775 50  0001 C CNN "LCSC"
+	1    3950 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_D1
+U 1 1 5FE388B9
+P 4600 7775
+F 0 "D_D1" V 4646 7695 50  0000 R CNN
+F 1 "D" V 4555 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 4600 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 7775 50  0001 C CNN
+F 4 "C414017" H 4600 7775 50  0001 C CNN "LCSC"
+	1    4600 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_J1
+U 1 1 5FE388AF
+P 7200 7775
+F 0 "D_J1" V 7246 7695 50  0000 R CNN
+F 1 "D" V 7155 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7200 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 7775 50  0001 C CNN
+F 4 "C414017" H 7200 7775 50  0001 C CNN "LCSC"
+	1    7200 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_J1
+U 1 1 5FE388A5
+P 7500 7475
+F 0 "K_J1" H 7500 7708 60  0000 C CNN
+F 1 "KEYSW" H 7500 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 7475 60  0001 C CNN
+F 3 "" H 7500 7475 60  0000 C CNN
+	1    7500 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_H1
+U 1 1 5FE3889B
+P 6550 7775
+F 0 "D_H1" V 6596 7695 50  0000 R CNN
+F 1 "D" V 6505 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 6550 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 7775 50  0001 C CNN
+F 4 "C414017" H 6550 7775 50  0001 C CNN "LCSC"
+	1    6550 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_H1
+U 1 1 5FE38891
+P 6850 7475
+F 0 "K_H1" H 6850 7708 60  0000 C CNN
+F 1 "KEYSW" H 6850 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 7475 60  0001 C CNN
+F 3 "" H 6850 7475 60  0000 C CNN
+	1    6850 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_G1
+U 1 1 5FE38887
+P 5900 7775
+F 0 "D_G1" V 5946 7695 50  0000 R CNN
+F 1 "D" V 5855 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5900 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 7775 50  0001 C CNN
+F 4 "C414017" H 5900 7775 50  0001 C CNN "LCSC"
+	1    5900 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_G1
+U 1 1 5FE3887D
+P 6200 7475
+F 0 "K_G1" H 6200 7708 60  0000 C CNN
+F 1 "KEYSW" H 6200 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 7475 60  0001 C CNN
+F 3 "" H 6200 7475 60  0000 C CNN
+	1    6200 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_F_1
+U 1 1 5FE38873
+P 5250 7775
+F 0 "D_F_1" V 5296 7695 50  0000 R CNN
+F 1 "D" V 5205 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5250 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 7775 50  0001 C CNN
+F 4 "C414017" H 5250 7775 50  0001 C CNN "LCSC"
+	1    5250 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_F_1
+U 1 1 5FE38869
+P 5550 7475
+F 0 "K_F_1" H 5550 7708 60  0000 C CNN
+F 1 "KEYSW" H 5550 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 7475 60  0001 C CNN
+F 3 "" H 5550 7475 60  0000 C CNN
+	1    5550 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_D1
+U 1 1 5FE3885F
+P 4900 7475
+F 0 "K_D1" H 4900 7708 60  0000 C CNN
+F 1 "KEYSW" H 4900 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 7475 60  0001 C CNN
+F 3 "" H 4900 7475 60  0000 C CNN
+	1    4900 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_A1
+U 1 1 5FE38855
+P 3300 7775
+F 0 "D_A1" V 3346 7695 50  0000 R CNN
+F 1 "D" V 3255 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3300 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 7775 50  0001 C CNN
+F 4 "C414017" H 3300 7775 50  0001 C CNN "LCSC"
+	1    3300 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_A1
+U 1 1 5FE3884B
+P 3600 7475
+F 0 "K_A1" H 3600 7708 60  0000 C CNN
+F 1 "KEYSW" H 3600 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 7475 60  0001 C CNN
+F 3 "" H 3600 7475 60  0000 C CNN
+	1    3600 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_CAPSL1
+U 1 1 5FE38841
+P 2650 7775
+F 0 "D_CAPSL1" V 2696 7695 50  0000 R CNN
+F 1 "D" V 2605 7695 50  0000 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 2650 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 7775 50  0001 C CNN
+F 4 "C414017" H 2650 7775 50  0001 C CNN "LCSC"
+	1    2650 7775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_CAPSL1
+U 1 1 5FE38837
+P 2950 7475
+F 0 "K_CAPSL1" H 2950 7708 60  0000 C CNN
+F 1 "KEYSW" H 2950 7375 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 7475 60  0001 C CNN
+F 3 "" H 2950 7475 60  0000 C CNN
+	1    2950 7475
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_P1
+U 1 1 5FE3882D
+P 9450 6775
+F 0 "K_P1" H 9450 7008 60  0000 C CNN
+F 1 "KEYSW" H 9450 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 6775 60  0001 C CNN
+F 3 "" H 9450 6775 60  0000 C CNN
+	1    9450 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_P1
+U 1 1 5FE38823
+P 9150 7075
+F 0 "D_P1" V 9196 6995 50  0001 R CNN
+F 1 "D" V 9105 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9150 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 7075 50  0001 C CNN
+F 4 "C414017" H 9150 7075 50  0001 C CNN "LCSC"
+	1    9150 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_[1
+U 1 1 5FE38819
+P 9800 7075
+F 0 "D_[1" V 9846 6995 50  0001 R CNN
+F 1 "D" V 9755 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9800 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 7075 50  0001 C CNN
+F 4 "C414017" H 9800 7075 50  0001 C CNN "LCSC"
+	1    9800 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_END1
+U 1 1 5FE3880F
+P 13150 7075
+F 0 "D_END1" V 13196 6995 50  0001 R CNN
+F 1 "D" V 13105 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13150 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 7075 50  0001 C CNN
+F 4 "C414017" H 13150 7075 50  0001 C CNN "LCSC"
+	1    13150 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_END1
+U 1 1 5FE38805
+P 13450 6775
+F 0 "K_END1" H 13450 7008 60  0000 C CNN
+F 1 "KEYSW" H 13450 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 6775 60  0001 C CNN
+F 3 "" H 13450 6775 60  0000 C CNN
+	1    13450 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_DEL1
+U 1 1 5FE387FB
+P 12500 7075
+F 0 "D_DEL1" V 12546 6995 50  0001 R CNN
+F 1 "D" V 12455 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 12500 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 7075 50  0001 C CNN
+F 4 "C414017" H 12500 7075 50  0001 C CNN "LCSC"
+	1    12500 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_DEL1
+U 1 1 5FE387F1
+P 12800 6775
+F 0 "K_DEL1" H 12800 7008 60  0000 C CNN
+F 1 "KEYSW" H 12800 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 6775 60  0001 C CNN
+F 3 "" H 12800 6775 60  0000 C CNN
+	1    12800 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_\1
+U 1 1 5FE387E7
+P 11100 7075
+F 0 "D_\\1" V 11146 6995 50  0001 R CNN
+F 1 "D" V 11055 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 11100 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 7075 50  0001 C CNN
+F 4 "C414017" H 11100 7075 50  0001 C CNN "LCSC"
+	1    11100 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_\1
+U 1 1 5FE387DD
+P 11400 6775
+F 0 "K_\\1" H 11400 7008 60  0000 C CNN
+F 1 "KEYSW" H 11400 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 11400 6775 60  0001 C CNN
+F 3 "" H 11400 6775 60  0000 C CNN
+	1    11400 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_]1
+U 1 1 5FE387D3
+P 10450 7075
+F 0 "D_]1" V 10496 6995 50  0001 R CNN
+F 1 "D" V 10405 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 10450 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 10450 7075 50  0001 C CNN
+F 4 "C414017" H 10450 7075 50  0001 C CNN "LCSC"
+	1    10450 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_]1
+U 1 1 5FE387C9
+P 10750 6775
+F 0 "K_]1" H 10750 7008 60  0000 C CNN
+F 1 "KEYSW" H 10750 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10750 6775 60  0001 C CNN
+F 3 "" H 10750 6775 60  0000 C CNN
+	1    10750 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_[1
+U 1 1 5FE387BF
+P 10100 6775
+F 0 "K_[1" H 10100 7008 60  0000 C CNN
+F 1 "KEYSW" H 10100 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 6775 60  0001 C CNN
+F 3 "" H 10100 6775 60  0000 C CNN
+	1    10100 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_O1
+U 1 1 5FE387B5
+P 8500 7075
+F 0 "D_O1" V 8546 6995 50  0001 R CNN
+F 1 "D" V 8455 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 8500 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 7075 50  0001 C CNN
+F 4 "C414017" H 8500 7075 50  0001 C CNN "LCSC"
+	1    8500 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_O1
+U 1 1 5FE387AB
+P 8800 6775
+F 0 "K_O1" H 8800 7008 60  0000 C CNN
+F 1 "KEYSW" H 8800 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 6775 60  0001 C CNN
+F 3 "" H 8800 6775 60  0000 C CNN
+	1    8800 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_I1
+U 1 1 5FE387A1
+P 7850 7075
+F 0 "D_I1" V 7896 6995 50  0001 R CNN
+F 1 "D" V 7805 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7850 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 7075 50  0001 C CNN
+F 4 "C414017" H 7850 7075 50  0001 C CNN "LCSC"
+	1    7850 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_I1
+U 1 1 5FE38797
+P 8150 6775
+F 0 "K_I1" H 8150 7008 60  0000 C CNN
+F 1 "KEYSW" H 8150 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 6775 60  0001 C CNN
+F 3 "" H 8150 6775 60  0000 C CNN
+	1    8150 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_W1
+U 1 1 5FE3878D
+P 4250 6775
+F 0 "K_W1" H 4250 7008 60  0000 C CNN
+F 1 "KEYSW" H 4250 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 6775 60  0001 C CNN
+F 3 "" H 4250 6775 60  0000 C CNN
+	1    4250 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_W1
+U 1 1 5FE38783
+P 3950 7075
+F 0 "D_W1" V 3996 6995 50  0001 R CNN
+F 1 "D" V 3905 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 7075 50  0001 C CNN
+F 4 "C414017" H 3950 7075 50  0001 C CNN "LCSC"
+	1    3950 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_E1
+U 1 1 5FE38779
+P 4600 7075
+F 0 "D_E1" V 4646 6995 50  0001 R CNN
+F 1 "D" V 4555 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 4600 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 7075 50  0001 C CNN
+F 4 "C414017" H 4600 7075 50  0001 C CNN "LCSC"
+	1    4600 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_U1
+U 1 1 5FE3876F
+P 7200 7075
+F 0 "D_U1" V 7246 6995 50  0001 R CNN
+F 1 "D" V 7155 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7200 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 7075 50  0001 C CNN
+F 4 "C414017" H 7200 7075 50  0001 C CNN "LCSC"
+	1    7200 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_U1
+U 1 1 5FE38765
+P 7500 6775
+F 0 "K_U1" H 7500 7008 60  0000 C CNN
+F 1 "KEYSW" H 7500 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 6775 60  0001 C CNN
+F 3 "" H 7500 6775 60  0000 C CNN
+	1    7500 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_Y1
+U 1 1 5FE3875B
+P 6550 7075
+F 0 "D_Y1" V 6596 6995 50  0001 R CNN
+F 1 "D" V 6505 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 6550 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 7075 50  0001 C CNN
+F 4 "C414017" H 6550 7075 50  0001 C CNN "LCSC"
+	1    6550 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_Y1
+U 1 1 5FE38751
+P 6850 6775
+F 0 "K_Y1" H 6850 7008 60  0000 C CNN
+F 1 "KEYSW" H 6850 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 6775 60  0001 C CNN
+F 3 "" H 6850 6775 60  0000 C CNN
+	1    6850 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_T1
+U 1 1 5FE38747
+P 5900 7075
+F 0 "D_T1" V 5946 6995 50  0001 R CNN
+F 1 "D" V 5855 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5900 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 7075 50  0001 C CNN
+F 4 "C414017" H 5900 7075 50  0001 C CNN "LCSC"
+	1    5900 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_T1
+U 1 1 5FE3873D
+P 6200 6775
+F 0 "K_T1" H 6200 7008 60  0000 C CNN
+F 1 "KEYSW" H 6200 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 6775 60  0001 C CNN
+F 3 "" H 6200 6775 60  0000 C CNN
+	1    6200 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_R1
+U 1 1 5FE38733
+P 5250 7075
+F 0 "D_R1" V 5296 6995 50  0001 R CNN
+F 1 "D" V 5205 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5250 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 7075 50  0001 C CNN
+F 4 "C414017" H 5250 7075 50  0001 C CNN "LCSC"
+	1    5250 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_R1
+U 1 1 5FE38729
+P 5550 6775
+F 0 "K_R1" H 5550 7008 60  0000 C CNN
+F 1 "KEYSW" H 5550 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 6775 60  0001 C CNN
+F 3 "" H 5550 6775 60  0000 C CNN
+	1    5550 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_E1
+U 1 1 5FE3871F
+P 4900 6775
+F 0 "K_E1" H 4900 7008 60  0000 C CNN
+F 1 "KEYSW" H 4900 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 6775 60  0001 C CNN
+F 3 "" H 4900 6775 60  0000 C CNN
+	1    4900 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_Q1
+U 1 1 5FE38715
+P 3300 7075
+F 0 "D_Q1" V 3346 6995 50  0001 R CNN
+F 1 "D" V 3255 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3300 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 7075 50  0001 C CNN
+F 4 "C414017" H 3300 7075 50  0001 C CNN "LCSC"
+	1    3300 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_Q1
+U 1 1 5FE3870B
+P 3600 6775
+F 0 "K_Q1" H 3600 7008 60  0000 C CNN
+F 1 "KEYSW" H 3600 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 6775 60  0001 C CNN
+F 3 "" H 3600 6775 60  0000 C CNN
+	1    3600 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_TAB1
+U 1 1 5FE38701
+P 2650 7075
+F 0 "D_TAB1" V 2696 6995 50  0001 R CNN
+F 1 "D" V 2605 6995 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 2650 7075 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 7075 50  0001 C CNN
+F 4 "C414017" H 2650 7075 50  0001 C CNN "LCSC"
+	1    2650 7075
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_TAB1
+U 1 1 5FE381E7
+P 2950 6775
+F 0 "K_TAB1" H 2950 7008 60  0000 C CNN
+F 1 "KEYSW" H 2950 6675 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 6775 60  0001 C CNN
+F 3 "" H 2950 6775 60  0000 C CNN
+	1    2950 6775
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_0
+U 1 1 5FE1B74B
+P 9450 6075
+F 0 "K_0" H 9450 6308 60  0000 C CNN
+F 1 "KEYSW" H 9450 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 9450 6075 60  0001 C CNN
+F 3 "" H 9450 6075 60  0000 C CNN
+	1    9450 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_10
+U 1 1 5FE1B741
+P 9150 6375
+F 0 "D_10" V 9196 6295 50  0001 R CNN
+F 1 "D" V 9105 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9150 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9150 6375 50  0001 C CNN
+F 4 "C414017" H 9150 6375 50  0001 C CNN "LCSC"
+	1    9150 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_MINUS1
+U 1 1 5FE1B737
+P 9800 6375
+F 0 "D_MINUS1" V 9846 6295 50  0001 R CNN
+F 1 "D" V 9755 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 9800 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 9800 6375 50  0001 C CNN
+F 4 "C414017" H 9800 6375 50  0001 C CNN "LCSC"
+	1    9800 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_HOME1
+U 1 1 5FE1B72D
+P 13150 6375
+F 0 "D_HOME1" V 13196 6295 50  0001 R CNN
+F 1 "D" V 13105 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 13150 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 13150 6375 50  0001 C CNN
+F 4 "C414017" H 13150 6375 50  0001 C CNN "LCSC"
+	1    13150 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_HOME1
+U 1 1 5FE1B723
+P 13450 6075
+F 0 "K_HOME1" H 13450 6308 60  0000 C CNN
+F 1 "KEYSW" H 13450 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 13450 6075 60  0001 C CNN
+F 3 "" H 13450 6075 60  0000 C CNN
+	1    13450 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_INS1
+U 1 1 5FE1B719
+P 12500 6375
+F 0 "D_INS1" V 12546 6295 50  0001 R CNN
+F 1 "D" V 12455 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 12500 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 12500 6375 50  0001 C CNN
+F 4 "C414017" H 12500 6375 50  0001 C CNN "LCSC"
+	1    12500 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_INS1
+U 1 1 5FE1B70F
+P 12800 6075
+F 0 "K_INS1" H 12800 6308 60  0000 C CNN
+F 1 "KEYSW" H 12800 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 12800 6075 60  0001 C CNN
+F 3 "" H 12800 6075 60  0000 C CNN
+	1    12800 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_BCKSP1
+U 1 1 5FE1B705
+P 11100 6375
+F 0 "D_BCKSP1" V 11146 6295 50  0001 R CNN
+F 1 "D" V 11055 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 11100 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 11100 6375 50  0001 C CNN
+F 4 "C414017" H 11100 6375 50  0001 C CNN "LCSC"
+	1    11100 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_BCKSP1
+U 1 1 5FE1B6FB
+P 11400 6075
+F 0 "K_BCKSP1" H 11400 6308 60  0000 C CNN
+F 1 "KEYSW" H 11400 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_2u" H 11400 6075 60  0001 C CNN
+F 3 "" H 11400 6075 60  0000 C CNN
+	1    11400 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_MINUS1
+U 1 1 5FE1B6DD
+P 10100 6075
+F 0 "K_MINUS1" H 10100 6308 60  0000 C CNN
+F 1 "KEYSW" H 10100 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 10100 6075 60  0001 C CNN
+F 3 "" H 10100 6075 60  0000 C CNN
+	1    10100 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_9
+U 1 1 5FE1B6D3
+P 8500 6375
+F 0 "D_9" V 8546 6295 50  0001 R CNN
+F 1 "D" V 8455 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 8500 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 8500 6375 50  0001 C CNN
+F 4 "C414017" H 8500 6375 50  0001 C CNN "LCSC"
+	1    8500 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_9
+U 1 1 5FE1B6C9
+P 8800 6075
+F 0 "K_9" H 8800 6308 60  0000 C CNN
+F 1 "KEYSW" H 8800 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8800 6075 60  0001 C CNN
+F 3 "" H 8800 6075 60  0000 C CNN
+	1    8800 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_8
+U 1 1 5FE1B6BF
+P 7850 6375
+F 0 "D_8" V 7896 6295 50  0001 R CNN
+F 1 "D" V 7805 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7850 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7850 6375 50  0001 C CNN
+F 4 "C414017" H 7850 6375 50  0001 C CNN "LCSC"
+	1    7850 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_8
+U 1 1 5FE1B6B5
+P 8150 6075
+F 0 "K_8" H 8150 6308 60  0000 C CNN
+F 1 "KEYSW" H 8150 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 8150 6075 60  0001 C CNN
+F 3 "" H 8150 6075 60  0000 C CNN
+	1    8150 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_2
+U 1 1 5FE1B6AB
+P 4250 6075
+F 0 "K_2" H 4250 6308 60  0000 C CNN
+F 1 "KEYSW" H 4250 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4250 6075 60  0001 C CNN
+F 3 "" H 4250 6075 60  0000 C CNN
+	1    4250 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_2
+U 1 1 5FE1B6A1
+P 3950 6375
+F 0 "D_2" V 3996 6295 50  0001 R CNN
+F 1 "D" V 3905 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3950 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3950 6375 50  0001 C CNN
+F 4 "C414017" H 3950 6375 50  0001 C CNN "LCSC"
+	1    3950 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_3
+U 1 1 5FE1B697
+P 4600 6375
+F 0 "D_3" V 4646 6295 50  0001 R CNN
+F 1 "D" V 4555 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 4600 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 4600 6375 50  0001 C CNN
+F 4 "C414017" H 4600 6375 50  0001 C CNN "LCSC"
+	1    4600 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:D D_7
+U 1 1 5FE1B68D
+P 7200 6375
+F 0 "D_7" V 7246 6295 50  0001 R CNN
+F 1 "D" V 7155 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 7200 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 7200 6375 50  0001 C CNN
+F 4 "C414017" H 7200 6375 50  0001 C CNN "LCSC"
+	1    7200 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_7
+U 1 1 5FE1B683
+P 7500 6075
+F 0 "K_7" H 7500 6308 60  0000 C CNN
+F 1 "KEYSW" H 7500 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 7500 6075 60  0001 C CNN
+F 3 "" H 7500 6075 60  0000 C CNN
+	1    7500 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_6
+U 1 1 5FE1B679
+P 6550 6375
+F 0 "D_6" V 6596 6295 50  0001 R CNN
+F 1 "D" V 6505 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 6550 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 6550 6375 50  0001 C CNN
+F 4 "C414017" H 6550 6375 50  0001 C CNN "LCSC"
+	1    6550 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_6
+U 1 1 5FE1B66F
+P 6850 6075
+F 0 "K_6" H 6850 6308 60  0000 C CNN
+F 1 "KEYSW" H 6850 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6850 6075 60  0001 C CNN
+F 3 "" H 6850 6075 60  0000 C CNN
+	1    6850 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_5
+U 1 1 5FE1B665
+P 5900 6375
+F 0 "D_5" V 5946 6295 50  0001 R CNN
+F 1 "D" V 5855 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5900 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5900 6375 50  0001 C CNN
+F 4 "C414017" H 5900 6375 50  0001 C CNN "LCSC"
+	1    5900 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_5
+U 1 1 5FE1B65B
+P 6200 6075
+F 0 "K_5" H 6200 6308 60  0000 C CNN
+F 1 "KEYSW" H 6200 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 6200 6075 60  0001 C CNN
+F 3 "" H 6200 6075 60  0000 C CNN
+	1    6200 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_4
+U 1 1 5FE1B651
+P 5250 6375
+F 0 "D_4" V 5296 6295 50  0001 R CNN
+F 1 "D" V 5205 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 5250 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 5250 6375 50  0001 C CNN
+F 4 "C414017" H 5250 6375 50  0001 C CNN "LCSC"
+	1    5250 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_4
+U 1 1 5FE1B647
+P 5550 6075
+F 0 "K_4" H 5550 6308 60  0000 C CNN
+F 1 "KEYSW" H 5550 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 5550 6075 60  0001 C CNN
+F 3 "" H 5550 6075 60  0000 C CNN
+	1    5550 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_3
+U 1 1 5FE1B63D
+P 4900 6075
+F 0 "K_3" H 4900 6308 60  0000 C CNN
+F 1 "KEYSW" H 4900 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 4900 6075 60  0001 C CNN
+F 3 "" H 4900 6075 60  0000 C CNN
+	1    4900 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_1
+U 1 1 5FE1B633
+P 3300 6375
+F 0 "D_1" V 3346 6295 50  0001 R CNN
+F 1 "D" V 3255 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 3300 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 3300 6375 50  0001 C CNN
+F 4 "C414017" H 3300 6375 50  0001 C CNN "LCSC"
+	1    3300 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_1
+U 1 1 5FE1B629
+P 3600 6075
+F 0 "K_1" H 3600 6308 60  0000 C CNN
+F 1 "KEYSW" H 3600 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 3600 6075 60  0001 C CNN
+F 3 "" H 3600 6075 60  0000 C CNN
+	1    3600 6075
+	1    0    0    -1  
+$EndComp
+$Comp
+L vakeyboard:D D_TILDA1
+U 1 1 5FE1B61F
+P 2650 6375
+F 0 "D_TILDA1" V 2696 6295 50  0001 R CNN
+F 1 "D" V 2605 6295 50  0001 R CNN
+F 2 "Diode_SMD:D_SOD-523" H 2650 6375 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/1908191708_MDD-Microdiode-Electronics-1N4148WT_C414017.pdf" H 2650 6375 50  0001 C CNN
+F 4 "C414017" H 2650 6375 50  0001 C CNN "LCSC"
+	1    2650 6375
+	0    -1   -1   0   
+$EndComp
+$Comp
+L vakeyboard:KEYSW K_TILDA1
+U 1 1 5FE1B385
+P 2950 6075
+F 0 "K_TILDA1" H 2950 6308 60  0000 C CNN
+F 1 "KEYSW" H 2950 5975 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 6075 60  0001 C CNN
+F 3 "" H 2950 6075 60  0000 C CNN
+	1    2950 6075
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC
