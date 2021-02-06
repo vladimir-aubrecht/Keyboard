@@ -1,3 +1,25 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ARGB_LED
+F https://datasheet.lcsc.com/szlcsc/1901151203_Everlight-Elec-MT19-237-R6GHBHC-B01-2T_C264517.pdf
+$ENDCMP
+#
+$CMP D
+D Diode
+K diode
+F ~
+$ENDCMP
+#
+$CMP IS31FL3743-QF
+D 18x11 LED matrix driver with 8-bit PWM and breathing, QFN-40
+K led matrix pwm
+F https://cz.mouser.com/datasheet/2/198/IS31FL3743A_DS-1949512.pdf
+$ENDCMP
+#
+$CMP IS31FL3743A-QF
+D 12x16 LED matrix driver with 8-bit PWM and breathing, QFN-48
+K led matrix pwm
+F http://www.issi.com/WW/pdf/IS31FL3733.pdf
+$ENDCMP
+#
 #End Doc Library

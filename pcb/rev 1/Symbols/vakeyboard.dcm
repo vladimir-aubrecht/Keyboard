@@ -10,4 +10,10 @@ K diode
 F ~
 $ENDCMP
 #
+$CMP IS31FL3743-QF
+D 18x11 LED matrix driver with 8-bit PWM and breathing, QFN-40
+K led matrix pwm
+F https://cz.mouser.com/datasheet/2/198/IS31FL3743A_DS-1949512.pdf
+$ENDCMP
+#
 #End Doc Library
