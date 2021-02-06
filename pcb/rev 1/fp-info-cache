@@ -1,4 +1,4 @@
-19174060116396911
+19175672751736023
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -50945,6 +50945,13 @@ Diode DO-35_SOD27 series Axial Vertical pin pitch 3.81mm  length 4mm diameter 2m
 0
 2
 2
+Footprints
+QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm
+QFN, 40 Pin (http://ww1.microchip.com/downloads/en/PackagingSpec/00000049BQ.pdf#page=297), generated with kicad-footprint-generator ipc_noLead_generator.py
+QFN NoLead
+0
+50
+40
 Fuse
 Fuse_0402_1005Metric
 Fuse SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
