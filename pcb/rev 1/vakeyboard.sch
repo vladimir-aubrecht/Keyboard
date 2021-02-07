@@ -6175,10 +6175,10 @@ Connection ~ 22825 7925
 Wire Wire Line
 	22825 7925 22825 8200
 $Comp
-L Device:C C_RD3
+L Device:C C_LD3
 U 1 1 6DCAF7D1
 P 23150 7925
-F 0 "C_RD3" H 23265 7971 50  0001 L CNN
+F 0 "C_LD3" H 23265 7971 50  0001 L CNN
 F 1 "1 uF" H 23265 7880 50  0001 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric" H 23188 7775 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 23150 7925 50  0001 C CNN
@@ -6187,10 +6187,10 @@ F 4 "C1848" H 23150 7925 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C_RD4
+L Device:C C_LD4
 U 1 1 6DCAF7C7
 P 23150 8200
-F 0 "C_RD4" H 23265 8246 50  0001 L CNN
+F 0 "C_LD4" H 23265 8246 50  0001 L CNN
 F 1 "1 uF" H 23265 8155 50  0001 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric" H 23188 8050 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 23150 8200 50  0001 C CNN
@@ -6199,10 +6199,10 @@ F 4 "C1848" H 23150 8200 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C_RD1
+L Device:C C_LD1
 U 1 1 6DCAF7BD
 P 22675 7925
-F 0 "C_RD1" H 22790 7971 50  0001 L CNN
+F 0 "C_LD1" H 22790 7971 50  0001 L CNN
 F 1 "1 uF" H 22790 7880 50  0001 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric" H 22713 7775 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 22675 7925 50  0001 C CNN
@@ -6211,10 +6211,10 @@ F 4 "C1848" H 22675 7925 50  0001 C CNN "LCSC"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C_RD2
+L Device:C C_LD2
 U 1 1 6DCACDB9
 P 22675 8200
-F 0 "C_RD2" H 22790 8246 50  0001 L CNN
+F 0 "C_LD2" H 22790 8246 50  0001 L CNN
 F 1 "1 uF" H 22790 8155 50  0001 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric" H 22713 8050 50  0001 C CNN
 F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 22675 8200 50  0001 C CNN
