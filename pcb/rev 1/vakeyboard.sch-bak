@@ -2257,7 +2257,7 @@ U 1 1 5FE38837
 P 2950 7475
 F 0 "K_CAPSL1" H 2950 7708 60  0000 C CNN
 F 1 "KEYSW" H 2950 7375 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 7475 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1.75u" H 2950 7475 60  0001 C CNN
 F 3 "" H 2950 7475 60  0000 C CNN
 	1    2950 7475
 	1    0    0    -1  
@@ -2361,7 +2361,7 @@ U 1 1 5FE387DD
 P 11400 6775
 F 0 "K_\\1" H 11400 7008 60  0000 C CNN
 F 1 "KEYSW" H 11400 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 11400 6775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1.5u" H 11400 6775 60  0001 C CNN
 F 3 "" H 11400 6775 60  0000 C CNN
 	1    11400 6775
 	1    0    0    -1  
@@ -2625,7 +2625,7 @@ U 1 1 5FE381E7
 P 2950 6775
 F 0 "K_TAB1" H 2950 7008 60  0000 C CNN
 F 1 "KEYSW" H 2950 6675 60  0001 C CNN
-F 2 "Footprints:CherryMX_PlateMount_HotSwap_1u" H 2950 6775 60  0001 C CNN
+F 2 "Footprints:CherryMX_PlateMount_HotSwap_1.5u" H 2950 6775 60  0001 C CNN
 F 3 "" H 2950 6775 60  0000 C CNN
 	1    2950 6775
 	1    0    0    -1  

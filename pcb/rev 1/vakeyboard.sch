@@ -4330,8 +4330,6 @@ Wire Wire Line
 Wire Wire Line
 	36000 14225 34975 14225
 Connection ~ 36000 14225
-Wire Wire Line
-	34975 14025 35375 14025
 Connection ~ 35375 14025
 Wire Wire Line
 	36000 13825 34975 13825
