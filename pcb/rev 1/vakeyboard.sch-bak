@@ -645,7 +645,7 @@ Wire Wire Line
 Wire Wire Line
 	14400 1550 8225 1550
 $Comp
-L Connector_Generic:Conn_01x04 J1
+L vakeyboard:Conn_01x04 J1
 U 1 1 612087D5
 P 6175 1625
 F 0 "J1" V 6300 1575 50  0000 L CNN
@@ -5068,8 +5068,8 @@ P 21975 8875
 F 0 "R_LD_R6" V 22025 8600 50  0000 C CNN
 F 1 "150 ohm" V 22090 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21905 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 21975 8875 50  0001 C CNN
-F 4 "C17471" H 21975 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 21975 8875 50  0001 C CNN
+F 4 "C25082" H 21975 8875 50  0001 C CNN "LCSC"
 	1    21975 8875
 	1    0    0    -1  
 $EndComp
@@ -5080,8 +5080,8 @@ P 21875 8875
 F 0 "R_LD_G6" V 21925 8600 50  0000 C CNN
 F 1 "200 ohm" V 21750 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21805 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21875 8875 50  0001 C CNN
-F 4 "C17540" H 21875 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21875 8875 50  0001 C CNN
+F 4 "C25087" H 21875 8875 50  0001 C CNN "LCSC"
 	1    21875 8875
 	1    0    0    -1  
 $EndComp
@@ -5092,8 +5092,8 @@ P 21775 8875
 F 0 "R_LD_B6" V 21825 8600 50  0000 C CNN
 F 1 "200 ohm" V 21650 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21705 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21775 8875 50  0001 C CNN
-F 4 "C17540" H 21775 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21775 8875 50  0001 C CNN
+F 4 "C25087" H 21775 8875 50  0001 C CNN "LCSC"
 	1    21775 8875
 	1    0    0    -1  
 $EndComp
@@ -5104,8 +5104,8 @@ P 21675 8875
 F 0 "R_LD_R5" V 21725 8600 50  0000 C CNN
 F 1 "150 ohm" V 21790 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21605 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 21675 8875 50  0001 C CNN
-F 4 "C17471" H 21675 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 21675 8875 50  0001 C CNN
+F 4 "C25082" H 21675 8875 50  0001 C CNN "LCSC"
 	1    21675 8875
 	1    0    0    -1  
 $EndComp
@@ -5116,8 +5116,8 @@ P 21575 8875
 F 0 "R_LD_G5" V 21625 8600 50  0000 C CNN
 F 1 "200 ohm" V 21450 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21505 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21575 8875 50  0001 C CNN
-F 4 "C17540" H 21575 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21575 8875 50  0001 C CNN
+F 4 "C25087" H 21575 8875 50  0001 C CNN "LCSC"
 	1    21575 8875
 	1    0    0    -1  
 $EndComp
@@ -5128,8 +5128,8 @@ P 21475 8875
 F 0 "R_LD_B5" V 21525 8600 50  0000 C CNN
 F 1 "200 ohm" V 21350 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21405 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21475 8875 50  0001 C CNN
-F 4 "C17540" H 21475 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21475 8875 50  0001 C CNN
+F 4 "C25087" H 21475 8875 50  0001 C CNN "LCSC"
 	1    21475 8875
 	1    0    0    -1  
 $EndComp
@@ -5140,8 +5140,8 @@ P 21375 8875
 F 0 "R_LD_R4" V 21425 8600 50  0000 C CNN
 F 1 "150 ohm" V 21490 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21305 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 21375 8875 50  0001 C CNN
-F 4 "C17471" H 21375 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 21375 8875 50  0001 C CNN
+F 4 "C25082" H 21375 8875 50  0001 C CNN "LCSC"
 	1    21375 8875
 	1    0    0    -1  
 $EndComp
@@ -5152,8 +5152,8 @@ P 21275 8875
 F 0 "R_LD_G4" V 21325 8600 50  0000 C CNN
 F 1 "200 ohm" V 21150 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21205 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21275 8875 50  0001 C CNN
-F 4 "C17540" H 21275 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21275 8875 50  0001 C CNN
+F 4 "C25087" H 21275 8875 50  0001 C CNN "LCSC"
 	1    21275 8875
 	1    0    0    -1  
 $EndComp
@@ -5164,8 +5164,8 @@ P 21175 8875
 F 0 "R_LD_B4" V 21225 8600 50  0000 C CNN
 F 1 "200 ohm" V 21050 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21105 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 21175 8875 50  0001 C CNN
-F 4 "C17540" H 21175 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 21175 8875 50  0001 C CNN
+F 4 "C25087" H 21175 8875 50  0001 C CNN "LCSC"
 	1    21175 8875
 	1    0    0    -1  
 $EndComp
@@ -5176,8 +5176,8 @@ P 21075 8875
 F 0 "R_LD_R3" V 21125 8600 50  0000 C CNN
 F 1 "150 ohm" V 21190 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 21005 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 21075 8875 50  0001 C CNN
-F 4 "C17471" H 21075 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 21075 8875 50  0001 C CNN
+F 4 "C25082" H 21075 8875 50  0001 C CNN "LCSC"
 	1    21075 8875
 	1    0    0    -1  
 $EndComp
@@ -5188,8 +5188,8 @@ P 20975 8875
 F 0 "R_LD_G3" V 21025 8600 50  0000 C CNN
 F 1 "200 ohm" V 20850 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20905 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20975 8875 50  0001 C CNN
-F 4 "C17540" H 20975 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20975 8875 50  0001 C CNN
+F 4 "C25087" H 20975 8875 50  0001 C CNN "LCSC"
 	1    20975 8875
 	1    0    0    -1  
 $EndComp
@@ -5200,8 +5200,8 @@ P 20875 8875
 F 0 "R_LD_B3" V 20925 8600 50  0000 C CNN
 F 1 "200 ohm" V 20750 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20805 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20875 8875 50  0001 C CNN
-F 4 "C17540" H 20875 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20875 8875 50  0001 C CNN
+F 4 "C25087" H 20875 8875 50  0001 C CNN "LCSC"
 	1    20875 8875
 	1    0    0    -1  
 $EndComp
@@ -5212,8 +5212,8 @@ P 20775 8875
 F 0 "R_LD_R2" V 20825 8600 50  0000 C CNN
 F 1 "150 ohm" V 20890 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20705 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 20775 8875 50  0001 C CNN
-F 4 "C17471" H 20775 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 20775 8875 50  0001 C CNN
+F 4 "C25082" H 20775 8875 50  0001 C CNN "LCSC"
 	1    20775 8875
 	1    0    0    -1  
 $EndComp
@@ -5224,8 +5224,8 @@ P 20675 8875
 F 0 "R_LD_G2" V 20725 8600 50  0000 C CNN
 F 1 "200 ohm" V 20550 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20605 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20675 8875 50  0001 C CNN
-F 4 "C17540" H 20675 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20675 8875 50  0001 C CNN
+F 4 "C25087" H 20675 8875 50  0001 C CNN "LCSC"
 	1    20675 8875
 	1    0    0    -1  
 $EndComp
@@ -5236,8 +5236,8 @@ P 20575 8875
 F 0 "R_LD_B2" V 20625 8600 50  0000 C CNN
 F 1 "200 ohm" V 20450 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20505 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20575 8875 50  0001 C CNN
-F 4 "C17540" H 20575 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20575 8875 50  0001 C CNN
+F 4 "C25087" H 20575 8875 50  0001 C CNN "LCSC"
 	1    20575 8875
 	1    0    0    -1  
 $EndComp
@@ -5248,8 +5248,8 @@ P 20475 8875
 F 0 "R_LD_R1" V 20525 8600 50  0000 C CNN
 F 1 "150 ohm" V 20590 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20405 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 20475 8875 50  0001 C CNN
-F 4 "C17471" H 20475 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 20475 8875 50  0001 C CNN
+F 4 "C25082" H 20475 8875 50  0001 C CNN "LCSC"
 	1    20475 8875
 	1    0    0    -1  
 $EndComp
@@ -5260,8 +5260,8 @@ P 20375 8875
 F 0 "R_LD_G1" V 20425 8600 50  0000 C CNN
 F 1 "200 ohm" V 20250 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20305 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20375 8875 50  0001 C CNN
-F 4 "C17540" H 20375 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20375 8875 50  0001 C CNN
+F 4 "C25087" H 20375 8875 50  0001 C CNN "LCSC"
 	1    20375 8875
 	1    0    0    -1  
 $EndComp
@@ -5308,8 +5308,8 @@ P 20275 8875
 F 0 "R_LD_B1" V 20325 8600 50  0000 C CNN
 F 1 "200 ohm" V 20150 8875 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 20205 8875 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 20275 8875 50  0001 C CNN
-F 4 "C17540" H 20275 8875 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 20275 8875 50  0001 C CNN
+F 4 "C25087" H 20275 8875 50  0001 C CNN "LCSC"
 	1    20275 8875
 	1    0    0    -1  
 $EndComp
@@ -5447,8 +5447,8 @@ P 34550 8900
 F 0 "R_RD_R6" V 34600 8625 50  0000 C CNN
 F 1 "150 ohm" V 34665 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 34480 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 34550 8900 50  0001 C CNN
-F 4 "C17471" H 34550 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 34550 8900 50  0001 C CNN
+F 4 "C25082" H 34550 8900 50  0001 C CNN "LCSC"
 	1    34550 8900
 	1    0    0    -1  
 $EndComp
@@ -5459,8 +5459,8 @@ P 34450 8900
 F 0 "R_RD_G6" V 34500 8625 50  0000 C CNN
 F 1 "200 ohm" V 34325 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 34380 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 34450 8900 50  0001 C CNN
-F 4 "C17540" H 34450 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 34450 8900 50  0001 C CNN
+F 4 "C25087" H 34450 8900 50  0001 C CNN "LCSC"
 	1    34450 8900
 	1    0    0    -1  
 $EndComp
@@ -5471,8 +5471,8 @@ P 34350 8900
 F 0 "R_RD_B6" V 34400 8625 50  0000 C CNN
 F 1 "200 ohm" V 34225 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 34280 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 34350 8900 50  0001 C CNN
-F 4 "C17540" H 34350 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 34350 8900 50  0001 C CNN
+F 4 "C25087" H 34350 8900 50  0001 C CNN "LCSC"
 	1    34350 8900
 	1    0    0    -1  
 $EndComp
@@ -5483,8 +5483,8 @@ P 34250 8900
 F 0 "R_RD_R5" V 34300 8625 50  0000 C CNN
 F 1 "150 ohm" V 34365 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 34180 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 34250 8900 50  0001 C CNN
-F 4 "C17471" H 34250 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 34250 8900 50  0001 C CNN
+F 4 "C25082" H 34250 8900 50  0001 C CNN "LCSC"
 	1    34250 8900
 	1    0    0    -1  
 $EndComp
@@ -5495,8 +5495,8 @@ P 34150 8900
 F 0 "R_RD_G5" V 34200 8625 50  0000 C CNN
 F 1 "200 ohm" V 34025 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 34080 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 34150 8900 50  0001 C CNN
-F 4 "C17540" H 34150 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 34150 8900 50  0001 C CNN
+F 4 "C25087" H 34150 8900 50  0001 C CNN "LCSC"
 	1    34150 8900
 	1    0    0    -1  
 $EndComp
@@ -5507,8 +5507,8 @@ P 34050 8900
 F 0 "R_RD_B5" V 34100 8625 50  0000 C CNN
 F 1 "200 ohm" V 33925 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33980 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 34050 8900 50  0001 C CNN
-F 4 "C17540" H 34050 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 34050 8900 50  0001 C CNN
+F 4 "C25087" H 34050 8900 50  0001 C CNN "LCSC"
 	1    34050 8900
 	1    0    0    -1  
 $EndComp
@@ -5519,8 +5519,8 @@ P 33950 8900
 F 0 "R_RD_R4" V 34000 8625 50  0000 C CNN
 F 1 "150 ohm" V 34065 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33880 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 33950 8900 50  0001 C CNN
-F 4 "C17471" H 33950 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 33950 8900 50  0001 C CNN
+F 4 "C25082" H 33950 8900 50  0001 C CNN "LCSC"
 	1    33950 8900
 	1    0    0    -1  
 $EndComp
@@ -5531,8 +5531,8 @@ P 33850 8900
 F 0 "R_RD_G4" V 33900 8625 50  0000 C CNN
 F 1 "200 ohm" V 33725 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33780 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33850 8900 50  0001 C CNN
-F 4 "C17540" H 33850 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33850 8900 50  0001 C CNN
+F 4 "C25087" H 33850 8900 50  0001 C CNN "LCSC"
 	1    33850 8900
 	1    0    0    -1  
 $EndComp
@@ -5543,8 +5543,8 @@ P 33750 8900
 F 0 "R_RD_B4" V 33800 8625 50  0000 C CNN
 F 1 "200 ohm" V 33625 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33680 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33750 8900 50  0001 C CNN
-F 4 "C17540" H 33750 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33750 8900 50  0001 C CNN
+F 4 "C25087" H 33750 8900 50  0001 C CNN "LCSC"
 	1    33750 8900
 	1    0    0    -1  
 $EndComp
@@ -5555,8 +5555,8 @@ P 33650 8900
 F 0 "R_RD_R3" V 33700 8625 50  0000 C CNN
 F 1 "150 ohm" V 33765 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33580 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 33650 8900 50  0001 C CNN
-F 4 "C17471" H 33650 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 33650 8900 50  0001 C CNN
+F 4 "C25082" H 33650 8900 50  0001 C CNN "LCSC"
 	1    33650 8900
 	1    0    0    -1  
 $EndComp
@@ -5567,8 +5567,8 @@ P 33550 8900
 F 0 "R_RD_G3" V 33600 8625 50  0000 C CNN
 F 1 "200 ohm" V 33425 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33480 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33550 8900 50  0001 C CNN
-F 4 "C17540" H 33550 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33550 8900 50  0001 C CNN
+F 4 "C25087" H 33550 8900 50  0001 C CNN "LCSC"
 	1    33550 8900
 	1    0    0    -1  
 $EndComp
@@ -5579,8 +5579,8 @@ P 33450 8900
 F 0 "R_RD_B3" V 33500 8625 50  0000 C CNN
 F 1 "200 ohm" V 33325 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33380 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33450 8900 50  0001 C CNN
-F 4 "C17540" H 33450 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33450 8900 50  0001 C CNN
+F 4 "C25087" H 33450 8900 50  0001 C CNN "LCSC"
 	1    33450 8900
 	1    0    0    -1  
 $EndComp
@@ -5591,8 +5591,8 @@ P 33350 8900
 F 0 "R_RD_R2" V 33400 8625 50  0000 C CNN
 F 1 "150 ohm" V 33465 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33280 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 33350 8900 50  0001 C CNN
-F 4 "C17471" H 33350 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 33350 8900 50  0001 C CNN
+F 4 "C25082" H 33350 8900 50  0001 C CNN "LCSC"
 	1    33350 8900
 	1    0    0    -1  
 $EndComp
@@ -5603,8 +5603,8 @@ P 33250 8900
 F 0 "R_RD_G2" V 33300 8625 50  0000 C CNN
 F 1 "200 ohm" V 33125 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33180 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33250 8900 50  0001 C CNN
-F 4 "C17540" H 33250 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33250 8900 50  0001 C CNN
+F 4 "C25087" H 33250 8900 50  0001 C CNN "LCSC"
 	1    33250 8900
 	1    0    0    -1  
 $EndComp
@@ -5615,8 +5615,8 @@ P 33150 8900
 F 0 "R_RD_B2" V 33200 8625 50  0000 C CNN
 F 1 "200 ohm" V 33025 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 33080 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 33150 8900 50  0001 C CNN
-F 4 "C17540" H 33150 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 33150 8900 50  0001 C CNN
+F 4 "C25087" H 33150 8900 50  0001 C CNN "LCSC"
 	1    33150 8900
 	1    0    0    -1  
 $EndComp
@@ -5627,8 +5627,8 @@ P 33050 8900
 F 0 "R_RD_R1" V 33100 8625 50  0000 C CNN
 F 1 "150 ohm" V 33165 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 32980 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F1500T5E_C17471.pdf" H 33050 8900 50  0001 C CNN
-F 4 "C17471" H 33050 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf" H 33050 8900 50  0001 C CNN
+F 4 "C25082" H 33050 8900 50  0001 C CNN "LCSC"
 	1    33050 8900
 	1    0    0    -1  
 $EndComp
@@ -5639,8 +5639,8 @@ P 32950 8900
 F 0 "R_RD_G1" V 33000 8625 50  0000 C CNN
 F 1 "200 ohm" V 32825 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 32880 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 32950 8900 50  0001 C CNN
-F 4 "C17540" H 32950 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 32950 8900 50  0001 C CNN
+F 4 "C25087" H 32950 8900 50  0001 C CNN "LCSC"
 	1    32950 8900
 	1    0    0    -1  
 $EndComp
@@ -5687,8 +5687,8 @@ P 32850 8900
 F 0 "R_RD_B1" V 32900 8625 50  0000 C CNN
 F 1 "200 ohm" V 32725 8900 50  0001 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric" V 32780 8900 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0805W8F2000T5E_C17540.pdf" H 32850 8900 50  0001 C CNN
-F 4 "C17540" H 32850 8900 50  0001 C CNN "LCSC"
+F 3 "https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF2000TCE_C25087.pdf" H 32850 8900 50  0001 C CNN
+F 4 "C25087" H 32850 8900 50  0001 C CNN "LCSC"
 	1    32850 8900
 	1    0    0    -1  
 $EndComp
@@ -6042,7 +6042,7 @@ Connection ~ 33450 6700
 Wire Wire Line
 	33450 6700 31550 6700
 $Comp
-L Connector_Generic:Conn_01x04 J2
+L vakeyboard:Conn_01x04 J2
 U 1 1 6D13F4E9
 P 27200 3625
 F 0 "J2" V 27325 3575 50  0000 L CNN
