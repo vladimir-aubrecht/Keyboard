@@ -4,6 +4,12 @@ $CMP ARGB_LED
 F https://datasheet.lcsc.com/szlcsc/1901151203_Everlight-Elec-MT19-237-R6GHBHC-B01-2T_C264517.pdf
 $ENDCMP
 #
+$CMP Conn_01x04
+D Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
+K connector
+F ~
+$ENDCMP
+#
 $CMP D
 D Diode
 K diode

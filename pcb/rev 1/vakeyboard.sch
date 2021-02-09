@@ -5405,8 +5405,6 @@ Wire Wire Line
 Wire Wire Line
 	20275 15000 22350 15000
 Connection ~ 22350 15000
-Wire Wire Line
-	21675 7125 21675 6975
 $Comp
 L vakeyboard:IS31FL3743-QF U_RD_L1
 U 1 1 693A0288
@@ -5935,14 +5933,6 @@ Wire Wire Line
 	27200 7125 27200 4050
 Connection ~ 21775 7125
 Wire Wire Line
-	21675 6975 21775 6975
-Wire Wire Line
-	27300 6975 27300 4025
-Connection ~ 21675 6975
-Connection ~ 21775 6975
-Wire Wire Line
-	21775 6975 27300 6975
-Wire Wire Line
 	34250 6700 34350 6700
 Connection ~ 34350 6700
 Wire Wire Line
@@ -5991,7 +5981,7 @@ Wire Wire Line
 Wire Wire Line
 	21175 7125 21175 6575
 Wire Wire Line
-	21175 6575 33750 6575
+	21175 6575 22825 6575
 Wire Wire Line
 	33750 6575 33750 7150
 $Comp
@@ -6047,13 +6037,6 @@ Connection ~ 21675 6675
 Wire Wire Line
 	33650 6700 33450 6700
 Wire Wire Line
-	33550 7150 33550 7100
-Wire Wire Line
-	33550 7100 34750 7100
-Connection ~ 34750 7100
-Wire Wire Line
-	34750 7100 34750 6700
-Wire Wire Line
 	33450 7150 33450 6700
 Connection ~ 33450 6700
 Wire Wire Line
@@ -6077,8 +6060,6 @@ Wire Wire Line
 	21575 6675 21675 6675
 Wire Wire Line
 	34150 7125 34750 7125
-Wire Wire Line
-	34750 7125 34750 7100
 $Comp
 L Device:C C_RD6
 U 1 1 6D2238A6
@@ -6263,4 +6244,32 @@ Wire Wire Line
 	34750 7125 34750 7800
 Connection ~ 34750 7125
 Connection ~ 34750 7800
+NoConn ~ 3125 950 
+NoConn ~ 3125 850 
+NoConn ~ 31925 8550
+NoConn ~ 31825 8550
+NoConn ~ 31725 8550
+Wire Wire Line
+	34750 6700 34750 7125
+Wire Wire Line
+	34150 7125 33550 7125
+Wire Wire Line
+	33550 7125 33550 7150
+Connection ~ 34150 7125
+Wire Wire Line
+	22825 7925 22825 6575
+Connection ~ 22825 6575
+Wire Wire Line
+	22825 6575 33750 6575
+Wire Wire Line
+	21675 7025 27300 7025
+Wire Wire Line
+	21675 6975 21675 7025
+Wire Wire Line
+	27300 4025 27300 7025
+Connection ~ 21675 7025
+Wire Wire Line
+	21675 7025 21675 7125
+NoConn ~ 19250 8525
+NoConn ~ 19150 8525
 $EndSCHEMATC
