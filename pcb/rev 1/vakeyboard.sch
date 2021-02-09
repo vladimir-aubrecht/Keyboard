@@ -6066,9 +6066,9 @@ U 1 1 6D2238A6
 P 35050 7625
 F 0 "C_RD6" H 35165 7671 50  0001 L CNN
 F 1 "1 uF" H 35165 7580 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 35088 7475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 35050 7625 50  0001 C CNN
-F 4 "C1848" H 35050 7625 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 35088 7475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 35050 7625 50  0001 C CNN
+F 4 "C52923" H 35050 7625 50  0001 C CNN "LCSC"
 	1    35050 7625
 	0    -1   -1   0   
 $EndComp
@@ -6078,9 +6078,9 @@ U 1 1 6D22740A
 P 35050 7350
 F 0 "C_RD5" H 35165 7396 50  0001 L CNN
 F 1 "1 uF" H 35165 7305 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 35088 7200 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 35050 7350 50  0001 C CNN
-F 4 "C1848" H 35050 7350 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 35088 7200 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 35050 7350 50  0001 C CNN
+F 4 "C52923" H 35050 7350 50  0001 C CNN "LCSC"
 	1    35050 7350
 	0    -1   -1   0   
 $EndComp
@@ -6100,9 +6100,9 @@ U 1 1 6D59ECA8
 P 35525 7625
 F 0 "C_RD8" H 35640 7671 50  0001 L CNN
 F 1 "1 uF" H 35640 7580 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 35563 7475 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 35525 7625 50  0001 C CNN
-F 4 "C1848" H 35525 7625 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 35563 7475 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 35525 7625 50  0001 C CNN
+F 4 "C52923" H 35525 7625 50  0001 C CNN "LCSC"
 	1    35525 7625
 	0    -1   -1   0   
 $EndComp
@@ -6112,9 +6112,9 @@ U 1 1 6D5A168C
 P 35525 7350
 F 0 "C_RD7" H 35640 7396 50  0001 L CNN
 F 1 "1 uF" H 35640 7305 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 35563 7200 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 35525 7350 50  0001 C CNN
-F 4 "C1848" H 35525 7350 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 35563 7200 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 35525 7350 50  0001 C CNN
+F 4 "C52923" H 35525 7350 50  0001 C CNN "LCSC"
 	1    35525 7350
 	0    -1   -1   0   
 $EndComp
@@ -6159,9 +6159,9 @@ U 1 1 6DCAF7D1
 P 23150 7925
 F 0 "C_LD3" H 23265 7971 50  0001 L CNN
 F 1 "1 uF" H 23265 7880 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 23188 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 23150 7925 50  0001 C CNN
-F 4 "C1848" H 23150 7925 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 23188 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 23150 7925 50  0001 C CNN
+F 4 "C52923" H 23150 7925 50  0001 C CNN "LCSC"
 	1    23150 7925
 	0    -1   -1   0   
 $EndComp
@@ -6171,9 +6171,9 @@ U 1 1 6DCAF7C7
 P 23150 8200
 F 0 "C_LD4" H 23265 8246 50  0001 L CNN
 F 1 "1 uF" H 23265 8155 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 23188 8050 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 23150 8200 50  0001 C CNN
-F 4 "C1848" H 23150 8200 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 23188 8050 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 23150 8200 50  0001 C CNN
+F 4 "C52923" H 23150 8200 50  0001 C CNN "LCSC"
 	1    23150 8200
 	0    -1   -1   0   
 $EndComp
@@ -6183,9 +6183,9 @@ U 1 1 6DCAF7BD
 P 22675 7925
 F 0 "C_LD1" H 22790 7971 50  0001 L CNN
 F 1 "1 uF" H 22790 7880 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 22713 7775 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 22675 7925 50  0001 C CNN
-F 4 "C1848" H 22675 7925 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 22713 7775 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 22675 7925 50  0001 C CNN
+F 4 "C52923" H 22675 7925 50  0001 C CNN "LCSC"
 	1    22675 7925
 	0    -1   -1   0   
 $EndComp
@@ -6195,9 +6195,9 @@ U 1 1 6DCACDB9
 P 22675 8200
 F 0 "C_LD2" H 22790 8246 50  0001 L CNN
 F 1 "1 uF" H 22790 8155 50  0001 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric" H 22713 8050 50  0001 C CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL31B105KBHNNNE_C1848.pdf" H 22675 8200 50  0001 C CNN
-F 4 "C1848" H 22675 8200 50  0001 C CNN "LCSC"
+F 2 "Capacitor_SMD:C_0402_1005Metric" H 22713 8050 50  0001 C CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Samsung-Electro-Mechanics-CL05A105KA5NQNC_C52923.pdf" H 22675 8200 50  0001 C CNN
+F 4 "C52923" H 22675 8200 50  0001 C CNN "LCSC"
 	1    22675 8200
 	0    -1   -1   0   
 $EndComp
