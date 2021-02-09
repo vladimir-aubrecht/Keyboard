@@ -645,7 +645,7 @@ Wire Wire Line
 Wire Wire Line
 	14400 1550 8225 1550
 $Comp
-L Connector_Generic:Conn_01x04 J1
+L vakeyboard:Conn_01x04 J1
 U 1 1 612087D5
 P 6175 1625
 F 0 "J1" V 6300 1575 50  0000 L CNN
@@ -6042,7 +6042,7 @@ Connection ~ 33450 6700
 Wire Wire Line
 	33450 6700 31550 6700
 $Comp
-L Connector_Generic:Conn_01x04 J2
+L vakeyboard:Conn_01x04 J2
 U 1 1 6D13F4E9
 P 27200 3625
 F 0 "J2" V 27325 3575 50  0000 L CNN
