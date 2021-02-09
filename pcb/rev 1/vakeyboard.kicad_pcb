@@ -10398,7 +10398,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 602359A4)
-    (at -21.019 242.508)
+    (at 133.096 197.866)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /679D1143)
@@ -10434,7 +10434,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 602359B4)
-    (at -23.051 251.462)
+    (at 133.096 201.676)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /67948C51)
@@ -10470,7 +10470,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 602359C4)
-    (at -22.797 256.606)
+    (at 133.096 205.994)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /678C0141)
@@ -10614,7 +10614,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A04)
-    (at -25.019 242.508)
+    (at 133.096 199.136)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /679D1139)
@@ -10650,7 +10650,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A14)
-    (at -27.051 251.462)
+    (at 133.096 202.946)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /67948C47)
@@ -10686,7 +10686,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A24)
-    (at -26.797 256.606)
+    (at 133.096 207.518)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /678B6882)
@@ -10830,7 +10830,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A64)
-    (at -29.019 242.508)
+    (at 133.096 200.406)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /679CE9B7)
@@ -10866,7 +10866,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A74)
-    (at -31.051 251.462)
+    (at 133.096 204.47)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /679464EF)
@@ -10902,7 +10902,7 @@
   )
 
   (module Resistor_SMD:R_0402_1005Metric (layer F.Cu) (tedit 5F68FEEE) (tstamp 60235A84)
-    (at -30.797 256.606)
+    (at 133.096 208.788)
     (descr "Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator")
     (tags resistor)
     (path /678B3595)
