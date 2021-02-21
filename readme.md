@@ -61,3 +61,7 @@ Render front
 
 Render Back
 ![PCB scheme](./docs/images/pcb_render_back_rev1.png)
+
+## Frame
+Plate
+![Plate](./docs/images/plate_rev1.png)
