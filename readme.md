@@ -24,22 +24,18 @@ Thou current version is not tested yet. I will have current version of PCB & pla
 
 # Galery
 
-## PCB
-Scheme
-![PCB scheme](./docs/images/pcb_rev1.png)
+| Description   | Component | Revision | Picture                                                |
+|:-------------:|:---------:|:--------:|--------------------------------------------------------|
+| Scheme        | PCB       | 1        | ![PCB scheme](./docs/images/pcb_rev1.png)              |
+| Render front  | PCB       | 1        | ![PCB scheme](./docs/images/pcb_render_front_rev1.png) |
+| Render Back   | PCB       | 1        | ![PCB scheme](./docs/images/pcb_render_back_rev1.png)  |
+| Render        | Plate     | 1        | ![Plate](./docs/images/plate_rev1.png)                 |
+| Reality front | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_front_rev0.png)   |
+| Reality back  | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_back_rev0.png)    |
 
-Render front
-![PCB scheme](./docs/images/pcb_render_front_rev1.png)
-
-Render Back
-![PCB scheme](./docs/images/pcb_render_back_rev1.png)
-
-Reality rev0 front
-![PCB scheme](./docs/images/pcb_real_front_rev0.png)
-
-Reality rev0 back
-![PCB scheme](./docs/images/pcb_real_back_rev0.png)
-
-## Frame
-Plate
-![Plate](./docs/images/plate_rev1.png)
+<style type="text/css">
+    img
+    {
+        width: 300px;
+    }
+</style>
