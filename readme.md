@@ -32,10 +32,3 @@ Thou current version is not tested yet. I will have current version of PCB & pla
 | Render        | Plate     | 1        | ![Plate](./docs/images/plate_rev1.png)                 |
 | Reality front | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_front_rev0.png)   |
 | Reality back  | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_back_rev0.png)    |
-
-<style type="text/css">
-    img
-    {
-        width: 300px;
-    }
-</style>
