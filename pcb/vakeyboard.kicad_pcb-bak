@@ -3,7 +3,7 @@
   (general
     (thickness 1.6)
     (drawings 4)
-    (tracks 5614)
+    (tracks 5617)
     (zones 0)
     (modules 323)
     (nets 235)
@@ -568,7 +568,7 @@
     (add_net "Net-(U_RD_L1-Pad40)")
   )
 
-  (module MountingHole:MountingHole_2.2mm_M2_ISO7380 (layer F.Cu) (tedit 56D1B4CB) (tstamp 604578A6)
+  (module Footprints:MountingHole_M1.4 (layer F.Cu) (tedit 604516A5) (tstamp 604578A6)
     (at 246.45 149.093)
     (descr "Mounting Hole 2.2mm, no annular, M2, ISO7380")
     (tags "mounting hole 2.2mm no annular m2 iso7380")
@@ -576,26 +576,26 @@
     (fp_text reference REF** (at 0 -2.75) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value MountingHole_2.2mm_M2_ISO7380 (at 0 2.75) (layer F.Fab) hide
+    (fp_text value MountingHole_M1.4 (at 0 2.75) (layer F.Fab) hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text user %R (at 0.3 0) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_circle (center 0 0) (end 1.75 0) (layer Cmts.User) (width 0.15))
     (fp_circle (center 0 0) (end 2 0) (layer F.CrtYd) (width 0.05))
-    (fp_text user %R (at 0.3 0) (layer F.Fab) hide
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
-    (pad 1 np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+    (pad "" np_thru_hole circle (at 0 0) (size 1.5 1.5) (drill 1.5) (layers *.Cu *.Mask))
   )
 
-  (module MountingHole:MountingHole_2.2mm_M2_ISO7380 (layer F.Cu) (tedit 56D1B4CB) (tstamp 6045739A)
-    (at 151.2 149.098)
+  (module Footprints:MountingHole_M1.4 (layer F.Cu) (tedit 604516A5) (tstamp 6045739A)
+    (at 151.2 150.348)
     (descr "Mounting Hole 2.2mm, no annular, M2, ISO7380")
     (tags "mounting hole 2.2mm no annular m2 iso7380")
     (attr virtual)
     (fp_text reference REF** (at 0 -2.75) (layer F.SilkS) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value MountingHole_2.2mm_M2_ISO7380 (at 0 2.75) (layer F.Fab) hide
+    (fp_text value MountingHole_M1.4 (at 0 2.75) (layer F.Fab) hide
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_text user %R (at 0.3 0) (layer F.Fab) hide
@@ -603,7 +603,7 @@
     )
     (fp_circle (center 0 0) (end 1.75 0) (layer Cmts.User) (width 0.15))
     (fp_circle (center 0 0) (end 2 0) (layer F.CrtYd) (width 0.05))
-    (pad 1 np_thru_hole circle (at 0 0) (size 2.2 2.2) (drill 2.2) (layers *.Cu *.Mask))
+    (pad "" np_thru_hole circle (at 0 0) (size 1.5 1.5) (drill 1.5) (layers *.Cu *.Mask))
   )
 
   (module Footprints:CherryMX_PlateMount_HotSwap_1.5u (layer F.Cu) (tedit 603AD487) (tstamp 6023F765)
@@ -13324,7 +13324,6 @@
   (segment (start 120.18 108.166) (end 120.18 100.622) (width 0.127) (layer B.Cu) (net 98))
   (segment (start 153.525 164.545) (end 153.525 154.795) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 148.76 150.03) (end 148.76 145.495) (width 0.127) (layer B.Cu) (net 99))
-  (segment (start 153.525 154.795) (end 148.76 150.03) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 148.76 145.495) (end 148.76 138.6) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 139.23 129.07) (end 139.23 126.445) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 148.76 138.6) (end 139.23 129.07) (width 0.127) (layer B.Cu) (net 99))
@@ -13353,6 +13352,10 @@
   (segment (start 312.585 108.928) (end 312.585 108.547) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 312.585 108.801) (end 312.585 108.928) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 312.585 108.928) (end 312.585 169.075) (width 0.127) (layer B.Cu) (net 99))
+  (segment (start 153.162 154.432) (end 150.876 154.432) (width 0.127) (layer B.Cu) (net 99))
+  (segment (start 153.525 154.795) (end 153.162 154.432) (width 0.127) (layer B.Cu) (net 99))
+  (segment (start 148.76 152.316) (end 148.76 150.03) (width 0.127) (layer B.Cu) (net 99))
+  (segment (start 150.876 154.432) (end 148.76 152.316) (width 0.127) (layer B.Cu) (net 99))
   (segment (start 165.43875 200.25125) (end 182.095 183.595) (width 0.127) (layer B.Cu) (net 100))
   (segment (start 165.43875 202.645) (end 165.43875 200.25125) (width 0.127) (layer B.Cu) (net 100))
   (segment (start 172.575 164.545) (end 172.575 154.795) (width 0.127) (layer B.Cu) (net 100))
