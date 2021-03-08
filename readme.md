@@ -24,11 +24,15 @@ Thou current version is not tested yet. I will have current version of PCB & pla
 
 # Galery
 
-| Description   | Component | Revision | Picture                                                |
-|:-------------:|:---------:|:--------:|--------------------------------------------------------|
-| Scheme        | PCB       | 1        | ![PCB scheme](./docs/images/pcb_rev1.png)              |
-| Render front  | PCB       | 1        | ![PCB scheme](./docs/images/pcb_render_front_rev1.png) |
-| Render Back   | PCB       | 1        | ![PCB scheme](./docs/images/pcb_render_back_rev1.png)  |
-| Render        | Plate     | 1        | ![Plate](./docs/images/plate_rev1.png)                 |
-| Reality front | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_front_rev0.png)   |
-| Reality back  | PCB       | 0        | ![PCB scheme](./docs/images/pcb_real_back_rev0.png)    |
+| Description     | Component | Revision | Picture                                                              |
+|:---------------:|:---------:|:--------:|----------------------------------------------------------------------|
+| Scheme          | PCB       | 1        | ![PCB scheme](./docs/images/pcb_rev1.png)                            |
+| Render front    | PCB       | 1        | ![PCB render front](./docs/images/pcb_render_front_rev1.png)         |
+| Render back     | PCB       | 1        | ![PCB render back](./docs/images/pcb_render_back_rev1.png)           |
+| Render          | Plate     | 1        | ![Plate render](./docs/images/plate_rev1.png)                        |
+| Reality front   | PCB       | 0        | ![PCB reality front](./docs/images/pcb_real_front_rev0.png)          |
+| Reality back    | PCB       | 0        | ![PCB reality back](./docs/images/pcb_real_back_rev0.png)            |
+| Render          | Case      | 1        | ![Case render](./docs/images/case_render_full.png)                   |
+| Render no plate | Case      | 1        | ![case render no plate](./docs/images/case_render_without_plate.png) |
+| Render no pcb   | Case      | 1        | ![case render no pcb](./docs/images/case_render_without_pcb.png)     |
+| Render no cover | Case      | 1        | ![case render no cover](./docs/images/case_render_without_cover.png) |

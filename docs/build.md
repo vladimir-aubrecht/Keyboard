@@ -34,3 +34,6 @@ Built on top of [QMK](https://qmk.fm/).
 
 ## Plate
 Built with the help of [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/) & Keeb's Plate tool (https://plate.keeb.io/).
+
+## Case
+Built by OnShape, [check out](https://cad.onshape.com/documents/c60788452082993ff7acdd11/w/b14733d6a8d57351c8582e21/e/f5989423f9dc86a71831a4e9) the models!
