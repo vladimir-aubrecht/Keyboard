@@ -1,4 +1,4 @@
-#include "Layout.h"
+#include "KeyMapProvider.h"
 #include "Keyboard.h"
 
 #define KC_NONE  0x00
@@ -7,12 +7,12 @@
 #define KC_SCRL  0x91
 #define KC_PAUSE 0x13
 
-Layout::Layout(uint8_t numberOfRows, uint8_t numberOfColumns)
+KeyMapProvider::KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
 }
-uint16_t** Layout::getKeymaps()
+uint16_t** KeyMapProvider::getKeyMap()
 {
 	uint16_t** keymaps = new uint16_t*[this->numberOfRows];
 
