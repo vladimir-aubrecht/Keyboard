@@ -1,17 +1,25 @@
-#include "Convertors.h"
-#include "MatrixScanner.h"
-#include "Convertors.h"
+#include "Drivers/KeyboardDriver.h"
 #include "Drivers/DisplayDriver.h"
 #include "Drivers/PinDriver.h"
-#include <Keyboard.h>
+#include "Matrix/MatrixEvaluator.h"
+#include "Matrix/Convertors.h"
+#include "Matrix/MatrixScanner.h"
+#include "Matrix/MatrixEvaluator.h"
+#include "Matrix/Convertors.h"
 #include "Layout.h"
 
+const uint8_t numberOfRows = 6;
+const uint8_t numberOfColumns = 16;
+
 PinDriver pinDriver = PinDriver();
+KeyboardDriver keyboardDriver = KeyboardDriver();
 DisplayDriver displayDriver = DisplayDriver();
-MatrixScanner matrixScanner = MatrixScanner(pinDriver, 6, 16);
-Layout layout = Layout();
+MatrixScanner matrixScanner = MatrixScanner(pinDriver, numberOfRows, numberOfColumns);
+MatrixEvaluator matrixEvaluator = MatrixEvaluator();
+Layout layout = Layout(numberOfRows, numberOfColumns);
 
 uint16_t** keymap = NULL;
+Matrix* previousMatrix = NULL;
 
 void setup()
 {
@@ -29,31 +37,19 @@ void setup()
 
 void loop()
 {
-	Matrix* matrix = matrixScanner.scanMatrix();
-	char* matrixString = Convertors::toString(matrix);
+	Matrix* matrix = matrixScanner.scanKeyPressMatrix();
 	
-	displayDriver.setText(matrixString);
-	Serial.println(matrixString);
-	
-	for (uint8_t row = 0; row < matrix->numberOfRows; row++)
+	if (previousMatrix != NULL)
 	{
-		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
-		{
-			uint16_t currentKey = keymap[row][column];
+		Matrix* pressedKeysMatrix = matrixEvaluator.getPressedKeysMatrix(previousMatrix, matrix);
+		Matrix* releasedKeysMatrix = matrixEvaluator.getReleasedKeysMatrix(previousMatrix, matrix);
 
-			bool isSet = (matrix->matrixData[row] >> column) & 1 == 1;
+		keyboardDriver.SendKeys(pressedKeysMatrix, releasedKeysMatrix);
 
-			if (isSet)
-			{
-				Keyboard.press(currentKey);
-			}
-			else
-			{
-				Keyboard.release(currentKey);
-			}
-		}
+		delete pressedKeysMatrix;
+		delete releasedKeysMatrix;
 	}
 
-	delete matrixString;
-	delete matrix;
+	delete previousMatrix;
+	previousMatrix = matrix;
 }

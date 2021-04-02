@@ -8,9 +8,9 @@ MatrixScanner::MatrixScanner(IPinDriver& pinDriver, uint8_t numberOfRows, uint8_
 	this->numberOfColumns = numberOfColumns;
 }
 
-Matrix* MatrixScanner::scanMatrix()
+Matrix* MatrixScanner::scanKeyPressMatrix()
 {
-	uint16_t* matrixData = new uint16_t[this->numberOfRows];
+	uint32_t* matrixData = new uint32_t[this->numberOfRows];
 	Matrix* matrix = new Matrix(matrixData, this->numberOfRows, this->numberOfColumns);
 
 	for (uint8_t row = 0; row < this->numberOfRows; row++)

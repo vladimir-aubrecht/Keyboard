@@ -4,7 +4,7 @@
 #include <Arduino.h>
 #include <Adafruit_MCP23017.h>
 
-#include "IPinDriver.h"
+#include "Drivers/IPinDriver.h"
 
 class PinDriver : public IPinDriver
 {
