@@ -10,7 +10,7 @@ class KeyboardDriver
 public:
 	KeyboardDriver();
 
-	void SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix);
+	void SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymap);
 };
 
 #endif

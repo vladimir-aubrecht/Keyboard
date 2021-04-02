@@ -21,18 +21,24 @@
     <ClInclude Include="__vm\.VaKeyboard.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="PinDriver.h">
+    <ClInclude Include="Drivers\DisplayDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DisplayDriver.h">
+    <ClInclude Include="Drivers\PinDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Layout.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PinDriver.cpp">
+    <ClCompile Include="Drivers\DisplayDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DisplayDriver.cpp">
+    <ClCompile Include="Drivers\PinDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Layout.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

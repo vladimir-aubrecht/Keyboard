@@ -21,11 +21,21 @@
   <ItemGroup>
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)KeyboardSDK.h" /> -->
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Convertors.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\IPinDriver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\MatrixScanner.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\Convertors.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\Matrix.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\MatrixEvaluator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\MatrixScanner.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Convertors.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MatrixScanner.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Matrix\Convertors.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Matrix\MatrixEvaluator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Matrix\MatrixScanner.cpp" />
   </ItemGroup>
 </Project>

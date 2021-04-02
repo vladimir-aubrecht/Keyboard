@@ -1,11 +1,6 @@
-#include "Drivers/KeyboardDriver.h"
+#include "KeyboardSDK.h"
 #include "Drivers/DisplayDriver.h"
 #include "Drivers/PinDriver.h"
-#include "Matrix/MatrixEvaluator.h"
-#include "Matrix/Convertors.h"
-#include "Matrix/MatrixScanner.h"
-#include "Matrix/MatrixEvaluator.h"
-#include "Matrix/Convertors.h"
 #include "Layout.h"
 
 const uint8_t numberOfRows = 6;
@@ -44,7 +39,7 @@ void loop()
 		Matrix* pressedKeysMatrix = matrixEvaluator.getPressedKeysMatrix(previousMatrix, matrix);
 		Matrix* releasedKeysMatrix = matrixEvaluator.getReleasedKeysMatrix(previousMatrix, matrix);
 
-		keyboardDriver.SendKeys(pressedKeysMatrix, releasedKeysMatrix);
+		keyboardDriver.SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
 
 		delete pressedKeysMatrix;
 		delete releasedKeysMatrix;

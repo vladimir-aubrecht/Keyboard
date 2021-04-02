@@ -6,7 +6,7 @@ KeyboardDriver::KeyboardDriver()
 
 }
 
-void KeyboardDriver::SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix)
+void KeyboardDriver::SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymap)
 {
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
 	{
