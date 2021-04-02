@@ -4,7 +4,7 @@
 #include "Layout.h"
 
 const uint8_t numberOfRows = 6;
-const uint8_t numberOfColumns = 16;
+const uint8_t numberOfColumns = 17;
 
 PinDriver pinDriver = PinDriver();
 KeyboardDriver keyboardDriver = KeyboardDriver();
@@ -34,6 +34,9 @@ void loop()
 {
 	Matrix* matrix = matrixScanner.scanKeyPressMatrix();
 	
+	//char* matrixString = Convertors::toString(matrix);
+	//Serial.println(matrixString);
+
 	if (previousMatrix != NULL)
 	{
 		Matrix* pressedKeysMatrix = matrixEvaluator.getPressedKeysMatrix(previousMatrix, matrix);
@@ -44,6 +47,8 @@ void loop()
 		delete pressedKeysMatrix;
 		delete releasedKeysMatrix;
 	}
+
+	//delete[] matrixString;
 
 	delete previousMatrix;
 	previousMatrix = matrix;

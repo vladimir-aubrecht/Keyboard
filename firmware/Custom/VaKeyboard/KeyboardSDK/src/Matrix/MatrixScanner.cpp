@@ -21,8 +21,7 @@ Matrix* MatrixScanner::scanKeyPressMatrix()
 	
 		for (uint8_t column = 0; column < this->numberOfColumns; column++)
 		{
-			uint8_t pin = this->pinDriver->readPin(column);
-			
+			uint32_t pin = this->pinDriver->readPin(column);
 			matrixData[row] |= (pin << column);
 		}
 

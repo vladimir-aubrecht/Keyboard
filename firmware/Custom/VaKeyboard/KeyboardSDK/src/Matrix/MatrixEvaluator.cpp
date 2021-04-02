@@ -22,7 +22,7 @@ Matrix* MatrixEvaluator::getStateChangeMatrix(Matrix* previousMatrix, Matrix* cu
 			if (oldBit != newBit && newBit == expectedState)
 			{
 				//key was newly pressed
-				matrixData[row] |= 1 << column;
+				matrixData[row] |= ((uint32_t)1) << column;
 			}
 		}
 	}

@@ -31,9 +31,9 @@ void PinDriver::initialise()
 	for (uint8_t i = 8; i < 16; i++)
 	{
 		mcp0.pullUp(i, HIGH);
+		mcp1.pullUp(i, HIGH);
 
 		mcp1.pinMode(i, OUTPUT);
-		mcp1.pullUp(i, HIGH);
 	}
 }
 
