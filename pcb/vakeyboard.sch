@@ -457,25 +457,11 @@ Wire Wire Line
 Wire Wire Line
 	11100 5825 12500 5825
 Connection ~ 11100 5825
-$Comp
-L Interface_Expansion:MCP23S17_SO U1
-U 1 1 5FEB7B2E
-P 7525 1650
-F 0 "U1" H 7525 2931 50  0000 C CNN
-F 1 "MCP23017-E/SO" H 7525 2840 50  0000 C CNN
-F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 7725 650 50  0001 L CNN
-F 3 "https://datasheet.lcsc.com/szlcsc/Microchip-Tech-MCP23017-E-SO_C47023.pdf" H 7725 550 50  0001 L CNN
-F 4 "C47023" H 7525 1650 50  0001 C CNN "LCSC"
-	1    7525 1650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2650 5825 2100 5825
 Wire Wire Line
 	2100 5825 2100 1550
 Connection ~ 2650 5825
-Wire Wire Line
-	3825 550  4525 550 
 NoConn ~ 4525 1750
 NoConn ~ 4525 1850
 NoConn ~ 4525 2150
@@ -584,22 +570,11 @@ Wire Wire Line
 	6825 2350 6825 2450
 Connection ~ 6825 2350
 Wire Wire Line
-	7525 550  5800 550 
-Wire Wire Line
-	5800 550  5800 1425
-Wire Wire Line
-	5800 2750 3825 2750
-Wire Wire Line
 	6825 2350 5800 2350
-Connection ~ 5800 2350
-Wire Wire Line
-	5800 2350 5800 2750
 Wire Wire Line
 	4525 950  6425 950 
 Wire Wire Line
 	6425 950  6425 1425
-Wire Wire Line
-	6425 2750 7525 2750
 Wire Wire Line
 	4525 2250 4800 2250
 Wire Wire Line
@@ -698,9 +673,6 @@ Wire Wire Line
 	6775 1750 6825 1750
 Wire Wire Line
 	6475 1750 6425 1750
-Connection ~ 6425 1750
-Wire Wire Line
-	6425 1750 6425 2750
 NoConn ~ 8225 1450
 NoConn ~ 8225 1350
 NoConn ~ 8225 1250
@@ -747,7 +719,6 @@ Wire Wire Line
 	4525 550  5200 550 
 Wire Wire Line
 	5200 550  5200 575 
-Connection ~ 4525 550 
 $Comp
 L Device:R R_SI1
 U 1 1 6159C9C7
@@ -6273,4 +6244,39 @@ Wire Wire Line
 Connection ~ 18975 6575
 Wire Wire Line
 	20975 6575 18975 6575
+$Comp
+L Interface_Expansion:MCP23S17_SO U1
+U 1 1 5FEB7B2E
+P 7525 1650
+F 0 "U1" H 7525 2931 50  0000 C CNN
+F 1 "MCP23017-E/SO" H 7525 2840 50  0000 C CNN
+F 2 "Package_SO:SOIC-28W_7.5x17.9mm_P1.27mm" H 7725 650 50  0001 L CNN
+F 3 "https://datasheet.lcsc.com/szlcsc/Microchip-Tech-MCP23017-E-SO_C47023.pdf" H 7725 550 50  0001 L CNN
+F 4 "C47023" H 7525 1650 50  0001 C CNN "LCSC"
+	1    7525 1650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7525 2750 5800 2750
+Wire Wire Line
+	5800 2750 5800 2350
+Connection ~ 5800 2350
+Wire Wire Line
+	5800 500  3825 500 
+Wire Wire Line
+	3825 500  3825 550 
+Wire Wire Line
+	3825 2750 3825 3050
+Wire Wire Line
+	3825 3050 6425 3050
+Wire Wire Line
+	6425 3050 6425 1750
+Connection ~ 6425 1750
+Wire Wire Line
+	5800 500  5800 1425
+Wire Wire Line
+	7525 550  6425 550 
+Wire Wire Line
+	6425 550  6425 950 
+Connection ~ 6425 950 
 $EndSCHEMATC
