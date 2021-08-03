@@ -27,7 +27,7 @@
     <ClInclude Include="Drivers\PinDriver.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Layout.h">
+    <ClInclude Include="KeyMapProvider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -38,7 +38,7 @@
     <ClCompile Include="Drivers\PinDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Layout.cpp">
+    <ClCompile Include="KeyMapProvider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

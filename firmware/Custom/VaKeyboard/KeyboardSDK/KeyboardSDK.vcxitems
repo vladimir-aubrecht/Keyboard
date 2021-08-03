@@ -23,6 +23,8 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Convertors.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\IPinDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\IKeyMapProvider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\KeyboardSDK.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\MatrixScanner.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\Convertors.h" />
@@ -33,6 +35,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Convertors.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\KeyboardSDK.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MatrixScanner.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Matrix\Convertors.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Matrix\MatrixEvaluator.cpp" />
