@@ -2,7 +2,7 @@
 
 void RgbLedDriver::initialise()
 {
-	//this->controller1.initialise();
+	this->controller1->initialise();
 	this->controller2->initialise();
 }
 

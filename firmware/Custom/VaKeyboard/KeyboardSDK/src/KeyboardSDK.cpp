@@ -32,7 +32,7 @@ void KeyboardSDK::scan()
 		Matrix* pressedKeysMatrix = this->matrixEvaluator->getPressedKeysMatrix(this->previousMatrix, matrix);
 		Matrix* releasedKeysMatrix = this->matrixEvaluator->getReleasedKeysMatrix(this->previousMatrix, matrix);
 
-		//this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
+		this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
 
 		delete pressedKeysMatrix;
 		delete releasedKeysMatrix;

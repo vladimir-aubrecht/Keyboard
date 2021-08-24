@@ -8,8 +8,13 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire* wire)
 
 void Is31fl3743a::initialise()
 {
-	this->wire->begin();
-	this->wire->beginTransmission(0x20);
+	uint8_t address = (this->i2c_addr << 1) + 0b01000001;
+
+	Serial.print("Address: ");
+	Serial.println(address);
+
+	/*this->wire->begin();
+	this->wire->beginTransmission(address);
 	uint8_t result = this->wire->endTransmission();
 	if (result == 0)
 	{
@@ -20,12 +25,12 @@ void Is31fl3743a::initialise()
 		Serial.println("I2C not initialised!");
 		Serial.print(result);
 		Serial.println();
-	}
+	}*/
 
-	/*this->i2c_dev = new Adafruit_I2CDevice(this->i2c_addr, this->wire);
+	this->i2c_dev = new Adafruit_I2CDevice(address, this->wire);
 	
 	if (!this->i2c_dev->begin())
 	{
 		Serial.println("I2C not initialised!");
-	}*/
+	}
 }
