@@ -30,15 +30,30 @@
     <ClInclude Include="KeyMapProvider.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Drivers\RgbLedDriver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chips\Is31fl3743a.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Drivers\DisplayDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Drivers\PinDriver.cpp">
+    <ClCompile Include="Drivers\RowWritingPinDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KeyMapProvider.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\RgbLedDriver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Chips\Is31fl3743a.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Drivers\ColumnWritingPinDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

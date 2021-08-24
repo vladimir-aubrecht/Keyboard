@@ -17,7 +17,6 @@ void DisplayDriver::initialise()
 
 void DisplayDriver::setText(char* text)
 {
-	display.fillScreen(BLACK);
 	display.setCursor(0, 0);
 	display.print(text);
 }

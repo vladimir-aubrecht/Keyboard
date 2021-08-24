@@ -78,7 +78,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\VaKeyboard;$(ProjectDir)..\KeyboardSDK\src;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\variants\micro;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\\lib\gcc\avr\7.3.0\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\\lib\gcc\avr\7.3.0\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include-fixed;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include\avr;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\VaKeyboard;$(ProjectDir)..\KeyboardSDK\src;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\libraries\Keyboard\src;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\libraries\HID\src;$(ProjectDir)..\..\..\..\..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_GFX_Library;$(ProjectDir)..\..\..\..\..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_SSD1331_OLED_Driver_Library_for_Arduino;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\libraries\SPI\src;$(ProjectDir)..\..\..\..\..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_MCP23017_Arduino_Library;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\libraries\Wire\src;$(ProjectDir)..\..\..\..\..\..\..\..\OneDrive\Dokumenty\Arduino\libraries\Adafruit_BusIO;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\cores\arduino;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\arduino\avr\variants\micro;$(ProjectDir)..\..\..\..\..\..\VLADIM~1\Keyboard\firmware\Custom\VAKEYB~1\VAKEYB~1;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\\lib\gcc\avr\7.3.0\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\\lib\gcc\avr\7.3.0\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include-fixed;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\avr\include\avr;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.2\include;$(ProjectDir)..\..\..\..\..\..\..\..\..\..\Program Files (x86)\arduino-nightly\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)__vm\.VaKeyboard.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_atmega32u4__;__AVR_ATmega32U4__;__AVR_ATmega32u4__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=108013;ARDUINO_AVR_MICRO;ARDUINO_ARCH_AVR;USB_VID=0x2341;USB_PID=0x8037;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -115,13 +115,18 @@
   <ItemGroup>
     <ClInclude Include="Drivers\DisplayDriver.h" />
     <ClInclude Include="Drivers\PinDriver.h" />
+    <ClInclude Include="Chips\Is31fl3743a.h" />
     <ClInclude Include="KeyMapProvider.h" />
+    <ClInclude Include="Drivers\RgbLedDriver.h" />
     <ClInclude Include="__vm\.VaKeyboard.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Drivers\ColumnWritingPinDriver.cpp" />
     <ClCompile Include="Drivers\DisplayDriver.cpp" />
-    <ClCompile Include="Drivers\PinDriver.cpp" />
+    <ClCompile Include="Drivers\RowWritingPinDriver.cpp" />
+    <ClCompile Include="Chips\Is31fl3743a.cpp" />
     <ClCompile Include="KeyMapProvider.cpp" />
+    <ClCompile Include="Drivers\RgbLedDriver.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
