@@ -41,7 +41,7 @@
     <ClCompile Include="Drivers\DisplayDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Drivers\RowWritingPinDriver.cpp">
+    <ClCompile Include="Drivers\PinDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="KeyMapProvider.cpp">
@@ -51,9 +51,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Chips\Is31fl3743a.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Drivers\ColumnWritingPinDriver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

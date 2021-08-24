@@ -8,7 +8,7 @@ char* Convertors::toString(Matrix* matrix)
 
 	for (uint8_t rowIndex = 0; rowIndex < matrix->numberOfRows; rowIndex++)
 	{
-		uint16_t row = matrix->matrixData[rowIndex];
+		uint32_t row = matrix->matrixData[rowIndex];
 
 		for (uint8_t columnIndex = 0; columnIndex < matrix->numberOfColumns; columnIndex++)
 		{
