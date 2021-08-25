@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)KeyboardSDK.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\ILogger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Convertors.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\IPinDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.h" />

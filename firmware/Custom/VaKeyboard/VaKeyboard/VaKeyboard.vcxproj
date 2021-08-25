@@ -118,6 +118,7 @@
     <ClInclude Include="Chips\Is31fl3743a.h" />
     <ClInclude Include="KeyMapProvider.h" />
     <ClInclude Include="Drivers\RgbLedDriver.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="__vm\.VaKeyboard.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
@@ -126,6 +127,7 @@
     <ClCompile Include="Chips\Is31fl3743a.cpp" />
     <ClCompile Include="KeyMapProvider.cpp" />
     <ClCompile Include="Drivers\RgbLedDriver.cpp" />
+    <ClCompile Include="Logger.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

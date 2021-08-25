@@ -30,11 +30,5 @@ Matrix* MatrixScanner::scanKeyPressMatrix()
 		this->pinDriver->writePin(row, HIGH);
 	}
 
-	char* strMatrix = Convertors::toString(matrix);
-
-	Serial.println(strMatrix);
-
-	delete strMatrix;
-
 	return matrix;
 }

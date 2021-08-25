@@ -4,11 +4,12 @@
 class RgbLedDriver
 {
 private:
-	Is31fl3743a* controller1 = new Is31fl3743a(0b1100, &Wire);
-	Is31fl3743a* controller2 = new Is31fl3743a(0b0011, &Wire);
+	Is31fl3743a* controller1 = NULL;
+	Is31fl3743a* controller2 = NULL;
+	ILogger* logger = NULL;
 
 public:
-	RgbLedDriver();
+	RgbLedDriver(ILogger& logger);
 
 	void initialise();
 };

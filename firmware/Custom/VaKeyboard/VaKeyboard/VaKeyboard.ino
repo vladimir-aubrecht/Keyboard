@@ -3,12 +3,14 @@
 #include "Drivers/PinDriver.h"
 #include "KeyMapProvider.h"
 #include "Drivers/RgbLedDriver.h"
+#include "Logger.h"
 
 const uint8_t numberOfRows = 6;
 const uint8_t numberOfColumns = 17;
 
-PinDriver pinDriver = PinDriver();
-RgbLedDriver rgbLedDriver = RgbLedDriver();
+Logger logger = Logger();
+PinDriver pinDriver = PinDriver(logger);
+RgbLedDriver rgbLedDriver = RgbLedDriver(logger);
 KeyboardDriver keyboardDriver = KeyboardDriver();
 DisplayDriver displayDriver = DisplayDriver();
 MatrixScanner matrixScanner = MatrixScanner(pinDriver, numberOfRows, numberOfColumns);
@@ -22,14 +24,14 @@ void setup()
 	Serial.begin(9600);
 
 	displayDriver.initialise();
-	pinDriver.initialise();
-	//rgbLedDriver.initialise();
+	//pinDriver.initialise();
+	rgbLedDriver.initialise();
 
 	Serial.println("\nSetup is done!");
 }
 
 void loop()
 {
-	keyboard.scan();
-	//rgbLedDriver.initialise();
+	//keyboard.scan();
+	rgbLedDriver.initialise();
 }
