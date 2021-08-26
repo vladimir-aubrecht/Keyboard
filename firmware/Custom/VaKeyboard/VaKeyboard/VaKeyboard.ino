@@ -24,7 +24,7 @@ void setup()
 	Serial.begin(9600);
 
 	displayDriver.initialise();
-	//pinDriver.initialise();
+	pinDriver.initialise();
 	rgbLedDriver.initialise();
 
 	Serial.println("\nSetup is done!");
@@ -32,6 +32,5 @@ void setup()
 
 void loop()
 {
-	//keyboard.scan();
-	rgbLedDriver.initialise();
+	keyboard.scan();
 }

@@ -26,7 +26,7 @@ void Is31fl3743a::initialise()
 	for (int i = 0x01; i < 0xA3; i++)
 	{
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
-		PWM.write(0xff);
+		PWM.write(0xFF);
 	}
 
 	CRWL.write(0xC5);	//unlock CR
@@ -34,13 +34,13 @@ void Is31fl3743a::initialise()
 	for (int i = 0x01; i < 0xA3; i++)
 	{
 		Adafruit_BusIO_Register SL(i2c_dev, i);
-		SL.write(0xA0);
+		SL.write(0xFF);
 	}
 
 	CRWL.write(0xC5);	//unlock CR
 	CR.write(0x02);
 	Adafruit_BusIO_Register GCC(i2c_dev, 0x01);	//global current
-	GCC.write(0xA0);
+	GCC.write(0xFF);
 
 	uint8_t configuration = (((uint8_t)(11 - this->enabledColumns)) << 4) + 9;
 	Adafruit_BusIO_Register CONF(i2c_dev, 0x00);

@@ -29,7 +29,7 @@ void PinDriver::initialise()
 	if (!mcp0Status)
 	{
 		logger->logError("failed to initialise first MCP23017.");
-		while (1);
+		return;
 	}
 
 	for (uint8_t i = 0; i < 8; i++)
@@ -47,7 +47,7 @@ void PinDriver::initialise()
 	if (!mcp1Status)
 	{
 		logger->logError("failed to initialise second MCP23017.");
-		while (1);
+		return;
 	}
 
 	for (uint8_t i = 0; i < 8; i++)
