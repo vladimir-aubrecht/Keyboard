@@ -25,8 +25,10 @@ void Is31fl3743a::initialise()
 	CR.write(0x00);	//lets write pwm
 	for (int i = 0x01; i < 0xA3; i++)
 	{
+		uint8_t intensity = random(0xFF);
+		intensity = 0xFF;
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
-		PWM.write(0xFF);
+		PWM.write(intensity);
 	}
 
 	CRWL.write(0xC5);	//unlock CR
@@ -49,5 +51,6 @@ void Is31fl3743a::initialise()
 	Adafruit_BusIO_Register PDU(i2c_dev, 0x02);
 	PDU.write(0b00110011);
 
-	Serial.println("done");
+	Adafruit_BusIO_Register SS(i2c_dev, 0x25);
+	SS.write(0b00000001);	//configure timing to 1200 us
 }

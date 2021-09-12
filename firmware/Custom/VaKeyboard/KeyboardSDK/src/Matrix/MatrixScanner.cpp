@@ -18,7 +18,6 @@ Matrix* MatrixScanner::scanKeyPressMatrix()
 		matrixData[row] = 0;
 
 		this->pinDriver->writePin(row, LOW);
-		delay(50);
 
 		for (uint8_t column = 0; column < this->numberOfColumns; column++)
 		{
