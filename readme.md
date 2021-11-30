@@ -13,14 +13,16 @@ Side features:
 - Modularity - All logic chips are on separate modules. Main PCB contains just RGB LEDs, sockets and IO expanders with LED drivers.
 
 # Current status
-[Revision 1](changelog.md) is in development, check details about the [build](docs/build.md)!
+[Revision 1](changelog.md) PCB is working, check details about the [build](docs/build.md)!
 
-Currently are developed all features of this project except of:
+What is missing in Revision 1:
 - Bluetooth 5.0.
 - Charging through USB-C.
 - Anodized aluminium frame of Filco Majestouch 2 design.
 
-Thou current version is not tested yet. I will have current version of PCB & plate in couple of weeks, then I'll update this post.
+Currently I am focusing on finishing casing for the keyboard.
+I managed to test dimensions of casing (see photo in [Galery](#Galery)) and keyboard can be already fully assembled when 3D printed! :)
+In next couple of weeks I should get aluminium and I already have all essential components for metal casting, so you can expect short article on metal casting from 3D printed case soon.
 
 # Galery
 
@@ -36,3 +38,4 @@ Thou current version is not tested yet. I will have current version of PCB & pla
 | Render no plate | Case      | 1        | ![case render no plate](./docs/images/case_render_without_plate.png) |
 | Render no pcb   | Case      | 1        | ![case render no pcb](./docs/images/case_render_without_pcb.png)     |
 | Render no cover | Case      | 1        | ![case render no cover](./docs/images/case_render_without_cover.png) |
+| Keyboard        | Keyboard  | 1        | ![keyboard](./docs/images/keyboard_rev1.png)                         |
