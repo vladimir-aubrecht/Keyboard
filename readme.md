@@ -25,6 +25,8 @@ Currently I am focusing on finishing casing for the keyboard.
 I managed to test dimensions of casing (see photo in [Galery](#Galery)) and keyboard can be already fully assembled when 3D printed! :)
 In next couple of weeks I should get aluminium and I already have all essential components for metal casting, so you can expect short article on metal casting from 3D printed case soon.
 
+> :warning: Revision 1 had originally bug with 2 swapped wires for power supply for IO expanders. That's why PCB has those 2 wires and it was fixed in latest commits.
+
 # Galery
 
 | Description                 | Component | Revision | Picture                                                                          |
