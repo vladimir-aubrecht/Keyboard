@@ -30,10 +30,12 @@ LCSC numbers are based on [JLCPCB](http://jlcpcb.com/) catalog.
 | Resistor 150 Ohm  | [0402WGF1500TCE](https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf)           | C25082  | 0402    |   6    | Red LED channel to limit current and prevent overheating.             |
 
 ## Firmware
-Built on top of [QMK](https://qmk.fm/).
+Currently there are 2 firmwares. 
+- Original built on top of [QMK](https://qmk.fm/). This firmware currently do not support RGB LEDs, thou it shouldn't be hard to add support.
+- Custom made firmware (source code in repo). This has full feature set, keyboard functionality and RGB LEDs are working here.
 
 ## Plate
 Built with the help of [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/#/) & Keeb's Plate tool (https://plate.keeb.io/).
 
 ## Case
-Built by OnShape, [check out](https://cad.onshape.com/documents/c60788452082993ff7acdd11/w/b14733d6a8d57351c8582e21/e/f5989423f9dc86a71831a4e9) the models!
+Built in OnShape CAD software, [check out](https://cad.onshape.com/documents/c60788452082993ff7acdd11/w/b14733d6a8d57351c8582e21/e/f5989423f9dc86a71831a4e9) the models!
