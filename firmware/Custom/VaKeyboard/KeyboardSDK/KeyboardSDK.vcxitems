@@ -20,12 +20,15 @@
   </ItemGroup>
   <ItemGroup>
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)KeyboardSDK.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\BluetoothKeyboardDriver.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\IKeyboardDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\ILogger.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Convertors.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\IPinDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\IKeyMapProvider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\KeyboardSDK.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)src\KeyCodes.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\MatrixScanner.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)src\Matrix\Convertors.h" />
@@ -35,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Convertors.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)src\Drivers\BluetoothKeyboardDriver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\Drivers\KeyboardDriver.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\KeyboardSDK.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)src\MatrixScanner.cpp" />
