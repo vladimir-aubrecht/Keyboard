@@ -1,11 +1,11 @@
 #include "Is31fl3743a.h"
 #include <Adafruit_BusIO_Register.h>
 
-Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire* wire, ILogger& logger, uint8_t enabledColumns)
+Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire* wire, ILogger* logger, uint8_t enabledColumns)
 {
 	this->i2c_addr = i2c_addr;
 	this->wire = wire;
-	this->logger = &logger;
+	this->logger = logger;
 	this->enabledColumns = enabledColumns;
 }
 

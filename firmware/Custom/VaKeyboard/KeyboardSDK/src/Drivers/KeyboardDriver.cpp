@@ -1,12 +1,13 @@
+#ifndef ESP32
 #include "KeyboardDriver.h"
+#include <Keyboard.h>
 
-
-KeyboardDriver::KeyboardDriver()
+UsbHidKeyboardDriver::UsbHidKeyboardDriver()
 {
 	Keyboard.begin();
 }
 
-void KeyboardDriver::SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymapProvider)
+void UsbHidKeyboardDriver::SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymapProvider)
 {
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
 	{
@@ -30,3 +31,6 @@ void KeyboardDriver::SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMat
 
 	Keyboard.flush();
 }
+#else
+#pragma message "Detected ESP32, skipping compilation of UsbHidKeyboardDriver as ESP32 doesn't have support for USB HID."
+#endif

@@ -15,7 +15,7 @@ private:
 	uint8_t enabledColumns = 0;
 
 public:
-	Is31fl3743a(uint8_t i2c_addr, TwoWire* wire, ILogger& logger, uint8_t enabledColumns);
+	Is31fl3743a(uint8_t i2c_addr, TwoWire* wire, ILogger* logger, uint8_t enabledColumns);
 
 	void initialise();
 };

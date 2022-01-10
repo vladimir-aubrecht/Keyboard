@@ -1,5 +1,4 @@
-#ifndef _MATRIXSCANNER_h
-#define _MATRIXSCANNER_h
+#pragma once
 
 #include <arduino.h>
 #include "../Drivers/IPinDriver.h"
@@ -13,8 +12,6 @@ private:
 	uint8_t numberOfColumns;
 
 public:
-	MatrixScanner(IPinDriver& pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns);
+	MatrixScanner(IPinDriver* pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns);
 	Matrix* scanKeyPressMatrix();
 };
-#endif
-

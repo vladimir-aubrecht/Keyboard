@@ -9,7 +9,7 @@ private:
 	ILogger* logger = NULL;
 
 public:
-	RgbLedDriver(ILogger& logger);
+	RgbLedDriver(ILogger* logger);
 
 	void initialise();
 };

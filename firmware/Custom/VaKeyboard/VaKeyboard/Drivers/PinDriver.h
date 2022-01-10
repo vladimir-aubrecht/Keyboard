@@ -17,7 +17,7 @@ public:
 	virtual uint8_t readPin(uint8_t pinNumber);
 	virtual void writePin(uint8_t pinNumber, uint8_t value);
 
-	PinDriver(ILogger& logger);
+	PinDriver(ILogger* logger);
 
 	void initialise();
 };

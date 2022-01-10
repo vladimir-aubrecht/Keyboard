@@ -1,6 +1,4 @@
-#ifndef _MATRIX_h
-#define _MATRIX_h
-
+#pragma once
 #include <arduino.h>
 
 struct Matrix
@@ -23,4 +21,3 @@ public:
 	}
 };
 
-#endif

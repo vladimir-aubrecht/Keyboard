@@ -1,5 +1,4 @@
-#ifndef _LAYOUT_h
-#define _LAYOUT_h
+#pragma once
 
 #include "Arduino.h"
 #include "IKeyMapProvider.h"
@@ -16,4 +15,3 @@ public:
 	virtual uint16_t** getKeyMap();
 };
 
-#endif

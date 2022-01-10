@@ -61,7 +61,7 @@ void PinDriver::initialise()
 	}
 }
 
-PinDriver::PinDriver(ILogger& logger)
+PinDriver::PinDriver(ILogger* logger)
 {
-	this->logger = &logger;
+	this->logger = logger;
 }

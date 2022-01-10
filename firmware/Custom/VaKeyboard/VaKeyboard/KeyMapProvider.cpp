@@ -1,5 +1,5 @@
 #include "KeyMapProvider.h"
-#include "Keyboard.h"
+#include "KeyCodes.h"
 
 // codes are 136 + usb hid codes (https://gist.github.com/ekaitz-zarraga/2b25b94b711684ba4e969e5a5723969b)
 

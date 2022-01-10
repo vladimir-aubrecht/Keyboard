@@ -1,5 +1,4 @@
-#ifndef _CONVERTORS_h
-#define _CONVERTORS_h
+#pragma once
 
 #include "Matrix.h"
 
@@ -8,6 +7,3 @@ class Convertors
 public:
 	static char* toString(Matrix* matrix);
 };
-
-#endif
-

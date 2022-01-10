@@ -1,17 +1,10 @@
-#ifndef _KEYBOARDDRIVER_h
-#define _KEYBOARDDRIVER_h
+#pragma once
+#include "IKeyboardDriver.h"
 
-#include <arduino.h>
-#include <Keyboard.h>
-#include "../Matrix/Matrix.h"
-
-class KeyboardDriver
+class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 public:
-	KeyboardDriver();
+	UsbHidKeyboardDriver();
 
-	void SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymapProvider);
+	virtual void SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymapProvider);
 };
-
-#endif
-

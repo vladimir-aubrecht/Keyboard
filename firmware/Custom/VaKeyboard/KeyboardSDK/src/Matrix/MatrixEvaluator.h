@@ -1,5 +1,4 @@
-#ifndef _MATRIXEVALUATOR_h
-#define _MATRIXEVALUATOR_h
+#pragma once
 
 #include <arduino.h>
 #include "Matrix.h"
@@ -15,4 +14,3 @@ public:
 	Matrix* getPressedKeysMatrix(Matrix* oldMatrix, Matrix* newMatrix);
 	Matrix* getReleasedKeysMatrix(Matrix* oldMatrix, Matrix* newMatrix);
 };
-#endif

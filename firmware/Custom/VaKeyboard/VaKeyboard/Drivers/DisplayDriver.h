@@ -1,5 +1,4 @@
-#ifndef _DISPLAYDRIVER_h
-#define _DISPLAYDRIVER_h
+#pragma once
 
 #include <arduino.h>
 #include <Adafruit_GFX.h>
@@ -26,4 +25,3 @@ public:
 	void initialise();
 	void setText(char* text);
 };
-#endif
