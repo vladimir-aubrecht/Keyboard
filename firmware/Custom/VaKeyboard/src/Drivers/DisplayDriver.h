@@ -18,10 +18,9 @@
 class DisplayDriver
 {
 private:
-	Adafruit_SSD1331 display = Adafruit_SSD1331(&SPI, 7, 6, 8);
+	Adafruit_SSD1331* display = NULL;
 
 public:
-	DisplayDriver();
-	void initialise();
+	DisplayDriver(SPIClass* spi);
 	void setText(char* text);
 };

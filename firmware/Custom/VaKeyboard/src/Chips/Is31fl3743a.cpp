@@ -7,15 +7,13 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire* wire, ILogger* logger, uint8
 	this->wire = wire;
 	this->logger = logger;
 	this->enabledColumns = enabledColumns;
-}
 
-void Is31fl3743a::initialise()
-{
-	this->i2c_dev = new Adafruit_I2CDevice(this->i2c_addr, this->wire);
+		this->i2c_dev = new Adafruit_I2CDevice(this->i2c_addr, this->wire);
 	
 	if (!this->i2c_dev->begin())
 	{
 		this->logger->logError("Failed to initialise IS31FL3743A.");
+		return;
 	}
 
 	Adafruit_BusIO_Register CRWL(i2c_dev, 0xFE);

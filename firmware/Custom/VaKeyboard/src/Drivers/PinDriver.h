@@ -18,6 +18,4 @@ public:
 	virtual void writePin(uint8_t pinNumber, uint8_t value);
 
 	PinDriver(ILogger* logger);
-
-	void initialise();
 };

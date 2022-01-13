@@ -4,7 +4,7 @@
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver()
 {
-	this->bleKeyboard = new BleKeyboard();
+	this->bleKeyboard = new BleKeyboard("VA Keyboard", "VASoft", 100U);
 	this->bleKeyboard->begin();
 }
 

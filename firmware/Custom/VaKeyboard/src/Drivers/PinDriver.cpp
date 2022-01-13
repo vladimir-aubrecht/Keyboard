@@ -22,13 +22,15 @@ void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 	mcp0->digitalWrite(pinNumber, value);
 }
 
-void PinDriver::initialise()
+PinDriver::PinDriver(ILogger* logger)
 {
-	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR);
+	this->logger = logger;
+
+		uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR);
 	
 	if (!mcp0Status)
 	{
-		logger->logError("failed to initialise first MCP23017.");
+		logger->logError("Failed to initialise first MCP23017.");
 		return;
 	}
 
@@ -46,7 +48,7 @@ void PinDriver::initialise()
 
 	if (!mcp1Status)
 	{
-		logger->logError("failed to initialise second MCP23017.");
+		logger->logError("Failed to initialise second MCP23017.");
 		return;
 	}
 
@@ -59,9 +61,4 @@ void PinDriver::initialise()
 	{
 		mcp1->pinMode(i, INPUT_PULLUP);
 	}
-}
-
-PinDriver::PinDriver(ILogger* logger)
-{
-	this->logger = logger;
 }

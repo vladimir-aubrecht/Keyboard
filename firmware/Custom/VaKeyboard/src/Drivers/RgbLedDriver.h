@@ -10,7 +10,5 @@ private:
 
 public:
 	RgbLedDriver(ILogger* logger);
-
-	void initialise();
 };
 
