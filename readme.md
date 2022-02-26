@@ -13,6 +13,9 @@ Side features:
 - Except of LED drivers & sockets everything is on front side for soldering on JCLPCB side.
 - Modularity - All logic chips are on separate modules. Main PCB contains just RGB LEDs, sockets and IO expanders with LED drivers.
 
+I am having last 3 spare PCBs based on Revision 1. There is tiny bug there, but very easily fixable and otherwise fully working, including RGB LED diods.
+In case you are interested **I am fine to donate 1 piece per person** in case you'll pay delivery.
+
 # Current status
 [Revision 1](changelog.md) PCB is working, check details about the [build](docs/build.md)!
 
