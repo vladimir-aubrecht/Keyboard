@@ -1,3 +1,4 @@
 **/.DS_Store
 .vs
 **/debug/
+/firmware/Custom/DotnetKeyboard/DotnetKeyboard/DotnetKeyboard/obj
