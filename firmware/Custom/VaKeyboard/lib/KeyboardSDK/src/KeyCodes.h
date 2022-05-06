@@ -1,5 +1,7 @@
 #pragma once
+#include <KeyboardLayouts/ImprovedKeylayouts.h>
 
+/*
 #define KEY_LEFT_CTRL     0x80
 #define KEY_LEFT_SHIFT    0x81
 #define KEY_LEFT_ALT      0x82
@@ -48,3 +50,5 @@
 #define KEY_F22           0xF9
 #define KEY_F23           0xFA
 #define KEY_F24           0xFB
+
+*/

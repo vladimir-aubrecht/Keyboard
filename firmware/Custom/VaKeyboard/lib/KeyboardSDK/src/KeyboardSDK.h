@@ -14,7 +14,7 @@ private:
 	MatrixEvaluator* matrixEvaluator;
 	IKeyboardDriver* keyboardDriver;
 	
-	uint16_t** keymap;
+	KeyboardKeycode** keymap;
 	Matrix* previousMatrix = NULL;
 
 public:

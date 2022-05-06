@@ -1,17 +1,17 @@
 #include "MatrixScanner.h"
 #include "Convertors.h"
 
-MatrixScanner::MatrixScanner(IPinDriver* pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns)
+MatrixScanner::MatrixScanner(IPinDriver *pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns)
 {
 	this->pinDriver = pinDriver;
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
 }
 
-Matrix* MatrixScanner::scanKeyPressMatrix()
+Matrix *MatrixScanner::scanKeyPressMatrix()
 {
-	uint32_t* matrixData = new uint32_t[this->numberOfRows];
-	Matrix* matrix = new Matrix(matrixData, this->numberOfRows, this->numberOfColumns);
+	Matrix *matrix = new Matrix(this->numberOfRows, this->numberOfColumns);
+	uint32_t *matrixData = matrix->matrixData;
 
 	for (uint8_t row = 0; row < this->numberOfRows; row++)
 	{

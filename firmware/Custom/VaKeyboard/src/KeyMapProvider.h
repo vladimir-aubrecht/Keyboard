@@ -12,6 +12,6 @@ private:
 public:
 	KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns);
 
-	virtual uint16_t** getKeyMap();
+	virtual KeyboardKeycode** getKeyMap();
 };
 

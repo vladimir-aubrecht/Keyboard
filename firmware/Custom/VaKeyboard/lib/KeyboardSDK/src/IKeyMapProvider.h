@@ -1,9 +1,10 @@
 #pragma once
 
 #include <Arduino.h>
+#include "KeyCodes.h"
 
 class IKeyMapProvider
 {
 public:
-	virtual uint16_t** getKeyMap() = 0;
+	virtual KeyboardKeycode** getKeyMap() = 0;
 };
