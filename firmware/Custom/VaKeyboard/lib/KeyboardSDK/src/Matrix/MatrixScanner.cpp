@@ -19,6 +19,7 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 
 		this->pinDriver->writePin(row, LOW);
 
+		this->pinDriver->refreshCache();
 		for (uint8_t column = 0; column < this->numberOfColumns; column++)
 		{
 			uint32_t pin = this->pinDriver->readPin(column);
@@ -29,7 +30,7 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 		this->pinDriver->writePin(row, HIGH);
 	}
 
-	/*char* sm = Convertors::toString(matrix);
+	/*char *sm = Convertors::toString(matrix);
 	Serial.println(sm);
 	delete sm;*/
 

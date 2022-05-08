@@ -44,13 +44,13 @@ void BluetoothKeyboardDriver::SendKeys(Matrix *scannedKeysMatrix, Matrix *presse
 		uint8_t keyCount = ScanForPressedRegularKeys(currentStateMatrix, keymapProvider, buffer);
 		uint8_t modificators = ScanForModificators(scannedKeysMatrix, keymapProvider);
 
-		uint8_t keysToSendArraySize = keyCount / 5;
+		uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
 
-		if (keyCount % 5 > 0)
+		if (keyCount % this->maxKeyCountInReport > 0)
 			keysToSendArraySize++;
 
 		uint8_t **keysToSend = new uint8_t *[keysToSendArraySize];
-		SplitToArrayOf5(buffer, keyCount, keysToSend);
+		SplitToArrayOf(buffer, keyCount, keysToSend, this->maxKeyCountInReport);
 
 		for (uint8_t i = 0; i < keysToSendArraySize && keyCount > 0; i++)
 		{
@@ -60,7 +60,7 @@ void BluetoothKeyboardDriver::SendKeys(Matrix *scannedKeysMatrix, Matrix *presse
 
 		if (keyCount == 0 && modificators != 0)
 		{
-			uint8_t keys[5]{0, 0, 0, 0, 0};
+			uint8_t keys[this->maxKeyCountInReport]{0, 0, 0, 0, 0};
 			this->SendKeypresses(modificators, keys);
 		}
 
@@ -159,7 +159,7 @@ bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys
 {
 	String cmd = this->ConvertToHexCode(modificators) + "-00";
 
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < this->maxKeyCountInReport; i++)
 	{
 		cmd += "-" + this->ConvertToHexCode(keys[i]);
 	}
@@ -189,22 +189,22 @@ String BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
 	return hexCode;
 }
 
-void BluetoothKeyboardDriver::SplitToArrayOf5(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray)
+void BluetoothKeyboardDriver::SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength)
 {
-	uint8_t outputArraySize = arrayLength / 5;
+	uint8_t outputArraySize = arrayLength / innerArrayLength;
 
-	if (arrayLength % 5 > 0)
+	if (arrayLength % innerArrayLength > 0)
 		outputArraySize++;
 
 	for (uint8_t i = 0; i < outputArraySize; i++)
 	{
-		outputArray[i] = new uint8_t[5];
+		outputArray[i] = new uint8_t[innerArrayLength];
 
-		for (uint8_t j = 0; j < 5; j++)
+		for (uint8_t j = 0; j < innerArrayLength; j++)
 		{
-			if (i * 5 + j < arrayLength)
+			if (i * innerArrayLength + j < arrayLength)
 			{
-				outputArray[i][j] = array[i * 5 + j];
+				outputArray[i][j] = array[i * innerArrayLength + j];
 			}
 			else
 			{
