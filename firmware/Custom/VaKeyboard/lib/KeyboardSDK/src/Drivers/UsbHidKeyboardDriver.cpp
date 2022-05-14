@@ -5,7 +5,7 @@ UsbHidKeyboardDriver::UsbHidKeyboardDriver()
 	NKROKeyboard.begin();
 }
 
-void UsbHidKeyboardDriver::SendKeys(Matrix* scannedKeysMatrix, Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, KeyboardKeycode** keymapProvider)
+void UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
 {
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
 	{
@@ -19,7 +19,6 @@ void UsbHidKeyboardDriver::SendKeys(Matrix* scannedKeysMatrix, Matrix* pressedKe
 			if (isPressed)
 			{
 				NKROKeyboard.press(currentKey);
-				
 			}
 			else if (isReleased)
 			{

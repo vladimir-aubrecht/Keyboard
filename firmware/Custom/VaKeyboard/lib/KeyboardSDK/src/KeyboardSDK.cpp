@@ -1,10 +1,11 @@
 #include "KeyboardSDK.h"
 
-KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider)
+KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
 	this->keyboardDriver = keyboardDriver;
+	this->logger = logger ?: new NullLogger();
 
 	this->keymap = keymapProvider->getKeyMap();
 }
@@ -38,7 +39,7 @@ void KeyboardSDK::scan()
 
 		diffTime = millis();
 
-		this->keyboardDriver->SendKeys(matrix, pressedKeysMatrix, releasedKeysMatrix, keymap);
+		this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
 
 		sendKeyTime = millis();
 
@@ -55,15 +56,11 @@ void KeyboardSDK::scan()
 	unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
 	unsigned long totalElapsedTime = endTime - startTime;
 
-	/*Serial.print("Scan duration: ");
-	Serial.println(scanElapsedTime);
-
-	Serial.print("Diff duration: ");
-	Serial.println(diffElapsedTime);
-
-	Serial.print("Send duration: ");
-	Serial.println(sendKeyElapsedTime);
-
-	Serial.print("Total duration: ");
-	Serial.println(totalElapsedTime);*/
+	if (this->logger->isEnabled())
+	{
+		this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
+		this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
+		this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
+		this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
+	}
 }

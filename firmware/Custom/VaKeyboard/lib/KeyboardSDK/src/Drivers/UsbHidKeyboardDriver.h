@@ -5,9 +5,8 @@
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
-
 public:
 	UsbHidKeyboardDriver();
 
-	virtual void SendKeys(Matrix* scannedKeysMatrix, Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, KeyboardKeycode** keymapProvider);
+	virtual void SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };

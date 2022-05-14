@@ -18,8 +18,6 @@
 const uint8_t numberOfRows = 6;
 const uint8_t numberOfColumns = 17;
 
-// USBHIDKeyboard Keyboard;
-
 ILogger *logger = NULL;
 IPinDriver *pinDriver = NULL;
 RgbLedDriver *rgbLedDriver = NULL;
@@ -36,20 +34,20 @@ void setup()
 	Wire.begin();
 	Wire.setClock(1700000);
 
-	logger = new Logger();
+	logger = new NullLogger();
 	pinDriver = new PinDriver(logger);
 	rgbLedDriver = new RgbLedDriver(logger);
 
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
 	// keyboardDriver = new UsbHidKeyboardDriver(/*&Keyboard*/);
-	keyboardDriver = new BluetoothKeyboardDriver(ble);
+	keyboardDriver = new BluetoothKeyboardDriver(ble, logger);
 
 	// displayDriver = new DisplayDriver(&SPI);
-	matrixScanner = new MatrixScanner(pinDriver, numberOfRows, numberOfColumns);
+	matrixScanner = new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger);
 	matrixEvaluator = new MatrixEvaluator();
 	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
-	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider);
+	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, logger);
 
 	Serial.println("\nSetup is done!");
 }

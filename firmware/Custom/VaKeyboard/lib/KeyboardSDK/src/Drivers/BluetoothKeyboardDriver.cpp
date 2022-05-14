@@ -1,39 +1,43 @@
 #include "BluetoothKeyboardDriver.h"
-#include "../Matrix/Convertors.h"
 
-BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble)
+BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, ILogger *logger)
 {
 	this->ble = ble;
+	this->logger = logger ?: new NullLogger();
 
 	if (!this->ble->begin(true))
 	{
-		Serial.println("Couldn't find Bluefruit, make sure it's in CoMmanD mode & check wiring?");
+		logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
+		return;
 	}
 
 	if (!ble->factoryReset())
 	{
-		Serial.println(F("Couldn't factory reset"));
+		logger->logError("Couldn't factory reset");
+		return;
 	}
 
 	ble->echo(false);
 
 	if (!ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		Serial.println("Could not set device name?");
+		logger->logError("Could not set device name?");
+		return;
 	}
 
 	if (!ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		Serial.println("Could not enable Keyboard");
+		logger->logError("Could not enable Keyboard");
+		return;
 	}
 
 	if (!ble->reset())
 	{
-		Serial.println("Couldn't reset??");
+		logger->logWarning("Couldn't reset??");
 	}
 }
 
-void BluetoothKeyboardDriver::SendKeys(Matrix *scannedKeysMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
+void BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
 {
 	if (this->ble->isConnected())
 	{
@@ -42,7 +46,7 @@ void BluetoothKeyboardDriver::SendKeys(Matrix *scannedKeysMatrix, Matrix *presse
 		uint8_t *buffer = new uint8_t[currentStateMatrix->numberOfRows * currentStateMatrix->numberOfColumns];
 
 		uint8_t keyCount = ScanForPressedRegularKeys(currentStateMatrix, keymapProvider, buffer);
-		uint8_t modificators = ScanForModificators(scannedKeysMatrix, keymapProvider);
+		uint8_t modificators = ScanForModificators(currentStateMatrix, keymapProvider);
 
 		uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
 
@@ -74,7 +78,7 @@ void BluetoothKeyboardDriver::SendKeys(Matrix *scannedKeysMatrix, Matrix *presse
 	}
 	else
 	{
-		Serial.println("Keyboard not connected :(");
+		this->logger->logWarning("Keyboard not connected :(");
 	}
 }
 

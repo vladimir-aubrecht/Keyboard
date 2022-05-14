@@ -4,7 +4,7 @@
 #include <Adafruit_MCP23X17.h>
 
 #include "Drivers/IPinDriver.h"
-#include "ILogger.h"
+#include "Logger/ILogger.h"
 
 class PinDriver : public IPinDriver
 {

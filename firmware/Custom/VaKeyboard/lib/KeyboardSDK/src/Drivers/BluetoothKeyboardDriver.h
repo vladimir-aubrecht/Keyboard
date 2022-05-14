@@ -1,6 +1,8 @@
 #pragma once
 
 #include "IKeyboardDriver.h"
+#include "Logger/ILogger.h"
+#include "Logger/NullLogger.h"
 
 #include "Adafruit_BLE.h"
 #include "Adafruit_BluefruitLE_SPI.h"
@@ -9,6 +11,7 @@ class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
 	Adafruit_BluefruitLE_SPI *ble;
+	ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	const uint8_t maxKeyCountInReport = 6;
 
@@ -21,7 +24,7 @@ private:
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:
-	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble);
+	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, ILogger *logger);
 
-	virtual void SendKeys(Matrix *scannedKeysMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
+	virtual void SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };

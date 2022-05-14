@@ -1,8 +1,9 @@
 #include "MatrixScanner.h"
 #include "Convertors.h"
 
-MatrixScanner::MatrixScanner(IPinDriver *pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns)
+MatrixScanner::MatrixScanner(IPinDriver *pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns, ILogger *logger)
 {
+	this->logger = logger;
 	this->pinDriver = pinDriver;
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
@@ -30,9 +31,12 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 		this->pinDriver->writePin(row, HIGH);
 	}
 
-	/*char *sm = Convertors::toString(matrix);
-	Serial.println(sm);
-	delete sm;*/
+	if (this->logger->isEnabled())
+	{
+		char *sm = Convertors::toString(matrix);
+		this->logger->logDebug(sm);
+		delete sm;
+	}
 
 	return matrix;
 }

@@ -29,7 +29,6 @@ uint8_t PinDriver::readPin(uint8_t pinNumber)
 
 void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 {
-	uint8_t enabledPinValue = 1 << pinNumber;
 	mcp0->digitalWrite(pinNumber, value);
 }
 
