@@ -26,5 +26,7 @@ private:
 public:
 	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, ILogger *logger);
 
+	virtual void Init();
+	virtual void ResetPairing();
 	virtual void SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };

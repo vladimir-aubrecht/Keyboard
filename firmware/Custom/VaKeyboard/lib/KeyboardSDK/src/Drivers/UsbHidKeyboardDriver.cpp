@@ -29,3 +29,7 @@ void UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 
 	NKROKeyboard.send();
 }
+
+void UsbHidKeyboardDriver::ResetPairing()
+{
+}

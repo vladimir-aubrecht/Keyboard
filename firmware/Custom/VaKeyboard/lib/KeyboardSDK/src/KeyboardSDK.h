@@ -8,12 +8,14 @@
 #include "IKeyMapProvider.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
+#include "ActionEvaluator.h"
 
 class KeyboardSDK
 {
 private:
 	MatrixScanner *matrixScanner;
 	MatrixEvaluator *matrixEvaluator;
+	ActionEvaluator *actionEvaluator;
 	IKeyboardDriver *keyboardDriver;
 	ILogger *logger;
 
@@ -21,7 +23,7 @@ private:
 	Matrix *previousMatrix = NULL;
 
 public:
-	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ILogger *logger);
+	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger);
 	~KeyboardSDK();
 	void scan();
 };

@@ -1,9 +1,10 @@
 #include "KeyboardSDK.h"
 
-KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ILogger *logger)
+KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
+	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
 	this->logger = logger ?: new NullLogger();
 
@@ -39,7 +40,10 @@ void KeyboardSDK::scan()
 
 		diffTime = millis();
 
-		this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
+		if (!this->actionEvaluator->evaluateActions(matrix))
+		{
+			this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
+		}
 
 		sendKeyTime = millis();
 

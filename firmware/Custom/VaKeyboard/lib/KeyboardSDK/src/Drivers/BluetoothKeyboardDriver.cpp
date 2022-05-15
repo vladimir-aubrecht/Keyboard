@@ -4,36 +4,45 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, 
 {
 	this->ble = ble;
 	this->logger = logger ?: new NullLogger();
+	this->Init();
+}
 
+void BluetoothKeyboardDriver::ResetPairing()
+{
+	if (!this->ble->factoryReset())
+	{
+		this->logger->logError("Couldn't factory reset");
+		return;
+	}
+
+	Init();
+}
+
+void BluetoothKeyboardDriver::Init()
+{
 	if (!this->ble->begin(true))
 	{
-		logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
+		this->logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
 		return;
 	}
 
-	if (!ble->factoryReset())
+	this->ble->echo(false);
+
+	if (!this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		logger->logError("Couldn't factory reset");
+		this->logger->logError("Could not set device name?");
 		return;
 	}
 
-	ble->echo(false);
-
-	if (!ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
+	if (!this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		logger->logError("Could not set device name?");
+		this->logger->logError("Could not enable Keyboard");
 		return;
 	}
 
-	if (!ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
+	if (!this->ble->reset())
 	{
-		logger->logError("Could not enable Keyboard");
-		return;
-	}
-
-	if (!ble->reset())
-	{
-		logger->logWarning("Couldn't reset??");
+		this->logger->logWarning("Couldn't reset??");
 	}
 }
 

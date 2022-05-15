@@ -18,3 +18,12 @@ KeyboardKeycode **KeyMapProvider::getKeyMap()
 
 	return keymaps;
 }
+
+uint8_t KeyMapProvider::getRowCount()
+{
+	return this->numberOfRows;
+}
+uint8_t KeyMapProvider::getColumnCount()
+{
+	return this->numberOfColumns;
+}

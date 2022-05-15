@@ -8,5 +8,6 @@ private:
 public:
 	UsbHidKeyboardDriver();
 
+	virtual void ResetPairing();
 	virtual void SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };

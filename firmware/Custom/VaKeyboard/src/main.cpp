@@ -26,7 +26,15 @@ DisplayDriver *displayDriver = NULL;
 MatrixScanner *matrixScanner = NULL;
 MatrixEvaluator *matrixEvaluator = NULL;
 KeyMapProvider *keymapProvider = NULL;
+ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
+
+void triggerBtReset()
+{
+	logger->logDebug("Resetting BT pairing...");
+	delay(2000);
+	keyboardDriver->ResetPairing();
+}
 
 void setup()
 {
@@ -34,7 +42,7 @@ void setup()
 	Wire.begin();
 	Wire.setClock(1700000);
 
-	logger = new NullLogger();
+	logger = new Logger();
 	pinDriver = new PinDriver(logger);
 	rgbLedDriver = new RgbLedDriver(logger);
 
@@ -47,9 +55,12 @@ void setup()
 	matrixScanner = new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger);
 	matrixEvaluator = new MatrixEvaluator();
 	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
-	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, logger);
+	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
+	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, actionEvaluator, logger);
 
-	Serial.println("\nSetup is done!");
+	actionEvaluator->registerAction(triggerBtReset, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+
+	logger->logDebug("\nSetup is done!");
 }
 
 void loop()
