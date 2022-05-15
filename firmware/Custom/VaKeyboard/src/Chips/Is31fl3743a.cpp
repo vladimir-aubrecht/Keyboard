@@ -19,7 +19,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 	Adafruit_BusIO_Register CRWL(i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(i2c_dev, 0xFD);
 
-	this->setIntensity(0xff);
+	this->setGlobalIntensity(0xff);
 
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x01);	  // lets write scaling
@@ -45,12 +45,12 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 	SS.write(0b00000001); // configure timing to 1200 us
 }
 
-uint8_t Is31fl3743a::getIntensity()
+uint8_t Is31fl3743a::getGlobalIntensity()
 {
-	return this->currentIntensity;
+	return this->currentGlobalIntensity;
 }
 
-void Is31fl3743a::setIntensity(uint8_t intensity)
+void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 {
 	Adafruit_BusIO_Register CRWL(this->i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(this->i2c_dev, 0xFD);
@@ -59,9 +59,31 @@ void Is31fl3743a::setIntensity(uint8_t intensity)
 	CR.write(0x00);	  // lets write pwm
 	for (int i = 0x01; i < 0xA3; i++)
 	{
+		uint8_t finalIntensity = intensity;
+		if (i % 3 == 1) // color correction hack
+		{
+			finalIntensity *= 0.5;
+		}
+
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
-		PWM.write(intensity);
+		PWM.write(finalIntensity);
 	}
 
-	this->currentIntensity = intensity;
+	this->currentGlobalIntensity = intensity;
+}
+
+void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity)
+{
+	Adafruit_BusIO_Register CRWL(this->i2c_dev, 0xFE);
+	Adafruit_BusIO_Register CR(this->i2c_dev, 0xFD);
+
+	CRWL.write(0xC5); // unlock CR
+	CR.write(0x00);	  // lets write pwm
+
+	Adafruit_BusIO_Register rPWM(i2c_dev, y * 18 + x * 4);
+	Adafruit_BusIO_Register gPWM(i2c_dev, y * 18 + x * 4 + 1);
+	Adafruit_BusIO_Register bPWM(i2c_dev, y * 18 + x * 4 + 2);
+	rPWM.write(redIntensity);
+	gPWM.write(greenIntensity);
+	bPWM.write(blueIntensity);
 }

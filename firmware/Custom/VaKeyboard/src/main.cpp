@@ -50,14 +50,19 @@ void toggleConnection()
 	keyboardDriver->SwapKeyboards();
 }
 
+void randomizeColors()
+{
+	rgbLedDriver->randomizeColors(numberOfRows, numberOfColumns);
+}
+
 void setup()
 {
 	Serial.begin(115200);
 	Wire.begin();
-	Wire.setClock(1700000);
+	Wire.setClock(1700000L);
 
 	logger = new Logger();
-	pinDriver = new PinDriver(logger);
+	pinDriver = new PinDriver(&Wire, logger);
 	rgbLedDriver = new RgbLedDriver(logger);
 
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
@@ -77,6 +82,7 @@ void setup()
 	actionEvaluator->registerAction(triggerBtReset, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerAction(toggleLeds, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerAction(toggleConnection, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerAction(randomizeColors, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 
 	logger->logDebug("\nSetup is done!");
 }

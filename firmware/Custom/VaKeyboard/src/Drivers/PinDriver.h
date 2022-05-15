@@ -19,5 +19,5 @@ public:
 	virtual void writePin(uint8_t pinNumber, uint8_t value);
 	virtual void refreshCache();
 
-	PinDriver(ILogger *logger);
+	PinDriver(TwoWire *wire, ILogger *logger);
 };

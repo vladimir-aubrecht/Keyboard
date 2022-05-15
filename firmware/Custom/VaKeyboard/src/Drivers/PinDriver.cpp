@@ -32,10 +32,10 @@ void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 	mcp0->digitalWrite(pinNumber, value);
 }
 
-PinDriver::PinDriver(ILogger *logger)
+PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 {
 	this->logger = logger;
-	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR, &Wire);
+	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR, wire);
 
 	if (!mcp0Status)
 	{
@@ -53,7 +53,7 @@ PinDriver::PinDriver(ILogger *logger)
 		mcp0->pinMode(i, INPUT_PULLUP);
 	}
 
-	uint8_t mcp1Status = mcp1->begin_I2C((uint8_t)MCP23XXX_ADDR + 7, &Wire); // outside chip next to keyboard edge
+	uint8_t mcp1Status = mcp1->begin_I2C((uint8_t)MCP23XXX_ADDR + 7, wire); // outside chip next to keyboard edge
 
 	if (!mcp1Status)
 	{
