@@ -4,7 +4,7 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, 
 {
 	this->ble = ble;
 	this->logger = logger ?: new NullLogger();
-	this->Init();
+	Init();
 }
 
 void BluetoothKeyboardDriver::ResetPairing()
@@ -225,4 +225,10 @@ void BluetoothKeyboardDriver::SplitToArrayOf(uint8_t *array, uint8_t arrayLength
 			}
 		}
 	}
+}
+
+void BluetoothKeyboardDriver::ResetState()
+{
+	this->currentStateMatrix = NULL;
+	this->SendRelease();
 }

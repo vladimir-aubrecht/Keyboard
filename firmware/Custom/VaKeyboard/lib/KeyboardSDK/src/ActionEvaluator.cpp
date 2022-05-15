@@ -73,7 +73,7 @@ bool ActionEvaluator::evaluateActions(Matrix *matrix)
             this->actions[k]->action();
             return true;
         }
-
-        return false;
     }
+
+    return false;
 }

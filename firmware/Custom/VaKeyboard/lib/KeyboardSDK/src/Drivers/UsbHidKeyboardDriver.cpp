@@ -33,3 +33,8 @@ void UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 void UsbHidKeyboardDriver::ResetPairing()
 {
 }
+
+void UsbHidKeyboardDriver::ResetState()
+{
+	NKROKeyboard.releaseAll();
+}

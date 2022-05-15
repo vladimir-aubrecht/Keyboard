@@ -14,6 +14,10 @@ private:
 	ILogger *logger = NULL;
 	uint8_t enabledColumns = 0;
 
+	uint8_t currentIntensity = 0;
+
 public:
 	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t enabledColumns);
+	void setIntensity(uint8_t intensity);
+	uint8_t getIntensity();
 };
