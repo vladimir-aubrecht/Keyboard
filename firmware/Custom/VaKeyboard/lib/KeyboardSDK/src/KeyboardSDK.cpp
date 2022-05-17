@@ -40,9 +40,12 @@ void KeyboardSDK::scan()
 
 		diffTime = millis();
 
-		if (!this->actionEvaluator->evaluateActions(matrix))
+		if (!this->actionEvaluator->evaluateMatrixActions(matrix) && !this->actionEvaluator->evaluateTimerAction())
 		{
-			this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap);
+			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap))
+			{
+				this->actionEvaluator->updateTimerActionsTime();
+			}
 		}
 
 		sendKeyTime = millis();
@@ -60,11 +63,11 @@ void KeyboardSDK::scan()
 	unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
 	unsigned long totalElapsedTime = endTime - startTime;
 
-	if (this->logger->isEnabled())
+	/*if (this->logger->isEnabled())
 	{
 		this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
 		this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
 		this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
 		this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
-	}
+	}*/
 }

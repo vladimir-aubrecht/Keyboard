@@ -46,7 +46,7 @@ void BluetoothKeyboardDriver::Init()
 	}
 }
 
-void BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
+bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
 {
 	if (this->ble->isConnected())
 	{
@@ -83,7 +83,10 @@ void BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 		if (keyCount == 0)
 		{
 			this->SendRelease();
+			return false;
 		}
+
+		return true;
 	}
 	else
 	{

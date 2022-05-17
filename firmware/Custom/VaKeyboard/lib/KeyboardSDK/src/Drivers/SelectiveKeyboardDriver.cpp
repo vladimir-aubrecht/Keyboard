@@ -11,9 +11,9 @@ void SelectiveKeyboardDriver::ResetPairing()
 {
     this->currentKeyboard->ResetPairing();
 }
-void SelectiveKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
+bool SelectiveKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
 {
-    this->currentKeyboard->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymapProvider);
+    return this->currentKeyboard->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymapProvider);
 }
 
 void SelectiveKeyboardDriver::SwapKeyboards()

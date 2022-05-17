@@ -31,11 +31,33 @@ void RgbLedDriver::randomizeColorsPerController(Is31fl3743a *controller, uint8_t
 	}
 }
 
-void RgbLedDriver::toggle()
+void RgbLedDriver::turnOn()
 {
+	if (this->controller1->getGlobalIntensity() == 0)
+	{
+		this->controller1->setGlobalIntensity(0xff);
+	}
+
+	if (this->controller2->getGlobalIntensity() == 0)
+	{
+		this->controller2->setGlobalIntensity(0xff);
+	}
+}
+
+void RgbLedDriver::turnOff()
+{
+	this->controller1->setGlobalIntensity(0);
+	this->controller2->setGlobalIntensity(0);
+}
+
+bool RgbLedDriver::toggle()
+{
+	bool isOn = true;
+
 	if (this->controller1->getGlobalIntensity() > 0)
 	{
 		this->controller1->setGlobalIntensity(0);
+		isOn = false;
 	}
 	else
 	{
@@ -45,9 +67,12 @@ void RgbLedDriver::toggle()
 	if (this->controller2->getGlobalIntensity() > 0)
 	{
 		this->controller2->setGlobalIntensity(0);
+		isOn = false;
 	}
 	else
 	{
 		this->controller2->setGlobalIntensity(0xff);
 	}
+
+	return isOn;
 }

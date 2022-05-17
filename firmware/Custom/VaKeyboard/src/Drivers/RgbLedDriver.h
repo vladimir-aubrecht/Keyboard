@@ -11,6 +11,8 @@ private:
 
 public:
 	RgbLedDriver(ILogger *logger);
-	void toggle();
+	void turnOn();
+	void turnOff();
+	bool toggle();
 	void randomizeColors(uint8_t rowsCount, uint8_t columnCount);
 };

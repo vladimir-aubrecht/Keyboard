@@ -4,10 +4,10 @@ ActionEvaluator::ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logge
 {
     this->logger = logger ?: new NullLogger();
     this->keymapProvider = keymapProvider;
-    this->actions = new Action *[0];
+    this->matrixActions = new MatrixAction *[0];
 }
 
-ActionEvaluator::Action *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
 {
     KeyboardKeycode **keymaps = keymapProvider->getKeyMap();
 
@@ -36,44 +36,100 @@ ActionEvaluator::Action *ActionEvaluator::translateToAction(void (*action)(), ui
         }
     }
 
-    return new Action(action, keycodesCount, rows, columns);
+    return new MatrixAction(action, keycodesCount, rows, columns);
 }
 
-void ActionEvaluator::registerAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
 {
-    uint8_t itemsCount = registeredActionsCount;
-    Action **newActions = new Action *[itemsCount + 1];
+    uint8_t itemsCount = registeredMatrixActionsCount;
+    MatrixAction **newActions = new MatrixAction *[itemsCount + 1];
 
     for (uint8_t i = 0; i < itemsCount; i++)
     {
-        newActions[i] = this->actions[i];
+        newActions[i] = this->matrixActions[i];
     }
 
     newActions[itemsCount] = translateToAction(action, keycodesCount, keycodes);
 
-    Action **oldAction = this->actions;
-    this->actions = newActions;
-    registeredActionsCount++;
-    delete oldAction;
+    MatrixAction **oldAction = this->matrixActions;
+    this->matrixActions = newActions;
+    registeredMatrixActionsCount++;
+
+    if (oldAction != NULL)
+    {
+        delete oldAction;
+    }
 }
 
-bool ActionEvaluator::evaluateActions(Matrix *matrix)
+bool ActionEvaluator::evaluateMatrixActions(Matrix *matrix)
 {
-    for (uint8_t k = 0; k < registeredActionsCount; k++)
+    for (uint8_t k = 0; k < registeredMatrixActionsCount; k++)
     {
         uint8_t allPressed = 1;
-        for (uint8_t i = 0; i < this->actions[k]->keycodesCount; i++)
+        for (uint8_t i = 0; i < this->matrixActions[k]->keycodesCount; i++)
         {
-            uint8_t isPressed = (matrix->matrixData[this->actions[k]->rows[i]] >> this->actions[k]->columns[i]) & 1;
+            uint8_t isPressed = (matrix->matrixData[this->matrixActions[k]->rows[i]] >> this->matrixActions[k]->columns[i]) & 1;
             allPressed &= isPressed;
         }
 
         if (allPressed)
         {
-            this->actions[k]->action();
+            this->matrixActions[k]->action();
             return true;
         }
     }
 
     return false;
+}
+
+void ActionEvaluator::registerTimerAction(unsigned long millisecondsCount, unsigned long firstRunInMillisecondsCount, void (*triggerAction)(), void (*noTriggerAction)())
+{
+    uint8_t itemsCount = registeredTimerActionsCount;
+    TimerAction **newActions = new TimerAction *[itemsCount + 1];
+
+    for (uint8_t i = 0; i < itemsCount; i++)
+    {
+        newActions[i] = this->timerActions[i];
+    }
+
+    newActions[itemsCount] = new TimerAction(millisecondsCount, firstRunInMillisecondsCount, triggerAction, noTriggerAction);
+
+    TimerAction **oldAction = this->timerActions;
+    this->timerActions = newActions;
+    registeredTimerActionsCount++;
+
+    if (oldAction != NULL)
+    {
+        delete oldAction;
+    }
+}
+
+bool ActionEvaluator::evaluateTimerAction()
+{
+    unsigned long currentTime = millis();
+
+    for (uint8_t k = 0; k < registeredTimerActionsCount; k++)
+    {
+        TimerAction *action = this->timerActions[k];
+
+        if ((unsigned long)(currentTime - action->lastExecutionTime) > action->millisecondsCount)
+        {
+            action->triggerAction();
+        }
+        else
+        {
+            action->noTriggerAction();
+        }
+    }
+
+    return false;
+}
+
+void ActionEvaluator::updateTimerActionsTime()
+{
+    for (uint8_t k = 0; k < registeredTimerActionsCount; k++)
+    {
+        TimerAction *action = this->timerActions[k];
+        action->lastExecutionTime = millis();
+    }
 }

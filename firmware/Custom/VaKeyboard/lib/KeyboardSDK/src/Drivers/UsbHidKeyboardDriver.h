@@ -10,5 +10,5 @@ public:
 
 	virtual void ResetPairing();
 	virtual void ResetState();
-	virtual void SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
+	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };

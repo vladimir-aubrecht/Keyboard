@@ -33,6 +33,8 @@ KeyboardSDK *keyboard = NULL;
 IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
+bool enforcedDisabledLeds = false;
+
 void triggerBtReset()
 {
 	logger->logDebug("Resetting BT pairing...");
@@ -42,7 +44,7 @@ void triggerBtReset()
 void toggleLeds()
 {
 	logger->logDebug("Toggling LEDs...");
-	rgbLedDriver->toggle();
+	enforcedDisabledLeds = !rgbLedDriver->toggle();
 }
 
 void toggleConnection()
@@ -53,6 +55,21 @@ void toggleConnection()
 void randomizeColors()
 {
 	rgbLedDriver->randomizeColors(numberOfRows, numberOfColumns);
+}
+
+void turnOnLeds()
+{
+	if (enforcedDisabledLeds)
+	{
+		return;
+	}
+
+	rgbLedDriver->turnOn();
+}
+
+void turnOffLeds()
+{
+	rgbLedDriver->turnOff();
 }
 
 void setup()
@@ -79,10 +96,11 @@ void setup()
 	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
 	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, actionEvaluator, logger);
 
-	actionEvaluator->registerAction(triggerBtReset, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerAction(toggleLeds, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerAction(toggleConnection, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerAction(randomizeColors, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(triggerBtReset, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(toggleLeds, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(toggleConnection, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(randomizeColors, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
 
 	logger->logDebug("\nSetup is done!");
 }
