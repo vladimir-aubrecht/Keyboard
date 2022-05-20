@@ -39,7 +39,7 @@ PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 
 	if (!mcp0Status)
 	{
-		// this->logger->logError("Failed to initialise first MCP23017.");
+		// this->logger->logError(F("Failed to initialise first MCP23017."));
 		return;
 	}
 
@@ -57,7 +57,7 @@ PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 
 	if (!mcp1Status)
 	{
-		// this->logger->logError("Failed to initialise second MCP23017.");
+		// this->logger->logError(F("Failed to initialise second MCP23017."));
 		return;
 	}
 

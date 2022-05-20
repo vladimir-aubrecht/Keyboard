@@ -11,7 +11,7 @@ void BluetoothKeyboardDriver::ResetPairing()
 {
 	if (!this->ble->factoryReset())
 	{
-		// this->logger->logError("Couldn't factory reset");
+		this->logger->logError(F("Couldn't factory reset"));
 		return;
 	}
 
@@ -22,7 +22,7 @@ void BluetoothKeyboardDriver::Init()
 {
 	if (!this->ble->begin(true))
 	{
-		// this->logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
+		this->logger->logError(F("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?"));
 		return;
 	}
 
@@ -30,19 +30,19 @@ void BluetoothKeyboardDriver::Init()
 
 	if (!this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		// this->logger->logError("Could not set device name?");
+		// this->logger->logError(F("Could not set device name?"));
 		return;
 	}
 
 	if (!this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		// this->logger->logError("Could not enable Keyboard");
+		// this->logger->logError(F("Could not enable Keyboard"));
 		return;
 	}
 
 	if (!this->ble->reset())
 	{
-		// this->logger->logWarning("Couldn't reset??");
+		// this->logger->logWarning(F("Couldn't reset??"));
 	}
 }
 
@@ -90,7 +90,7 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 	}
 	else
 	{
-		this->logger->logWarning("Keyboard not connected :(");
+		this->logger->logWarning(F("Keyboard not connected :("));
 	}
 }
 
@@ -180,7 +180,6 @@ bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys
 		cmd += "-" + this->ConvertToHexCode(keys[i]);
 	}
 
-	// Serial.println(cmd);
 	ble->println("AT+BLEKEYBOARDCODE=" + cmd);
 
 	return !ble->waitForOK();
@@ -188,7 +187,7 @@ bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys
 
 bool BluetoothKeyboardDriver::SendRelease()
 {
-	ble->println("AT+BLEKEYBOARDCODE=00-00");
+	ble->println(F("AT+BLEKEYBOARDCODE=00-00"));
 
 	return !ble->waitForOK();
 }

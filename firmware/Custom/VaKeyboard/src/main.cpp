@@ -39,13 +39,13 @@ bool enforcedDisabledLeds = false;
 
 void triggerBtReset()
 {
-	// logger->logDebug("Resetting BT pairing...");
+	// logger->logDebug(F("Resetting BT pairing..."));
 	keyboardDriver->ResetPairing();
 }
 
 void toggleLeds()
 {
-	// logger->logDebug("Toggling LEDs...");
+	// logger->logDebug(F("Toggling LEDs..."));
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
 }
 
@@ -138,7 +138,7 @@ void setup()
 	actionEvaluator->registerMatrixAction(showBatteryLevel, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
 
-	// logger->logDebug("\nSetup is done!");
+	// logger->logDebug(F("\nSetup is done!"));
 }
 
 void loop()

@@ -12,7 +12,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	if (!this->i2c_dev->begin())
 	{
-		// this->logger->logError("Failed to initialise IS31FL3743A.");
+		// this->logger->logError(F("Failed to initialise IS31FL3743A."));
 		return;
 	}
 
