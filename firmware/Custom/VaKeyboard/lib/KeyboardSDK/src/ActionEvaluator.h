@@ -13,6 +13,7 @@ public:
     ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logger);
     void registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
     void registerTimerAction(unsigned long millisecondsCount, unsigned long firstRunInMillisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
+    void registerTemporaryTimerAction(unsigned long millisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
     bool evaluateMatrixActions(Matrix *matrix);
     bool evaluateTimerAction();
     void updateTimerActionsTime();
@@ -55,6 +56,7 @@ private:
     ILogger *logger = NULL;
     MatrixAction **matrixActions = NULL;
     TimerAction **timerActions = NULL;
+    TimerAction *temporaryTimerActions = NULL;
     IKeyMapProvider *keymapProvider = NULL;
 
     MatrixAction *translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);

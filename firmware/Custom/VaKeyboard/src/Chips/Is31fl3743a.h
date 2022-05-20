@@ -17,7 +17,7 @@ private:
 	uint8_t currentGlobalIntensity = 0;
 
 public:
-	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t enabledColumns);
+	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t enabledColumns);	
 	void setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);
 	void setGlobalIntensity(uint8_t intensity);
 	uint8_t getGlobalIntensity();

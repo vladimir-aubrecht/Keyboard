@@ -1,32 +1,48 @@
 #include "RgbLedDriver.h"
 
-RgbLedDriver::RgbLedDriver(ILogger *logger)
+RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCount)
 {
 	this->logger = logger;
+	this->rowsCount = rowsCount;
+	this->columnCount = columnCount;
 	this->controller1 = new Is31fl3743a(0x2C, &Wire, logger, 9);
 	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 8);
 }
 
-void RgbLedDriver::randomizeColors(uint8_t rowsCount, uint8_t columnCount)
+void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color)
 {
-	this->randomizeColorsPerController(this->controller1, rowsCount, columnCount);
-	this->randomizeColorsPerController(this->controller2, rowsCount, columnCount);
+	uint8_t r = (uint8_t)((color & 0x00ff0000) >> 16);
+	uint8_t g = (uint8_t)((color & 0x0000ff00) >> 8);
+	uint8_t b = (uint8_t)(color & 0x000000ff);
+	uint8_t intensity = (256 - animationPhase);
+
+	this->setColor(x, y, r / intensity, g / intensity, b / intensity);
 }
 
-void RgbLedDriver::randomizeColorsPerController(Is31fl3743a *controller, uint8_t rowsCount, uint8_t columnCount)
+void RgbLedDriver::setColor(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity)
 {
-	uint8_t r = 0;
-	uint8_t g = 0;
-	uint8_t b = 0;
-
-	for (uint8_t row = 0; row < rowsCount; row++)
+	if (y < 9)
 	{
-		for (uint8_t column = 0; column < columnCount; column++)
+		controller1->setLedIntensities(x, y, redIntensity, greenIntensity, blueIntensity);
+	}
+	else
+	{
+		controller2->setLedIntensities(x, y - 9, redIntensity, greenIntensity, blueIntensity);
+	}
+}
+
+void RgbLedDriver::randomizeColors()
+{
+	for (uint8_t row = 0; row < this->rowsCount; row++)
+	{
+		for (uint8_t column = 0; column < this->columnCount; column++)
 		{
-			r = random(0xff);
-			g = random(0xff);
-			b = random(0xff);
-			controller->setLedIntensities(row, column, r, g, b);
+			uint32_t color = random(0x00ffffff);
+			uint8_t r = (uint8_t)((color & 0x00ff0000) >> 16);
+			uint8_t g = (uint8_t)((color & 0x0000ff00) >> 8);
+			uint8_t b = (uint8_t)(color & 0x000000ff);
+
+			this->setColor(row, column, r, g, b);
 		}
 	}
 }

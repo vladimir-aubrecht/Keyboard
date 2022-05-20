@@ -11,7 +11,7 @@ void BluetoothKeyboardDriver::ResetPairing()
 {
 	if (!this->ble->factoryReset())
 	{
-		this->logger->logError("Couldn't factory reset");
+		// this->logger->logError("Couldn't factory reset");
 		return;
 	}
 
@@ -22,7 +22,7 @@ void BluetoothKeyboardDriver::Init()
 {
 	if (!this->ble->begin(true))
 	{
-		this->logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
+		// this->logger->logError("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?");
 		return;
 	}
 
@@ -30,19 +30,19 @@ void BluetoothKeyboardDriver::Init()
 
 	if (!this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		this->logger->logError("Could not set device name?");
+		// this->logger->logError("Could not set device name?");
 		return;
 	}
 
 	if (!this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		this->logger->logError("Could not enable Keyboard");
+		// this->logger->logError("Could not enable Keyboard");
 		return;
 	}
 
 	if (!this->ble->reset())
 	{
-		this->logger->logWarning("Couldn't reset??");
+		// this->logger->logWarning("Couldn't reset??");
 	}
 }
 

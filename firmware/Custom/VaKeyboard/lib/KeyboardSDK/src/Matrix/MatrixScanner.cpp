@@ -33,9 +33,9 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 
 	if (this->logger->isEnabled())
 	{
-		char *sm = Convertors::toString(matrix);
-		this->logger->logDebug(sm);
-		delete sm;
+		// char *sm = Convertors::toString(matrix);
+		// this->logger->logDebug(sm);
+		// delete sm;
 	}
 
 	return matrix;

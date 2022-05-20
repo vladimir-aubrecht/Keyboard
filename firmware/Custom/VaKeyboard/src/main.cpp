@@ -6,6 +6,7 @@
 #include "Drivers/SelectiveKeyboardDriver.h"
 #include "Drivers/DisplayDriver.h"
 #include "Drivers/PinDriver.h"
+#include "Drivers/BatteryDriver.h"
 #include "KeyMapProvider.h"
 #include "Drivers/RgbLedDriver.h"
 #include "Logger.h"
@@ -29,6 +30,7 @@ MatrixEvaluator *matrixEvaluator = NULL;
 KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
+BatteryDriver *batteryDriver = NULL;
 
 IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
@@ -37,24 +39,42 @@ bool enforcedDisabledLeds = false;
 
 void triggerBtReset()
 {
-	logger->logDebug("Resetting BT pairing...");
+	// logger->logDebug("Resetting BT pairing...");
 	keyboardDriver->ResetPairing();
 }
 
 void toggleLeds()
 {
-	logger->logDebug("Toggling LEDs...");
+	// logger->logDebug("Toggling LEDs...");
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
 }
 
 void toggleConnection()
 {
-	keyboardDriver->SwapKeyboards();
+	enforcedDisabledLeds = true;
+	rgbLedDriver->turnOff();
+
+	if (keyboardDriver->SwapKeyboards() == usbKeyboardDriver)
+	{
+		actionEvaluator->registerTemporaryTimerAction(
+			1000, []()
+			{ rgbLedDriver->blink(0xff, 0, 2, 0x00ffffff); },
+			[]()
+			{ enforcedDisabledLeds = false; });
+	}
+	else
+	{
+		actionEvaluator->registerTemporaryTimerAction(
+			1000, []()
+			{ rgbLedDriver->blink(0xff, 0, 3, 0x00ffffff); },
+			[]()
+			{ enforcedDisabledLeds = false; });
+	}
 }
 
 void randomizeColors()
 {
-	rgbLedDriver->randomizeColors(numberOfRows, numberOfColumns);
+	rgbLedDriver->randomizeColors();
 }
 
 void turnOnLeds()
@@ -72,15 +92,30 @@ void turnOffLeds()
 	rgbLedDriver->turnOff();
 }
 
+void showBatteryLevel()
+{
+	enforcedDisabledLeds = true;
+	turnOffLeds();
+
+	actionEvaluator->registerTemporaryTimerAction(
+		1000, []()
+		{ rgbLedDriver->blink(0xff, 0, (batteryDriver->readBatteryLevel() / 10) + 1, 0x00ffffff); },
+		[]()
+		{ enforcedDisabledLeds = false; });
+}
+
 void setup()
 {
 	Serial.begin(115200);
 	Wire.begin();
-	Wire.setClock(1700000L);
 
 	logger = new Logger();
+	batteryDriver = new BatteryDriver();
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
+
+	Wire.setClock(1700000L);
+
 	pinDriver = new PinDriver(&Wire, logger);
-	rgbLedDriver = new RgbLedDriver(logger);
 
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
@@ -100,12 +135,14 @@ void setup()
 	actionEvaluator->registerMatrixAction(toggleLeds, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(toggleConnection, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(randomizeColors, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(showBatteryLevel, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
 
-	logger->logDebug("\nSetup is done!");
+	// logger->logDebug("\nSetup is done!");
 }
 
 void loop()
 {
 	keyboard->scan();
+	Serial.println(batteryDriver->readBatteryLevel());
 }

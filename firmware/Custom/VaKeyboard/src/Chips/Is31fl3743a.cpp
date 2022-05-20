@@ -12,7 +12,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	if (!this->i2c_dev->begin())
 	{
-		this->logger->logError("Failed to initialise IS31FL3743A.");
+		// this->logger->logError("Failed to initialise IS31FL3743A.");
 		return;
 	}
 
@@ -80,9 +80,10 @@ void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, 
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x00);	  // lets write pwm
 
-	Adafruit_BusIO_Register rPWM(i2c_dev, y * 18 + x * 4);
-	Adafruit_BusIO_Register gPWM(i2c_dev, y * 18 + x * 4 + 1);
-	Adafruit_BusIO_Register bPWM(i2c_dev, y * 18 + x * 4 + 2);
+	// registers starts at address 0x1
+	Adafruit_BusIO_Register rPWM(i2c_dev, y * 18 + x * 3 + 1);
+	Adafruit_BusIO_Register gPWM(i2c_dev, y * 18 + x * 3 + 2);
+	Adafruit_BusIO_Register bPWM(i2c_dev, y * 18 + x * 3 + 3);
 	rPWM.write(redIntensity);
 	gPWM.write(greenIntensity);
 	bPWM.write(blueIntensity);

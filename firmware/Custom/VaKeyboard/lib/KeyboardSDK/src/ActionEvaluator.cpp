@@ -82,6 +82,11 @@ bool ActionEvaluator::evaluateMatrixActions(Matrix *matrix)
     return false;
 }
 
+void ActionEvaluator::registerTemporaryTimerAction(unsigned long millisecondsCount, void (*triggerAction)(), void (*noTriggerAction)())
+{
+    this->temporaryTimerActions = new TimerAction(millisecondsCount, millis(), triggerAction, noTriggerAction);
+}
+
 void ActionEvaluator::registerTimerAction(unsigned long millisecondsCount, unsigned long firstRunInMillisecondsCount, void (*triggerAction)(), void (*noTriggerAction)())
 {
     uint8_t itemsCount = registeredTimerActionsCount;
@@ -107,6 +112,17 @@ void ActionEvaluator::registerTimerAction(unsigned long millisecondsCount, unsig
 bool ActionEvaluator::evaluateTimerAction()
 {
     unsigned long currentTime = millis();
+
+    if (this->temporaryTimerActions != NULL)
+    {
+        this->temporaryTimerActions->triggerAction();
+
+        if ((unsigned long)(currentTime - this->temporaryTimerActions->lastExecutionTime) > this->temporaryTimerActions->millisecondsCount)
+        {
+            this->temporaryTimerActions->noTriggerAction();
+            this->temporaryTimerActions = NULL;
+        }
+    }
 
     for (uint8_t k = 0; k < registeredTimerActionsCount; k++)
     {

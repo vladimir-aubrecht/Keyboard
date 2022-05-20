@@ -16,7 +16,7 @@ bool SelectiveKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
     return this->currentKeyboard->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymapProvider);
 }
 
-void SelectiveKeyboardDriver::SwapKeyboards()
+IKeyboardDriver *SelectiveKeyboardDriver::SwapKeyboards()
 {
     if (this->currentKeyboard == this->keyboard1)
     {
@@ -28,6 +28,8 @@ void SelectiveKeyboardDriver::SwapKeyboards()
     }
 
     this->ResetState();
+
+    return this->currentKeyboard;
 }
 
 void SelectiveKeyboardDriver::ResetState()
