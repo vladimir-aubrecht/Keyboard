@@ -1,11 +1,12 @@
 #pragma once
 
 #include <arduino.h>
+#include "Drivers/IBatteryDriver.h"
 
-class BatteryDriver
+class BatteryDriver : public IBatteryDriver
 {
 public:
     BatteryDriver();
 
-    uint8_t readBatteryLevel();
+    virtual uint8_t readBatteryLevel();
 };

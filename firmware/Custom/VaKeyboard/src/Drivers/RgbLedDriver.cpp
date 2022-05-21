@@ -68,27 +68,14 @@ void RgbLedDriver::turnOff()
 
 bool RgbLedDriver::toggle()
 {
-	bool isOn = true;
-
 	if (this->controller1->getGlobalIntensity() > 0)
 	{
-		this->controller1->setGlobalIntensity(0);
-		isOn = false;
+		turnOff();
+		return false;
 	}
 	else
 	{
-		this->controller1->setGlobalIntensity(0xff);
+		turnOn();
+		return true;
 	}
-
-	if (this->controller2->getGlobalIntensity() > 0)
-	{
-		this->controller2->setGlobalIntensity(0);
-		isOn = false;
-	}
-	else
-	{
-		this->controller2->setGlobalIntensity(0xff);
-	}
-
-	return isOn;
 }

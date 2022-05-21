@@ -25,20 +25,20 @@ KeyboardSDK::~KeyboardSDK()
 
 void KeyboardSDK::scan()
 {
-	unsigned long startTime = millis();
+	// unsigned long startTime = millis();
 
 	Matrix *matrix = this->matrixScanner->scanKeyPressMatrix();
 
-	unsigned long scanTime = millis();
-	unsigned long diffTime = millis();
-	unsigned long sendKeyTime = millis();
+	// unsigned long scanTime = millis();
+	// unsigned long diffTime = millis();
+	// unsigned long sendKeyTime = millis();
 
 	if (this->previousMatrix != NULL)
 	{
 		Matrix *pressedKeysMatrix = this->matrixEvaluator->getPressedKeysMatrix(this->previousMatrix, matrix);
 		Matrix *releasedKeysMatrix = this->matrixEvaluator->getReleasedKeysMatrix(this->previousMatrix, matrix);
 
-		diffTime = millis();
+		// diffTime = millis();
 
 		if (!this->actionEvaluator->evaluateMatrixActions(matrix) && !this->actionEvaluator->evaluateTimerAction())
 		{
@@ -48,7 +48,7 @@ void KeyboardSDK::scan()
 			}
 		}
 
-		sendKeyTime = millis();
+		// sendKeyTime = millis();
 
 		delete pressedKeysMatrix;
 		delete releasedKeysMatrix;
@@ -57,7 +57,7 @@ void KeyboardSDK::scan()
 
 	this->previousMatrix = matrix;
 
-	if (this->logger->isEnabled())
+	/*if (this->logger->isEnabled())
 	{
 		unsigned long endTime = millis();
 		unsigned long scanElapsedTime = scanTime - startTime;
@@ -69,5 +69,5 @@ void KeyboardSDK::scan()
 		//this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
 		//this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
 		//this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
-	}
+	}*/
 }

@@ -31,12 +31,12 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 		this->pinDriver->writePin(row, HIGH);
 	}
 
-	if (this->logger->isEnabled())
-	{
-		// char *sm = Convertors::toString(matrix);
-		// this->logger->logDebug(sm);
-		// delete sm;
-	}
+	// if (this->logger->isEnabled())
+	//{
+	//  char *sm = Convertors::toString(matrix);
+	//  this->logger->logDebug(sm);
+	//  delete sm;
+	//}
 
 	return matrix;
 }

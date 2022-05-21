@@ -4,7 +4,7 @@
 #include "Drivers/UsbHidKeyboardDriver.h"
 #include "Drivers/BluetoothKeyboardDriver.h"
 #include "Drivers/SelectiveKeyboardDriver.h"
-#include "Drivers/DisplayDriver.h"
+//#include "Drivers/DisplayDriver.h"
 #include "Drivers/PinDriver.h"
 #include "Drivers/BatteryDriver.h"
 #include "KeyMapProvider.h"
@@ -24,35 +24,44 @@ ILogger *logger = NULL;
 IPinDriver *pinDriver = NULL;
 RgbLedDriver *rgbLedDriver = NULL;
 SelectiveKeyboardDriver *keyboardDriver = NULL;
-DisplayDriver *displayDriver = NULL;
+// DisplayDriver *displayDriver = NULL;
 MatrixScanner *matrixScanner = NULL;
 MatrixEvaluator *matrixEvaluator = NULL;
 KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
-BatteryDriver *batteryDriver = NULL;
+IBatteryDriver *batteryDriver = NULL;
 
 IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 bool enforcedDisabledLeds = false;
+bool isConnectionInChange = false;
 
 void triggerBtReset()
 {
-	logger->logDebug(F("Resetting BT pairing..."));
+	// logger->logDebug(F("Resetting BT pairing..."));
 	keyboardDriver->ResetPairing();
 }
 
 void toggleLeds()
 {
-	logger->logDebug(F("Toggling LEDs..."));
+	// logger->logDebug(F("Toggling LEDs..."));
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
 }
 
 void toggleConnection()
 {
+	if (isConnectionInChange)
+	{
+		return;
+	}
+
+	isConnectionInChange = true;
+
 	enforcedDisabledLeds = true;
 	rgbLedDriver->turnOff();
+	keyboardDriver->ResetState();
 
 	if (keyboardDriver->SwapKeyboards() == usbKeyboardDriver)
 	{
@@ -60,7 +69,7 @@ void toggleConnection()
 			1000, []()
 			{ rgbLedDriver->blink(0xff, 0, 2, 0x00ffffff); },
 			[]()
-			{ enforcedDisabledLeds = false; });
+			{ enforcedDisabledLeds = false; isConnectionInChange = false; });
 	}
 	else
 	{
@@ -68,7 +77,7 @@ void toggleConnection()
 			1000, []()
 			{ rgbLedDriver->blink(0xff, 0, 3, 0x00ffffff); },
 			[]()
-			{ enforcedDisabledLeds = false; });
+			{ enforcedDisabledLeds = false; isConnectionInChange = false; });
 	}
 }
 
@@ -109,7 +118,7 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	logger = new Logger();
+	logger = new NullLogger();
 	batteryDriver = new BatteryDriver();
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
 
@@ -120,7 +129,7 @@ void setup()
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 
 	usbKeyboardDriver = new UsbHidKeyboardDriver();
-	btKeyboardDriver = new BluetoothKeyboardDriver(ble, logger);
+	btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
 
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 
