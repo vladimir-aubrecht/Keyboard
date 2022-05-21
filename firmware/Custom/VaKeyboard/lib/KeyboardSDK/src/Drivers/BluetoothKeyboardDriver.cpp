@@ -1,9 +1,10 @@
 #include "BluetoothKeyboardDriver.h"
 
-BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, ILogger *logger)
+BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, IBatteryDriver *batteryDriver, ILogger *logger)
 {
 	this->ble = ble;
 	this->logger = logger ?: new NullLogger();
+	this->batteryDriver = batteryDriver;
 	Init();
 }
 
@@ -11,7 +12,7 @@ void BluetoothKeyboardDriver::ResetPairing()
 {
 	if (!this->ble->factoryReset())
 	{
-		this->logger->logError(F("Couldn't factory reset"));
+		// this->logger->logError(F("Couldn't factory reset"));
 		return;
 	}
 
@@ -22,7 +23,7 @@ void BluetoothKeyboardDriver::Init()
 {
 	if (!this->ble->begin(true))
 	{
-		this->logger->logError(F("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?"));
+		// this->logger->logError(F("Couldn't find Bluefruit, make sure it's in Command mode & check wiring?"));
 		return;
 	}
 
@@ -30,19 +31,22 @@ void BluetoothKeyboardDriver::Init()
 
 	if (!this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		this->logger->logError(F("Could not set device name?"));
+		// this->logger->logError(F("Could not set device name?"));
 		return;
 	}
 
 	if (!this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		this->logger->logError(F("Could not enable Keyboard"));
+		// this->logger->logError(F("Could not enable Keyboard"));
 		return;
 	}
 
+	this->ble->sendCommandCheckOK(F("AT+BLEBATTEN=on"));
+	this->ble->sendCommandCheckOK("AT+BLEBATTVAL=" + batteryDriver->readBatteryLevel());
+
 	if (!this->ble->reset())
 	{
-		this->logger->logWarning(F("Couldn't reset??"));
+		// this->logger->logWarning(F("Couldn't reset??"));
 	}
 }
 
@@ -90,7 +94,8 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 	}
 	else
 	{
-		this->logger->logWarning(F("Keyboard not connected :("));
+		// this->logger->logWarning(F("Keyboard not connected :("));
+		this->ble->con return false;
 	}
 }
 
@@ -173,14 +178,11 @@ uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKey
 
 bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys)
 {
-	char cmd[20];
-	strcpy(cmd, this->ConvertToHexCode(modificators));
-	strcat(cmd, "-00");
+	String cmd = this->ConvertToHexCode(modificators) + "-00";
 
 	for (int i = 0; i < this->maxKeyCountInReport; i++)
 	{
-		strcat(cmd, "-");
-		strcat(cmd, this->ConvertToHexCode(keys[i]));
+		cmd += "-" + this->ConvertToHexCode(keys[i]);
 	}
 
 	ble->print("AT+BLEKEYBOARDCODE=");
@@ -191,12 +193,12 @@ bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys
 
 bool BluetoothKeyboardDriver::SendRelease()
 {
-	ble->println(F("AT+BLEKEYBOARDCODE=00-00"));
+	ble->println("AT+BLEKEYBOARDCODE=00-00");
 
 	return !ble->waitForOK();
 }
 
-const char *BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
+String BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
 {
 	String hexCode = String(code, HEX);
 
@@ -205,7 +207,7 @@ const char *BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
 		hexCode = "0" + hexCode;
 	}
 
-	return hexCode.c_str();
+	return hexCode;
 }
 
 void BluetoothKeyboardDriver::SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength)
