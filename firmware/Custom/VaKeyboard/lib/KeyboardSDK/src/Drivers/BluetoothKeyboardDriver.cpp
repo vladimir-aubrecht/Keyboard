@@ -95,7 +95,7 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 	else
 	{
 		// this->logger->logWarning(F("Keyboard not connected :("));
-		this->ble->con return false;
+		return false;
 	}
 }
 
