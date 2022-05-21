@@ -15,7 +15,7 @@ private:
 	Matrix *currentStateMatrix = NULL;
 	const uint8_t maxKeyCountInReport = 6;
 
-	String ConvertToHexCode(uint8_t code);
+	const char *ConvertToHexCode(uint8_t code);
 	void SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength);
 	bool SendKeypresses(uint8_t modificators, uint8_t *keys);
 	bool SendRelease();

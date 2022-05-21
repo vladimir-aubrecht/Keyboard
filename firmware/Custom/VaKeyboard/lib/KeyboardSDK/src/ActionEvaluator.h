@@ -1,6 +1,5 @@
 #pragma once
 
-#include <Arduino.h>
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
 #include "Matrix/Matrix.h"

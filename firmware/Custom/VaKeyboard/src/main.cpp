@@ -39,13 +39,13 @@ bool enforcedDisabledLeds = false;
 
 void triggerBtReset()
 {
-	// logger->logDebug(F("Resetting BT pairing..."));
+	logger->logDebug(F("Resetting BT pairing..."));
 	keyboardDriver->ResetPairing();
 }
 
 void toggleLeds()
 {
-	// logger->logDebug(F("Toggling LEDs..."));
+	logger->logDebug(F("Toggling LEDs..."));
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
 }
 
@@ -144,5 +144,10 @@ void setup()
 void loop()
 {
 	keyboard->scan();
-	Serial.println(batteryDriver->readBatteryLevel());
+	uint8_t batteryLevel = batteryDriver->readBatteryLevel();
+
+	if (batteryLevel < 15)
+	{
+		rgbLedDriver->setColor(0, 0, 0xff, 0, 0);
+	}
 }

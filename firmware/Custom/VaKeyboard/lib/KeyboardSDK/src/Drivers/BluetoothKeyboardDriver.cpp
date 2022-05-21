@@ -30,19 +30,19 @@ void BluetoothKeyboardDriver::Init()
 
 	if (!this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard")))
 	{
-		// this->logger->logError(F("Could not set device name?"));
+		this->logger->logError(F("Could not set device name?"));
 		return;
 	}
 
 	if (!this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On")))
 	{
-		// this->logger->logError(F("Could not enable Keyboard"));
+		this->logger->logError(F("Could not enable Keyboard"));
 		return;
 	}
 
 	if (!this->ble->reset())
 	{
-		// this->logger->logWarning(F("Couldn't reset??"));
+		this->logger->logWarning(F("Couldn't reset??"));
 	}
 }
 
@@ -173,14 +173,18 @@ uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKey
 
 bool BluetoothKeyboardDriver::SendKeypresses(uint8_t modificators, uint8_t *keys)
 {
-	String cmd = this->ConvertToHexCode(modificators) + "-00";
+	char cmd[20];
+	strcpy(cmd, this->ConvertToHexCode(modificators));
+	strcat(cmd, "-00");
 
 	for (int i = 0; i < this->maxKeyCountInReport; i++)
 	{
-		cmd += "-" + this->ConvertToHexCode(keys[i]);
+		strcat(cmd, "-");
+		strcat(cmd, this->ConvertToHexCode(keys[i]));
 	}
 
-	ble->println("AT+BLEKEYBOARDCODE=" + cmd);
+	ble->print("AT+BLEKEYBOARDCODE=");
+	ble->println(cmd);
 
 	return !ble->waitForOK();
 }
@@ -192,7 +196,7 @@ bool BluetoothKeyboardDriver::SendRelease()
 	return !ble->waitForOK();
 }
 
-String BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
+const char *BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
 {
 	String hexCode = String(code, HEX);
 
@@ -201,7 +205,7 @@ String BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
 		hexCode = "0" + hexCode;
 	}
 
-	return hexCode;
+	return hexCode.c_str();
 }
 
 void BluetoothKeyboardDriver::SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength)

@@ -12,7 +12,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	if (!this->i2c_dev->begin())
 	{
-		// this->logger->logError(F("Failed to initialise IS31FL3743A."));
+		this->logger->logError(F("Failed to initialise IS31FL3743A."));
 		return;
 	}
 
@@ -59,14 +59,8 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 	CR.write(0x00);	  // lets write pwm
 	for (int i = 0x01; i < 0xA3; i++)
 	{
-		uint8_t finalIntensity = intensity;
-		if (i % 3 == 1) // color correction hack
-		{
-			finalIntensity *= 0.5;
-		}
-
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
-		PWM.write(finalIntensity);
+		PWM.write(intensity);
 	}
 
 	this->currentGlobalIntensity = intensity;

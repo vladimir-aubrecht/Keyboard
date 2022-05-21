@@ -1,6 +1,5 @@
 #pragma once
 
-#include <arduino.h>
 #include "../Drivers/IPinDriver.h"
 #include "Matrix.h"
 #include "Logger/ILogger.h"
