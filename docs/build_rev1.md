@@ -4,7 +4,7 @@ This repository contains all necessary artefact to build the keyboard.
 Meaning:
 - PCB
 - [List of components](#List-of-components)
-- [Firmware](#Firmware) for [Adafruit Feather Bluefruit M0 LE](https://www.adafruit.com/product/2995) (read about [improvements](#future-improvements)!)
+- [Firmware](#Firmware) for [Adafruit Feather Bluefruit 32u4 LE](https://www.adafruit.com/product/2829) (read about [improvements](#future-improvements)!)
 - [Plate](#Plate)
 - Frame (not done yet)
 
@@ -33,7 +33,7 @@ LCSC numbers are based on [JLCPCB](http://jlcpcb.com/) catalog.
 | Resistor 150 Ohm  | [0402WGF1500TCE](https://datasheet.lcsc.com/szlcsc/Uniroyal-Elec-0402WGF1500TCE_C25082.pdf)           | C25082  | 0402    |   6    | Red LED channel to limit current and prevent overheating.             |
 
 ## Firmware
-Custom made firmware (source code in repo) for [Adafruit Feather Bluefruit M0 LE](https://www.adafruit.com/product/2995). This has full feature set, keyboard functionality, RGB LEDs and Bluetooth are working.
+Custom made firmware (source code in repo) for [Adafruit Feather Bluefruit 32u4 LE](https://www.adafruit.com/product/2829). This has full feature set, keyboard functionality, RGB LEDs and Bluetooth are working.
 
 Firmware is very simple to adjust (if needed at all) for other microcontrollers given microcontroller has required feature (USB HID, BT, I2C, 32 KB Program Storage - no need for all of them, you just need to comment USB HID or BT if your controller doesn't have it).
 
