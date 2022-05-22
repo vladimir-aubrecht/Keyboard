@@ -6,19 +6,24 @@
 #include "Matrix/MatrixScanner.h"
 #include "Matrix/MatrixEvaluator.h"
 #include "IKeyMapProvider.h"
+#include "Logger/ILogger.h"
+#include "Logger/NullLogger.h"
+#include "ActionEvaluator.h"
 
 class KeyboardSDK
 {
 private:
-	MatrixScanner* matrixScanner;
-	MatrixEvaluator* matrixEvaluator;
-	IKeyboardDriver* keyboardDriver;
-	
-	uint16_t** keymap;
-	Matrix* previousMatrix = NULL;
+	MatrixScanner *matrixScanner;
+	MatrixEvaluator *matrixEvaluator;
+	ActionEvaluator *actionEvaluator;
+	IKeyboardDriver *keyboardDriver;
+	ILogger *logger;
+
+	KeyboardKeycode **keymap;
+	Matrix *previousMatrix = NULL;
 
 public:
-	KeyboardSDK(MatrixScanner* matrixScanner, MatrixEvaluator* matrixEvaluator, IKeyboardDriver* keyboardDriver, IKeyMapProvider* keymapProvider);
+	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger);
 	~KeyboardSDK();
 	void scan();
 };

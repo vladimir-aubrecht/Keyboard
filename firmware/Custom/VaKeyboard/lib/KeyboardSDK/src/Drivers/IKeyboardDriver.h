@@ -2,10 +2,12 @@
 
 #include <Arduino.h>
 #include "../Matrix/Matrix.h"
+#include "KeyCodes.h"
 
 class IKeyboardDriver
 {
 public:
-	virtual void SendKeys(Matrix* pressedKeysMatrix, Matrix* releasedKeysMatrix, uint16_t** keymapProvider) = 0;
+	virtual void ResetPairing() = 0;
+	virtual void ResetState() = 0;
+	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider) = 0;
 };
-

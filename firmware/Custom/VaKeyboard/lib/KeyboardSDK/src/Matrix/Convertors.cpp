@@ -1,10 +1,10 @@
 #include "Convertors.h"
 
-char* Convertors::toString(Matrix* matrix)
+char *Convertors::toString(Matrix *matrix)
 {
 	uint8_t stringRowLength = matrix->numberOfColumns + 1;
 	uint8_t stringLength = matrix->numberOfRows * stringRowLength + 1;
-	char* matrixString = new char[stringLength];
+	char *matrixString = new char[stringLength];
 
 	for (uint8_t rowIndex = 0; rowIndex < matrix->numberOfRows; rowIndex++)
 	{

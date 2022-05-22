@@ -5,13 +5,14 @@
 
 class KeyMapProvider : public IKeyMapProvider
 {
-private:
+public:
 	uint8_t numberOfRows;
 	uint8_t numberOfColumns;
 
 public:
 	KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns);
 
-	virtual uint16_t** getKeyMap();
+	virtual KeyboardKeycode **getKeyMap();
+	virtual uint8_t getRowCount();
+	virtual uint8_t getColumnCount();
 };
-

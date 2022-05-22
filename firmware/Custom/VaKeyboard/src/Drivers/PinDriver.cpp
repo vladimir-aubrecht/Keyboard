@@ -1,36 +1,45 @@
 #include "PinDriver.h"
 
+void PinDriver::refreshCache()
+{
+	uint32_t banks = 0;
+	banks |= ((uint16_t)(~mcp0->readGPIOB())) << 8;
+	banks |= ((uint32_t)~mcp1->readGPIOAB()) << 16;
+	cache = banks;
+}
+
 uint8_t PinDriver::readPin(uint8_t pinNumber)
 {
 	if (pinNumber < 8)
 	{
-		return 1 - mcp0->digitalRead(15 - pinNumber);
+		uint32_t mask = (1 << (7 - pinNumber));
+		return (((cache << 16) >> 24) & mask) >> (7 - pinNumber); // 1 - mcp0->digitalRead(15 - pinNumber);
 	}
 	else if (pinNumber < 16)
 	{
-		return 1 - mcp1->digitalRead(7 - (pinNumber - 8));
+		uint32_t mask = (1 << (7 - (pinNumber - 8)));
+		return ((cache >> 16) & mask) >> (7 - (pinNumber - 8)); // 1 - mcp1->digitalRead(7 - (pinNumber - 8));
 	}
 	else
 	{
-		return 1 - mcp1->digitalRead(15 - (pinNumber - 16));
+		uint32_t mask = (1 << (15 - (pinNumber - 16)));
+		return ((cache >> 16) & mask) >> (15 - (pinNumber - 16)); // 1 - mcp1->digitalRead(15 - (pinNumber - 16));
 	}
 }
 
 void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 {
-	uint8_t enabledPinValue = 1 << pinNumber;
 	mcp0->digitalWrite(pinNumber, value);
 }
 
-PinDriver::PinDriver(ILogger* logger)
+PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 {
 	this->logger = logger;
+	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR, wire);
 
-		uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR);
-	
 	if (!mcp0Status)
 	{
-		logger->logError("Failed to initialise first MCP23017.");
+		// this->logger->logError(F("Failed to initialise first MCP23017."));
 		return;
 	}
 
@@ -44,11 +53,11 @@ PinDriver::PinDriver(ILogger* logger)
 		mcp0->pinMode(i, INPUT_PULLUP);
 	}
 
-	uint8_t mcp1Status = mcp1->begin_I2C((uint8_t)MCP23XXX_ADDR + 7); //outside chip next to keyboard edge
+	uint8_t mcp1Status = mcp1->begin_I2C((uint8_t)MCP23XXX_ADDR + 7, wire); // outside chip next to keyboard edge
 
 	if (!mcp1Status)
 	{
-		logger->logError("Failed to initialise second MCP23017.");
+		// this->logger->logError(F("Failed to initialise second MCP23017."));
 		return;
 	}
 

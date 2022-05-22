@@ -1,29 +1,29 @@
 #include "KeyMapProvider.h"
-#include "KeyCodes.h"
-
-// codes are 136 + usb hid codes (https://gist.github.com/ekaitz-zarraga/2b25b94b711684ba4e969e5a5723969b)
-
-#define KC_NONE  0x00
-#define KC_MENU  0xfe	// not working yet
-#define KC_PRTSC 0xce
-#define KC_SCRL  0xcf
-#define KC_PAUSE 0xd0	// not working yet probably because of soldering
 
 KeyMapProvider::KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
 }
-uint16_t** KeyMapProvider::getKeyMap()
+KeyboardKeycode **KeyMapProvider::getKeyMap()
 {
-	uint16_t** keymaps = new uint16_t*[this->numberOfRows];
+	KeyboardKeycode **keymaps = new KeyboardKeycode *[this->numberOfRows];
 
-	keymaps[0] = new uint16_t[this->numberOfColumns]{ KEY_ESC, KC_NONE, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_F11, KEY_F12, KC_PRTSC, KC_SCRL, KC_PAUSE };
-	keymaps[1] = new uint16_t[this->numberOfColumns]{ '`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', KEY_BACKSPACE, KEY_INSERT, KEY_HOME, KEY_PAGE_UP };
-	keymaps[2] = new uint16_t[this->numberOfColumns]{ KEY_TAB, 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', '[', ']', '\\', KEY_DELETE, KEY_END, KEY_PAGE_DOWN };
-	keymaps[3] = new uint16_t[this->numberOfColumns]{ KEY_CAPS_LOCK, 'a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', ';', '\'', KC_NONE, KEY_RETURN, KC_NONE, KC_NONE, KC_NONE };
-	keymaps[4] = new uint16_t[this->numberOfColumns]{ KEY_LEFT_SHIFT, 'z', 'x', 'c', 'v', 'b', 'n', 'm', ',', '.', '/', KC_NONE, KC_NONE, KEY_RIGHT_SHIFT, KC_NONE, KEY_UP_ARROW, KC_NONE };
-	keymaps[5] = new uint16_t[this->numberOfColumns]{ KEY_LEFT_CTRL, KEY_LEFT_GUI, KEY_LEFT_ALT, KC_NONE, KC_NONE, KC_NONE, ' ', KC_NONE, KC_NONE, KC_NONE, KEY_RIGHT_ALT, KEY_RIGHT_GUI, KC_MENU, KEY_RIGHT_CTRL, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW };
+	keymaps[0] = new KeyboardKeycode[this->numberOfColumns]{KEY_ESC, KEY_RESERVED, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_F11, KEY_F12, KEY_PRINT, KEY_SCROLL_LOCK, KEY_PAUSE};
+	keymaps[1] = new KeyboardKeycode[this->numberOfColumns]{KEY_TILDE, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS, KEY_EQUAL, KEY_BACKSPACE, KEY_INSERT, KEY_HOME, KEY_PAGE_UP};
+	keymaps[2] = new KeyboardKeycode[this->numberOfColumns]{KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, KEY_BACKSLASH, KEY_DELETE, KEY_END, KEY_PAGE_DOWN};
+	keymaps[3] = new KeyboardKeycode[this->numberOfColumns]{KEY_CAPS_LOCK, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, KEY_QUOTE, KEY_RESERVED, KEY_RETURN, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED};
+	keymaps[4] = new KeyboardKeycode[this->numberOfColumns]{KEY_LEFT_SHIFT, KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, KEY_SLASH, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_SHIFT, KEY_RESERVED, KEY_UP_ARROW, KEY_RESERVED};
+	keymaps[5] = new KeyboardKeycode[this->numberOfColumns]{KEY_LEFT_CTRL, KEY_LEFT_GUI, KEY_LEFT_ALT, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_SPACE, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_ALT, KEY_RIGHT_GUI, KEY_MENU, KEY_RIGHT_CTRL, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW};
 
 	return keymaps;
+}
+
+uint8_t KeyMapProvider::getRowCount()
+{
+	return this->numberOfRows;
+}
+uint8_t KeyMapProvider::getColumnCount()
+{
+	return this->numberOfColumns;
 }

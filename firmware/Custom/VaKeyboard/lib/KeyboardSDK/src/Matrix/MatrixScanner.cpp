@@ -1,23 +1,25 @@
 #include "MatrixScanner.h"
 #include "Convertors.h"
 
-MatrixScanner::MatrixScanner(IPinDriver* pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns)
+MatrixScanner::MatrixScanner(IPinDriver *pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns, ILogger *logger)
 {
+	this->logger = logger;
 	this->pinDriver = pinDriver;
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
 }
 
-Matrix* MatrixScanner::scanKeyPressMatrix()
+Matrix *MatrixScanner::scanKeyPressMatrix()
 {
-	uint32_t* matrixData = new uint32_t[this->numberOfRows];
-	Matrix* matrix = new Matrix(matrixData, this->numberOfRows, this->numberOfColumns);
+	Matrix *matrix = new Matrix(this->numberOfRows, this->numberOfColumns);
+	uint32_t *matrixData = matrix->matrixData;
 
 	for (uint8_t row = 0; row < this->numberOfRows; row++)
 	{
 		matrixData[row] = 0;
 
 		this->pinDriver->writePin(row, LOW);
+		this->pinDriver->refreshCache();
 
 		for (uint8_t column = 0; column < this->numberOfColumns; column++)
 		{
@@ -29,9 +31,12 @@ Matrix* MatrixScanner::scanKeyPressMatrix()
 		this->pinDriver->writePin(row, HIGH);
 	}
 
-	/*char* sm = Convertors::toString(matrix);
-	Serial.println(sm);
-	delete sm;*/
+	// if (this->logger->isEnabled())
+	//{
+	//  char *sm = Convertors::toString(matrix);
+	//  this->logger->logDebug(sm);
+	//  delete sm;
+	//}
 
 	return matrix;
 }

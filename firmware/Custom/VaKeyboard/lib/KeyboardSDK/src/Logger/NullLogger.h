@@ -1,8 +1,8 @@
 #pragma once
 
-#include "Logger/ILogger.h"
+#include "ILogger.h"
 
-class Logger : public ILogger
+class NullLogger : public ILogger
 {
 public:
 	virtual void logDebug(const char *message);
@@ -14,4 +14,6 @@ public:
 	virtual void logError(const __FlashStringHelper *message);
 
 	virtual bool isEnabled();
+
+	NullLogger();
 };
