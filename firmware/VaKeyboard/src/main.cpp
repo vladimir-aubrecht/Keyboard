@@ -9,7 +9,7 @@
 #include "Drivers/BatteryDriver.h"
 #include "KeyMapProvider.h"
 #include "Drivers/RgbLedDriver.h"
-#include "Logger.h"
+//#include "Logger.h"
 
 #include "Adafruit_BluefruitLE_SPI.h"
 
@@ -36,28 +36,33 @@ IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 bool enforcedDisabledLeds = false;
-bool isConnectionInChange = false;
+bool isActionInProgress = false;
 
-void triggerBtReset()
+bool triggerBtReset()
 {
 	// logger->logDebug(F("Resetting BT pairing..."));
 	keyboardDriver->ResetPairing();
+
+	return true;
 }
 
-void toggleLeds()
+bool toggleLeds()
 {
 	// logger->logDebug(F("Toggling LEDs..."));
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
+
+	return true;
 }
 
-void toggleConnection()
+void resumeLeds()
 {
-	if (isConnectionInChange)
-	{
-		return;
-	}
+	enforcedDisabledLeds = false;
+	isActionInProgress = false;
+}
 
-	isConnectionInChange = true;
+bool toggleConnection()
+{
+	// logger->logDebug(F("Toggling connection..."));
 
 	enforcedDisabledLeds = true;
 	rgbLedDriver->turnOff();
@@ -68,49 +73,76 @@ void toggleConnection()
 		actionEvaluator->registerTemporaryTimerAction(
 			1000, []()
 			{ rgbLedDriver->blink(0xff, 0, 2, 0x00ffffff); },
-			[]()
-			{ enforcedDisabledLeds = false; isConnectionInChange = false; });
+			resumeLeds);
 	}
 	else
 	{
 		actionEvaluator->registerTemporaryTimerAction(
 			1000, []()
 			{ rgbLedDriver->blink(0xff, 0, 3, 0x00ffffff); },
-			[]()
-			{ enforcedDisabledLeds = false; isConnectionInChange = false; });
+			resumeLeds);
 	}
+
+	return false;
 }
 
-void randomizeColors()
+bool randomizeColors()
 {
+	// logger->logDebug(F("Toggling randomize colors..."));
 	rgbLedDriver->randomizeColors();
+
+	return true;
 }
 
-void turnOnLeds()
+bool turnOnLeds()
 {
 	if (enforcedDisabledLeds)
 	{
 		return;
 	}
 
+	// logger->logDebug(F("Toggling LEDs on..."));
+
 	rgbLedDriver->turnOn();
+
+	return true;
 }
 
-void turnOffLeds()
+bool turnOffLeds()
 {
+	// logger->logDebug(F("Toggling LEDs off..."));
 	rgbLedDriver->turnOff();
+
+	return true;
 }
 
-void showBatteryLevel()
+bool showBatteryLevel()
 {
+	// logger->logDebug(F("Toggling show battery..."));
 	enforcedDisabledLeds = true;
 	turnOffLeds();
 
 	actionEvaluator->registerTemporaryTimerAction(
-		1000, []()
+		2000, []()
 		{ rgbLedDriver->blink(0xff, 0, (batteryDriver->readBatteryLevel() / 10) + 1, 0x00ffffff); },
-		[]()
-		{ enforcedDisabledLeds = false; });
+		resumeLeds);
+
+	return false;
+}
+
+template <bool (*func)()>
+void callWithGuard()
+{
+	if (isActionInProgress)
+	{
+		return;
+	}
+	isActionInProgress = true;
+
+	if (func())
+	{
+		isActionInProgress = false;
+	}
 }
 
 void setup()
@@ -140,12 +172,12 @@ void setup()
 	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
 	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, actionEvaluator, logger);
 
-	actionEvaluator->registerMatrixAction(triggerBtReset, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(toggleLeds, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(toggleConnection, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(randomizeColors, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(showBatteryLevel, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
 
 	// logger->logDebug(F("\nSetup is done!"));
 }

@@ -122,6 +122,8 @@ bool ActionEvaluator::evaluateTimerAction()
             this->temporaryTimerActions->noTriggerAction();
             this->temporaryTimerActions = NULL;
         }
+
+        return false;
     }
 
     for (uint8_t k = 0; k < registeredTimerActionsCount; k++)
