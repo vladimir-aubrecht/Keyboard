@@ -1,6 +1,6 @@
-# Build
-This repository contains all necessary artefact to build the keyboard.
+#Revisions
 
+<<<<<<< Updated upstream:docs/build_rev1.md
 Meaning:
 - PCB
 - [List of components](#List-of-components)
@@ -52,3 +52,7 @@ Built in OnShape CAD software, [check out](https://cad.onshape.com/documents/c60
 
 - Current combination of PCB chips is limiting I2C to 400 KHz and given amount of queries to MCP23017 there is a performance issue there. Latency of scanning is ~20 ms, **total latency ~30 ms** (through USB). Feeling wise I didn't have problem to type on it by using all my 10 fingers with quite fast speed, but I can imagine it might be **problematic for progamers**. Potential workaround around this is disconnecting RGB LEDs through the connector after which 1.7MHz on I2C should be available, potentially speeding it up.
 In next version I am planning to switch to SPI.
+=======
+- [Revision 1](./revisions/rev1.md)
+- [Revision 2](./revisions/rev2.md)
+>>>>>>> Stashed changes:docs/build.md
