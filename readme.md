@@ -17,7 +17,7 @@ Side features:
 In case you are interested **I am fine to donate 1 piece per person** in case you'll pay delivery. Be aware, that it's just PCB, components must be soldered by you.
 
 # Current status
-[Revision 1](changelog.md) keyboard is working, check details about the [build](docs/build_rev1.md)!
+[Revision 1](changelog.md) PCB is working, check details about the [rev 1 build](docs/revisions/rev1.md)!
 
 What is missing in Revision 1:
 - Bluetooth 5.0.
