@@ -257,7 +257,7 @@
     (property "Value" "IS31FL3743-QF" (id 1) (at 0 -1.27 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Footprint" "" (id 2) (at 0 0 0)
+    (property "Footprint" "Footprints:QFN-40-1EP_5x5mm_P0.4mm_EP3.4x3.4mm" (id 2) (at 0 0 0)
       (effects (font (size 1.27 1.27)) hide)
     )
     (property "Datasheet" "https://cz.mouser.com/datasheet/2/198/IS31FL3743A_DS-1949512.pdf" (id 3) (at 0 0 0)
