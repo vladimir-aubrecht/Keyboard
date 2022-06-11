@@ -500,10 +500,10 @@
       (effects (font (size 1.524 1.524)) hide)
     )
     (property "Footprint" "" (id 2) (at 0 0 0)
-      (effects (font (size 1.524 1.524)))
+      (effects (font (size 1.524 1.524)) hide)
     )
     (property "Datasheet" "" (id 3) (at 0 0 0)
-      (effects (font (size 1.524 1.524)))
+      (effects (font (size 1.524 1.524)) hide)
     )
     (symbol "KEYSW_0_1"
       (circle (center -5.08 0) (radius 1.27)
