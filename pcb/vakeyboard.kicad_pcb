@@ -43,6 +43,7 @@
       (dielectric_constraints no)
     )
     (pad_to_mask_clearance 0)
+    (grid_origin 26.69 213)
     (pcbplotparams
       (layerselection 0x00010fc_ffffffff)
       (disableapertmacros false)
@@ -74,7 +75,7 @@
       (mirror false)
       (drillshape 0)
       (scaleselection 1)
-      (outputdirectory "Gerber files/")
+      (outputdirectory "./")
     )
   )
 
