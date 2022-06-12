@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "vakeyboard")(type "KiCad")(uri "${KIPRJMOD}/Symbols/vakeyboard.kicad_sym")(options "")(descr ""))
-)
