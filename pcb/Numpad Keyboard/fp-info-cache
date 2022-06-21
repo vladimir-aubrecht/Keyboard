@@ -1,4 +1,4 @@
-20264309090727096
+20264309795869702
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52353,9 +52353,9 @@ CherryMX_PlateMount_HotSwap_6.25u
 2
 2
 Footprints
-D_DO-35_SOD27_P3.81mm_Vertical_AnodeUp
-Diode, DO-35_SOD27 series, Axial, Vertical, pin pitch=3.81mm, , length*diameter=4*2mm^2, , http://www.diodes.com/_files/packages/DO-35.pdf
-Diode DO-35_SOD27 series Axial Vertical pin pitch 3.81mm  length 4mm diameter 2mm
+D_SOD-523
+http://www.diodes.com/datasheets/ap02001.pdf p.144
+Diode SOD523
 0
 2
 2
