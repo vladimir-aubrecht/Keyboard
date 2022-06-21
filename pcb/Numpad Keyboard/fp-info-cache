@@ -1,4 +1,4 @@
-20262653508171262
+20264309090727096
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -52373,6 +52373,13 @@ QFN NoLead
 0
 50
 40
+Footprints
+QFN50P600X600X80-41N
+
+
+0
+41
+41
 Footprints
 R_0402_1005Metric
 Resistor SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
