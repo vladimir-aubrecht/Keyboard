@@ -1,7 +1,7 @@
 (footprint "CherryMX_PlateMount_HotSwap_2u_90deg" (version 20211014) (generator pcbnew)
   (layer "F.Cu")
   (tedit 603AD4D8)
-  (attr through_hole)
+  (attr smd)
   (fp_text reference "K_ENTER" (at 0 -8.89) (layer "F.SilkS") hide
     (effects (font (size 1 1) (thickness 0.15)))
     (tstamp e3805de2-97ff-4fa9-9be7-456d8f8f2f3b)
