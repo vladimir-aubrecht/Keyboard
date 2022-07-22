@@ -2,7 +2,6 @@
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver()
 {
-	NKROKeyboard.begin();
 }
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
@@ -20,16 +19,17 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			if (isPressed)
 			{
 				isPress = true;
-				NKROKeyboard.press(currentKey);
+				
+				//NKROKeyboard.press(currentKey);
 			}
 			else if (isReleased)
 			{
-				NKROKeyboard.release(currentKey);
+				//NKROKeyboard.release(currentKey);
 			}
 		}
 	}
 
-	NKROKeyboard.send();
+	//NKROKeyboard.send();
 
 	return isPress;
 }
@@ -40,5 +40,5 @@ void UsbHidKeyboardDriver::ResetPairing()
 
 void UsbHidKeyboardDriver::ResetState()
 {
-	NKROKeyboard.releaseAll();
+	//NKROKeyboard.releaseAll();
 }

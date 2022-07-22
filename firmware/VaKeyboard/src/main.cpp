@@ -1,17 +1,25 @@
 #include <Arduino.h>
 
 #include "KeyboardSDK.h"
-#include "Drivers/UsbHidKeyboardDriver.h"
-#include "Drivers/BluetoothKeyboardDriver.h"
 #include "Drivers/SelectiveKeyboardDriver.h"
 //#include "Drivers/DisplayDriver.h"
 #include "Drivers/PinDriver.h"
-#include "Drivers/BatteryDriver.h"
 #include "KeyMapProvider.h"
 #include "Drivers/RgbLedDriver.h"
-//#include "Logger.h"
+#include "Logger.h"
 
+#ifdef FEATHER32U4
+#include "Drivers/Feather32u4/BatteryDriver.h"
+#include "Drivers/Feather32u4/UsbHidKeyboardDriver.h"
+#include "Drivers/Feather32u4/BluetoothKeyboardDriver.h"
 #include "Adafruit_BluefruitLE_SPI.h"
+#endif
+
+#ifndef FEATHER32U4
+#include "Drivers/PortentaH7/BatteryDriver.h"
+#include "Drivers/PortentaH7/UsbHidKeyboardDriver.h"
+#include "Drivers/PortentaH7/BluetoothKeyboardDriver.h"
+#endif
 
 #define BLUEFRUIT_SPI_CS 8
 #define BLUEFRUIT_SPI_IRQ 7
@@ -98,7 +106,7 @@ bool turnOnLeds()
 {
 	if (enforcedDisabledLeds)
 	{
-		return;
+		return true;
 	}
 
 	// logger->logDebug(F("Toggling LEDs on..."));
@@ -154,14 +162,16 @@ void setup()
 	batteryDriver = new BatteryDriver();
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
 
-	Wire.setClock(1700000L);
-
 	pinDriver = new PinDriver(&Wire, logger);
 
-	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
-
 	usbKeyboardDriver = new UsbHidKeyboardDriver();
+
+#ifdef FEATHER32U4
+	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
+#else
+	btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
+#endif
 
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 

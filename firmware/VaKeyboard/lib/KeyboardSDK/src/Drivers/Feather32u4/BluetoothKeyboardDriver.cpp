@@ -1,6 +1,8 @@
 #include "BluetoothKeyboardDriver.h"
 
-BluetoothKeyboardDriver::BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, IBatteryDriver *batteryDriver, ILogger *logger)
+BluetoothKeyboardDriver::BluetoothKeyboardDriver(
+	Adafruit_BluefruitLE_SPI *ble, 
+	IBatteryDriver *batteryDriver, ILogger *logger)
 {
 	this->ble = ble;
 	this->logger = logger ?: new NullLogger();

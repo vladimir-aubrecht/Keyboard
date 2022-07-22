@@ -57,17 +57,17 @@ void KeyboardSDK::scan()
 
 	this->previousMatrix = matrix;
 
-	/*if (this->logger->isEnabled())
-	{
-		unsigned long endTime = millis();
-		unsigned long scanElapsedTime = scanTime - startTime;
-		unsigned long diffElapsedTime = diffTime - scanTime;
-		unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
-		unsigned long totalElapsedTime = endTime - startTime;
+	// if (this->logger->isEnabled())
+	// {
+	// 	unsigned long endTime = millis();
+	// 	unsigned long scanElapsedTime = scanTime - startTime;
+	// 	unsigned long diffElapsedTime = diffTime - scanTime;
+	// 	unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
+	// 	unsigned long totalElapsedTime = endTime - startTime;
 
-		//this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
-		//this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
-		//this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
-		//this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
-	}*/
+	// 	this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
+	// }
 }

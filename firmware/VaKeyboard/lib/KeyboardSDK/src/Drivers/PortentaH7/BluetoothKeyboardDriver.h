@@ -1,17 +1,14 @@
 #pragma once
 
-#include "IKeyboardDriver.h"
+#include "../IKeyboardDriver.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
 
-#include "Adafruit_BLE.h"
-#include "Adafruit_BluefruitLE_SPI.h"
 #include "Drivers/IBatteryDriver.h"
 
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
-	Adafruit_BluefruitLE_SPI *ble;
 	ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
@@ -26,7 +23,7 @@ private:
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:
-	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, IBatteryDriver *batteryDriver, ILogger *logger);
+	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, ILogger *logger);
 
 	virtual void Init();
 	virtual void ResetPairing();

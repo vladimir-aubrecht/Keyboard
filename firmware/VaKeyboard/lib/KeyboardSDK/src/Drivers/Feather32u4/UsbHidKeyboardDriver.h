@@ -1,10 +1,10 @@
 #pragma once
-#include "IKeyboardDriver.h"
+#include "../IKeyboardDriver.h"
+
 #include "HID-Project.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
-private:
 public:
 	UsbHidKeyboardDriver();
 

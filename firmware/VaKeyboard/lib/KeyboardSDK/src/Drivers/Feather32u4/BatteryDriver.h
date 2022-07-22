@@ -1,7 +1,7 @@
 #pragma once
 
 #include <arduino.h>
-#include "Drivers/IBatteryDriver.h"
+#include "../IBatteryDriver.h"
 
 class BatteryDriver : public IBatteryDriver
 {
