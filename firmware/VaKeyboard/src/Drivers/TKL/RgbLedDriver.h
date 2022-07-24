@@ -1,5 +1,5 @@
 #pragma once
-#include "../Chips/Is31fl3743a.h"
+#include "../../Chips/Is31fl3743a.h"
 
 class RgbLedDriver
 {

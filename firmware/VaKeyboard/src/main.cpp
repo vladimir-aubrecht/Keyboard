@@ -3,9 +3,9 @@
 #include "KeyboardSDK.h"
 #include "Drivers/SelectiveKeyboardDriver.h"
 //#include "Drivers/DisplayDriver.h"
-#include "Drivers/PinDriver.h"
+#include "Drivers/TKL/PinDriver.h"
+#include "Drivers/TKL/RgbLedDriver.h"
 #include "KeyMapProvider.h"
-#include "Drivers/RgbLedDriver.h"
 #include "Logger.h"
 
 #ifdef FEATHER32U4

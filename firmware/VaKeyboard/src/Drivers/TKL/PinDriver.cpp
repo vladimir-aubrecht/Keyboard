@@ -13,17 +13,17 @@ uint8_t PinDriver::readPin(uint8_t pinNumber)
 	if (pinNumber < 8)
 	{
 		uint32_t mask = (1 << (7 - pinNumber));
-		return (((cache << 16) >> 24) & mask) >> (7 - pinNumber); // 1 - mcp0->digitalRead(15 - pinNumber);
+		return (((cache << 16) >> 24) & mask) >> (7 - pinNumber);
 	}
 	else if (pinNumber < 16)
 	{
 		uint32_t mask = (1 << (7 - (pinNumber - 8)));
-		return ((cache >> 16) & mask) >> (7 - (pinNumber - 8)); // 1 - mcp1->digitalRead(7 - (pinNumber - 8));
+		return ((cache >> 16) & mask) >> (7 - (pinNumber - 8));
 	}
 	else
 	{
 		uint32_t mask = (1 << (15 - (pinNumber - 16)));
-		return ((cache >> 16) & mask) >> (15 - (pinNumber - 16)); // 1 - mcp1->digitalRead(15 - (pinNumber - 16));
+		return ((cache >> 16) & mask) >> (15 - (pinNumber - 16));
 	}
 }
 
