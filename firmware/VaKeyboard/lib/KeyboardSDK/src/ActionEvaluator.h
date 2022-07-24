@@ -52,7 +52,8 @@ private:
 
     uint8_t registeredMatrixActionsCount = 0;
     uint8_t registeredTimerActionsCount = 0;
-    ILogger *logger = NULL;
+    //ILogger *logger = NULL;
+    KeyboardKeycode **keymaps = NULL;
     MatrixAction **matrixActions = NULL;
     TimerAction **timerActions = NULL;
     TimerAction *temporaryTimerActions = NULL;

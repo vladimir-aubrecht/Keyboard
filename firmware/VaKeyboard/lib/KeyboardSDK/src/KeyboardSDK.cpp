@@ -6,7 +6,7 @@ KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEv
 	this->matrixEvaluator = matrixEvaluator;
 	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
-	this->logger = logger ?: new NullLogger();
+	//this->logger = logger ?: new NullLogger();
 
 	this->keymap = keymapProvider->getKeyMap();
 }

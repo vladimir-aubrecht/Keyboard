@@ -1,6 +1,7 @@
 #include <Arduino.h>
 
 #include "KeyboardSDK.h"
+#include "Matrix/MatrixDebouncer.h"
 #include "Drivers/SelectiveKeyboardDriver.h"
 //#include "Drivers/DisplayDriver.h"
 #include "Drivers/TKL/PinDriver.h"
@@ -28,19 +29,14 @@
 const uint8_t numberOfRows = 6;
 const uint8_t numberOfColumns = 17;
 
-ILogger *logger = NULL;
-IPinDriver *pinDriver = NULL;
 RgbLedDriver *rgbLedDriver = NULL;
 SelectiveKeyboardDriver *keyboardDriver = NULL;
 // DisplayDriver *displayDriver = NULL;
-MatrixScanner *matrixScanner = NULL;
-MatrixEvaluator *matrixEvaluator = NULL;
 KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
 
-IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 bool enforcedDisabledLeds = false;
@@ -127,6 +123,7 @@ bool turnOffLeds()
 bool showBatteryLevel()
 {
 	// logger->logDebug(F("Toggling show battery..."));
+
 	enforcedDisabledLeds = true;
 	turnOffLeds();
 
@@ -158,29 +155,31 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	logger = new NullLogger();
+	ILogger* logger = new NullLogger();
 	batteryDriver = new BatteryDriver();
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
-
-	pinDriver = new PinDriver(&Wire, logger);
 
 	usbKeyboardDriver = new UsbHidKeyboardDriver();
 
 #ifdef FEATHER32U4
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
-	btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
 #else
-	btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
 #endif
 
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 
 	// displayDriver = new DisplayDriver(&SPI);
-	matrixScanner = new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger);
-	matrixEvaluator = new MatrixEvaluator();
 	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
 	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
-	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, actionEvaluator, logger);
+	keyboard = new KeyboardSDK(
+		new MatrixScanner(new PinDriver(&Wire, logger), numberOfRows, numberOfColumns, logger), 
+		new MatrixEvaluator(new MatrixDebouncer(keymapProvider, 2)),
+		keyboardDriver,
+		keymapProvider,
+		actionEvaluator,
+		logger);
 
 	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
@@ -188,7 +187,6 @@ void setup()
 	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
-
 	// logger->logDebug(F("\nSetup is done!"));
 }
 

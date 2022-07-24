@@ -2,15 +2,14 @@
 
 ActionEvaluator::ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logger)
 {
-    this->logger = logger ?: new NullLogger();
-    this->keymapProvider = keymapProvider;
+    //this->logger = logger ?: new NullLogger();
     this->matrixActions = new MatrixAction *[0];
+    this->keymaps = keymapProvider->getKeyMap();
+    this->keymapProvider = keymapProvider;
 }
 
 ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
 {
-    KeyboardKeycode **keymaps = keymapProvider->getKeyMap();
-
     uint8_t rowCount = keymapProvider->getRowCount();
     uint8_t columnCount = keymapProvider->getColumnCount();
 

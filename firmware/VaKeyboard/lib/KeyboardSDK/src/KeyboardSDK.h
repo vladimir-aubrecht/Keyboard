@@ -17,7 +17,7 @@ private:
 	MatrixEvaluator *matrixEvaluator;
 	ActionEvaluator *actionEvaluator;
 	IKeyboardDriver *keyboardDriver;
-	ILogger *logger;
+	//ILogger *logger;
 
 	KeyboardKeycode **keymap;
 	Matrix *previousMatrix = NULL;
