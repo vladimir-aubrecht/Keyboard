@@ -1,3 +1,5 @@
+#ifndef ARDUINO_MICRO
+
 #include "BluetoothKeyboardDriver.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
@@ -159,3 +161,5 @@ void BluetoothKeyboardDriver::ResetState()
 	this->currentStateMatrix = NULL;
 	this->SendRelease();
 }
+
+#endif

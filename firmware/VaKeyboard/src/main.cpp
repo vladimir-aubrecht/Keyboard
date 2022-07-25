@@ -2,7 +2,6 @@
 
 #include "KeyboardSDK.h"
 #include "Matrix/MatrixDebouncer.h"
-#include "Drivers/SelectiveKeyboardDriver.h"
 //#include "Drivers/DisplayDriver.h"
 #include "Drivers/TKL/PinDriver.h"
 #include "Drivers/TKL/RgbLedDriver.h"
@@ -10,13 +9,20 @@
 #include "Logger.h"
 
 #ifdef FEATHER32U4
+#include "Drivers/SelectiveKeyboardDriver.h"
 #include "Drivers/Feather32u4/BatteryDriver.h"
 #include "Drivers/Feather32u4/UsbHidKeyboardDriver.h"
 #include "Drivers/Feather32u4/BluetoothKeyboardDriver.h"
 #include "Adafruit_BluefruitLE_SPI.h"
 #endif
 
-#ifndef FEATHER32U4
+#ifdef ARDUINO_MICRO
+#include "Drivers/Micro/BatteryDriver.h"
+#include "Drivers/Micro/UsbHidKeyboardDriver.h"
+#endif
+
+#ifdef PORTENTA_H7
+#include "Drivers/SelectiveKeyboardDriver.h"
 #include "Drivers/PortentaH7/BatteryDriver.h"
 #include "Drivers/PortentaH7/UsbHidKeyboardDriver.h"
 #include "Drivers/PortentaH7/BluetoothKeyboardDriver.h"
@@ -30,7 +36,6 @@ const uint8_t numberOfRows = 6;
 const uint8_t numberOfColumns = 17;
 
 RgbLedDriver *rgbLedDriver = NULL;
-SelectiveKeyboardDriver *keyboardDriver = NULL;
 // DisplayDriver *displayDriver = NULL;
 KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
@@ -42,26 +47,15 @@ IKeyboardDriver *usbKeyboardDriver = NULL;
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
 
+#ifndef ARDUINO_MICRO
+SelectiveKeyboardDriver *keyboardDriver = NULL;
+
 bool triggerBtReset()
 {
 	// logger->logDebug(F("Resetting BT pairing..."));
 	keyboardDriver->ResetPairing();
 
 	return true;
-}
-
-bool toggleLeds()
-{
-	// logger->logDebug(F("Toggling LEDs..."));
-	enforcedDisabledLeds = !rgbLedDriver->toggle();
-
-	return true;
-}
-
-void resumeLeds()
-{
-	enforcedDisabledLeds = false;
-	isActionInProgress = false;
 }
 
 bool toggleConnection()
@@ -88,6 +82,22 @@ bool toggleConnection()
 	}
 
 	return false;
+}
+
+#endif
+
+bool toggleLeds()
+{
+	// logger->logDebug(F("Toggling LEDs..."));
+	enforcedDisabledLeds = !rgbLedDriver->toggle();
+
+	return true;
+}
+
+void resumeLeds()
+{
+	enforcedDisabledLeds = false;
+	isActionInProgress = false;
 }
 
 bool randomizeColors()
@@ -164,11 +174,17 @@ void setup()
 #ifdef FEATHER32U4
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
-#else
-	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 #endif
 
-	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+#ifdef ARDUINO_MICRO
+	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
+#endif
+
+#ifdef PORTENTA_H7
+	//IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
+	//keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+#endif
 
 	// displayDriver = new DisplayDriver(&SPI);
 	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
@@ -181,9 +197,13 @@ void setup()
 		actionEvaluator,
 		logger);
 
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	
+	#ifndef ARDUINO_MICRO
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	#endif
+
 	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);

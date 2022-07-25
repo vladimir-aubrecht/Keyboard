@@ -1,5 +1,7 @@
 #pragma once
 
+#ifndef ARDUINO_MICRO
+
 #include "../IKeyboardDriver.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
@@ -34,3 +36,5 @@ public:
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };
+
+#endif
