@@ -1,3 +1,5 @@
+#ifdef TKL
+
 #include "PinDriver.h"
 
 void PinDriver::refreshCache()
@@ -71,3 +73,5 @@ PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 		mcp1->pinMode(i, INPUT_PULLUP);
 	}
 }
+
+#endif

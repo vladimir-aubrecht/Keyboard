@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef NUMPAD
+
 #include "Arduino.h"
 #include "IKeyMapProvider.h"
 
@@ -16,3 +18,5 @@ public:
 	virtual uint8_t getRowCount();
 	virtual uint8_t getColumnCount();
 };
+
+#endif

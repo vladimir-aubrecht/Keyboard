@@ -1,3 +1,5 @@
+#ifdef TKL
+
 #include "KeyMapProvider.h"
 
 KeyMapProvider::KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns)
@@ -27,3 +29,5 @@ uint8_t KeyMapProvider::getColumnCount()
 {
 	return this->numberOfColumns;
 }
+
+#endif

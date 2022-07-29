@@ -3,10 +3,25 @@
 #include "KeyboardSDK.h"
 #include "Matrix/MatrixDebouncer.h"
 //#include "Drivers/DisplayDriver.h"
+#include "Logger.h"
+
+#ifdef NUMPAD
+#include "Drivers/Numpad/KeyMapProvider.h"
+#include "Drivers/Numpad/PinDriver.h"
+#include "Drivers/Numpad/RgbLedDriver.h"
+
+const uint8_t numberOfRows = 5;
+const uint8_t numberOfColumns = 4;
+#endif
+
+#ifdef TKL
+#include "Drivers/TKL/KeyMapProvider.h"
 #include "Drivers/TKL/PinDriver.h"
 #include "Drivers/TKL/RgbLedDriver.h"
-#include "KeyMapProvider.h"
-#include "Logger.h"
+
+const uint8_t numberOfRows = 6;
+const uint8_t numberOfColumns = 17;
+#endif
 
 #ifdef FEATHER32U4
 #include "Drivers/SelectiveKeyboardDriver.h"
@@ -31,9 +46,6 @@
 #define BLUEFRUIT_SPI_CS 8
 #define BLUEFRUIT_SPI_IRQ 7
 #define BLUEFRUIT_SPI_RST 4 // Optional but recommended, set to -1 if unused
-
-const uint8_t numberOfRows = 6;
-const uint8_t numberOfColumns = 17;
 
 RgbLedDriver *rgbLedDriver = NULL;
 // DisplayDriver *displayDriver = NULL;
@@ -175,22 +187,25 @@ void setup()
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
 #ifdef ARDUINO_MICRO
 	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
+	IPinDriver* pinDriver = new PinDriver(logger);
 #endif
 
 #ifdef PORTENTA_H7
-	//IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
-	//keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
 	// displayDriver = new DisplayDriver(&SPI);
 	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
 	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
 	keyboard = new KeyboardSDK(
-		new MatrixScanner(new PinDriver(&Wire, logger), numberOfRows, numberOfColumns, logger), 
+		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger), 
 		new MatrixEvaluator(new MatrixDebouncer(keymapProvider, 2)),
 		keyboardDriver,
 		keymapProvider,
