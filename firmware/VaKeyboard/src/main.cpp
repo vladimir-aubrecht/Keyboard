@@ -6,7 +6,7 @@
 #include "Logger.h"
 
 #ifdef NUMPAD
-#include "Drivers/Numpad/KeyMapProvider.h"
+#include "Drivers/Numpad/KeyboardDescriptor.h"
 #include "Drivers/Numpad/PinDriver.h"
 #include "Drivers/Numpad/RgbLedDriver.h"
 
@@ -15,7 +15,7 @@ const uint8_t numberOfColumns = 4;
 #endif
 
 #ifdef TKL
-#include "Drivers/TKL/KeyMapProvider.h"
+#include "Drivers/TKL/KeyboardDescriptor.h"
 #include "Drivers/TKL/PinDriver.h"
 #include "Drivers/TKL/RgbLedDriver.h"
 
@@ -49,7 +49,6 @@ const uint8_t numberOfColumns = 17;
 
 RgbLedDriver *rgbLedDriver = NULL;
 // DisplayDriver *displayDriver = NULL;
-KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
@@ -68,6 +67,12 @@ bool triggerBtReset()
 	keyboardDriver->ResetPairing();
 
 	return true;
+}
+
+void resumeLeds()
+{
+	enforcedDisabledLeds = false;
+	isActionInProgress = false;
 }
 
 bool toggleConnection()
@@ -104,12 +109,6 @@ bool toggleLeds()
 	enforcedDisabledLeds = !rgbLedDriver->toggle();
 
 	return true;
-}
-
-void resumeLeds()
-{
-	enforcedDisabledLeds = false;
-	isActionInProgress = false;
 }
 
 bool randomizeColors()
@@ -202,13 +201,13 @@ void setup()
 #endif
 
 	// displayDriver = new DisplayDriver(&SPI);
-	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
-	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
+	IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
+	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
 	keyboard = new KeyboardSDK(
 		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger), 
-		new MatrixEvaluator(new MatrixDebouncer(keymapProvider, 2)),
+		new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
 		keyboardDriver,
-		keymapProvider,
+		keyboardDescriptor,
 		actionEvaluator,
 		logger);
 

@@ -9,7 +9,7 @@ class RgbLedDriver
 private:
 	Is31fl3743a *controller1 = NULL;
 	Is31fl3743a *controller2 = NULL;
-	ILogger *logger = NULL;
+	//ILogger *logger = NULL;
 	uint8_t rowsCount = 0;
 	uint8_t columnCount = 0;
 

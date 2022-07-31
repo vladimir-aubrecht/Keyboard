@@ -1,10 +1,10 @@
 #include "MatrixDebouncer.h"
 
-MatrixDebouncer::MatrixDebouncer(IKeyMapProvider *keymapProvider, uint8_t debounceTimeInMs)
+MatrixDebouncer::MatrixDebouncer(IKeyboardDescriptor *keyboardDescriptor, uint8_t debounceTimeInMs)
 {
     this->debounceTimeInMs = debounceTimeInMs;
-    uint8_t rowsCount = keymapProvider->getRowCount();
-    uint8_t columnCount = keymapProvider->getColumnCount();
+    uint8_t rowsCount = keyboardDescriptor->getRowCount();
+    uint8_t columnCount = keyboardDescriptor->getColumnCount();
 
     this->lastDebounceTimes = new long*[rowsCount];
 

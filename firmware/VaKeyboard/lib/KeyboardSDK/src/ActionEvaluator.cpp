@@ -1,25 +1,23 @@
 #include "ActionEvaluator.h"
 
-ActionEvaluator::ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logger)
+ActionEvaluator::ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
-    //this->logger = logger ?: new NullLogger();
+    //this->logger = logger;
     this->matrixActions = new MatrixAction *[0];
-    this->keymaps = keymapProvider->getKeyMap();
-    this->keymapProvider = keymapProvider;
+    this->keymaps = keyboardDescriptor->getKeyMap();
+    this->rowCount = keyboardDescriptor->getRowCount();
+    this->columnCount = keyboardDescriptor->getColumnCount();
 }
 
 ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
 {
-    uint8_t rowCount = keymapProvider->getRowCount();
-    uint8_t columnCount = keymapProvider->getColumnCount();
-
     uint8_t *rows = new uint8_t[keycodesCount];
     uint8_t *columns = new uint8_t[keycodesCount];
 
     uint8_t currentKeyIndex = 0;
-    for (uint8_t row = 0; row < rowCount; row++)
+    for (uint8_t row = 0; row < this->rowCount; row++)
     {
-        for (uint8_t column = 0; column < columnCount; column++)
+        for (uint8_t column = 0; column < this->columnCount; column++)
         {
             KeyboardKeycode keyCode = keymaps[row][column];
 

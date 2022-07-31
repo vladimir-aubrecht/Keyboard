@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include "KeyCodes.h"
 
-class IKeyMapProvider
+class IKeyboardDescriptor
 {
 public:
 	virtual KeyboardKeycode **getKeyMap() = 0;

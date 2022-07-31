@@ -13,7 +13,7 @@ class PinDriver : public IPinDriver
 private:
 	Adafruit_MCP23X17 *mcp0 = new Adafruit_MCP23X17();
 	Adafruit_MCP23X17 *mcp1 = new Adafruit_MCP23X17();
-	ILogger *logger = NULL;
+	//ILogger *logger = NULL;
 	uint32_t cache = 0;
 
 public:

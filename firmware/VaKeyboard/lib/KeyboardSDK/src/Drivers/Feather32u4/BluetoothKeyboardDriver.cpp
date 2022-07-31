@@ -7,7 +7,7 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	IBatteryDriver *batteryDriver, ILogger *logger)
 {
 	this->ble = ble;
-	this->logger = logger ?: new NullLogger();
+	//this->logger = logger;
 	this->batteryDriver = batteryDriver;
 	Init();
 }

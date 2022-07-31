@@ -4,12 +4,12 @@
 #include "Logger/NullLogger.h"
 #include "Matrix/Matrix.h"
 #include "KeyCodes.h"
-#include "IKeyMapProvider.h"
+#include "IKeyboardDescriptor.h"
 
 class ActionEvaluator
 {
 public:
-    ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logger);
+    ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
     void registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
     void registerTimerAction(unsigned long millisecondsCount, unsigned long firstRunInMillisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
     void registerTemporaryTimerAction(unsigned long millisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
@@ -57,7 +57,9 @@ private:
     MatrixAction **matrixActions = NULL;
     TimerAction **timerActions = NULL;
     TimerAction *temporaryTimerActions = NULL;
-    IKeyMapProvider *keymapProvider = NULL;
+    IKeyboardDescriptor *keyboardDescriptor = NULL;
+    uint8_t rowCount = 0;
+    uint8_t columnCount = 0;
 
     MatrixAction *translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
 };

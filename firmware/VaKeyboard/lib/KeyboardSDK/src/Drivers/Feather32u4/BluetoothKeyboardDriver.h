@@ -15,7 +15,7 @@ class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
 	Adafruit_BluefruitLE_SPI *ble;
-	ILogger *logger;
+	//ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
 	const uint8_t maxKeyCountInReport = 6;

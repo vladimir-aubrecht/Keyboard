@@ -1,6 +1,6 @@
 #pragma once
 #include <Arduino.h>
-#include "../IKeyMapProvider.h"
+#include "../IKeyboardDescriptor.h"
 
 class MatrixDebouncer
 {
@@ -9,7 +9,7 @@ private:
     long** lastDebounceTimes;
 
 public:
-    MatrixDebouncer(IKeyMapProvider *keymapProvider, uint8_t debounceTimeInMs);
+    MatrixDebouncer(IKeyboardDescriptor *keymapProvider, uint8_t debounceTimeInMs);
 
     bool isDebounced(uint8_t row, uint8_t column);
 };

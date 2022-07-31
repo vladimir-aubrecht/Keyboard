@@ -3,16 +3,16 @@
 #ifdef TKL
 
 #include "Arduino.h"
-#include "IKeyMapProvider.h"
+#include "IKeyboardDescriptor.h"
 
-class KeyMapProvider : public IKeyMapProvider
+class KeyboardDescriptor : public IKeyboardDescriptor
 {
 public:
 	uint8_t numberOfRows;
 	uint8_t numberOfColumns;
 
 public:
-	KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns);
+	KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);
 
 	virtual KeyboardKeycode **getKeyMap();
 	virtual uint8_t getRowCount();

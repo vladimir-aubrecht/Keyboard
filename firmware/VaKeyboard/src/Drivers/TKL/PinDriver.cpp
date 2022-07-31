@@ -36,7 +36,7 @@ void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 
 PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 {
-	this->logger = logger;
+	//this->logger = logger;
 	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR, wire);
 
 	if (!mcp0Status)

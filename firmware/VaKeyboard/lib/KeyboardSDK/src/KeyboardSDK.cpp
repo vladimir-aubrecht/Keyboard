@@ -1,14 +1,14 @@
 #include "KeyboardSDK.h"
 
-KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger)
+KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
 	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
-	//this->logger = logger ?: new NullLogger();
+	//this->logger = logger;
 
-	this->keymap = keymapProvider->getKeyMap();
+	this->keymap = keyboardDescriptor->getKeyMap();
 }
 
 KeyboardSDK::~KeyboardSDK()

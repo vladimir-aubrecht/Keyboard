@@ -11,7 +11,7 @@
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
-	ILogger *logger;
+	//ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
 	const uint8_t maxKeyCountInReport = 6;
