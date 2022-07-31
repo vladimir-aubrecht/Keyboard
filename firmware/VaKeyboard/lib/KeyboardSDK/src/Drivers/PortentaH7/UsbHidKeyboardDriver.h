@@ -1,4 +1,7 @@
 #pragma once
+
+#ifdef PORTENTA_H7
+
 #include "../IKeyboardDriver.h"
 
 //#include "PluggableUSBHID.h"
@@ -16,3 +19,5 @@ public:
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };
+
+#endif

@@ -1,3 +1,5 @@
+#ifdef PORTENTA_H7
+
 #include "UsbHidKeyboardDriver.h"
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver()
@@ -42,3 +44,5 @@ void UsbHidKeyboardDriver::ResetState()
 {
 	//NKROKeyboard.releaseAll();
 }
+
+#endif

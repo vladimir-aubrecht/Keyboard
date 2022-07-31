@@ -1,3 +1,5 @@
+#ifdef ARDUINO_MICRO
+
 #include "UsbHidKeyboardDriver.h"
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver()
@@ -43,3 +45,5 @@ void UsbHidKeyboardDriver::ResetState()
 {
 	NKROKeyboard.releaseAll();
 }
+
+#endif

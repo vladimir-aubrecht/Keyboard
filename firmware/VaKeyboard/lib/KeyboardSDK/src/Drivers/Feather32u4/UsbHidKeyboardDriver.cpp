@@ -1,3 +1,5 @@
+#ifdef FEATHER32U4
+
 #include "UsbHidKeyboardDriver.h"
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver()
@@ -43,3 +45,5 @@ void UsbHidKeyboardDriver::ResetState()
 {
 	NKROKeyboard.releaseAll();
 }
+
+#endif

@@ -1,4 +1,7 @@
 #pragma once
+
+#ifdef ARDUINO_MICRO
+
 #include "../IKeyboardDriver.h"
 
 #include "HID-Project.h"
@@ -12,3 +15,5 @@ public:
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
 };
+
+#endif

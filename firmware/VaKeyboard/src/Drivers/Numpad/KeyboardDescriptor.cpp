@@ -1,13 +1,13 @@
 #ifdef NUMPAD
 
-#include "KeyMapProvider.h"
+#include "KeyboardDescriptor.h"
 
-KeyMapProvider::KeyMapProvider(uint8_t numberOfRows, uint8_t numberOfColumns)
+KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
 	this->numberOfRows = numberOfRows;
 	this->numberOfColumns = numberOfColumns;
 }
-KeyboardKeycode **KeyMapProvider::getKeyMap()
+KeyboardKeycode **KeyboardDescriptor::getKeyMap()
 {
 	KeyboardKeycode **keymaps = new KeyboardKeycode *[this->numberOfRows];
 
@@ -20,11 +20,11 @@ KeyboardKeycode **KeyMapProvider::getKeyMap()
 	return keymaps;
 }
 
-uint8_t KeyMapProvider::getRowCount()
+uint8_t KeyboardDescriptor::getRowCount()
 {
 	return this->numberOfRows;
 }
-uint8_t KeyMapProvider::getColumnCount()
+uint8_t KeyboardDescriptor::getColumnCount()
 {
 	return this->numberOfColumns;
 }

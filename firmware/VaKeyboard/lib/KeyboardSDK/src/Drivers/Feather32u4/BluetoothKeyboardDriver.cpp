@@ -1,4 +1,4 @@
-#ifndef ARDUINO_MICRO
+#ifdef FEATHER32U4
 
 #include "BluetoothKeyboardDriver.h"
 

@@ -1,3 +1,5 @@
+#ifdef ARDUINO_MICRO
+
 // I had issues to force platformIO to install it properly as dependency, therefore temporarely copying it.
 // This file is copy from here:
 // https://github.com/jfjlaros/max7301
@@ -49,7 +51,7 @@ byte MAX7301::_transfer(byte data) {
 
   for (bit = 7; bit >= 0; bit--) {
     ::digitalWrite(_pinCLK, LOW);
-    ::digitalWrite(_pinDIN, data & (0x01 << bit));
+    ::digitalWrite(_pinDIN, (data & (0x01 << bit)));
     result |= ::digitalRead(_pinDOUT) << bit;
     ::digitalWrite(_pinCLK, HIGH);
   }
@@ -200,3 +202,5 @@ byte MAX7301::digitalReadRange(byte pin) {
 void MAX7301::digitalWriteRange(byte pin, byte data) {
   write(pin + 0x40, data);
 }
+
+#endif

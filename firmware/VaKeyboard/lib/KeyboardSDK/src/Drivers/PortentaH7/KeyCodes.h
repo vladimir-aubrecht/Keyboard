@@ -1,4 +1,7 @@
 #pragma once
+
+#ifdef PORTENTA_H7
+
 #include <Arduino.h>
 
 enum KeyboardKeycode : uint8_t {
@@ -514,3 +517,5 @@ enum KeyboardKeycode : uint8_t {
 #define KEY_F24           0xFB
 
 */
+
+#endif

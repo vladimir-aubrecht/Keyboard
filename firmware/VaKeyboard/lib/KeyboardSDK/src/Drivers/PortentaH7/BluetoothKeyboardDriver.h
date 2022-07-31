@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef ARDUINO_MICRO
+#ifdef PORTENTA_H7
 
 #include "../IKeyboardDriver.h"
 #include "Logger/ILogger.h"

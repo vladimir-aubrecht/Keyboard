@@ -58,6 +58,12 @@ IKeyboardDriver *usbKeyboardDriver = NULL;
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
 
+void resumeLeds()
+{
+	enforcedDisabledLeds = false;
+	isActionInProgress = false;
+}
+
 #ifndef ARDUINO_MICRO
 SelectiveKeyboardDriver *keyboardDriver = NULL;
 
@@ -67,12 +73,6 @@ bool triggerBtReset()
 	keyboardDriver->ResetPairing();
 
 	return true;
-}
-
-void resumeLeds()
-{
-	enforcedDisabledLeds = false;
-	isActionInProgress = false;
 }
 
 bool toggleConnection()

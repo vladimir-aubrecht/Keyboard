@@ -1,6 +1,6 @@
 #pragma once
 
-#ifndef ARDUINO_MICRO
+#ifdef FEATHER32U4
 
 #include "../IKeyboardDriver.h"
 #include "Logger/ILogger.h"
@@ -38,3 +38,4 @@ public:
 };
 
 #endif
+

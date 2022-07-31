@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef FEATHER32U4
+
 #include <arduino.h>
 #include "../IBatteryDriver.h"
 
@@ -10,3 +12,5 @@ public:
 
     virtual uint8_t readBatteryLevel();
 };
+
+#endif

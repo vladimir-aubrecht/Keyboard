@@ -1,3 +1,5 @@
+#ifdef FEATHER32U4
+
 #include "BatteryDriver.h"
 
 BatteryDriver::BatteryDriver()
@@ -19,3 +21,5 @@ uint8_t BatteryDriver::readBatteryLevel()
     float measuredvbat = analogRead(9);
     return (uint8_t)(1.07421875 * measuredvbat - 600);
 }
+
+#endif

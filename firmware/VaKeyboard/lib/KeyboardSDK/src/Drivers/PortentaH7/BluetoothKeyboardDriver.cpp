@@ -1,4 +1,4 @@
-#ifndef ARDUINO_MICRO
+#ifdef PORTENTA_H7
 
 #include "BluetoothKeyboardDriver.h"
 

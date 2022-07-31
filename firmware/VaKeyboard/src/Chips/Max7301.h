@@ -2,6 +2,8 @@
 // This file is copy from here:
 // https://github.com/jfjlaros/max7301
 
+#ifdef ARDUINO_MICRO
+
 #ifndef MAX7301_h
 #define MAX7301_h
 
@@ -36,5 +38,7 @@ class MAX7301 {
          _pinDOUT,
          _pinCS;
 };
+
+#endif
 
 #endif

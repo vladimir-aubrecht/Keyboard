@@ -35,7 +35,7 @@ byte transferMax7301Byte(byte data_out)
 
         //9600 baud is about 104 microseconds per pulse
         //so wait half of that time between edges
-        delayMicroseconds(520000);
+        delayMicroseconds(52);
         digitalWrite(SCK, HIGH);
         //SCLK rising edge, Arduino changes output
         //shift data out of data_out onto DIN pin
@@ -43,7 +43,7 @@ byte transferMax7301Byte(byte data_out)
         data_out <<= 1;
         //wait the other half of the 104 microseconds
  
-        delayMicroseconds(520000);
+        delayMicroseconds(52);
     }
     //last falling edge of SCLK
     digitalWrite(SCK, LOW);
