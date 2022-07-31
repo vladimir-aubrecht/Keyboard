@@ -211,15 +211,15 @@ void setup()
 		actionEvaluator,
 		logger);
 
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KeyboardKeycode::KEY_F1, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
 	
 	#ifndef ARDUINO_MICRO
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KeyboardKeycode::KEY_ESC, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyboardKeycode[3]{KeyboardKeycode::KEY_F2, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
 	#endif
 
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KeyboardKeycode::KEY_F3, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KeyboardKeycode::KEY_F4, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
 	// logger->logDebug(F("\nSetup is done!"));
 }

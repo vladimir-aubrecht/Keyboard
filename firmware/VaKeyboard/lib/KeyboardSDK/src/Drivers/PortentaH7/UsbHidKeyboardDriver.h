@@ -4,13 +4,16 @@
 
 #include "../IKeyboardDriver.h"
 
-//#include "PluggableUSBHID.h"
-//#include "USBKeyboard.h"
+#include "PluggableUSBHID.h"
+#include "USBKeyboard.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
-//USBKeyboard Keyboard;
+USBKeyboard Keyboard;
+
+private:
+	uint8_t ScanForModificators(Matrix *matrix, KeyboardKeycode **keymapProvider);
 
 public:
 	UsbHidKeyboardDriver();

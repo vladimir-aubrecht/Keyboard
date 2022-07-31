@@ -8,6 +8,10 @@
 
 #include "Drivers/IBatteryDriver.h"
 
+#include "Mbed_BLE_HID.h"
+//#include "services/HIDKeyboardService.h"
+
+
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
