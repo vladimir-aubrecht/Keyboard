@@ -18,8 +18,7 @@ uint8_t BatteryDriver::readBatteryLevel()
     return (uint8_t)(100 * (measuredvbat - 3.6) / 0.6);
     */
 
-    float measuredvbat = analogRead(9);
-    return (uint8_t)(1.07421875 * measuredvbat - 600);
+    return (uint8_t)(1.07421875 * analogRead(9) - 600);
 }
 
 #endif

@@ -53,13 +53,10 @@ private:
     uint8_t registeredMatrixActionsCount = 0;
     uint8_t registeredTimerActionsCount = 0;
     //ILogger *logger = NULL;
-    KeyboardKeycode **keymaps = NULL;
     MatrixAction **matrixActions = NULL;
     TimerAction **timerActions = NULL;
     TimerAction *temporaryTimerActions = NULL;
     IKeyboardDescriptor *keyboardDescriptor = NULL;
-    uint8_t rowCount = 0;
-    uint8_t columnCount = 0;
 
     MatrixAction *translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
 };

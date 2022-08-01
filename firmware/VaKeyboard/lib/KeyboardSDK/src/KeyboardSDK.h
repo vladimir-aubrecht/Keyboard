@@ -17,13 +17,12 @@ private:
 	MatrixEvaluator *matrixEvaluator;
 	ActionEvaluator *actionEvaluator;
 	IKeyboardDriver *keyboardDriver;
+	IKeyboardDescriptor *keyboardDescriptor;
 	//ILogger *logger;
 
-	KeyboardKeycode **keymap;
 	Matrix *previousMatrix = NULL;
 
 public:
 	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger);
-	~KeyboardSDK();
 	void scan();
 };

@@ -9,5 +9,5 @@ class IKeyboardDriver
 public:
 	virtual void ResetPairing() = 0;
 	virtual void ResetState() = 0;
-	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider) = 0;
+	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix) = 0;
 };

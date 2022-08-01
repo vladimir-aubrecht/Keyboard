@@ -2,22 +2,24 @@
 
 #include "UsbHidKeyboardDriver.h"
 
-UsbHidKeyboardDriver::UsbHidKeyboardDriver()
+UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
+	this->keyboardDescriptor = keyboardDescriptor;
 	NKROKeyboard.begin();
 }
 
-bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
+bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
 	bool isPress = false;
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
 	{
 		for (uint8_t column = 0; column < pressedKeysMatrix->numberOfColumns; column++)
 		{
-			KeyboardKeycode currentKey = keymapProvider[row][column];
+			auto keymap = this->keyboardDescriptor->getKeyMap()[0];
+			KeyboardKeycode currentKey = keymap[row][column];
 
-			bool isPressed = ((pressedKeysMatrix->matrixData[row] >> column) & 1) == 1;
-			bool isReleased = ((releasedKeysMatrix->matrixData[row] >> column) & 1) == 1;
+			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
+			uint8_t isReleased = releasedKeysMatrix->getBit(row, column);
 
 			if (isPressed)
 			{

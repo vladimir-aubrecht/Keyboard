@@ -16,8 +16,8 @@ Matrix* MatrixEvaluator::getStateChangeMatrix(Matrix* previousMatrix, Matrix* cu
 
 		for (uint8_t column = 0; column < previousMatrix->numberOfColumns; column++)
 		{
-			uint8_t oldBit = (previousMatrix->matrixData[row] >> column) & 1;
-			uint8_t newBit = (currentMatrix->matrixData[row] >> column) & 1;
+			uint8_t oldBit = previousMatrix->getBit(row, column);
+			uint8_t newBit = currentMatrix->getBit(row, column);
 
 			if (oldBit != newBit && newBit == expectedState)
 			{

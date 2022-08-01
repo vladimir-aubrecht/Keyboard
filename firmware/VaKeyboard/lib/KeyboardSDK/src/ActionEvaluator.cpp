@@ -4,9 +4,7 @@ ActionEvaluator::ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogge
 {
     //this->logger = logger;
     this->matrixActions = new MatrixAction *[0];
-    this->keymaps = keyboardDescriptor->getKeyMap();
-    this->rowCount = keyboardDescriptor->getRowCount();
-    this->columnCount = keyboardDescriptor->getColumnCount();
+    this->keyboardDescriptor = keyboardDescriptor;
 }
 
 ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
@@ -15,11 +13,12 @@ ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)
     uint8_t *columns = new uint8_t[keycodesCount];
 
     uint8_t currentKeyIndex = 0;
-    for (uint8_t row = 0; row < this->rowCount; row++)
+    
+    for (uint8_t row = 0; row < this->keyboardDescriptor->getRowCount(); row++)
     {
-        for (uint8_t column = 0; column < this->columnCount; column++)
+        for (uint8_t column = 0; column < this->keyboardDescriptor->getColumnCount(); column++)
         {
-            KeyboardKeycode keyCode = keymaps[row][column];
+            KeyboardKeycode keyCode = this->keyboardDescriptor->getKeyMap()[0][row][column];
 
             for (uint8_t keycodeIndex = 0; keycodeIndex < keycodesCount; keycodeIndex++)
             {

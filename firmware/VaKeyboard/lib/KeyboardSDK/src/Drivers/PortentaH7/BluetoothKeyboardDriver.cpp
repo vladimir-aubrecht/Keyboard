@@ -3,8 +3,11 @@
 #include "BluetoothKeyboardDriver.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
-	IBatteryDriver *batteryDriver, ILogger *logger)
+	IBatteryDriver *batteryDriver,
+	IKeyboardDescriptor *keyboardDescriptor,
+	ILogger *logger)
 {
+	this->keyboardDescriptor = keyboardDescriptor;
 	//this->logger = logger;
 	this->batteryDriver = batteryDriver;
 	Init();
@@ -20,7 +23,7 @@ void BluetoothKeyboardDriver::Init()
 	
 }
 
-bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider)
+bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
 	return false;
 }
@@ -36,8 +39,8 @@ Matrix *BluetoothKeyboardDriver::UpdateStateMatrix(Matrix *stateMatrix, Matrix *
 	{
 		for (uint8_t column = 0; column < stateMatrix->numberOfColumns; column++)
 		{
-			bool isPressed = (pressedKeysMatrix->matrixData[row] >> column) & 1 == 1;
-			bool isReleased = ((releasedKeysMatrix->matrixData[row] >> column) & 1) == 1;
+			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
+			uint8_t isReleased = releasedKeysMatrix->getBit(row, column);
 
 			if (isPressed)
 			{
@@ -63,7 +66,7 @@ uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, Keybo
 		{
 			KeyboardKeycode currentKey = keymapProvider[row][column];
 
-			bool isPressed = (matrix->matrixData[row] >> column) & 1 == 1;
+			uint8_t isPressed = matrix->getBit(row, column);
 
 			if (isPressed && currentKey < 0xE0) // without modificator keys, 0xE0 starts modificator key
 			{
@@ -86,7 +89,7 @@ uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKey
 		{
 			KeyboardKeycode currentKey = keymapProvider[row][column];
 
-			bool isScannedPress = (matrix->matrixData[row] >> column) & 1 == 1;
+			uint8_t isScannedPress = matrix->getBit(row, column);
 
 			if (isScannedPress)
 			{

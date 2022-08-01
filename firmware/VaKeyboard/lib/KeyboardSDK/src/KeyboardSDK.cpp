@@ -6,21 +6,8 @@ KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEv
 	this->matrixEvaluator = matrixEvaluator;
 	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
+	this->keyboardDescriptor = keyboardDescriptor;
 	//this->logger = logger;
-
-	this->keymap = keyboardDescriptor->getKeyMap();
-}
-
-KeyboardSDK::~KeyboardSDK()
-{
-	for (uint8_t row = 0; row < this->previousMatrix->numberOfRows; row++)
-	{
-		delete[] keymap[row];
-	}
-
-	delete[] keymap;
-
-	delete this->previousMatrix;
 }
 
 void KeyboardSDK::scan()
@@ -42,7 +29,7 @@ void KeyboardSDK::scan()
 
 		if (!this->actionEvaluator->evaluateMatrixActions(matrix) && !this->actionEvaluator->evaluateTimerAction())
 		{
-			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap))
+			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix))
 			{
 				this->actionEvaluator->updateTimerActionsTime();
 			}

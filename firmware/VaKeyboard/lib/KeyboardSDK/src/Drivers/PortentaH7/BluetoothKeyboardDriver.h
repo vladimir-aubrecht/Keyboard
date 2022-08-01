@@ -7,6 +7,7 @@
 #include "Logger/NullLogger.h"
 
 #include "Drivers/IBatteryDriver.h"
+#include "IKeyboardDescriptor.h"
 
 #include "Mbed_BLE_HID.h"
 //#include "services/HIDKeyboardService.h"
@@ -18,6 +19,7 @@ private:
 	//ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
+	IKeyboardDescriptor *keyboardDescriptor = NULL;
 	const uint8_t maxKeyCountInReport = 6;
 
 	String ConvertToHexCode(uint8_t code);
@@ -29,12 +31,12 @@ private:
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:
-	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, ILogger *logger);
+	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 
 	virtual void Init();
 	virtual void ResetPairing();
 	virtual void ResetState();
-	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
+	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 };
 
 #endif
