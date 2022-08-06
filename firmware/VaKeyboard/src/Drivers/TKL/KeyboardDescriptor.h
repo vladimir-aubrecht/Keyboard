@@ -4,7 +4,6 @@
 
 #include "Arduino.h"
 #include "IKeyboardDescriptor.h"
-#include "HID-Project.h"
 
 class KeyboardDescriptor : public IKeyboardDescriptor
 {

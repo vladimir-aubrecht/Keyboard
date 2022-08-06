@@ -5,8 +5,6 @@
 #include "../IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
 
-#include "HID-Project.h"
-
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:

@@ -1,6 +1,7 @@
 #ifdef FEATHER32U4
 
 #include "UsbHidKeyboardDriver.h"
+#include "HID-Project.h"
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
@@ -61,12 +62,12 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 
 				if (isPressed)
 				{
-					NKROKeyboard.press(currentKey);
+					NKROKeyboard.press((KeyboardKeycode)currentKey);
 					isPress = true;
 				}
 				else if (isReleased)
 				{
-					NKROKeyboard.release(currentKey);
+					NKROKeyboard.release((KeyboardKeycode)currentKey);
 				}
 			}
 		}
