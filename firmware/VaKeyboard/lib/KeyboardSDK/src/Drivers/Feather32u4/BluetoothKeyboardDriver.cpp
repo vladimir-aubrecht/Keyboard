@@ -54,9 +54,13 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 
 		uint8_t *buffer = new uint8_t[currentStateMatrix->numberOfRows * currentStateMatrix->numberOfColumns];
 
-		auto keymap = this->keyboardDescriptor->getKeyMap()[0];
+		auto coordMap = this->keyboardDescriptor->getCoordinatesMap();
+		bool isLayout1 = currentStateMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn());
+		uint8_t layout = isLayout1 ? 1 : 0;
+
+		auto keymap = this->keyboardDescriptor->getKeyMap()[layout];
 		uint8_t keyCount = ScanForPressedRegularKeys(currentStateMatrix, keymap, buffer);
-		uint8_t modificators = ScanForModificators(currentStateMatrix, keymap);
+		uint8_t modificators = ScanForModificators(currentStateMatrix);
 
 		uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
 
@@ -75,7 +79,7 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 		if (keyCount == 0 && modificators != 0)
 		{
 			uint8_t keys[this->maxKeyCountInReport]{0, 0, 0, 0, 0};
-			//this->SendKeypresses(modificators, keys);
+			this->SendKeypresses(modificators, keys);
 		}
 
 		delete buffer;
@@ -147,26 +151,21 @@ uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, Keybo
 	return foundKeyCount;
 }
 
-uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKeycode **keymapProvider)
+uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix)
 {
 	uint8_t modificators = 0;
 
-	for (uint8_t row = 0; row < matrix->numberOfRows; row++)
+	auto coordMap = this->keyboardDescriptor->getCoordinatesMap();
+
+	for (uint8_t i = 0xE0; i < 0xff; i++)
 	{
-		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
-		{
-			KeyboardKeycode currentKey = keymapProvider[row][column];
+		uint8_t isScannedPress = matrix->getBit(coordMap[i - 0x76]->getRow(), coordMap[i - 0x76]->getColumn());
 
-			uint8_t isScannedPress = matrix->getBit(row, column);
-
-			if (isScannedPress)
-			{
-				if (currentKey >= 0xE0) // modificator keys
-				{
-					modificators |= (1 << (currentKey - 0xE0));
-				}
-			}
-		}
+	 	if (isScannedPress)
+	 	{
+	 		modificators |= (1 << (i - 0xE0));
+	 	}
+		
 	}
 
 	return modificators;

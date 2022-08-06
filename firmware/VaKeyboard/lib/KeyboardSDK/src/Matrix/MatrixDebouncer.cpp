@@ -6,31 +6,31 @@ MatrixDebouncer::MatrixDebouncer(IKeyboardDescriptor *keyboardDescriptor, uint8_
     uint8_t rowsCount = keyboardDescriptor->getRowCount();
     uint8_t columnCount = keyboardDescriptor->getColumnCount();
 
-    this->lastDebounceTimes = new long*[rowsCount];
+    this->lastDebounceTimes = new uint8_t*[rowsCount];
 
     for (uint8_t row = 0; row < rowsCount; row++)
     {
-        this->lastDebounceTimes[row] = new long[columnCount];
+        this->lastDebounceTimes[row] = new uint8_t[columnCount];
 
         for (uint8_t column = 0; column < columnCount; column++)
         {
-            this->lastDebounceTimes[row][column] = -1;
+            this->lastDebounceTimes[row][column] = 0;
         }
     }
 }
 
 bool MatrixDebouncer::isDebounced(uint8_t row, uint8_t column)
 {
-    if (this->lastDebounceTimes[row][column] == -1)
+    uint8_t currentTime = millis();
+    if (this->lastDebounceTimes[row][column] == 0)
     {
-        this->lastDebounceTimes[row][column] = millis();
+        this->lastDebounceTimes[row][column] = currentTime - this->debounceTimeInMs;
         return true;
     }
 
-    long currentTime = millis();
     if (currentTime - this->lastDebounceTimes[row][column] >= this->debounceTimeInMs)
     {
-        this->lastDebounceTimes[row][column] = millis();
+        this->lastDebounceTimes[row][column] += this->debounceTimeInMs;
         return true;
     }
 }

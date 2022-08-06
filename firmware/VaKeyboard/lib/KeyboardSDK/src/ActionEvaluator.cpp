@@ -116,6 +116,7 @@ bool ActionEvaluator::evaluateTimerAction()
         if ((unsigned long)(currentTime - this->temporaryTimerActions->lastExecutionTime) > this->temporaryTimerActions->millisecondsCount)
         {
             this->temporaryTimerActions->noTriggerAction();
+            delete this->temporaryTimerActions;
             this->temporaryTimerActions = NULL;
         }
 

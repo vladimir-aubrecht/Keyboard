@@ -28,7 +28,7 @@ private:
 	void SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength);
 	bool SendKeypresses(uint8_t modificators, uint8_t *keys);
 	bool SendRelease();
-	uint8_t ScanForModificators(Matrix *matrix, KeyboardKeycode **keymapProvider);
+	uint8_t ScanForModificators(Matrix *matrix);
 	uint8_t ScanForPressedRegularKeys(Matrix *matrix, KeyboardKeycode **keymapProvider, uint8_t *foundKeys);
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 

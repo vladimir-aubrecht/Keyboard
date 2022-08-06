@@ -180,6 +180,8 @@ void callWithGuard()
 
 void setup()
 {
+	delay(2000); // Keep the delay. It's useful when program crashes during the setup as you can reflash program without the need of pressing RESET button.
+
 	Serial.begin(115200);
 	Wire.begin();
 

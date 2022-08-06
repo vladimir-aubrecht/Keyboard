@@ -6,7 +6,7 @@ class MatrixDebouncer
 {
 private:
     uint8_t debounceTimeInMs = 2;
-    long** lastDebounceTimes;
+    uint8_t** lastDebounceTimes;
 
 public:
     MatrixDebouncer(IKeyboardDescriptor *keymapProvider, uint8_t debounceTimeInMs);
