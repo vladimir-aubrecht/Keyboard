@@ -10,7 +10,7 @@ class ActionEvaluator
 {
 public:
     ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
-    void registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
+    void registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes);
     void registerTimerAction(unsigned long millisecondsCount, unsigned long firstRunInMillisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
     void registerTemporaryTimerAction(unsigned long millisecondsCount, void (*triggerAction)(), void (*noTriggerAction)());
     bool evaluateMatrixActions(Matrix *matrix);
@@ -58,5 +58,5 @@ private:
     TimerAction *temporaryTimerActions = NULL;
     IKeyboardDescriptor *keyboardDescriptor = NULL;
 
-    MatrixAction *translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes);
+    MatrixAction *translateToAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes);
 };

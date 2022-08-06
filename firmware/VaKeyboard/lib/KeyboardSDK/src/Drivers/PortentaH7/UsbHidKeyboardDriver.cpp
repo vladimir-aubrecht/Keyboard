@@ -17,7 +17,7 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 	{
 		for (uint8_t column = 0; column < pressedKeysMatrix->numberOfColumns; column++)
 		{
-			KeyboardKeycode currentKey = keymap[row][column];
+			auto currentKey = keymap[row][column];
 
 			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
 
@@ -41,7 +41,7 @@ void UsbHidKeyboardDriver::ResetState()
 {
 }
 
-uint8_t UsbHidKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKeycode **keymapProvider)
+uint8_t UsbHidKeyboardDriver::ScanForModificators(Matrix *matrix, KeyCode **keymapProvider)
 {
 	uint8_t modificators = 0;
 
@@ -49,7 +49,7 @@ uint8_t UsbHidKeyboardDriver::ScanForModificators(Matrix *matrix, KeyboardKeycod
 	{
 		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
 		{
-			KeyboardKeycode currentKey = keymapProvider[row][column];
+			auto currentKey = keymapProvider[row][column];
 
 			uint8_t isScannedPress = matrix->getBit(row, column);
 

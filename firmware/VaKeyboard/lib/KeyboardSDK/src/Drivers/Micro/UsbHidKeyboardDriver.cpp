@@ -16,7 +16,7 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 		for (uint8_t column = 0; column < pressedKeysMatrix->numberOfColumns; column++)
 		{
 			auto keymap = this->keyboardDescriptor->getKeyMap()[0];
-			KeyboardKeycode currentKey = keymap[row][column];
+			auto currentKey = keymap[row][column];
 
 			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
 			uint8_t isReleased = releasedKeysMatrix->getBit(row, column);

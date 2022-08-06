@@ -16,7 +16,7 @@ private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
 
 private:
-	uint8_t ScanForModificators(Matrix *matrix, KeyboardKeycode **keymapProvider);
+	uint8_t ScanForModificators(Matrix *matrix, Keycode **keymapProvider);
 
 public:
 	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);

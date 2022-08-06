@@ -29,7 +29,7 @@ private:
 	bool SendKeypresses(uint8_t modificators, uint8_t *keys);
 	bool SendRelease();
 	uint8_t ScanForModificators(Matrix *matrix);
-	uint8_t ScanForPressedRegularKeys(Matrix *matrix, KeyboardKeycode **keymapProvider, uint8_t *foundKeys);
+	uint8_t ScanForPressedRegularKeys(Matrix *matrix, KeyCode **keymap, uint8_t *foundKeys);
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:

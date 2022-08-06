@@ -7,7 +7,7 @@ ActionEvaluator::ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogge
     this->keyboardDescriptor = keyboardDescriptor;
 }
 
-ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes)
 {
     uint8_t *rows = new uint8_t[keycodesCount];
     uint8_t *columns = new uint8_t[keycodesCount];
@@ -18,7 +18,7 @@ ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)
     {
         for (uint8_t column = 0; column < this->keyboardDescriptor->getColumnCount(); column++)
         {
-            KeyboardKeycode keyCode = this->keyboardDescriptor->getKeyMap()[0][row][column];
+            auto keyCode = this->keyboardDescriptor->getKeyMap()[0][row][column];
 
             for (uint8_t keycodeIndex = 0; keycodeIndex < keycodesCount; keycodeIndex++)
             {
@@ -35,7 +35,7 @@ ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)
     return new MatrixAction(action, keycodesCount, rows, columns);
 }
 
-void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes)
 {
     uint8_t itemsCount = registeredMatrixActionsCount;
     MatrixAction **newActions = new MatrixAction *[itemsCount + 1];

@@ -1,6 +1,15 @@
 #pragma once
 
+typedef uint8_t KeyCode;
+
+enum KeyType : uint8_t
+{
+    KEY = 0,
+    MEDIA = 1
+};
+
 #ifdef FEATHER32U4
+#include "HID-Project.h"
 #include "Drivers/Feather32u4/KeyCodes.h"
 #endif
 

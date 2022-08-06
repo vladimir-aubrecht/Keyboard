@@ -128,7 +128,7 @@ Matrix *BluetoothKeyboardDriver::UpdateStateMatrix(Matrix *stateMatrix, Matrix *
 	return stateMatrix;
 }
 
-uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, KeyboardKeycode **keymapProvider, uint8_t *foundKeys)
+uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, KeyCode **keymap, uint8_t *foundKeys)
 {
 	uint8_t foundKeyCount = 0;
 
@@ -136,7 +136,7 @@ uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, Keybo
 	{
 		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
 		{
-			KeyboardKeycode currentKey = keymapProvider[row][column];
+			auto currentKey = keymap[row][column];
 
 			uint8_t isPressed = matrix->getBit(row, column);
 
