@@ -14,6 +14,7 @@ enum KeyType : uint8_t
 #endif
 
 #ifdef ARDUINO_MICRO
+#include "HID-APIs/ConsumerAPI.h"
 #include "Drivers/Micro/KeyCodes.h"
 #endif
 

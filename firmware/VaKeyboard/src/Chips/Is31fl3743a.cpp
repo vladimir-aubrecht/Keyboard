@@ -32,7 +32,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x02);
 	Adafruit_BusIO_Register GCC(i2c_dev, 0x01); // global current
-	GCC.write(0x44);
+	GCC.write(0xFF);
 
 	Adafruit_BusIO_Register CONF(i2c_dev, 0x00);
 	CONF.write(this->columnMask); // normal mode + enabled columns
@@ -59,10 +59,29 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x00);	  // lets write pwm
+
+
 	for (int i = 0x01; i < 0xA3; i++)
 	{
+		//uint32_t color = random(0x00ffffff);
+		uint8_t r = 0xff; //(uint8_t)((color & 0x00ff0000) >> 16);
+		uint8_t g = 0xff; //(uint8_t)((color & 0x0000ff00) >> 8);
+		uint8_t b = 0xff; //(uint8_t)(color & 0x000000ff);
+
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
-		PWM.write(intensity);
+
+		if ((i - 1) % 3 == 0)	//red led
+		{
+			PWM.write(2 * r / 5);
+		}
+		else if ((i - 2) % 3 == 0)	//green led
+		{
+			PWM.write(g);
+		}
+		else //blue led
+		{
+			PWM.write(4 * b / 5);
+		}
 	}
 
 	this->currentGlobalIntensity = intensity;
