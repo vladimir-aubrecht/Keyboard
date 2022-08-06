@@ -9,7 +9,7 @@ enum KeyType : uint8_t
 };
 
 #ifdef FEATHER32U4
-#include "HID-Project.h"
+#include "HID-APIs/ConsumerAPI.h"
 #include "Drivers/Feather32u4/KeyCodes.h"
 #endif
 

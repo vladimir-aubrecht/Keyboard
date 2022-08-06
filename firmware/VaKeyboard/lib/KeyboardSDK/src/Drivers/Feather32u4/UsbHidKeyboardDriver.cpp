@@ -61,8 +61,8 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 
 				if (isPressed)
 				{
-					isPress = true;
 					NKROKeyboard.press(currentKey);
+					isPress = true;
 				}
 				else if (isReleased)
 				{
