@@ -4,6 +4,9 @@
 
 #include "../IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
+#include "esp32-hal.h"
+#include "esp32-hal-tinyusb.h"
+#include "USB.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
@@ -12,6 +15,7 @@ private:
 
 private:
 	uint8_t ScanForModificators(Matrix *matrix, KeyCode **keymapProvider);
+	ESPUSB usb = ESPUSB();
 
 public:
 	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);

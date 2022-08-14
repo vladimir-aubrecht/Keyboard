@@ -5,6 +5,7 @@
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
+	//TODO: https://gist.github.com/brgaulin/2dec28baf5e9e11dfd7ef8354adf103d
 }
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
