@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef PORTENTA_H7
+#ifdef TINYS3
 
 #include <Arduino.h>
 

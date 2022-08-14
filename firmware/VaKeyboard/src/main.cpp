@@ -43,7 +43,7 @@ const uint8_t numberOfColumns = 17;
 #include "Drivers/PortentaH7/BluetoothKeyboardDriver.h"
 #endif
 
-#ifdef TINY_S3
+#ifdef TINYS3
 #include "Drivers/SelectiveKeyboardDriver.h"
 #include "Drivers/TinyS3/BatteryDriver.h"
 #include "Drivers/TinyS3/UsbHidKeyboardDriver.h"
@@ -205,6 +205,12 @@ void setup()
 #endif
 
 #ifdef PORTENTA_H7
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+#endif
+
+#ifdef TINYS3
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);

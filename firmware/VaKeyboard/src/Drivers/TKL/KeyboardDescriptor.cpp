@@ -1,7 +1,6 @@
 #ifdef TKL
 
 #include "KeyboardDescriptor.h"
-#include "HID-Project.h"
 
 KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
