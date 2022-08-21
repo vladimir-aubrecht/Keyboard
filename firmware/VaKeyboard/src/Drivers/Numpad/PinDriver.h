@@ -11,7 +11,7 @@
 class PinDriver : public IPinDriver
 {
 private:
-	//MAX7301* max7301;
+	Max7301* max7301;
 	ILogger *logger = NULL;
 	uint32_t cache = 0;
 
@@ -20,7 +20,7 @@ public:
 	virtual void writePin(uint8_t pinNumber, uint8_t value);
 	virtual void refreshCache();
 
-	PinDriver(/*MAX7301* max7301,*/ ILogger *logger);
+	PinDriver(Max7301* max7301, ILogger *logger);
 };
 
 #endif

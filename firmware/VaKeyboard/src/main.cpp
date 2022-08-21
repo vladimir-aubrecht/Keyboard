@@ -34,6 +34,7 @@ const uint8_t numberOfColumns = 17;
 #ifdef ARDUINO_MICRO
 #include "Drivers/Micro/BatteryDriver.h"
 #include "Drivers/Micro/UsbHidKeyboardDriver.h"
+#include "Chips/Max7301.h"
 #endif
 
 #ifdef PORTENTA_H7
@@ -201,7 +202,8 @@ void setup()
 
 #ifdef ARDUINO_MICRO
 	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
-	IPinDriver* pinDriver = new PinDriver(logger);
+	Max7301* max = new Max7301(SS);
+	IPinDriver* pinDriver = new PinDriver(max, logger);
 #endif
 
 #ifdef PORTENTA_H7

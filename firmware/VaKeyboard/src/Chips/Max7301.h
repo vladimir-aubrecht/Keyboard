@@ -1,44 +1,18 @@
-// I had issues to force platformIO to install it properly as dependency, therefore temporarely copying it.
-// This file is copy from here:
-// https://github.com/jfjlaros/max7301
-
-#ifdef ARDUINO_MICRO
-
-#ifndef MAX7301_h
-#define MAX7301_h
-
+#pragma once
 #include <Arduino.h>
+#include <SPI.h>
 
-#define NOP 0x00
-#define GPIO_OUTPUT 0x01
-#define GPIO_INPUT 0x02
-#define GPIO_INPUT_PULLUP 0x03
+class Max7301
+{
+private:
+    uint8_t csPin;
+    SPISettings spiSettings;
+    uint8_t transferWord(uint8_t higherByte, uint8_t lowerByte);
 
-
-class MAX7301 {
-  public:
-    MAX7301(byte, byte, byte, byte, bool);
-    byte read(byte),
-         getPinMode(byte),
-         digitalRead(byte),
-         digitalReadRange(byte);
-    void write(byte, byte),
-         enable(void),
-         disable(void),
-         enableTransitionDetection(void),
-         disableTransitionDetection(void),
-         configureTransitionDetection(byte, bool),
-         pinMode(byte, byte),
-         digitalWrite(byte, byte),
-         digitalWriteRange(byte, byte);
-  private:
-    byte _transfer(byte),
-         _pinCLK,
-         _pinDIN,
-         _pinDOUT,
-         _pinCS;
+public: 
+    Max7301(uint8_t csPin);
+    void begin();
+    uint8_t read(uint8_t address);
+    void write(uint8_t address, uint8_t value);
+    void enable();
 };
-
-#endif
-
-#endif
