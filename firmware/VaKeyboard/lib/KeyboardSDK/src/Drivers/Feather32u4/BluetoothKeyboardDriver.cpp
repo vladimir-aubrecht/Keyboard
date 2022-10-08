@@ -3,7 +3,7 @@
 #include "BluetoothKeyboardDriver.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
-	Adafruit_BluefruitLE_SPI *ble, 
+	Adafruit_BluefruitLE_SPI *ble,
 	IBatteryDriver *batteryDriver,
 	IKeyboardDescriptor *keyboardDescriptor,
 	ILogger *logger)
@@ -54,9 +54,7 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 
 		uint8_t *buffer = new uint8_t[currentStateMatrix->numberOfRows * currentStateMatrix->numberOfColumns];
 
-		auto coordMap = this->keyboardDescriptor->getCoordinatesMap();
-		bool isLayout1 = currentStateMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn());
-		uint8_t layout = isLayout1 ? 1 : 0;
+		uint8_t layout = this->keyboardDescriptor->getSelectedLayer(currentStateMatrix);
 
 		auto keymap = this->keyboardDescriptor->getKeyMap()[layout];
 		uint8_t keyCount = ScanForPressedRegularKeys(currentStateMatrix, keymap, buffer);
@@ -165,7 +163,7 @@ uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix)
 	 	{
 	 		modificators |= (1 << (i - 0xE0));
 	 	}
-		
+
 	}
 
 	return modificators;

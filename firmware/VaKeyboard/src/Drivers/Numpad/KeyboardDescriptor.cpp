@@ -1,6 +1,7 @@
 #ifdef NUMPAD
 
 #include "KeyboardDescriptor.h"
+#include "BleKeyboard.h"
 
 KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
@@ -14,13 +15,13 @@ KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfCol
 void KeyboardDescriptor::initKeyAsignment()
 {
 	this->keymaps = new KeyCode **[this->getLayersCount()];
-	
+
 	this->keymaps[0] = new KeyCode *[this->numberOfRows];
-	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_NUM_LOCK, KEYPAD_DIVIDE, KEYPAD_MULTIPLY, KEYPAD_SUBTRACT};
-	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEYPAD_7, KEYPAD_8, KEYPAD_9, KEY_RESERVED};
-	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEYPAD_4, KEYPAD_5, KEYPAD_6, KEYPAD_ADD};
-	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEYPAD_1, KEYPAD_2, KEYPAD_3, KEY_RESERVED};
-	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEYPAD_0, KEY_RESERVED, KEYPAD_DOT, KEYPAD_ENTER};
+	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_RESERVED, KEY_NUM_SLASH, KEY_NUM_ASTERISK, KEY_NUM_MINUS};
+	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEY_NUM_7, KEY_NUM_8, KEY_NUM_9, KEY_RESERVED};
+	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEY_NUM_4, KEY_NUM_5, KEY_NUM_6, KEY_NUM_PLUS};
+	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEY_NUM_1, KEY_NUM_2, KEY_NUM_3, KEY_RESERVED};
+	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEY_NUM_0, KEY_RESERVED, KEY_NUM_PERIOD, KEY_NUM_ENTER};
 }
 
 void KeyboardDescriptor::initCoordinatesMap()
@@ -40,9 +41,14 @@ void KeyboardDescriptor::initCoordinatesMap()
 				{
 					this->coordMap[(uint8_t)key - 0x76] = coord;
 				}
-			}	
+			}
 		}
 	}
+}
+
+uint8_t KeyboardDescriptor::getSelectedLayer(Matrix *pressedKeysMatrix)
+{
+	return 0;
 }
 
 KeyboardDescriptor::Coordinates **KeyboardDescriptor::getCoordinatesMap()
@@ -59,6 +65,7 @@ uint8_t KeyboardDescriptor::getRowCount()
 {
 	return this->numberOfRows;
 }
+
 uint8_t KeyboardDescriptor::getColumnCount()
 {
 	return this->numberOfColumns;

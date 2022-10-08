@@ -1,12 +1,10 @@
 #pragma once
 #include <Arduino.h>
-#include <SPI.h>
 
 class Max7301
 {
 private:
     uint8_t csPin;
-    SPISettings spiSettings;
     uint8_t transferWord(uint8_t higherByte, uint8_t lowerByte);
 
 public: 

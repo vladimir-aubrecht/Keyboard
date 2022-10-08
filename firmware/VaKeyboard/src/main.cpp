@@ -50,17 +50,20 @@ const uint8_t numberOfColumns = 17;
 #include "Drivers/TinyS3/UsbHidKeyboardDriver.h"
 #include "Drivers/TinyS3/BluetoothKeyboardDriver.h"
 #endif
-
+#ifdef WROOM32
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/Wroom32/BatteryDriver.h"
+#include "Drivers/Wroom32/UsbHidKeyboardDriver.h"
+#include "Drivers/Wroom32/BluetoothKeyboardDriver.h"
+#endif
 #define BLUEFRUIT_SPI_CS 8
 #define BLUEFRUIT_SPI_IRQ 7
 #define BLUEFRUIT_SPI_RST 4 // Optional but recommended, set to -1 if unused
 
 RgbLedDriver *rgbLedDriver = NULL;
-// DisplayDriver *displayDriver = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
-
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 bool enforcedDisabledLeds = false;
@@ -202,8 +205,7 @@ void setup()
 
 #ifdef ARDUINO_MICRO
 	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
-	Max7301* max = new Max7301(SS);
-	IPinDriver* pinDriver = new PinDriver(max, logger);
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
 #ifdef PORTENTA_H7
@@ -217,27 +219,31 @@ void setup()
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
-
-	// displayDriver = new DisplayDriver(&SPI);
+#ifdef WROOM32
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
+	Max7301* max7301 = new Max7301(SS);
+	IPinDriver* pinDriver = new PinDriver(max7301, logger);
+#endif
 	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
 	keyboard = new KeyboardSDK(
-		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger), 
+		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger),
 		new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
 		keyboardDriver,
 		keyboardDescriptor,
 		actionEvaluator,
-		logger);	
+		logger);
 
+	#ifndef NUMPAD
 	#ifndef ARDUINO_MICRO
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{KeyboardKeycode::KEY_ESC, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{KeyboardKeycode::KEY_F2, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KEY_ESC, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KEY_F2, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
 	#endif
-
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{KeyboardKeycode::KEY_F1, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
-
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{KeyboardKeycode::KEY_F3, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{KeyboardKeycode::KEY_F4, KeyboardKeycode::KEY_LEFT_CTRL, KeyboardKeycode::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KEY_F1, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KEY_F3, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KEY_F4, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
+	#endif
 	// logger->logDebug(F("\nSetup is done!"));
 }
 

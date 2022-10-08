@@ -13,10 +13,9 @@ UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescript
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
 	bool isPress = false;
-
-	auto coordMap = this->keyboardDescriptor->getCoordinatesMap();
-	isKeyMenuHold |= pressedKeysMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn());
-	isKeyMenuHold &= ~(releasedKeysMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn()));
+	
+	isKeyMenuHold |= this->keyboardDescriptor->getSelectedLayer(pressedKeysMatrix);
+	isKeyMenuHold &= ~(this->keyboardDescriptor->getSelectedLayer(releasedKeysMatrix));
 
 	if (isKeyMenuHold && this->keyboardDescriptor->getLayersCount() > 1) {
 		for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
@@ -71,7 +70,6 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 				}
 			}
 		}
-
 		NKROKeyboard.send();
 	}
 	return isPress;

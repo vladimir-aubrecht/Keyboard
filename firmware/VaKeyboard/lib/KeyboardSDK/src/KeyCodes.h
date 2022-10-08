@@ -23,3 +23,7 @@ enum KeyType : uint8_t
 #ifdef TINYS3
 #include "Drivers/TinyS3/KeyCodes.h"
 #endif
+
+#ifdef WROOM32
+#include "Drivers/Wroom32/KeyCodes.h"
+#endif

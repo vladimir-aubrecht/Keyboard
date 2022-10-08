@@ -2,6 +2,7 @@
 
 #include <Arduino.h>
 #include "KeyCodes.h"
+#include "Matrix/Matrix.h"
 
 class IKeyboardDescriptor
 {
@@ -32,16 +33,17 @@ public:
 	};
 
 	virtual KeyCode ***getKeyMap() = 0;
-	virtual Coordinates **getCoordinatesMap() = 0; 
+	virtual Coordinates **getCoordinatesMap() = 0;
 	virtual uint8_t getRowCount() = 0;
 	virtual uint8_t getColumnCount() = 0;
 	virtual uint8_t getLayersCount() = 0;
+	virtual uint8_t getSelectedLayer(Matrix *pressedKeysMatrix) = 0;
 	KeyType getKeyType(uint8_t layer, uint8_t row, uint8_t column)
 	{
 		if (layer == 1 && row == 0)
 		{
 			auto keyCode = this->getKeyMap()[1][row][column];
-			
+
 			switch (keyCode)
 			{
 			case MEDIA_PREVIOUS:
@@ -51,7 +53,7 @@ public:
 			case MEDIA_VOLUME_DOWN:
 			case MEDIA_VOLUME_UP:
 				return KeyType::MEDIA;
-			
+
 			default:
 				return KeyType::KEY;
 			}

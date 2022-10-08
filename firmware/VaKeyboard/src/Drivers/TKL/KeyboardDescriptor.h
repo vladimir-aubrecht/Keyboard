@@ -14,6 +14,7 @@ private:
 	Coordinates ** coordMap;
 	void initKeyAsignment();
 	void initCoordinatesMap();
+	uint8_t getSelectedLayer(Matrix *pressedKeysMatrix);
 
 public:
 	KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);

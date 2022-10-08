@@ -54,6 +54,11 @@ void KeyboardDescriptor::initCoordinatesMap()
 	}
 }
 
+uint8_t KeyboardDescriptor::getSelectedLayer(Matrix *pressedKeysMatrix)
+{
+	return pressedKeysMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn());
+}
+
 KeyboardDescriptor::Coordinates **KeyboardDescriptor::getCoordinatesMap()
 {
 	return this->coordMap;
