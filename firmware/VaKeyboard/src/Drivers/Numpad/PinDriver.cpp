@@ -17,12 +17,10 @@ void PinDriver::refreshCache()
 
 uint8_t PinDriver::readPin(uint8_t pinNumber)
 {
-	//Serial.println(this->max7301->read(0x0E), BIN);
-
 	uint32_t mask = (1 << (3 - pinNumber));
 	uint8_t result = ((cache & mask) >> (3 - pinNumber));
 
-	return result;
+	return (~result) & 0b00000001;
 }
 
 void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
@@ -43,7 +41,6 @@ PinDriver::PinDriver(Max7301* max7301, ILogger *logger)
 	this->max7301 = max7301;
 	this->max7301->begin();
 	this->max7301->enable();
-	//this->max7301->write(0x09, 0b00110011);
 
 	//00 is forbidden, 01 is output port, 10 is input without pull up, 11 is output with pull up
 	this->max7301->write(0x0C,0b11111111); // ports 19 - 16

@@ -4,7 +4,11 @@
 class Max7301
 {
 private:
-    uint8_t csPin;
+    uint8_t csPin = 11;
+    uint8_t mosiPin = 10;
+    uint8_t sclkPin = 9;
+    uint8_t misoPin = 13;
+    byte transferByte(byte data_out);
     uint8_t transferWord(uint8_t higherByte, uint8_t lowerByte);
 
 public: 

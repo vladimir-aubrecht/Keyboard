@@ -18,6 +18,7 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 	isKeyMenuHold &= ~(this->keyboardDescriptor->getSelectedLayer(releasedKeysMatrix));
 
 	if (isKeyMenuHold && this->keyboardDescriptor->getLayersCount() > 1) {
+		
 		for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
 		{
 			for (uint8_t column = 0; column < pressedKeysMatrix->numberOfColumns; column++)

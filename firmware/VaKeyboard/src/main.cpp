@@ -200,7 +200,14 @@ void setup()
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+
+	#ifdef NUMPAD
+	IPinDriver* pinDriver = new PinDriver(new Max7301(11), logger);
+	#endif
+
+	#ifdef TKL
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+	#endif
 #endif
 
 #ifdef ARDUINO_MICRO
@@ -248,9 +255,6 @@ void setup()
 
 void loop()
 {
-	usbKeyboardDriver->SendKeys(NULL, NULL);
-	delay(5000);
-	return;
 	keyboard->scan();
 	uint8_t batteryLevel = batteryDriver->readBatteryLevel();
 
