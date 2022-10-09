@@ -5,13 +5,13 @@
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
-	//TODO: https://gist.github.com/brgaulin/2dec28baf5e9e11dfd7ef8354adf103d
+	keyboard->begin();
+	USB.begin();
 }
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
 	auto keymap = this->keyboardDescriptor->getKeyMap()[0];
-	uint8_t modifiers = this->ScanForModificators(pressedKeysMatrix, keymap);
 
 	bool isPress = false;
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
@@ -21,12 +21,17 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			auto currentKey = keymap[row][column];
 
 			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
+			uint8_t isReleased = releasedKeysMatrix->getBit(row, column);
 
-			if (isPressed && currentKey < 0xE0) // without modificator keys, 0xE0 starts modificator key
+			if (isPressed)
 			{
 				isPress = true;
 				
-				//this->Keyboard.key_code(currentKey, modifiers);
+				this->keyboard->press(currentKey);
+			}
+			else if (isReleased)
+			{
+				this->keyboard->release(currentKey);
 			}
 		}
 	}
@@ -40,6 +45,7 @@ void UsbHidKeyboardDriver::ResetPairing()
 
 void UsbHidKeyboardDriver::ResetState()
 {
+	this->keyboard->releaseAll();
 }
 
 uint8_t UsbHidKeyboardDriver::ScanForModificators(Matrix *matrix, KeyCode **keymapProvider)

@@ -1,7 +1,6 @@
 #ifdef NUMPAD
 
 #include "KeyboardDescriptor.h"
-#include "BleKeyboard.h"
 
 KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns)
 {
@@ -17,11 +16,11 @@ void KeyboardDescriptor::initKeyAsignment()
 	this->keymaps = new KeyCode **[this->getLayersCount()];
 
 	this->keymaps[0] = new KeyCode *[this->numberOfRows];
-	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_RESERVED, KEY_NUM_SLASH, KEY_NUM_ASTERISK, KEY_NUM_MINUS};
-	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEY_NUM_7, KEY_NUM_8, KEY_NUM_9, KEY_RESERVED};
-	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEY_NUM_4, KEY_NUM_5, KEY_NUM_6, KEY_NUM_PLUS};
-	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEY_NUM_1, KEY_NUM_2, KEY_NUM_3, KEY_RESERVED};
-	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEY_NUM_0, KEY_RESERVED, KEY_NUM_PERIOD, KEY_NUM_ENTER};
+	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_RESERVED, KEY_PAD_SLASH, KEY_PAD_ASTERISK, KEY_PAD_MINUS};
+	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEY_PAD_7, KEY_PAD_8, KEY_PAD_9, KEY_RESERVED};
+	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEY_PAD_4, KEY_PAD_5, KEY_PAD_6, KEY_PAD_PLUS};
+	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEY_PAD_1, KEY_PAD_2, KEY_PAD_3, KEY_RESERVED};
+	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEY_PAD_0, KEY_RESERVED, KEY_PAD_PERIOD, KEY_PAD_ENTER};
 }
 
 void KeyboardDescriptor::initCoordinatesMap()

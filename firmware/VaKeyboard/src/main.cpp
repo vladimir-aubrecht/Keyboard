@@ -217,13 +217,12 @@ void setup()
 #ifdef TINYS3
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
-	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
 #ifdef WROOM32
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
-	Max7301* max7301 = new Max7301(SS);
-	IPinDriver* pinDriver = new PinDriver(max7301, logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
 	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
 	keyboard = new KeyboardSDK(
@@ -249,6 +248,9 @@ void setup()
 
 void loop()
 {
+	usbKeyboardDriver->SendKeys(NULL, NULL);
+	delay(5000);
+	return;
 	keyboard->scan();
 	uint8_t batteryLevel = batteryDriver->readBatteryLevel();
 
