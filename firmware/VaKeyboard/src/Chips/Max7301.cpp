@@ -15,38 +15,33 @@ void Max7301::begin()
     digitalWrite(this->csPin, HIGH);
     digitalWrite(this->sclkPin, LOW);
 
-    delay(100);
+    delay(10);
 }
 
 byte Max7301::transferByte(byte data_out)
 {
     byte current_bit, result;
     result = 0;
-    delayMicroseconds(1);
+
     for(current_bit = 0; current_bit < 8; current_bit++)
     {
         digitalWrite(this->sclkPin, LOW);
         result = (result << 1) | digitalRead(this->misoPin);
-        digitalWrite(this->mosiPin, data_out & 1);
-        data_out >>= 1;
+        digitalWrite(this->mosiPin, data_out & 0x80);
+        data_out <<= 1;
         digitalWrite(this->sclkPin, HIGH);
-        delayMicroseconds(1);
     }
+
     return result;
 }
-unsigned char reverse(unsigned char b) {
-   b = (b & 0xF0) >> 4 | (b & 0x0F) << 4;
-   b = (b & 0xCC) >> 2 | (b & 0x33) << 2;
-   b = (b & 0xAA) >> 1 | (b & 0x55) << 1;
-   return b;
-}
+
 uint8_t Max7301::transferWord(uint8_t cmdByte, uint8_t dataByte)
 {
     digitalWrite(this->sclkPin, LOW);
     digitalWrite(this->csPin, LOW);
     
-    transferByte(reverse(cmdByte));
-    uint8_t data = transferByte(reverse(dataByte));
+    transferByte(cmdByte);
+    uint8_t data = transferByte(dataByte);
     
     digitalWrite(this->csPin, HIGH);
     digitalWrite(this->sclkPin, LOW);
@@ -69,6 +64,6 @@ void Max7301::write(uint8_t address, uint8_t value)
 }
 void Max7301::enable()
 {
-    delay(2000);
+    delay(500);
     this->write(0x04, 1);
 }
