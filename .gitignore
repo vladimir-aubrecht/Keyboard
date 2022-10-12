@@ -2,4 +2,6 @@
 .vs
 **/debug/
 /firmware/Custom/DotnetKeyboard/DotnetKeyboard/DotnetKeyboard/obj
+*.zip
+*.xml
 **/*-backups/**

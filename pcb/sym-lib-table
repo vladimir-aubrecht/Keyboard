@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name vakeyboard)(type Legacy)(uri ${KIPRJMOD}/Symbols/vakeyboard.lib)(options "")(descr ""))
-)
