@@ -1,3 +1,5 @@
+#ifdef TKL
+
 #include "PinDriver.h"
 
 void PinDriver::refreshCache()
@@ -13,17 +15,17 @@ uint8_t PinDriver::readPin(uint8_t pinNumber)
 	if (pinNumber < 8)
 	{
 		uint32_t mask = (1 << (7 - pinNumber));
-		return (((cache << 16) >> 24) & mask) >> (7 - pinNumber); // 1 - mcp0->digitalRead(15 - pinNumber);
+		return (((cache << 16) >> 24) & mask) >> (7 - pinNumber);
 	}
 	else if (pinNumber < 16)
 	{
 		uint32_t mask = (1 << (7 - (pinNumber - 8)));
-		return ((cache >> 16) & mask) >> (7 - (pinNumber - 8)); // 1 - mcp1->digitalRead(7 - (pinNumber - 8));
+		return ((cache >> 16) & mask) >> (7 - (pinNumber - 8));
 	}
 	else
 	{
 		uint32_t mask = (1 << (15 - (pinNumber - 16)));
-		return ((cache >> 16) & mask) >> (15 - (pinNumber - 16)); // 1 - mcp1->digitalRead(15 - (pinNumber - 16));
+		return ((cache >> 16) & mask) >> (15 - (pinNumber - 16));
 	}
 }
 
@@ -34,7 +36,7 @@ void PinDriver::writePin(uint8_t pinNumber, uint8_t value)
 
 PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 {
-	this->logger = logger;
+	//this->logger = logger;
 	uint8_t mcp0Status = mcp0->begin_I2C((uint8_t)MCP23XXX_ADDR, wire);
 
 	if (!mcp0Status)
@@ -71,3 +73,5 @@ PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 		mcp1->pinMode(i, INPUT_PULLUP);
 	}
 }
+
+#endif

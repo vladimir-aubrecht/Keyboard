@@ -1,28 +1,24 @@
 #include "ActionEvaluator.h"
 
-ActionEvaluator::ActionEvaluator(IKeyMapProvider *keymapProvider, ILogger *logger)
+ActionEvaluator::ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
-    this->logger = logger ?: new NullLogger();
-    this->keymapProvider = keymapProvider;
+    //this->logger = logger;
     this->matrixActions = new MatrixAction *[0];
+    this->keyboardDescriptor = keyboardDescriptor;
 }
 
-ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes)
 {
-    KeyboardKeycode **keymaps = keymapProvider->getKeyMap();
-
-    uint8_t rowCount = keymapProvider->getRowCount();
-    uint8_t columnCount = keymapProvider->getColumnCount();
-
     uint8_t *rows = new uint8_t[keycodesCount];
     uint8_t *columns = new uint8_t[keycodesCount];
 
     uint8_t currentKeyIndex = 0;
-    for (uint8_t row = 0; row < rowCount; row++)
+    
+    for (uint8_t row = 0; row < this->keyboardDescriptor->getRowCount(); row++)
     {
-        for (uint8_t column = 0; column < columnCount; column++)
+        for (uint8_t column = 0; column < this->keyboardDescriptor->getColumnCount(); column++)
         {
-            KeyboardKeycode keyCode = keymaps[row][column];
+            auto keyCode = this->keyboardDescriptor->getKeyMap()[0][row][column];
 
             for (uint8_t keycodeIndex = 0; keycodeIndex < keycodesCount; keycodeIndex++)
             {
@@ -39,7 +35,7 @@ ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)
     return new MatrixAction(action, keycodesCount, rows, columns);
 }
 
-void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyboardKeycode *keycodes)
+void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCount, KeyCode *keycodes)
 {
     uint8_t itemsCount = registeredMatrixActionsCount;
     MatrixAction **newActions = new MatrixAction *[itemsCount + 1];
@@ -120,6 +116,7 @@ bool ActionEvaluator::evaluateTimerAction()
         if ((unsigned long)(currentTime - this->temporaryTimerActions->lastExecutionTime) > this->temporaryTimerActions->millisecondsCount)
         {
             this->temporaryTimerActions->noTriggerAction();
+            delete this->temporaryTimerActions;
             this->temporaryTimerActions = NULL;
         }
 

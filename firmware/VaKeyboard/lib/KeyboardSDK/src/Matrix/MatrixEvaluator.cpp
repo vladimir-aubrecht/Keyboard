@@ -1,9 +1,9 @@
 #include "MatrixEvaluator.h"
 
 
-MatrixEvaluator::MatrixEvaluator()
+MatrixEvaluator::MatrixEvaluator(MatrixDebouncer* matrixDebouncer)
 {
-
+	this->matrixDebouncer = matrixDebouncer;
 }
 
 Matrix* MatrixEvaluator::getStateChangeMatrix(Matrix* previousMatrix, Matrix* currentMatrix, uint8_t expectedState)
@@ -16,13 +16,16 @@ Matrix* MatrixEvaluator::getStateChangeMatrix(Matrix* previousMatrix, Matrix* cu
 
 		for (uint8_t column = 0; column < previousMatrix->numberOfColumns; column++)
 		{
-			uint8_t oldBit = (previousMatrix->matrixData[row] >> column) & 1;
-			uint8_t newBit = (currentMatrix->matrixData[row] >> column) & 1;
+			uint8_t oldBit = previousMatrix->getBit(row, column);
+			uint8_t newBit = currentMatrix->getBit(row, column);
 
 			if (oldBit != newBit && newBit == expectedState)
 			{
-				//key was newly pressed
-				matrixData[row] |= ((uint32_t)1) << column;
+				if (this->matrixDebouncer->isDebounced(row, column))
+				{
+					//key was newly pressed
+					matrixData[row] |= ((uint32_t)1) << column;
+				}
 			}
 		}
 	}

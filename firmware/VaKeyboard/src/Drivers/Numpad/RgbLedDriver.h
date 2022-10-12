@@ -1,5 +1,8 @@
 #pragma once
-#include "../Chips/Is31fl3743a.h"
+
+#ifdef NUMPAD
+
+#include "../../Chips/Is31fl3743a.h"
 
 class RgbLedDriver
 {
@@ -19,3 +22,5 @@ public:
 	void randomizeColors();
 	void setColor(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);
 };
+
+#endif

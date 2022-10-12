@@ -5,7 +5,7 @@
 #include "Matrix/Convertors.h"
 #include "Matrix/MatrixScanner.h"
 #include "Matrix/MatrixEvaluator.h"
-#include "IKeyMapProvider.h"
+#include "IKeyboardDescriptor.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
 #include "ActionEvaluator.h"
@@ -17,13 +17,12 @@ private:
 	MatrixEvaluator *matrixEvaluator;
 	ActionEvaluator *actionEvaluator;
 	IKeyboardDriver *keyboardDriver;
-	ILogger *logger;
+	IKeyboardDescriptor *keyboardDescriptor;
+	//ILogger *logger;
 
-	KeyboardKeycode **keymap;
 	Matrix *previousMatrix = NULL;
 
 public:
-	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger);
-	~KeyboardSDK();
+	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger);
 	void scan();
 };

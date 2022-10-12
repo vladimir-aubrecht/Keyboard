@@ -1,26 +1,13 @@
 #include "KeyboardSDK.h"
 
-KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyMapProvider *keymapProvider, ActionEvaluator *actionEvaluator, ILogger *logger)
+KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
 	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
-	this->logger = logger ?: new NullLogger();
-
-	this->keymap = keymapProvider->getKeyMap();
-}
-
-KeyboardSDK::~KeyboardSDK()
-{
-	for (uint8_t row = 0; row < this->previousMatrix->numberOfRows; row++)
-	{
-		delete[] keymap[row];
-	}
-
-	delete[] keymap;
-
-	delete this->previousMatrix;
+	this->keyboardDescriptor = keyboardDescriptor;
+	//this->logger = logger;
 }
 
 void KeyboardSDK::scan()
@@ -42,7 +29,7 @@ void KeyboardSDK::scan()
 
 		if (!this->actionEvaluator->evaluateMatrixActions(matrix) && !this->actionEvaluator->evaluateTimerAction())
 		{
-			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix, keymap))
+			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix))
 			{
 				this->actionEvaluator->updateTimerActionsTime();
 			}
@@ -57,17 +44,17 @@ void KeyboardSDK::scan()
 
 	this->previousMatrix = matrix;
 
-	/*if (this->logger->isEnabled())
-	{
-		unsigned long endTime = millis();
-		unsigned long scanElapsedTime = scanTime - startTime;
-		unsigned long diffElapsedTime = diffTime - scanTime;
-		unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
-		unsigned long totalElapsedTime = endTime - startTime;
+	// if (this->logger->isEnabled())
+	// {
+	// 	unsigned long endTime = millis();
+	// 	unsigned long scanElapsedTime = scanTime - startTime;
+	// 	unsigned long diffElapsedTime = diffTime - scanTime;
+	// 	unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;
+	// 	unsigned long totalElapsedTime = endTime - startTime;
 
-		//this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
-		//this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
-		//this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
-		//this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
-	}*/
+	// 	this->logger->logDebug((String("Scan duration: ") + String(scanElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Diff duration: ") + String(diffElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Send duration: ") + String(sendKeyElapsedTime)).c_str());
+	// 	this->logger->logDebug((String("Total duration: ") + String(totalElapsedTime)).c_str());
+	// }
 }

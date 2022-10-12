@@ -1,7 +1,9 @@
 #pragma once
 
+#ifdef ARDUINO_MICRO
+
 #include <arduino.h>
-#include "Drivers/IBatteryDriver.h"
+#include "../IBatteryDriver.h"
 
 class BatteryDriver : public IBatteryDriver
 {
@@ -10,3 +12,5 @@ public:
 
     virtual uint8_t readBatteryLevel();
 };
+
+#endif

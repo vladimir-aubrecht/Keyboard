@@ -1,42 +1,82 @@
 #include <Arduino.h>
 
 #include "KeyboardSDK.h"
-#include "Drivers/UsbHidKeyboardDriver.h"
-#include "Drivers/BluetoothKeyboardDriver.h"
-#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Matrix/MatrixDebouncer.h"
 //#include "Drivers/DisplayDriver.h"
-#include "Drivers/PinDriver.h"
-#include "Drivers/BatteryDriver.h"
-#include "KeyMapProvider.h"
-#include "Drivers/RgbLedDriver.h"
-//#include "Logger.h"
+#include "Logger.h"
 
+#ifdef NUMPAD
+#include "Drivers/Numpad/KeyboardDescriptor.h"
+#include "Drivers/Numpad/PinDriver.h"
+#include "Drivers/Numpad/RgbLedDriver.h"
+
+const uint8_t numberOfRows = 5;
+const uint8_t numberOfColumns = 4;
+#endif
+
+#ifdef TKL
+#include "Drivers/TKL/KeyboardDescriptor.h"
+#include "Drivers/TKL/PinDriver.h"
+#include "Drivers/TKL/RgbLedDriver.h"
+
+const uint8_t numberOfRows = 6;
+const uint8_t numberOfColumns = 17;
+#endif
+
+#ifdef FEATHER32U4
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/Feather32u4/BatteryDriver.h"
+#include "Drivers/Feather32u4/UsbHidKeyboardDriver.h"
+#include "Drivers/Feather32u4/BluetoothKeyboardDriver.h"
 #include "Adafruit_BluefruitLE_SPI.h"
+#endif
 
+#ifdef ARDUINO_MICRO
+#include "Drivers/Micro/BatteryDriver.h"
+#include "Drivers/Micro/UsbHidKeyboardDriver.h"
+#include "Chips/Max7301.h"
+#endif
+
+#ifdef PORTENTA_H7
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/PortentaH7/BatteryDriver.h"
+#include "Drivers/PortentaH7/UsbHidKeyboardDriver.h"
+#include "Drivers/PortentaH7/BluetoothKeyboardDriver.h"
+#endif
+
+#ifdef TINYS3
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/TinyS3/BatteryDriver.h"
+#include "Drivers/TinyS3/UsbHidKeyboardDriver.h"
+#include "Drivers/TinyS3/BluetoothKeyboardDriver.h"
+#endif
+#ifdef WROOM32
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/Wroom32/BatteryDriver.h"
+#include "Drivers/Wroom32/UsbHidKeyboardDriver.h"
+#include "Drivers/Wroom32/BluetoothKeyboardDriver.h"
+#endif
 #define BLUEFRUIT_SPI_CS 8
 #define BLUEFRUIT_SPI_IRQ 7
 #define BLUEFRUIT_SPI_RST 4 // Optional but recommended, set to -1 if unused
 
-const uint8_t numberOfRows = 6;
-const uint8_t numberOfColumns = 17;
-
-ILogger *logger = NULL;
-IPinDriver *pinDriver = NULL;
 RgbLedDriver *rgbLedDriver = NULL;
-SelectiveKeyboardDriver *keyboardDriver = NULL;
-// DisplayDriver *displayDriver = NULL;
-MatrixScanner *matrixScanner = NULL;
-MatrixEvaluator *matrixEvaluator = NULL;
-KeyMapProvider *keymapProvider = NULL;
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
-
-IKeyboardDriver *btKeyboardDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
+
+void resumeLeds()
+{
+	enforcedDisabledLeds = false;
+	isActionInProgress = false;
+}
+
+#ifndef ARDUINO_MICRO
+SelectiveKeyboardDriver *keyboardDriver = NULL;
 
 bool triggerBtReset()
 {
@@ -44,20 +84,6 @@ bool triggerBtReset()
 	keyboardDriver->ResetPairing();
 
 	return true;
-}
-
-bool toggleLeds()
-{
-	// logger->logDebug(F("Toggling LEDs..."));
-	enforcedDisabledLeds = !rgbLedDriver->toggle();
-
-	return true;
-}
-
-void resumeLeds()
-{
-	enforcedDisabledLeds = false;
-	isActionInProgress = false;
 }
 
 bool toggleConnection()
@@ -86,6 +112,16 @@ bool toggleConnection()
 	return false;
 }
 
+#endif
+
+bool toggleLeds()
+{
+	// logger->logDebug(F("Toggling LEDs..."));
+	enforcedDisabledLeds = !rgbLedDriver->toggle();
+
+	return true;
+}
+
 bool randomizeColors()
 {
 	// logger->logDebug(F("Toggling randomize colors..."));
@@ -98,7 +134,7 @@ bool turnOnLeds()
 {
 	if (enforcedDisabledLeds)
 	{
-		return;
+		return true;
 	}
 
 	// logger->logDebug(F("Toggling LEDs on..."));
@@ -119,6 +155,7 @@ bool turnOffLeds()
 bool showBatteryLevel()
 {
 	// logger->logDebug(F("Toggling show battery..."));
+
 	enforcedDisabledLeds = true;
 	turnOffLeds();
 
@@ -147,38 +184,81 @@ void callWithGuard()
 
 void setup()
 {
+	delay(2000); // Keep the delay. It's useful when program crashes during the setup as you can reflash program without the need of pressing RESET button.
+
 	Serial.begin(115200);
 	Wire.begin();
 
-	logger = new NullLogger();
+	ILogger* logger = new NullLogger();
 	batteryDriver = new BatteryDriver();
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
 
-	Wire.setClock(1700000L);
+	IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 
-	pinDriver = new PinDriver(&Wire, logger);
-
+#ifdef FEATHER32U4
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
-
-	usbKeyboardDriver = new UsbHidKeyboardDriver();
-	btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, logger);
-
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 
-	// displayDriver = new DisplayDriver(&SPI);
-	matrixScanner = new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger);
-	matrixEvaluator = new MatrixEvaluator();
-	keymapProvider = new KeyMapProvider(numberOfRows, numberOfColumns);
-	actionEvaluator = new ActionEvaluator(keymapProvider, logger);
-	keyboard = new KeyboardSDK(matrixScanner, matrixEvaluator, keyboardDriver, keymapProvider, actionEvaluator, logger);
+	#ifdef NUMPAD
+	IPinDriver* pinDriver = new PinDriver(new Max7301(11), logger);
+	#endif
 
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyboardKeycode[3]{KEY_ESC, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyboardKeycode[3]{KEY_F1, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyboardKeycode[3]{KEY_F2, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyboardKeycode[3]{KEY_F3, KEY_LEFT_CTRL, KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyboardKeycode[3]{KEY_F4, KEY_LEFT_CTRL, KEY_LEFT_GUI});
+	#ifdef TKL
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+	#endif
+#endif
+
+#ifdef ARDUINO_MICRO
+	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+#endif
+
+#ifdef PORTENTA_H7
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+#endif
+
+#ifdef TINYS3
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
+#endif
+#ifdef WROOM32
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
+#endif
+	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
+	keyboard = new KeyboardSDK(
+		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger),
+		new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
+		keyboardDriver,
+		keyboardDescriptor,
+		actionEvaluator,
+		logger);
+
+	#ifdef TKL
+	#ifndef ARDUINO_MICRO
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KEY_ESC, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KEY_F2, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	#endif
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KEY_F1, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KEY_F3, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KEY_F4, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
+	#endif
 
+	#ifdef NUMPAD
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_SUBTRACT});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_1});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_0});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_DOT});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_ENTER});
+	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
+	#endif
 	// logger->logDebug(F("\nSetup is done!"));
 }
 

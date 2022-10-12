@@ -32,4 +32,9 @@ public:
 	{
 		delete[] matrixData;
 	}
+
+	uint8_t getBit(uint8_t row, uint8_t column)
+	{
+		return (this->matrixData[row] >> column) & 1;
+	}
 };

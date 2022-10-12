@@ -13,6 +13,6 @@ public:
 
     virtual void ResetPairing();
     virtual void ResetState();
-    virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix, KeyboardKeycode **keymapProvider);
+    virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
     virtual IKeyboardDriver *SwapKeyboards();
 };

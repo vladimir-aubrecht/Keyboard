@@ -4,16 +4,17 @@
 #include "Matrix.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
+#include "IKeyboardDescriptor.h"
 
 class MatrixScanner
 {
 private:
-	ILogger *logger;
-	IPinDriver *pinDriver;
-	uint8_t numberOfRows;
-	uint8_t numberOfColumns;
+	//ILogger *logger;
+	IPinDriver *pinDriver = NULL;
+	uint8_t rowCount = 0;
+	uint8_t columnCount = 0;
 
 public:
-	MatrixScanner(IPinDriver *pinDriver, uint8_t numberOfRows, uint8_t numberOfColumns, ILogger *logger);
+	MatrixScanner(IPinDriver *pinDriver, uint8_t rowCount, uint8_t columnCount, ILogger *logger);
 	Matrix *scanKeyPressMatrix();
 };

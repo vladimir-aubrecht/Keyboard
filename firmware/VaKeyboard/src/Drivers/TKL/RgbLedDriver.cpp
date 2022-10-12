@@ -1,12 +1,14 @@
+#ifdef TKL
+
 #include "RgbLedDriver.h"
 
 RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCount)
 {
-	this->logger = logger;
+	//this->logger = logger;
 	this->rowsCount = rowsCount;
 	this->columnCount = columnCount;
-	this->controller1 = new Is31fl3743a(0x2C, &Wire, logger, 9);
-	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 8);
+	this->controller1 = new Is31fl3743a(0x2C, &Wire, logger, 0b00101001);
+	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 0b00111001);
 }
 
 void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color)
@@ -79,3 +81,5 @@ bool RgbLedDriver::toggle()
 		return true;
 	}
 }
+
+#endif
