@@ -17,27 +17,20 @@ Side features:
 In case you are interested **I am fine to donate 1 piece per person** in case you'll pay delivery. Be aware, that it's just PCB, components must be soldered by you.
 
 # Current status
-[Revision 1](changelog.md) PCB is working, check details about the [rev 1 build](docs/revisions/rev1.md)!
+[Revision 2](changelog.md) PCB is working, check details about the [rev 2 build](docs/revisions/rev2.md)!
 
-What is missing in Revision 1:
-- Bluetooth 5.0.
-- Charging through USB-C.
-- Anodized aluminium frame of Filco Majestouch 2 design.
-
-Currently I am focusing on finishing casing for the keyboard.
-I managed to test dimensions of casing (see photo in [Galery](#Galery)) and keyboard can be already fully assembled when 3D printed! :)
+I am finishing validation of adjusted casing and planning aluminium manufacturing soon.
 
 # Next steps
-At this time I am in process of ordering aluminium plate made on CNC(~25 usd - if everything will go well, I'll share where to make it ...).
-
-I am delaying aluminium case little bit longer as I want to extend project for magnetically attachable numpad (connected through POGO connectors from left or right side).
+Polishing firmware (and maybe support for QMK) will be my main focus. It's working, but there is a lot of technical debt there due to support of multiple microcontrollers for testing.
+I'll be also evaluating adding QMK support, thou it will probably not be replacement of custom firmware, but rather alternative.
 
 There are also planned changes in PCB namily:
-- switch to SPI interface to get lower latencies
-- improving brightness and colors of LEDs
-- adding status LEDs or tiny colorful OLED display (if I find some which fits into existing space, this is preferable solution).
+- adding status LEDs or tiny colorful display (if I find some which fits into existing space, this is preferable solution).
 - switch for turning keyboard on and off
 - better microcontroller with USB-C and more program storage
+- gyroscope / accelerometer for movement detection for optimizing wake up experience
+- fingerprint sensor
 
 # Built-in features
 - For battery below 15%, ESC will light red.
@@ -58,25 +51,29 @@ There are also planned changes in PCB namily:
 
 # Galery
 
-| Description                 | Component | Revision | Picture                                                                          |
-|:---------------------------:|:---------:|:--------:|----------------------------------------------------------------------------------|
-| Reality top cover           | Case      | 1        | ![Case top cover](./docs/images/case_top_with_cover.jpeg)                        |
-| Reality top white LEDs      | Case      | 1        | ![Case top white LEDs](./docs/images/case_top_white_leds.jpeg)                   |
-| Reality top colorfull LEDs  | Case      | 1        | ![Case top colorfull LEDs](./docs/images/case_top_colorfull_leds.jpeg)           |
-| Reality back                | Case      | 1        | ![Case back](./docs/images/case_back.jpeg)                                       |
-| Reality back connector      | Case      | 1        | ![Case back connector](./docs/images/case_back_connector.jpeg)                   |
-| Keyboard                    | Keyboard  | 1        | ![keyboard](./docs/images/keyboard_rev1.png)                                     |
-| Reality front random colors | PCB       | 1        | ![PCB reality front random colors](./docs/images/pcb_real_front_rev1_colors.png) |
-| Reality front               | PCB       | 1        | ![PCB reality front](./docs/images/pcb_real_front_rev1.png)                      |
-| Render                      | Case      | 1        | ![Case render](./docs/images/case_render_full.png)                               |
-| Render no plate             | Case      | 1        | ![case render no plate](./docs/images/case_render_without_plate.png)             |
-| Render no pcb               | Case      | 1        | ![case render no pcb](./docs/images/case_render_without_pcb.png)                 |
-| Render no cover             | Case      | 1        | ![case render no cover](./docs/images/case_render_without_cover.png)             |
-| Render front                | PCB       | 1        | ![PCB render front](./docs/images/pcb_render_front_rev1.png)                     |
-| Render back                 | PCB       | 1        | ![PCB render back](./docs/images/pcb_render_back_rev1.png)                       |
-| Render                      | Plate     | 1        | ![Plate render](./docs/images/plate_rev1.png)                                    |
-| Scheme                      | PCB       | 1        | ![PCB scheme](./docs/images/pcb_rev1.png)                                        |
-| Reality front               | PCB       | 0        | ![PCB reality front](./docs/images/pcb_real_front_rev0.png)                      |
-| Reality back                | PCB       | 0        | ![PCB reality back](./docs/images/pcb_real_back_rev0.png)                        |
+| Description                 | Component       | Revision | Picture                                                                          |
+|:---------------------------:|:--------------: |:--------:|----------------------------------------------------------------------------------|
+| Reality top cover           | Case            | 1        | ![Case top cover](./docs/images/case_top_with_cover.jpeg)                        |
+| Reality top white LEDs      | Case            | 1        | ![Case top white LEDs](./docs/images/case_top_white_leds.jpeg)                   |
+| Reality top colorfull LEDs  | Case            | 1        | ![Case top colorfull LEDs](./docs/images/case_top_colorfull_leds.jpeg)           |
+| Reality back                | Case            | 1        | ![Case back](./docs/images/case_back.jpeg)                                       |
+| Reality back connector      | Case            | 1        | ![Case back connector](./docs/images/case_back_connector.jpeg)                   |
+| Keyboard                    | TKL Keyboard    | 1        | ![Keyboard](./docs/images/keyboard_rev1.png)                                     |
+| Numpad from angle           | Numpad Keyboard | 2        | ![Numpad from angle](./docs/images/numpad_angled.jpg)                            |
+| Numpad from top             | Numpad Keyboard | 2        | ![Numpad from top](./docs/images/numpad_top.jpg)                                 |
+| Reality front random colors | PCB             | 1        | ![PCB reality front random colors](./docs/images/pcb_real_front_rev1_colors.png) |
+| Reality front               | PCB             | 1        | ![PCB reality front](./docs/images/pcb_real_front_rev1.png)                      |
+| Render                      | Case            | 1        | ![Case render](./docs/images/case_render_full.png)                               |
+| Render no plate             | Case            | 1        | ![case render no plate](./docs/images/case_render_without_plate.png)             |
+| Render no pcb               | Case            | 1        | ![case render no pcb](./docs/images/case_render_without_pcb.png)                 |
+| Render no cover             | Case            | 1        | ![case render no cover](./docs/images/case_render_without_cover.png)             |
+| Render front                | PCB             | 1        | ![PCB render front](./docs/images/pcb_render_front_rev1.png)                     |
+| Render back                 | PCB             | 1        | ![PCB render back](./docs/images/pcb_render_back_rev1.png)                       |
+| Reality Plate               | Plate           | 1        | ![Plate reality](./docs/images/plate_tkl.jpg)                                    |
+| Render                      | Plate           | 1        | ![Plate render](./docs/images/plate_rev1.png)                                    |
+| Scheme                      | PCB             | 1        | ![PCB scheme](./docs/images/pcb_rev1.png)                                        |
+| Reality front               | PCB             | 0        | ![PCB reality front](./docs/images/pcb_real_front_rev0.png)                      |
+| Reality back                | PCB             | 0        | ![PCB reality back](./docs/images/pcb_real_back_rev0.png)                        |
+| Reality numpad with LEDs on | PCB             | 2        | ![PCB reality LEDs](./docs/images/numpad_pcb.jpg)                                |
 
 
