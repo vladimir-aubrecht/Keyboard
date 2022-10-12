@@ -21,6 +21,8 @@ In case you are interested **I am fine to donate 1 piece per person** in case yo
 
 I am finishing validation of adjusted casing and planning aluminium manufacturing soon.
 
+If you are interested in more granular updates, I created [this Discord channel](https://discord.com/channels/1029883759740334140/1029884160967442452) where I'll be regularly posting status, photos, ideas, etc.
+
 # Next steps
 Polishing firmware (and maybe support for QMK) will be my main focus. It's working, but there is a lot of technical debt there due to support of multiple microcontrollers for testing.
 I'll be also evaluating adding QMK support, thou it will probably not be replacement of custom firmware, but rather alternative.
