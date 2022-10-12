@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>C:\Users\vladi\source\repos\vladimir-aubrecht\Keyboard\pcb\TKL Keyboard\vakeyboard.kicad_sch</source>
-    <date>21.06.2022 22:42:46</date>
+    <date>12.10.2022 22:15:23</date>
     <tool>Eeschema (6.0.5)</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -4901,6 +4901,31 @@
       <sheetpath names="/" tstamps="/"/>
       <tstamps>20833fa3-9fe8-4091-9838-cdf6dcc5cc8d</tstamps>
     </comp>
+    <comp ref="R4">
+      <value>R 10 kOhm</value>
+      <footprint>Footprints:R_0402_1005Metric</footprint>
+      <datasheet>https://datasheet.lcsc.com/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf</datasheet>
+      <fields>
+        <field name="Description / Value">1/16W Thick Film Resistors 50V ±1% ±100ppm/℃ -55℃~+155℃ 10kΩ 0402  Chip Resistor - Surface Mount ROHS</field>
+        <field name="LCSC">C25744</field>
+        <field name="Manufacturer">UNI-ROYAL(Uniroyal Elec)</field>
+        <field name="Mfg Part #">0402WGF1002TCE</field>
+        <field name="Package/Footprint">0402</field>
+        <field name="Type">SMD</field>
+      </fields>
+      <libsource lib="vakeyboard" part="R 10 kOhm" description="Resistor"/>
+      <property name="Description / Value" value="1/16W Thick Film Resistors 50V ±1% ±100ppm/℃ -55℃~+155℃ 10kΩ 0402  Chip Resistor - Surface Mount ROHS"/>
+      <property name="LCSC" value="C25744"/>
+      <property name="Manufacturer" value="UNI-ROYAL(Uniroyal Elec)"/>
+      <property name="Mfg Part #" value="0402WGF1002TCE"/>
+      <property name="Package/Footprint" value="0402"/>
+      <property name="Type" value="SMD"/>
+      <property name="Your Instructions / Notes" value=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="vakeyboard.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>8cbfa12b-d6b2-4a35-ac46-539e20686b83</tstamps>
+    </comp>
     <comp ref="R5">
       <value>R 10 kOhm</value>
       <footprint>Footprints:R_0402_1005Metric</footprint>
@@ -8726,6 +8751,7 @@
       <node ref="R13" pin="2" pintype="passive"/>
       <node ref="R14" pin="1" pintype="passive"/>
       <node ref="R15" pin="1" pintype="passive"/>
+      <node ref="R4" pin="2" pintype="passive"/>
       <node ref="R7" pin="2" pintype="passive"/>
       <node ref="R8" pin="1" pintype="passive"/>
       <node ref="R9" pin="1" pintype="passive"/>
@@ -9234,6 +9260,7 @@
     </net>
     <net code="99" name="Net-(J1-Pad4)">
       <node ref="J1" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="R4" pin="1" pintype="passive"/>
       <node ref="U1" pin="40" pinfunction="DOUT" pintype="output"/>
     </net>
     <net code="100" name="Net-(J2-Pad1)">
