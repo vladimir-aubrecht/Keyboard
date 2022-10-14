@@ -27,3 +27,7 @@ enum KeyType : uint8_t
 #ifdef WROOM32
 #include "Drivers/Wroom32/KeyCodes.h"
 #endif
+
+#ifdef FEATHER_ESP32_S3_NOPSRAM
+#include "Drivers/Feather_ESP32_S3_NOPSRAM/KeyCodes.h"
+#endif

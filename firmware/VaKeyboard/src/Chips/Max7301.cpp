@@ -34,8 +34,12 @@ byte Max7301::transferByte(byte data_out)
         //uint8_t readBit = (PINC >> PC7) & 1;
         result = (result << 1) | digitalRead(this->misoPin);
 
+        #ifdef FEATHER32U4
         PORTB &= B10111111;
         PORTB |= (data_out & 0x80) >> 1; // D10 is bit 6 MOSI, D9 is bit 5 CLK, D11 is bit 7 CS. Significantly faster version of: digitalWrite(this->mosiPin, data_out & 0x80);
+        #else
+        digitalWrite(this->mosiPin, data_out & 0x80);
+        #endif
 
         data_out <<= 1;
         

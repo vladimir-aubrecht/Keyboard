@@ -15,6 +15,8 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 	Matrix *matrix = new Matrix(rowCount, columnCount);
 	uint32_t *matrixData = matrix->matrixData;
 
+	unsigned long startTime = micros();
+
 	for (uint8_t row = 0; row < rowCount; row++)
 	{
 		matrixData[row] = 0;
@@ -31,6 +33,10 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 
 		this->pinDriver->writePin(row, HIGH);
 	}
+
+    unsigned long endTime = micros();
+    //Serial.println(endTime - startTime);
+    //delay(800);
 
 	// if (this->logger->isEnabled())
 	//{

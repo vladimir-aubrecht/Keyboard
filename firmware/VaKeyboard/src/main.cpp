@@ -50,6 +50,14 @@ const uint8_t numberOfColumns = 17;
 #include "Drivers/TinyS3/UsbHidKeyboardDriver.h"
 #include "Drivers/TinyS3/BluetoothKeyboardDriver.h"
 #endif
+
+#ifdef FEATHER_ESP32_S3_NOPSRAM
+#include "Drivers/SelectiveKeyboardDriver.h"
+#include "Drivers/Feather_ESP32_S3_NOPSRAM/BatteryDriver.h"
+#include "Drivers/Feather_ESP32_S3_NOPSRAM/UsbHidKeyboardDriver.h"
+#include "Drivers/Feather_ESP32_S3_NOPSRAM/BluetoothKeyboardDriver.h"
+#endif
+
 #ifdef WROOM32
 #include "Drivers/SelectiveKeyboardDriver.h"
 #include "Drivers/Wroom32/BatteryDriver.h"
@@ -231,6 +239,12 @@ void setup()
 	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
+#ifdef FEATHER_ESP32_S3_NOPSRAM
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
+#endif
+
 	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
 	keyboard = new KeyboardSDK(
 		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger),
