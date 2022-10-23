@@ -73,6 +73,7 @@ ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
+USBHIDKeyboard usbHidKeyboard;
 
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
@@ -202,7 +203,8 @@ void setup()
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
 
 	IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
-	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
+
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor, &usbHidKeyboard);
 
 #ifdef FEATHER32U4
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
@@ -241,7 +243,7 @@ void setup()
 #endif
 #ifdef FEATHER_ESP32_S3_NOPSRAM
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
-	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
 

@@ -4,8 +4,7 @@
 
 #include "../IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
-#include "esp32-hal.h"
-#include "esp32-hal-tinyusb.h"
+
 #include "USB.h"
 #include "USBHIDKeyboard.h"
 
@@ -13,13 +12,10 @@ class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
-	USBHIDKeyboard* keyboard = new USBHIDKeyboard();
-
-private:
-	uint8_t ScanForModificators(Matrix *matrix, KeyCode **keymapProvider);
+	USBHIDKeyboard* usbHidKeyboard = NULL;
 
 public:
-	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);
+	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor, USBHIDKeyboard*);
 
 	virtual void ResetPairing();
 	virtual void ResetState();

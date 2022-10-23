@@ -31,22 +31,22 @@ enum KeyboardKeycode : uint8_t {
 	MEDIA_VOLUME_DOWN	= 0xEA,
 
     KEY_NUM_LOCK = 0,
-    KEYPAD_DIVIDE = 0,
-    KEYPAD_MULTIPLY = 0,
-    KEYPAD_SUBTRACT = 0,
-    KEYPAD_ADD = 0,
-    KEYPAD_1 = 0,
-    KEYPAD_2 = 0,
-    KEYPAD_3 = 0,
-    KEYPAD_4 = 0,
-    KEYPAD_5 = 0,
-    KEYPAD_6 = 0,
-    KEYPAD_7 = 0,
-    KEYPAD_8 = 0,
-    KEYPAD_9 = 0,
-    KEYPAD_0 = 0,
-    KEYPAD_DOT = 0,
-    KEYPAD_ENTER = 0
+    KEYPAD_DIVIDE = 1,
+    KEYPAD_MULTIPLY = 2,
+    KEYPAD_SUBTRACT = 3,
+    KEYPAD_ADD = 4,
+    KEYPAD_1 = 5,
+    KEYPAD_2 = 6,
+    KEYPAD_3 = 7,
+    KEYPAD_4 = 8,
+    KEYPAD_5 = 9,
+    KEYPAD_6 = 10,
+    KEYPAD_7 = 11,
+    KEYPAD_8 = 12,
+    KEYPAD_9 = 13,
+    KEYPAD_0 = 14,
+    KEYPAD_DOT = 15,
+    KEYPAD_ENTER = 16
 };
 
 #endif

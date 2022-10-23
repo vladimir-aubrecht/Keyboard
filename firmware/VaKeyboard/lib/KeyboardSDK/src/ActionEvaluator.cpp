@@ -13,7 +13,7 @@ ActionEvaluator::MatrixAction *ActionEvaluator::translateToAction(void (*action)
     uint8_t *columns = new uint8_t[keycodesCount];
 
     uint8_t currentKeyIndex = 0;
-    
+
     for (uint8_t row = 0; row < this->keyboardDescriptor->getRowCount(); row++)
     {
         for (uint8_t column = 0; column < this->keyboardDescriptor->getColumnCount(); column++)
@@ -46,7 +46,7 @@ void ActionEvaluator::registerMatrixAction(void (*action)(), uint8_t keycodesCou
     }
 
     newActions[itemsCount] = translateToAction(action, keycodesCount, keycodes);
-
+    
     MatrixAction **oldAction = this->matrixActions;
     this->matrixActions = newActions;
     registeredMatrixActionsCount++;
