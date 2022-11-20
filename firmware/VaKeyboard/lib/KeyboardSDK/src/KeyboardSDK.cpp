@@ -12,7 +12,7 @@ KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEv
 
 void KeyboardSDK::scan()
 {
-	// unsigned long startTime = millis();
+	// unsigned long startTime = micros();
 
 	Matrix *matrix = this->matrixScanner->scanKeyPressMatrix();
 
@@ -46,7 +46,7 @@ void KeyboardSDK::scan()
 
 	// if (this->logger->isEnabled())
 	// {
-	// 	unsigned long endTime = millis();
+	// 	unsigned long endTime = micros();
 	// 	unsigned long scanElapsedTime = scanTime - startTime;
 	// 	unsigned long diffElapsedTime = diffTime - scanTime;
 	// 	unsigned long sendKeyElapsedTime = sendKeyTime - diffTime;

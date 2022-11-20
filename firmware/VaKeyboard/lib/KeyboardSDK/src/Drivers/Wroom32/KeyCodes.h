@@ -20,7 +20,7 @@ enum KeyboardKeycode : uint8_t {
     KEY_PAD_ENTER = 0xE0,
     KEY_PAD_PERIOD = 0xEB,
 
-	MEDIA_NEXT	= 0xB5,
+	MEDIA_NEXT	= 0,
 	MEDIA_PREVIOUS	= 0xB6,
 	MEDIA_PLAY_PAUSE	= 0xCD,
     MEDIA_VOLUME_MUTE	= 0xE2,

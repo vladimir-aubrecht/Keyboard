@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "pins_arduino.h": "c"
+        "pins_arduino.h": "c",
+        "*.tcc": "cpp"
     }
 }

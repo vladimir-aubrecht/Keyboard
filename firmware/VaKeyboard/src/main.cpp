@@ -244,7 +244,7 @@ void setup()
 #ifdef FEATHER_ESP32_S3_NOPSRAM
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
-	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(9, 6, 5, 10), logger);
 #endif
 
 	actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
@@ -280,6 +280,12 @@ void setup()
 
 void loop()
 {
+	// max7301->begin();
+	// max7301->write(0x09, 0x55);
+	// Serial.println(max7301->read(0x09));
+
+	// return;
+
 	keyboard->scan();
 	uint8_t batteryLevel = batteryDriver->readBatteryLevel();
 

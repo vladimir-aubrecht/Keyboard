@@ -1,8 +1,11 @@
 #include "Max7301.h"
 
-Max7301::Max7301(uint8_t csPin)
+Max7301::Max7301(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin)
 {
+    this->sclkPin = sclkPin;
+    this->mosiPin = mosiPin;
     this->csPin = csPin;
+    this->misoPin = misoPin;
 }
 
 void Max7301::begin()
@@ -74,20 +77,22 @@ uint8_t Max7301::transferWord(uint8_t cmdByte, uint8_t dataByte)
 
     return data;
 }
+
 uint8_t Max7301::read(uint8_t address)
 {
     uint8_t data = 0;
     address |= 0x80;
     transferWord(address, 0x00);
     data = transferWord(0x00, 0x00);
-
     return data;
 }
+
 void Max7301::write(uint8_t address, uint8_t value)
 {
     address &= ~0x80;
     transferWord(address, value);
 }
+
 void Max7301::enable()
 {
     delay(500);
