@@ -1,5 +1,7 @@
 #include "Max7301.h"
 
+#define ENABLE_FAST_WRITE 1
+
 Max7301::Max7301(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin)
 {
     this->sclkPin = sclkPin;
@@ -28,7 +30,7 @@ byte Max7301::transferByte(byte data_out)
 
     for(current_bit = 0; current_bit < 8; current_bit++)
     {
-        #ifdef FEATHER32U4
+        #if defined(FEATHER32U4) && defined(ENABLE_FAST_WRITE)
         PORTB &= B11011111;
         #else
         digitalWrite(this->sclkPin, LOW);
@@ -37,7 +39,7 @@ byte Max7301::transferByte(byte data_out)
         //uint8_t readBit = (PINC >> PC7) & 1;
         result = (result << 1) | digitalRead(this->misoPin);
 
-        #ifdef FEATHER32U4
+        #if defined(FEATHER32U4) && defined(ENABLE_FAST_WRITE)
         PORTB &= B10111111;
         PORTB |= (data_out & 0x80) >> 1; // D10 is bit 6 MOSI, D9 is bit 5 CLK, D11 is bit 7 CS. Significantly faster version of: digitalWrite(this->mosiPin, data_out & 0x80);
         #else
@@ -46,7 +48,7 @@ byte Max7301::transferByte(byte data_out)
 
         data_out <<= 1;
         
-        #ifdef FEATHER32U4
+        #if defined(FEATHER32U4) && defined(ENABLE_FAST_WRITE)
         PORTB |= B00100000;
         #else
         digitalWrite(this->sclkPin, HIGH);
@@ -58,7 +60,7 @@ byte Max7301::transferByte(byte data_out)
 
 uint8_t Max7301::transferWord(uint8_t cmdByte, uint8_t dataByte)
 {
-    #ifdef FEATHER32U4
+    #if defined(FEATHER32U4) && defined(ENABLE_FAST_WRITE)
     PORTB &= B01111111;
     #else
     digitalWrite(this->csPin, LOW);
@@ -67,7 +69,7 @@ uint8_t Max7301::transferWord(uint8_t cmdByte, uint8_t dataByte)
     transferByte(cmdByte);
     uint8_t data = transferByte(dataByte);
     
-    #ifdef FEATHER32U4
+    #if defined(FEATHER32U4) && defined(ENABLE_FAST_WRITE)
     PORTB |= B10000000; 
     PORTB &= B11011111;
     #else

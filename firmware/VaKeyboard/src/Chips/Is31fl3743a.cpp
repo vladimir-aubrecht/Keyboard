@@ -1,7 +1,7 @@
 #include "Is31fl3743a.h"
 #include <Adafruit_BusIO_Register.h>
 
-Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask)
+Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t maxCurrent)
 {
 	this->i2c_addr = i2c_addr;
 	this->wire = wire;
@@ -32,7 +32,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x02);
 	Adafruit_BusIO_Register GCC(i2c_dev, 0x01); // global current
-	GCC.write(0xFF);
+	GCC.write(maxCurrent);
 
 	Adafruit_BusIO_Register CONF(i2c_dev, 0x00);
 	CONF.write(this->columnMask); // normal mode + enabled columns

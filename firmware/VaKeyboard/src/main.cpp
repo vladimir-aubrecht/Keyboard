@@ -16,8 +16,17 @@ const uint8_t numberOfColumns = 4;
 
 #ifdef TKL
 #include "Drivers/TKL/KeyboardDescriptor.h"
-#include "Drivers/TKL/PinDriver.h"
-#include "Drivers/TKL/RgbLedDriver.h"
+
+#ifdef V1
+#include "Drivers/TKL/V1/PinDriver.h"
+#include "Drivers/TKL/V1/RgbLedDriver.h"
+#endif
+
+#ifdef V2
+#include "Drivers/TKL/V2/PinDriver.h"
+#include "Drivers/TKL/V2/RgbLedDriver.h"
+#include "Chips/Tca9548a.h"
+#endif
 
 const uint8_t numberOfRows = 6;
 const uint8_t numberOfColumns = 17;
@@ -56,6 +65,8 @@ const uint8_t numberOfColumns = 17;
 #include "Drivers/Feather_ESP32_S3_NOPSRAM/BatteryDriver.h"
 #include "Drivers/Feather_ESP32_S3_NOPSRAM/UsbHidKeyboardDriver.h"
 #include "Drivers/Feather_ESP32_S3_NOPSRAM/BluetoothKeyboardDriver.h"
+
+USBHIDKeyboard usbHidKeyboard;
 #endif
 
 #ifdef WROOM32
@@ -73,7 +84,9 @@ ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK *keyboard = NULL;
 IBatteryDriver *batteryDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
-USBHIDKeyboard usbHidKeyboard;
+
+//#include "Chips/Max7301.h"
+//Max7301* max = new Max7301(11, 10, 9, 13);
 
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
@@ -199,49 +212,57 @@ void setup()
 	Wire.begin();
 
 	ILogger* logger = new NullLogger();
+	
+	Tca9548a* tca = new Tca9548a(0x70, &Wire, logger);
+	
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns, tca);
+	
 	batteryDriver = new BatteryDriver();
-	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
 
 	IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
 
-	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor, &usbHidKeyboard);
-
 #ifdef FEATHER32U4
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
-
+		
 	#ifdef NUMPAD
 	IPinDriver* pinDriver = new PinDriver(new Max7301(11), logger);
 	#endif
 
 	#ifdef TKL
-	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(11, 10, 9, 13), logger);
 	#endif
 #endif
 
 #ifdef ARDUINO_MICRO
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* keyboardDriver = usbKeyboardDriver;
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
 #ifdef PORTENTA_H7
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
 #ifdef TINYS3
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
 #ifdef WROOM32
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
 #ifdef FEATHER_ESP32_S3_NOPSRAM
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor, &usbHidKeyboard);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(9, 6, 5, 10), logger);
@@ -280,11 +301,15 @@ void setup()
 
 void loop()
 {
-	// max7301->begin();
-	// max7301->write(0x09, 0x55);
-	// Serial.println(max7301->read(0x09));
+	//max->begin();
+	//max->write(0x09, 0x55);
+	//Serial.println(max->read(0x09));
 
 	// return;
+
+	//Serial.println("looping...");
+	//delay(1000);
+	//return;
 
 	keyboard->scan();
 	uint8_t batteryLevel = batteryDriver->readBatteryLevel();
