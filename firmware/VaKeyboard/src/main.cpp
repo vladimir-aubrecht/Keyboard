@@ -86,7 +86,7 @@ IBatteryDriver *batteryDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 //#include "Chips/Max7301.h"
-//Max7301* max = new Max7301(11, 10, 9, 13);
+//Max7301* max7301 = new Max7301(9, 6, 5, 10);
 
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
@@ -211,17 +211,17 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	ILogger* logger = new NullLogger();
-	
-	Tca9548a* tca = new Tca9548a(0x70, &Wire, logger);
-	
-	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns, tca);
+	ILogger* logger = NULL; //new NullLogger();
 	
 	batteryDriver = new BatteryDriver();
 
 	IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
 
-#ifdef FEATHER32U4
+#if defined(FEATHER32U4) && defined(V2)
+	Tca9548a* tca = new Tca9548a(0x70, &Wire, logger);
+	
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns, tca);
+
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);
@@ -233,6 +233,19 @@ void setup()
 
 	#ifdef TKL
 	IPinDriver* pinDriver = new PinDriver(new Max7301(11, 10, 9, 13), logger);
+	#endif
+#endif
+
+#if defined(FEATHER32U4) && defined(V1)
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
+
+	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
+	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
+	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);
+	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
+
+	#ifdef TKL
+	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 	#endif
 #endif
 
@@ -255,13 +268,17 @@ void setup()
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
+
 #ifdef WROOM32
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(btKeyboardDriver, usbKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
 #endif
+
 #ifdef FEATHER_ESP32_S3_NOPSRAM
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
+
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor, &usbHidKeyboard);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
@@ -301,14 +318,11 @@ void setup()
 
 void loop()
 {
-	//max->begin();
-	//max->write(0x09, 0x55);
-	//Serial.println(max->read(0x09));
+	//max7301->begin();
+	//max7301->write(0x06, 0x55);
+	//Serial.println(max7301->read(0x06));
 
-	// return;
-
-	//Serial.println("looping...");
-	//delay(1000);
+	//delay(500);
 	//return;
 
 	keyboard->scan();

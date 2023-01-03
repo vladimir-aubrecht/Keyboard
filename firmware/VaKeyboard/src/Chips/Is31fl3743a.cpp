@@ -10,11 +10,13 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	this->i2c_dev = new Adafruit_I2CDevice(this->i2c_addr, this->wire);
 
-	if (!this->i2c_dev->begin())
-	{
-		//this->logger->logError(F("Failed to initialise IS31FL3743A."));
-		return;
-	}
+	this->i2c_dev->begin();
+
+	// if (!this->i2c_dev->begin())
+	// {
+	// 	//this->logger->logError(F("Failed to initialise IS31FL3743A."));
+	// 	return;
+	// }
 
 	Adafruit_BusIO_Register CRWL(i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(i2c_dev, 0xFD);
@@ -64,9 +66,9 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 	for (int i = 0x01; i < 0xA3; i++)
 	{
 		//uint32_t color = random(0x00ffffff);
-		uint8_t r = 0xff; //(uint8_t)((color & 0x00ff0000) >> 16);
-		uint8_t g = 0xff; //(uint8_t)((color & 0x0000ff00) >> 8);
-		uint8_t b = 0xff; //(uint8_t)(color & 0x000000ff);
+		uint8_t r = intensity; //(uint8_t)((color & 0x00ff0000) >> 16);
+		uint8_t g = intensity; //(uint8_t)((color & 0x0000ff00) >> 8);
+		uint8_t b = intensity; //(uint8_t)(color & 0x000000ff);
 
 		Adafruit_BusIO_Register PWM(i2c_dev, i);
 

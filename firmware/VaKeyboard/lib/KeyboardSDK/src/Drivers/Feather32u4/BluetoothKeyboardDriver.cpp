@@ -37,7 +37,7 @@ void BluetoothKeyboardDriver::Init()
 	this->ble->echo(false);
 
 	// Some of these methods should have checks and logging, but it's dropped to save flash size as it "should never happen" anyway (lets see when it will be reported :P).
-	this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=VaKeyboard"));
+	this->ble->sendCommandCheckOK(F("AT+GAPDEVNAME=XBoard"));
 	this->ble->sendCommandCheckOK(F("AT+BleHIDEn=On"));
 
 	this->ble->sendCommandCheckOK(F("AT+BLEBATTEN=on"));
