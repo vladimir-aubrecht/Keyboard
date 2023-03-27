@@ -12,7 +12,7 @@ UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescript
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
-	bool isPress = false;
+	bool isChanged = false;
 
 	isKeyMenuHold |= this->keyboardDescriptor->getSelectedLayer(pressedKeysMatrix);
 	isKeyMenuHold &= ~(this->keyboardDescriptor->getSelectedLayer(releasedKeysMatrix));
@@ -38,12 +38,13 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 
 				if (isPressed)
 				{
-					isPress = true;
+					isChanged = true;
 					Consumer.press((ConsumerKeycode)currentKey);
 				}
 				else if (isReleased)
 				{
 					Consumer.release((ConsumerKeycode)currentKey);
+					isChanged = true;
 				}
 			}
 		}
@@ -63,18 +64,21 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 				if (isPressed)
 				{
 					NKROKeyboard.press((KeyboardKeycode)currentKey);
-					isPress = true;
+					isChanged = true;
 				}
 				else if (isReleased)
 				{
 					NKROKeyboard.release((KeyboardKeycode)currentKey);
+					isChanged = true;
 				}
 			}
 		}
 
-		NKROKeyboard.send();
+		if (isChanged) {
+			NKROKeyboard.send();
+		}
 	}
-	return isPress;
+	return isChanged;
 }
 
 void UsbHidKeyboardDriver::ResetPairing()
