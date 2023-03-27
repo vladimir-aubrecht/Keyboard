@@ -24,15 +24,20 @@ I am finishing validation of adjusted casing and planning aluminium manufacturin
 If you are interested in more granular updates, I created [this Discord channel](https://discord.com/channels/1029883759740334140/1029884160967442452) where I'll be regularly posting status, photos, ideas, etc.
 
 # Next steps
-Polishing firmware (and maybe support for QMK) will be my main focus. It's working, but there is a lot of technical debt there due to support of multiple microcontrollers for testing.
-I'll be also evaluating adding QMK support, thou it will probably not be replacement of custom firmware, but rather alternative.
+Polishing firmware will be my main focus. It's working, but there is a lot of technical debt there due to support of multiple microcontrollers for testing.
+I started to work on [QMK support](https://github.com/vladimir-aubrecht/qmk_firmware/tree/xboard/keyboards/xboard).
 
+## General
 There are also planned changes in PCB namily:
 - adding status LEDs or tiny colorful display (if I find some which fits into existing space, this is preferable solution).
 - switch for turning keyboard on and off
 - better microcontroller with USB-C and more program storage
 - gyroscope / accelerometer for movement detection for optimizing wake up experience
 - fingerprint sensor
+
+## QMK
+- Rev 1 keyboard is working now with QMK firmware, but bluetooth is not functional as when BT is enabled, keyboard scanning stop to work for some reason (will follow up on it).
+- Rev 2 firmware in progress.
 
 # Built-in features
 - For battery below 15%, ESC will light red.
