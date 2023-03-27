@@ -1,5 +1,5 @@
 #include <Arduino.h>
-
+#include <avr/wdt.h>
 #include "KeyboardSDK.h"
 #include "Matrix/MatrixDebouncer.h"
 //#include "Drivers/DisplayDriver.h"
@@ -314,6 +314,8 @@ void setup()
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
 	#endif
 	// logger->logDebug(F("\nSetup is done!"));
+
+	wdt_enable(WDTO_500MS);
 }
 
 void loop()
@@ -332,4 +334,6 @@ void loop()
 	{
 		rgbLedDriver->setColor(0, 0, 0xff, 0, 0);
 	}
+
+	wdt_reset();
 }
