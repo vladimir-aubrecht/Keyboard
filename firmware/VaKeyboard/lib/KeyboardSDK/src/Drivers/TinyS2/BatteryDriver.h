@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef TINYS3
+#ifdef TINYS2
 
 #include <arduino.h>
 #include "../IBatteryDriver.h"

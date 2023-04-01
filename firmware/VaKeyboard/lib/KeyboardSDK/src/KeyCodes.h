@@ -20,8 +20,8 @@ enum KeyType : uint8_t
 #include "Drivers/PortentaH7/KeyCodes.h"
 #endif
 
-#ifdef TINYS3
-#include "Drivers/TinyS3/KeyCodes.h"
+#ifdef TINYS2
+#include "Drivers/TinyS2/KeyCodes.h"
 #endif
 
 #ifdef WROOM32

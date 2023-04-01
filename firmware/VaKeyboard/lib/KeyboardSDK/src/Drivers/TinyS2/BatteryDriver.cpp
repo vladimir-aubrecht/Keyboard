@@ -1,4 +1,4 @@
-#ifdef TINYS3
+#ifdef TINYS2
 
 #include "BatteryDriver.h"
 

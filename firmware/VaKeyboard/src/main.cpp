@@ -1,5 +1,4 @@
 #include <Arduino.h>
-#include <avr/wdt.h>
 #include "KeyboardSDK.h"
 #include "Matrix/MatrixDebouncer.h"
 //#include "Drivers/DisplayDriver.h"
@@ -53,11 +52,11 @@ const uint8_t numberOfColumns = 17;
 #include "Drivers/PortentaH7/BluetoothKeyboardDriver.h"
 #endif
 
-#ifdef TINYS3
+#ifdef TINYS2
 #include "Drivers/SelectiveKeyboardDriver.h"
-#include "Drivers/TinyS3/BatteryDriver.h"
-#include "Drivers/TinyS3/UsbHidKeyboardDriver.h"
-#include "Drivers/TinyS3/BluetoothKeyboardDriver.h"
+#include "Drivers/TinyS2/BatteryDriver.h"
+#include "Drivers/TinyS2/UsbHidKeyboardDriver.h"
+#include "Drivers/TinyS2/BluetoothKeyboardDriver.h"
 #endif
 
 #ifdef FEATHER_ESP32_S3_NOPSRAM
@@ -262,11 +261,11 @@ void setup()
 	IPinDriver* pinDriver = new PinDriver(&Wire, logger);
 #endif
 
-#ifdef TINYS3
+#ifdef TINYS2
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
-	IPinDriver* pinDriver = new PinDriver(new Max7301(SS), logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301((uint8_t)14U, MOSI, SCK, MISO), logger);
 #endif
 
 #ifdef WROOM32
