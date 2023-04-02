@@ -12,10 +12,9 @@ class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
-	USBHIDKeyboard* usbHidKeyboard = NULL;
 
 public:
-	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor, USBHIDKeyboard*);
+	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);
 
 	virtual void ResetPairing();
 	virtual void ResetState();

@@ -13,23 +13,8 @@ class KeyboardSDK : public IKeyboardSDK
         const uint8_t numberOfRows = 6;
         const uint8_t numberOfColumns = 17;
 
-        ILogger *logger = NULL;
-        IBatteryDriver* batteryDriver = NULL;
-        IKeyboardDriver* primaryKeyboardDriver = NULL;
-        IKeyboardDriver* activeKeyboardDriver = NULL;
-        IRGBLedDriver* rgbLedDriver = NULL;
-        ActionEvaluator* actionEvaluator = NULL;
-        KeyPressProcessor* keypressProcessor = NULL;
-
     public:
-        KeyboardSDK(TwoWire *wire);
-        virtual KeyPressProcessor* GetKeyPressProcessor();
-        virtual IRGBLedDriver* GetRGBLedDriver();
-        virtual IBatteryDriver* GetBatteryDriver();
-        virtual ILogger* GetLogger();
-        virtual IKeyboardDriver* GetPrimaryKeyboardDriver();
-        virtual IKeyboardDriver* GetActiveKeyboardDriver();
-        virtual ActionEvaluator* GetActionEvaluator();
+        KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire);
 };
 
 #endif

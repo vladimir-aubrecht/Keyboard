@@ -3,7 +3,7 @@
 #include "Drivers/SelectiveKeyboardDriver.h"
 
 #if defined(NUMPAD) && defined(V2)
-#include "Drivers/TKL/V1/KeyboardSDK.h"
+#include "Drivers/Numpad/V2/KeyboardSDK.h"
 #endif
 
 #if defined(TKL) && defined(V1)
@@ -25,8 +25,6 @@ void resumeLeds()
 	enforcedDisabledLeds = false;
 	isActionInProgress = false;
 }
-
-#ifndef ARDUINO_MICRO
 
 bool triggerBtReset()
 {
@@ -61,8 +59,6 @@ bool toggleConnection()
 
 	return false;
 }
-
-#endif
 
 bool toggleLeds()
 {
@@ -139,29 +135,17 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	#if defined(ARDUINO_MICRO)
-	keyboardSDK = new KeyboardSDK(&Wire);
-	#endif
-
-	#if defined(FEATHER_ESP32_S3_NOPSRAM)
-		keyboardSDK = new KeyboardSDK(0x70, 9, 6, 5, 10, &Wire);
-	#endif
-
-	#if defined(FEATHER32U4)
-		keyboardSDK = new KeyboardSDK(0x70, 11, 10, 9, 13, &Wire);
-	#endif
+	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::misoPin, McuConfig::sclkPin, &Wire);
 	
-	#if defined(TINYS2)
-		keyboardSDK = new KeyboardSDK(0x70, (uint8_t)14U, MOSI, SCK, MISO, &Wire);
-	#endif
-
 	actionEvaluator = keyboardSDK->GetActionEvaluator();
 
 	#ifdef TKL
-	#ifndef ARDUINO_MICRO
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KK_ESC, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KK_F2, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	#endif
+
+	if (BluetoothKeyboardDriver::GetInstance() != NULL) {
+		actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KK_ESC, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+		actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KK_F2, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	}
+
 	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KK_F1, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KK_F3, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KK_F4, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});

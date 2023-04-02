@@ -2,18 +2,16 @@
 
 #include "UsbHidKeyboardDriver.h"
 
-UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor, USBHIDKeyboard* usbHidKeyboard)
+UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
-
-	this->usbHidKeyboard = usbHidKeyboard;
-
-	this->usbHidKeyboard->begin();
 	USB.begin();
 }
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
+	USBHIDKeyboard keyboard;
+	keyboard.begin();
 	auto keymap = this->keyboardDescriptor->getKeyMap()[0];
 
 	bool isPress = false;
@@ -29,16 +27,16 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			if (isPressed)
 			{
 				isPress = true;
-				
-				this->usbHidKeyboard->press(currentKey);
+
+				keyboard.pressRaw(currentKey);
 			}
 			else if (isReleased)
 			{
-				this->usbHidKeyboard->release(currentKey);
+				keyboard.releaseRaw(currentKey);
 			}
 		}
 	}
-
+	keyboard.end();
 	return isPress;
 }
 
@@ -48,7 +46,10 @@ void UsbHidKeyboardDriver::ResetPairing()
 
 void UsbHidKeyboardDriver::ResetState()
 {
-	this->usbHidKeyboard->releaseAll();
+	USBHIDKeyboard keyboard;
+	keyboard.begin();
+	keyboard.releaseAll();
+	keyboard.end();
 }
 
 #endif

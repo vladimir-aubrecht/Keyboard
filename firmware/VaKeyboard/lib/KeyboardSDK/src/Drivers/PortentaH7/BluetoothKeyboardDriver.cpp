@@ -165,4 +165,23 @@ void BluetoothKeyboardDriver::ResetState()
 	this->SendRelease();
 }
 
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+{
+	if (BluetoothKeyboardDriver::instance == NULL)
+	{
+	    //Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(8, 7, 4);
+		//BluetoothKeyboardDriver::instance = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);	
+	}
+
+    return BluetoothKeyboardDriver::instance;
+
+}
+
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::GetInstance()
+{
+	return BluetoothKeyboardDriver::instance;
+}
+
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::instance = NULL;
+
 #endif

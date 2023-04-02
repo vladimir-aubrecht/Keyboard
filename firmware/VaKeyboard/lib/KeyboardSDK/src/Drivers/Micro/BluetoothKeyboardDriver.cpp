@@ -1,4 +1,4 @@
-#ifdef TINYS2
+#ifdef ARDUINO_MICRO
 
 #include "BluetoothKeyboardDriver.h"
 
@@ -11,7 +11,6 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 
 void BluetoothKeyboardDriver::ResetPairing()
 {
-
 }
 
 void BluetoothKeyboardDriver::Init()
@@ -26,7 +25,6 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 
 void BluetoothKeyboardDriver::ResetState()
 {
-
 }
 
 BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)

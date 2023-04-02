@@ -1,6 +1,7 @@
 #ifdef FEATHER32U4
 
 #include "BluetoothKeyboardDriver.h"
+#include "Adafruit_BluefruitLE_SPI.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	Adafruit_BluefruitLE_SPI *ble,
@@ -233,5 +234,23 @@ void BluetoothKeyboardDriver::ResetState()
 	this->currentStateMatrix = NULL;
 	this->SendRelease();
 }
+
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+{
+	if (BluetoothKeyboardDriver::instance == NULL)
+	{
+	    Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(8, 7, 4);
+		BluetoothKeyboardDriver::instance = new BluetoothKeyboardDriver(ble, batteryDriver, keyboardDescriptor, logger);	
+	}
+
+    return BluetoothKeyboardDriver::instance;
+}
+
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::GetInstance()
+{
+	return BluetoothKeyboardDriver::instance;
+}
+
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::instance = NULL;
 
 #endif

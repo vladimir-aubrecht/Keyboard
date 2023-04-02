@@ -1,6 +1,6 @@
 #pragma once
 
-#ifdef TINYS2
+#ifdef ARDUINO_MICRO
 
 #include "../IKeyboardDriver.h"
 #include "Logger/ILogger.h"
@@ -9,10 +9,8 @@
 #include "Drivers/IBatteryDriver.h"
 #include "IKeyboardDescriptor.h"
 
-
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
-
 public:
 	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 

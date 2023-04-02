@@ -16,6 +16,7 @@ class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
 	//ILogger *logger;
+	static BluetoothKeyboardDriver* instance;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
@@ -36,6 +37,9 @@ public:
 	virtual void ResetPairing();
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
+
+	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	static BluetoothKeyboardDriver* GetInstance();
 };
 
 #endif

@@ -17,6 +17,8 @@ class BluetoothKeyboardDriver : public IKeyboardDriver
 private:
 	const char* AT_KEYBOARD_CODE = "AT+BLEKEYBOARDCODE=";
 
+	static BluetoothKeyboardDriver* instance;
+
 	Adafruit_BluefruitLE_SPI *ble;
 	//ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
@@ -39,6 +41,9 @@ public:
 	virtual void ResetPairing();
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
+
+	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	static BluetoothKeyboardDriver* GetInstance();
 };
 
 #endif
