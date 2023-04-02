@@ -1,4 +1,4 @@
-#ifdef TKL
+#if defined(TKL)
 
 #include "KeyboardDescriptor.h"
 

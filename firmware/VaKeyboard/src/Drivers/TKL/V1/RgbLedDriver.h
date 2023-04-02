@@ -1,11 +1,12 @@
+#if defined(TKL) && defined(V1)
+
 #pragma once
 
-#ifdef TKL
-#ifdef V1
 
 #include "../../../Chips/Is31fl3743a.h"
+#include "Drivers/IRGBLedDriver.h"
 
-class RgbLedDriver
+class RgbLedDriver : public IRGBLedDriver
 {
 private:
 	Is31fl3743a *controller1 = NULL;
@@ -16,14 +17,13 @@ private:
 
 public:
 	RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCount);
-	void turnOn();
-	void turnOff();
-	bool toggle();
-	void blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color);
-	void randomizeColors();
-	void setColor(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);
+	virtual void turnOn();
+	virtual void turnOff();
+	virtual bool toggle();
+	virtual void blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color);
+	virtual void randomizeColors();
+	virtual void setColor(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);
 };
 
 
-#endif
 #endif

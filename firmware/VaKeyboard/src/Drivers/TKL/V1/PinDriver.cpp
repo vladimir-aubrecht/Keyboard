@@ -1,5 +1,4 @@
-#ifdef TKL
-#ifdef V1
+#if defined(TKL) && defined(V1)
 
 #include "PinDriver.h"
 
@@ -67,5 +66,4 @@ PinDriver::PinDriver(TwoWire *wire, ILogger *logger)
 	}
 }
 
-#endif
 #endif

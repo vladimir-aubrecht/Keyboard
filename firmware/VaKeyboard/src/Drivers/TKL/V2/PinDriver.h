@@ -1,7 +1,6 @@
-#pragma once
+#if defined(TKL) && defined(V2)
 
-#ifdef TKL
-#ifdef V2
+#pragma once
 
 #include <Arduino.h>
 #include "../../../Chips/Max7301.h"
@@ -24,5 +23,4 @@ public:
 	PinDriver(Max7301* max7301, ILogger *logger);
 };
 
-#endif
 #endif

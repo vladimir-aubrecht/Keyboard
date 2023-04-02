@@ -1,7 +1,7 @@
+#if defined(TKL) && defined(V1)
+
 #pragma once
 
-#ifdef TKL
-#ifdef V1
 
 #include <Arduino.h>
 #include <Adafruit_MCP23X17.h>
@@ -25,5 +25,4 @@ public:
 	PinDriver(TwoWire *wire, ILogger *logger);
 };
 
-#endif
 #endif

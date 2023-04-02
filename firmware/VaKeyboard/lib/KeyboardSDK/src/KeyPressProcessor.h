@@ -10,7 +10,7 @@
 #include "Logger/NullLogger.h"
 #include "ActionEvaluator.h"
 
-class KeyboardSDK
+class KeyPressProcessor
 {
 private:
 	MatrixScanner *matrixScanner;
@@ -23,6 +23,6 @@ private:
 	Matrix *previousMatrix = NULL;
 
 public:
-	KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger);
+	KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger);
 	void scan();
 };

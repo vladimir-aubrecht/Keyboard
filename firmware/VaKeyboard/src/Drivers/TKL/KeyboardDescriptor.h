@@ -1,6 +1,7 @@
+#if defined(TKL)
+
 #pragma once
 
-#ifdef TKL
 
 #include "Arduino.h"
 #include "IKeyboardDescriptor.h"

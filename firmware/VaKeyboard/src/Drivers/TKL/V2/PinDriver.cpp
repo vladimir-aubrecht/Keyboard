@@ -1,5 +1,4 @@
-#ifdef TKL
-#ifdef V2
+#if defined(TKL) && defined(V2)
 
 #include "PinDriver.h"
 
@@ -69,5 +68,4 @@ PinDriver::PinDriver(Max7301* max7301, ILogger *logger)
 	this->max7301->enable();
 }
 
-#endif
 #endif

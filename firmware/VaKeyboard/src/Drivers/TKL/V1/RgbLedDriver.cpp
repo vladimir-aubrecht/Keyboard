@@ -1,5 +1,4 @@
-#ifdef TKL
-#ifdef V1
+#if defined(TKL) && defined(V1)
 
 #include "RgbLedDriver.h"
 
@@ -83,5 +82,4 @@ bool RgbLedDriver::toggle()
 	}
 }
 
-#endif
 #endif

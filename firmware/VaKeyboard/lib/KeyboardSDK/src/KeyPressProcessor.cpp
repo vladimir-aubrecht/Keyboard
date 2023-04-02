@@ -1,6 +1,6 @@
-#include "KeyboardSDK.h"
+#include "KeyPressProcessor.h"
 
-KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger)
+KeyPressProcessor::KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, IKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
@@ -10,7 +10,7 @@ KeyboardSDK::KeyboardSDK(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEv
 	//this->logger = logger;
 }
 
-void KeyboardSDK::scan()
+void KeyPressProcessor::scan()
 {
 	// unsigned long startTime = micros();
 

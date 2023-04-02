@@ -1,4 +1,4 @@
-#ifdef NUMPAD
+#if defined(NUMPAD)
 
 #include "KeyboardDescriptor.h"
 

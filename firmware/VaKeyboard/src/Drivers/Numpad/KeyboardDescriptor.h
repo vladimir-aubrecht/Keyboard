@@ -1,6 +1,7 @@
+#if defined(NUMPAD)
+
 #pragma once
 
-#ifdef NUMPAD
 
 #include "Arduino.h"
 #include "IKeyboardDescriptor.h"

@@ -1,6 +1,6 @@
-#pragma once
+#if defined(NUMPAD) && defined(V2)
 
-#ifdef NUMPAD
+#pragma once
 
 #include <Arduino.h>
 #include "../../Chips/Max7301.h"

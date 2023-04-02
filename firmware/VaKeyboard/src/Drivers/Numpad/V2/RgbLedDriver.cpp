@@ -1,4 +1,4 @@
-#ifdef NUMPAD
+#if defined(NUMPAD) && defined(V2)
 
 #include "RgbLedDriver.h"
 
