@@ -5,7 +5,9 @@
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
-	keyboard->begin();
+	this->keyboard = new USBHIDKeyboard();
+	this->keyboard->begin();
+	
 	USB.begin();
 }
 
@@ -26,12 +28,11 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			if (isPressed)
 			{
 				isPress = true;
-				
-				this->keyboard->press(currentKey);
+				this->keyboard->pressRaw((uint8_t)currentKey);
 			}
 			else if (isReleased)
 			{
-				this->keyboard->release(currentKey);
+				this->keyboard->releaseRaw((uint8_t)currentKey);
 			}
 		}
 	}

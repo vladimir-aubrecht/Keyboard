@@ -16,11 +16,11 @@ void KeyboardDescriptor::initKeyAsignment()
 	this->keymaps = new KeyCode **[this->getLayersCount()];
 
 	this->keymaps[0] = new KeyCode *[this->numberOfRows];
-	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_NUM_LOCK, KEYPAD_DIVIDE, KEYPAD_MULTIPLY, KEYPAD_SUBTRACT};
-	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEYPAD_7, KEYPAD_8, KEYPAD_9, KEY_RESERVED};
-	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEYPAD_4, KEYPAD_5, KEYPAD_6, KEYPAD_ADD};
-	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEYPAD_1, KEYPAD_2, KEYPAD_3, KEY_RESERVED};
-	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEYPAD_0, KEY_RESERVED, KEYPAD_DOT, KEYPAD_ENTER};
+	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KK_NUM_LOCK, KK_PAD_DIVIDE, KK_PAD_MULTIPLY, KK_PAD_SUBTRACT};
+	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KK_PAD_7, KK_PAD_8, KK_PAD_9, KK_RESERVED};
+	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KK_PAD_4, KK_PAD_5, KK_PAD_6, KK_PAD_ADD};
+	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KK_PAD_1, KK_PAD_2, KK_PAD_3, KK_RESERVED};
+	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KK_PAD_0, KK_RESERVED, KK_PAD_DOT, KK_PAD_ENTER};
 }
 
 void KeyboardDescriptor::initCoordinatesMap()

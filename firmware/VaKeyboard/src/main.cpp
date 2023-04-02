@@ -8,9 +8,11 @@
 #include "Drivers/Numpad/KeyboardDescriptor.h"
 #include "Drivers/Numpad/PinDriver.h"
 #include "Drivers/Numpad/RgbLedDriver.h"
+#include "Chips/Tca9548a.h"
 
 const uint8_t numberOfRows = 5;
 const uint8_t numberOfColumns = 4;
+
 #endif
 
 #ifdef TKL
@@ -85,7 +87,7 @@ IBatteryDriver *batteryDriver = NULL;
 IKeyboardDriver *usbKeyboardDriver = NULL;
 
 //#include "Chips/Max7301.h"
-//Max7301* max7301 = new Max7301(9, 6, 5, 10);
+//Max7301* max7301 = new Max7301((uint8_t)14U, MOSI, SCK, MISO);
 
 bool enforcedDisabledLeds = false;
 bool isActionInProgress = false;
@@ -219,7 +221,13 @@ void setup()
 #if defined(FEATHER32U4) && defined(V2)
 	Tca9548a* tca = new Tca9548a(0x70, &Wire, logger);
 	
+	#if defined(TKL)
 	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns, tca);
+	#endif
+
+	#if defined(NUMPAD)
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns);
+	#endif
 
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	Adafruit_BluefruitLE_SPI *ble = new Adafruit_BluefruitLE_SPI(BLUEFRUIT_SPI_CS, BLUEFRUIT_SPI_IRQ, BLUEFRUIT_SPI_RST);
@@ -227,7 +235,7 @@ void setup()
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 		
 	#ifdef NUMPAD
-	IPinDriver* pinDriver = new PinDriver(new Max7301(11), logger);
+	IPinDriver* pinDriver = new PinDriver(new Max7301(11, 10, 9, 13), logger);
 	#endif
 
 	#ifdef TKL
@@ -262,10 +270,16 @@ void setup()
 #endif
 
 #ifdef TINYS2
+
+	#if defined(TKL) && defined(V2)
+	Tca9548a* tca = new Tca9548a(0x70, &Wire, logger);	
+	rgbLedDriver = new RgbLedDriver(logger, numberOfRows, numberOfColumns, tca);
+
 	usbKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
 	IKeyboardDriver* btKeyboardDriver = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);
 	keyboardDriver = new SelectiveKeyboardDriver(usbKeyboardDriver, btKeyboardDriver);
 	IPinDriver* pinDriver = new PinDriver(new Max7301((uint8_t)14U, MOSI, SCK, MISO), logger);
+	#endif
 #endif
 
 #ifdef WROOM32
@@ -295,21 +309,21 @@ void setup()
 
 	#ifdef TKL
 	#ifndef ARDUINO_MICRO
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KEY_ESC, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KEY_F2, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KK_ESC, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KK_F2, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	#endif
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KEY_F1, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KEY_F3, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KEY_F4, ::KEY_LEFT_CTRL, ::KEY_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KK_F1, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KK_F3, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KK_F4, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
 	#endif
 
 	#ifdef NUMPAD
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_SUBTRACT});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_1});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_0});
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_DOT});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 2, new KeyCode[2]{::KEY_NUM_LOCK, ::KEYPAD_ENTER});
+	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_SUBTRACT});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_1});
+	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_0});
+	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_DOT});
+	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_ENTER});
 	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
 	#endif
 	// logger->logDebug(F("\nSetup is done!"));

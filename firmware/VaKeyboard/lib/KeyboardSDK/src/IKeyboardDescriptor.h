@@ -46,12 +46,12 @@ public:
 
 			switch (keyCode)
 			{
-			case MEDIA_PREVIOUS:
-			case MEDIA_NEXT:
-			case MEDIA_PLAY_PAUSE:
-			case MEDIA_VOLUME_MUTE:
-			case MEDIA_VOLUME_DOWN:
-			case MEDIA_VOLUME_UP:
+			case KK_PREVIOUS:
+			case KK_NEXT:
+			case KK_PLAY_PAUSE:
+			case KK_VOLUME_MUTE:
+			case KK_VOLUME_DOWN:
+			case KK_VOLUME_UP:
 				return KeyType::MEDIA;
 
 			default:

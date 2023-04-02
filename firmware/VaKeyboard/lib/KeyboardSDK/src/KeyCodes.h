@@ -1,5 +1,7 @@
 #pragma once
 
+#include <Arduino.h>
+
 typedef uint8_t KeyCode;
 
 enum KeyType : uint8_t
@@ -8,26 +10,120 @@ enum KeyType : uint8_t
     MEDIA = 1
 };
 
-#ifdef FEATHER32U4
-#include "Drivers/Feather32u4/KeyCodes.h"
-#endif
+enum SDKKeyboardKeycode : uint8_t {
+    KK_RESERVED        =  0,
+    KK_A               =  4,
+    KK_B               =  5,
+    KK_C               =  6,
+    KK_D               =  7,
+    KK_E               =  8,
+    KK_F               =  9,
+    KK_G               = 10,
+    KK_H               = 11,
+    KK_I               = 12,
+    KK_J               = 13,
+    KK_K               = 14,
+    KK_L               = 15,
+    KK_M               = 16,
+    KK_N               = 17,
+    KK_O               = 18,
+    KK_P               = 19,
+    KK_Q               = 20,
+    KK_R               = 21,
+    KK_S               = 22,
+    KK_T               = 23,
+    KK_U               = 24,
+    KK_V               = 25,
+    KK_W               = 26,
+    KK_X               = 27,
+    KK_Y               = 28,
+    KK_Z               = 29,
+    KK_1               = 30,
+    KK_2               = 31,
+    KK_3               = 32,
+    KK_4               = 33,
+    KK_5               = 34,
+    KK_6               = 35,
+    KK_7               = 36,
+    KK_8               = 37,
+    KK_9               = 38,
+    KK_0               = 39,
+    KK_ENTER           = 40,
+    KK_ESC             = 41,
+    KK_BACKSPACE       = 42,
+    KK_TAB             = 43,
+    KK_SPACE           = 44,
+    KK_MINUS           = 45,
+    KK_EQUAL           = 46,
+    KK_LEFT_BRACE      = 47,
+    KK_RIGHT_BRACE     = 48,
+    KK_BACKSLASH       = 49,
+    KK_NON_US_NUM      = 50,
+    KK_SEMICOLON       = 51,
+    KK_QUOTE           = 52,
+    KK_TILDE           = 53,
+    KK_COMMA           = 54,
+    KK_PERIOD          = 55,
+    KK_SLASH           = 56,
+    KK_CAPS_LOCK       = 0x39,
+    KK_F1              = 0x3A,
+    KK_F2              = 0x3B,
+    KK_F3              = 0x3C,
+    KK_F4              = 0x3D,
+    KK_F5              = 0x3E,
+    KK_F6              = 0x3F,
+    KK_F7              = 0x40,
+    KK_F8              = 0x41,
+    KK_F9              = 0x42,
+    KK_F10             = 0x43,
+    KK_F11             = 0x44,
+    KK_F12             = 0x45,
+    KK_PRINT           = 0x46,
+    KK_SCROLL_LOCK     = 0x47,
+    KK_PAUSE           = 0x48,
+    KK_INSERT          = 0x49,
+    KK_HOME            = 0x4A,
+    KK_PAGE_UP         = 0x4B,
+    KK_DELETE          = 0x4C,
+    KK_END             = 0x4D,
+    KK_PAGE_DOWN       = 0x4E,
+    KK_RIGHT           = 0x4F,
+    KK_LEFT            = 0x50,
+    KK_DOWN            = 0x51,
+    KK_UP              = 0x52,
+    KK_NUM_LOCK        = 0x53,
+    KK_PAD_DIVIDE       = 0x54,
+    KK_PAD_MULTIPLY     = 0x55,
+    KK_PAD_SUBTRACT     = 0x56,
+    KK_PAD_ADD          = 0x57,
+    KK_PAD_ENTER        = 0x58,
+    KK_PAD_1            = 0x59,
+    KK_PAD_2            = 0x5A,
+    KK_PAD_3            = 0x5B,
+    KK_PAD_4            = 0x5C,
+    KK_PAD_5            = 0x5D,
+    KK_PAD_6            = 0x5E,
+    KK_PAD_7            = 0x5F,
+    KK_PAD_8            = 0x60,
+    KK_PAD_9            = 0x61,
+    KK_PAD_0            = 0x62,
+    KK_PAD_DOT          = 0x63,
 
-#ifdef ARDUINO_MICRO
-#include "Drivers/Micro/KeyCodes.h"
-#endif
+    KK_LEFT_CTRL           = 0xE0,
+    KK_LEFT_SHIFT          = 0xE1,
+    KK_LEFT_ALT            = 0xE2,
+    KK_LEFT_GUI            = 0xE3,
+    KK_RIGHT_CTRL          = 0xE4,
+    KK_RIGHT_SHIFT         = 0xE5,
+    KK_RIGHT_ALT           = 0xE6,
+    KK_RIGHT_GUI           = 0xE7,
 
-#ifdef PORTENTA_H7
-#include "Drivers/PortentaH7/KeyCodes.h"
-#endif
+    KK_MENU   = 0x76,
 
-#ifdef TINYS2
-#include "Drivers/TinyS2/KeyCodes.h"
-#endif
-
-#ifdef WROOM32
-#include "Drivers/Wroom32/KeyCodes.h"
-#endif
-
-#ifdef FEATHER_ESP32_S3_NOPSRAM
-#include "Drivers/Feather_ESP32_S3_NOPSRAM/KeyCodes.h"
-#endif
+    KK_NEXT	= 0,
+	KK_PREVIOUS	= 0xB6,
+	KK_PLAY_PAUSE	= 0xCD,
+    KK_VOLUME_MUTE	= 0xE2,
+	KK_VOLUME_UP	= 0xE9,
+	KK_VOLUME_DOWN	= 0xEA
+};

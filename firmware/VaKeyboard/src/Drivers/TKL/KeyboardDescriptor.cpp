@@ -16,20 +16,21 @@ void KeyboardDescriptor::initKeyAsignment()
 	this->keymaps = new KeyCode **[this->getLayersCount()];
 
 	this->keymaps[0] = new KeyCode*[this->numberOfRows];
-	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KEY_ESC, KEY_RESERVED, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, KEY_F7, KEY_F8, KEY_F9, KEY_F10, KEY_F11, KEY_F12, KEY_PRINT, KEY_SCROLL_LOCK, KEY_PAUSE};
-	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KEY_TILDE, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS, KEY_EQUAL, KEY_BACKSPACE, KEY_INSERT, KEY_HOME, KEY_PAGE_UP};
-	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, KEY_BACKSLASH, KEY_DELETE, KEY_END, KEY_PAGE_DOWN};
-	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KEY_CAPS_LOCK, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, KEY_QUOTE, KEY_RESERVED, KEY_RETURN, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED};
-	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KEY_LEFT_SHIFT, KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, KEY_SLASH, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_SHIFT, KEY_RESERVED, KEY_UP_ARROW, KEY_RESERVED};
-	this->keymaps[0][5] = new KeyCode[this->numberOfColumns]{KEY_LEFT_CTRL, KEY_LEFT_GUI, KEY_LEFT_ALT, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_SPACE, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_ALT, KEY_RIGHT_GUI, HID_KEYBOARD_MENU, KEY_RIGHT_CTRL, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW};
+
+	this->keymaps[0][0] = new KeyCode[this->numberOfColumns]{KK_ESC, KK_RESERVED, KK_F1, KK_F2, KK_F3, KK_F4, KK_F5, KK_F6, KK_F7, KK_F8, KK_F9, KK_F10, KK_F11, KK_F12, KK_PRINT, KK_SCROLL_LOCK, KK_PAUSE};
+	this->keymaps[0][1] = new KeyCode[this->numberOfColumns]{KK_TILDE, KK_1, KK_2, KK_3, KK_4, KK_5, KK_6, KK_7, KK_8, KK_9, KK_0, KK_MINUS, KK_EQUAL, KK_BACKSPACE, KK_INSERT, KK_HOME, KK_PAGE_UP};
+	this->keymaps[0][2] = new KeyCode[this->numberOfColumns]{KK_TAB, KK_Q, KK_W, KK_E, KK_R, KK_T, KK_Y, KK_U, KK_I, KK_O, KK_P, KK_LEFT_BRACE, KK_RIGHT_BRACE, KK_BACKSLASH, KK_DELETE, KK_END, KK_PAGE_DOWN};
+	this->keymaps[0][3] = new KeyCode[this->numberOfColumns]{KK_CAPS_LOCK, KK_A, KK_S, KK_D, KK_F, KK_G, KK_H, KK_J, KK_K, KK_L, KK_SEMICOLON, KK_QUOTE, KK_RESERVED, KK_ENTER, KK_RESERVED, KK_RESERVED, KK_RESERVED};
+	this->keymaps[0][4] = new KeyCode[this->numberOfColumns]{KK_LEFT_SHIFT, KK_Z, KK_X, KK_C, KK_V, KK_B, KK_N, KK_M, KK_COMMA, KK_PERIOD, KK_SLASH, KK_RESERVED, KK_RESERVED, KK_RIGHT_SHIFT, KK_RESERVED, KK_UP, KK_RESERVED};
+	this->keymaps[0][5] = new KeyCode[this->numberOfColumns]{KK_LEFT_CTRL, KK_LEFT_GUI, KK_LEFT_ALT, KK_RESERVED, KK_RESERVED, KK_RESERVED, KK_SPACE, KK_RESERVED, KK_RESERVED, KK_RESERVED, KK_RIGHT_ALT, KK_RIGHT_GUI, KK_MENU, KK_RIGHT_CTRL, KK_LEFT, KK_DOWN, KK_RIGHT};
 
 	this->keymaps[1] = new KeyCode*[this->numberOfRows];
-	this->keymaps[1][0] = new KeyCode[this->numberOfColumns]{KEY_ESC, KEY_RESERVED, KEY_F1, KEY_F2, KEY_F3, KEY_F4, KEY_F5, KEY_F6, MEDIA_PREVIOUS, MEDIA_PLAY_PAUSE, MEDIA_NEXT, MEDIA_VOLUME_MUTE, MEDIA_VOLUME_DOWN, MEDIA_VOLUME_UP, KEY_PRINT, KEY_SCROLL_LOCK, KEY_PAUSE};
-	this->keymaps[1][1] = this->keymaps[0][1]; //new KeyCode[this->numberOfColumns]{KEY_TILDE, KEY_1, KEY_2, KEY_3, KEY_4, KEY_5, KEY_6, KEY_7, KEY_8, KEY_9, KEY_0, KEY_MINUS, KEY_EQUAL, KEY_BACKSPACE, KEY_INSERT, KEY_HOME, KEY_PAGE_UP};
-	this->keymaps[1][2] = this->keymaps[0][2]; //new KeyCode[this->numberOfColumns]{KEY_TAB, KEY_Q, KEY_W, KEY_E, KEY_R, KEY_T, KEY_Y, KEY_U, KEY_I, KEY_O, KEY_P, KEY_LEFT_BRACE, KEY_RIGHT_BRACE, KEY_BACKSLASH, KEY_DELETE, KEY_END, KEY_PAGE_DOWN};
-	this->keymaps[1][3] = this->keymaps[0][3]; //new KeyCode[this->numberOfColumns]{KEY_CAPS_LOCK, KEY_A, KEY_S, KEY_D, KEY_F, KEY_G, KEY_H, KEY_J, KEY_K, KEY_L, KEY_SEMICOLON, KEY_QUOTE, KEY_RESERVED, KEY_RETURN, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED};
-	this->keymaps[1][4] = this->keymaps[0][4]; //new KeyCode[this->numberOfColumns]{KEY_LEFT_SHIFT, KEY_Z, KEY_X, KEY_C, KEY_V, KEY_B, KEY_N, KEY_M, KEY_COMMA, KEY_PERIOD, KEY_SLASH, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_SHIFT, KEY_RESERVED, KEY_UP_ARROW, KEY_RESERVED};
-	this->keymaps[1][5] = this->keymaps[0][5]; //new KeyCode[this->numberOfColumns]{KEY_LEFT_CTRL, KEY_LEFT_GUI, KEY_LEFT_ALT, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_SPACE, KEY_RESERVED, KEY_RESERVED, KEY_RESERVED, KEY_RIGHT_ALT, KEY_RIGHT_GUI, HID_KEYBOARD_MENU, KEY_RIGHT_CTRL, KEY_LEFT_ARROW, KEY_DOWN_ARROW, KEY_RIGHT_ARROW};
+	this->keymaps[1][0] = new KeyCode[this->numberOfColumns]{KK_ESC, KK_RESERVED, KK_F1, KK_F2, KK_F3, KK_F4, KK_F5, KK_F6, KK_PREVIOUS, KK_PLAY_PAUSE, KK_NEXT, KK_VOLUME_MUTE, KK_VOLUME_DOWN, KK_VOLUME_UP, KK_PRINT, KK_SCROLL_LOCK, KK_PAUSE};
+	this->keymaps[1][1] = this->keymaps[0][1]; //new KeyCode[this->numberOfColumns]{KK_TILDE, KK_1, KK_2, KK_3, KK_4, KK_5, KK_6, KK_7, KK_8, KK_9, KK_0, KK_MINUS, KK_EQUAL, KK_BACKSPACE, KK_INSERT, KK_HOME, KK_PAGE_UP};
+	this->keymaps[1][2] = this->keymaps[0][2]; //new KeyCode[this->numberOfColumns]{KK_TAB, KK_Q, KK_W, KK_E, KK_R, KK_T, KK_Y, KK_U, KK_I, KK_O, KK_P, KK_LEFT_BRACE, KK_RIGHT_BRACE, KK_BACKSLASH, KK_DELETE, KK_END, KK_PAGE_DOWN};
+	this->keymaps[1][3] = this->keymaps[0][3]; //new KeyCode[this->numberOfColumns]{KK_CAPS_LOCK, KK_A, KK_S, KK_D, KK_F, KK_G, KK_H, KK_J, KK_K, KK_L, KK_SEMICOLON, KK_QUOTE, KK_RESERVED, KK_RETURN, KK_RESERVED, KK_RESERVED, KK_RESERVED};
+	this->keymaps[1][4] = this->keymaps[0][4]; //new KeyCode[this->numberOfColumns]{KK_LEFT_SHIFT, KK_Z, KK_X, KK_C, KK_V, KK_B, KK_N, KK_M, KK_COMMA, KK_PERIOD, KK_SLASH, KK_RESERVED, KK_RESERVED, KK_RIGHT_SHIFT, KK_RESERVED, KK_UP_ARROW, KK_RESERVED};
+	this->keymaps[1][5] = this->keymaps[0][5]; //new KeyCode[this->numberOfColumns]{KK_LEFT_CTRL, KK_LEFT_GUI, KK_LEFT_ALT, KK_RESERVED, KK_RESERVED, KK_RESERVED, KK_SPACE, KK_RESERVED, KK_RESERVED, KK_RESERVED, KK_RIGHT_ALT, KK_RIGHT_GUI, HID_KEYBOARD_MENU, KK_RIGHT_CTRL, KK_LEFT_ARROW, KK_DOWN_ARROW, KK_RIGHT_ARROW};
 }
 
 void KeyboardDescriptor::initCoordinatesMap()
@@ -56,7 +57,7 @@ void KeyboardDescriptor::initCoordinatesMap()
 
 uint8_t KeyboardDescriptor::getSelectedLayer(Matrix *pressedKeysMatrix)
 {
-	return pressedKeysMatrix->getBit(coordMap[HID_KEYBOARD_MENU - 0x76]->getRow(), coordMap[HID_KEYBOARD_MENU - 0x76]->getColumn());
+	return pressedKeysMatrix->getBit(coordMap[KK_MENU - 0x76]->getRow(), coordMap[KK_MENU - 0x76]->getColumn());
 }
 
 KeyboardDescriptor::Coordinates **KeyboardDescriptor::getCoordinatesMap()
