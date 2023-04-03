@@ -11,7 +11,6 @@ class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
-	USBHIDKeyboard* keyboard = NULL;
 
 private:
 	uint8_t ScanForModificators(Matrix *matrix, KeyCode **keymapProvider);
