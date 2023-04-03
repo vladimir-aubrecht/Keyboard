@@ -1,10 +1,12 @@
 #include "Is31fl3743a.h"
 #include <Adafruit_BusIO_Register.h>
 
-Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t maxCurrent)
+Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t rowCount, uint8_t columnCount, uint8_t maxCurrent)
 {
 	this->i2c_addr = i2c_addr;
 	this->wire = wire;
+	this->rowCount = rowCount;
+	this->columnCount = columnCount;
 	//this->logger = logger;
 	this->columnMask = columnMask;
 
@@ -25,10 +27,14 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	CRWL.write(0xC5); // unlock CR
 	CR.write(0x01);	  // lets write scaling
-	for (int i = 0x01; i < 0xA3; i++)
+	for (int column = 0; column < columnCount; column++)
 	{
-		Adafruit_BusIO_Register SL(i2c_dev, i);
-		SL.write(0xFF);
+		for (int row = 0; row < rowCount * 3; row++)
+		{
+			uint8_t index = row + (rowCount * 3 * column) + 1; //3 colors in LED
+			Adafruit_BusIO_Register SL(i2c_dev, index);
+			SL.write(0xFF);
+		}
 	}
 
 	CRWL.write(0xC5); // unlock CR
@@ -38,7 +44,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	Adafruit_BusIO_Register CONF(i2c_dev, 0x00);
 	CONF.write(this->columnMask); // normal mode + enabled columns
-
+	
 	Adafruit_BusIO_Register PDU(i2c_dev, 0x02);
 	PDU.write(0b00110011);
 
@@ -56,6 +62,7 @@ uint8_t Is31fl3743a::getGlobalIntensity()
 
 void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 {
+
 	Adafruit_BusIO_Register CRWL(this->i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(this->i2c_dev, 0xFD);
 
@@ -63,26 +70,30 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 	CR.write(0x00);	  // lets write pwm
 
 
-	for (int i = 0x01; i < 0xA3; i++)
+	for (int column = 0; column < columnCount; column++)
 	{
-		//uint32_t color = random(0x00ffffff);
-		uint8_t r = intensity; //(uint8_t)((color & 0x00ff0000) >> 16);
-		uint8_t g = intensity; //(uint8_t)((color & 0x0000ff00) >> 8);
-		uint8_t b = intensity; //(uint8_t)(color & 0x000000ff);
+		for (int row = 0; row < rowCount * 3; row++)
+		{
+			//uint32_t color = random(0x00ffffff);
+			uint8_t r = intensity; //(uint8_t)((color & 0x00ff0000) >> 16);
+			uint8_t g = intensity; //(uint8_t)((color & 0x0000ff00) >> 8);
+			uint8_t b = intensity; //(uint8_t)(color & 0x000000ff);
 
-		Adafruit_BusIO_Register PWM(i2c_dev, i);
+			uint8_t index = row + (rowCount * 3 * column) + 1; //3 colors in LED
+			Adafruit_BusIO_Register PWM(i2c_dev, index);	
 
-		if ((i - 1) % 3 == 0)	//red led
-		{
-			PWM.write(2 * r / 5);
-		}
-		else if ((i - 2) % 3 == 0)	//green led
-		{
-			PWM.write(g);
-		}
-		else //blue led
-		{
-			PWM.write(4 * b / 5);
+			if ((index - 1) % 3 == 0)	//red led
+			{
+				PWM.write(2 * r / 5);
+			}
+			else if ((index - 2) % 3 == 0)	//green led
+			{
+				PWM.write(g);
+			}
+			else //blue led
+			{
+				PWM.write(4 * b / 5);
+			}
 		}
 	}
 
@@ -91,6 +102,7 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 
 void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity)
 {
+	return;
 	Adafruit_BusIO_Register CRWL(this->i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(this->i2c_dev, 0xFD);
 
@@ -98,9 +110,9 @@ void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, 
 	CR.write(0x00);	  // lets write pwm
 
 	// registers starts at address 0x1
-	Adafruit_BusIO_Register rPWM(i2c_dev, y * 18 + x * 3 + 1);
-	Adafruit_BusIO_Register gPWM(i2c_dev, y * 18 + x * 3 + 2);
-	Adafruit_BusIO_Register bPWM(i2c_dev, y * 18 + x * 3 + 3);
+	Adafruit_BusIO_Register rPWM(i2c_dev, y * this->rowCount * 3 + x * 3 + 1);
+	Adafruit_BusIO_Register gPWM(i2c_dev, y * this->rowCount * 3 + x * 3 + 2);
+	Adafruit_BusIO_Register bPWM(i2c_dev, y * this->rowCount * 3 + x * 3 + 3);
 	rPWM.write(redIntensity);
 	gPWM.write(greenIntensity);
 	bPWM.write(blueIntensity);

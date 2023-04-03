@@ -11,20 +11,20 @@ RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCou
 	tca->selectChannel(0);
 
 	uint8_t maxCurrent = 0x1F;
-	this->controller1 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller3 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller4 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, maxCurrent);
+	this->controller1 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller3 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller4 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
 
 	tca->selectChannel(1);
 
-	this->controller5 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller6 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller7 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, maxCurrent);
-	this->controller8 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, maxCurrent);
+	this->controller5 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller6 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller7 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controller8 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
 
 	tca->selectChannel(2);
-	this->controller9 = new Is31fl3743a(0x20, &Wire, logger, 0b10101001, maxCurrent);
+	this->controller9 = new Is31fl3743a(0x20, &Wire, logger, 0b10101001, 6, 1, maxCurrent);
 
 }
 

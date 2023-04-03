@@ -135,7 +135,7 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::misoPin, McuConfig::sclkPin, &Wire);
+	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire);
 	
 	actionEvaluator = keyboardSDK->GetActionEvaluator();
 

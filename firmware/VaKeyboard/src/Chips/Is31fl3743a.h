@@ -13,11 +13,13 @@ private:
 	Adafruit_I2CDevice *i2c_dev = NULL;
 	ILogger *logger = NULL;
 	uint8_t columnMask = 0;
+	uint8_t rowCount = 0;
+	uint8_t columnCount = 0;
 
 	uint8_t currentGlobalIntensity = 0;
 
 public:
-	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t maxCurrent);
+	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t rowCount, uint8_t columnCount, uint8_t maxCurrent);
 	void setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);
 	void setGlobalIntensity(uint8_t intensity);
 	uint8_t getGlobalIntensity();

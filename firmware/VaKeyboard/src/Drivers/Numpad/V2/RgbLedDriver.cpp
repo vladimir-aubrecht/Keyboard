@@ -7,8 +7,8 @@ RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCou
 	this->logger = logger;
 	this->rowsCount = rowsCount;
 	this->columnCount = columnCount;
-	this->controller1 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 0xFF);
-	this->controller2 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 0xFF);
+	this->controller1 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 4, 0xFF);
+	this->controller2 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 4, 0xFF);
 }
 
 void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color)
