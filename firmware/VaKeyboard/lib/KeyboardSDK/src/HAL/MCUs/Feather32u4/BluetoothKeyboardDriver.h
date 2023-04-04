@@ -5,7 +5,7 @@
 #include "HAL/IKeyboardDriver.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
-#include "IKeyboardDescriptor.h"
+#include "BaseKeyboardDescriptor.h"
 
 #include "Adafruit_BLE.h"
 #include "Adafruit_BluefruitLE_SPI.h"
@@ -23,7 +23,7 @@ private:
 	//ILogger *logger;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
-	IKeyboardDescriptor *keyboardDescriptor = NULL;
+	BaseKeyboardDescriptor *keyboardDescriptor = NULL;
 	const uint8_t maxKeyCountInReport = 6;
 
 	char* GenerateCommandBytes(uint8_t modifier, uint8_t* keys);
@@ -35,14 +35,14 @@ private:
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:
-	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, IBatteryDriver *batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	BluetoothKeyboardDriver(Adafruit_BluefruitLE_SPI *ble, IBatteryDriver *batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 
 	virtual void Init();
 	virtual void ResetPairing();
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
-	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 	static BluetoothKeyboardDriver* GetInstance();
 };
 

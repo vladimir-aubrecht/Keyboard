@@ -6,7 +6,7 @@
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	Adafruit_BluefruitLE_SPI *ble,
 	IBatteryDriver *batteryDriver,
-	IKeyboardDescriptor *keyboardDescriptor,
+	BaseKeyboardDescriptor *keyboardDescriptor,
 	ILogger *logger)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
@@ -235,7 +235,7 @@ void BluetoothKeyboardDriver::ResetState()
 	this->SendRelease();
 }
 
-BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
 	if (BluetoothKeyboardDriver::instance == NULL)
 	{

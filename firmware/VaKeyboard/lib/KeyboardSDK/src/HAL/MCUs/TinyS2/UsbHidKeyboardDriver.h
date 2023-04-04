@@ -3,17 +3,17 @@
 #ifdef TINYS2
 
 #include "HAL/IKeyboardDriver.h"
-#include "IKeyboardDescriptor.h"
+#include "BaseKeyboardDescriptor.h"
 #include "USB.h"
 #include "USBHIDKeyboard.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
-	IKeyboardDescriptor *keyboardDescriptor = NULL;
+	BaseKeyboardDescriptor *keyboardDescriptor = NULL;
 
 public:
-	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);
+	UsbHidKeyboardDriver(BaseKeyboardDescriptor *keyboardDescriptor);
 
 	virtual void ResetPairing();
 	virtual void ResetState();

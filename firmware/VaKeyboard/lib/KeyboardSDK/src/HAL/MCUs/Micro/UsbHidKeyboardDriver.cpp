@@ -3,7 +3,7 @@
 #include "UsbHidKeyboardDriver.h"
 #include "HID-Project.h"
 
-UsbHidKeyboardDriver::UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor)
+UsbHidKeyboardDriver::UsbHidKeyboardDriver(BaseKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
 	Consumer.begin();

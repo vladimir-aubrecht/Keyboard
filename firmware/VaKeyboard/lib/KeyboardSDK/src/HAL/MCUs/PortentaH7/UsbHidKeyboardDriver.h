@@ -3,7 +3,7 @@
 #ifdef PORTENTA_H7
 
 #include "HAL/IKeyboardDriver.h"
-#include "IKeyboardDescriptor.h"
+#include "BaseKeyboardDescriptor.h"
 
 
 #include "PluggableUSBHID.h"
@@ -13,13 +13,13 @@ class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	USBKeyboard Keyboard;
-	IKeyboardDescriptor *keyboardDescriptor = NULL;
+	BaseKeyboardDescriptor *keyboardDescriptor = NULL;
 
 private:
 	uint8_t ScanForModificators(Matrix *matrix, KeyCode **keymapProvider);
 
 public:
-	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);
+	UsbHidKeyboardDriver(BaseKeyboardDescriptor *keyboardDescriptor);
 
 	virtual void ResetPairing();
 	virtual void ResetState();

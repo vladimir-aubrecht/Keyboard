@@ -1,6 +1,6 @@
 #include "MatrixDebouncer.h"
 
-MatrixDebouncer::MatrixDebouncer(IKeyboardDescriptor *keyboardDescriptor, uint8_t debounceTimeInMs)
+MatrixDebouncer::MatrixDebouncer(BaseKeyboardDescriptor *keyboardDescriptor, uint8_t debounceTimeInMs)
 {
     this->debounceTimeInMs = debounceTimeInMs;
     uint8_t rowsCount = keyboardDescriptor->getRowCount();

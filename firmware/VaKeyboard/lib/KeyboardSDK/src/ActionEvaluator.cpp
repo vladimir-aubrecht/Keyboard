@@ -1,6 +1,6 @@
 #include "ActionEvaluator.h"
 
-ActionEvaluator::ActionEvaluator(IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+ActionEvaluator::ActionEvaluator(BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
     //this->logger = logger;
     this->matrixActions = new MatrixAction *[0];

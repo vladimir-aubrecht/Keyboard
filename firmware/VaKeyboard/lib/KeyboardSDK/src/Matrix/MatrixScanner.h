@@ -4,7 +4,7 @@
 #include "Matrix.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
-#include "IKeyboardDescriptor.h"
+#include "BaseKeyboardDescriptor.h"
 
 class MatrixScanner
 {

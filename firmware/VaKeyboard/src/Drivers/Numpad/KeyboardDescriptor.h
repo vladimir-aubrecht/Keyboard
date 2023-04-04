@@ -4,27 +4,16 @@
 
 
 #include "Arduino.h"
-#include "IKeyboardDescriptor.h"
+#include "BaseKeyboardDescriptor.h"
 
-class KeyboardDescriptor : public IKeyboardDescriptor
+class KeyboardDescriptor : public BaseKeyboardDescriptor
 {
-public:
-	uint8_t numberOfRows;
-	uint8_t numberOfColumns;
-	KeyCode ***keymaps;
-	Coordinates ** coordMap;
-	void initKeyAsignment();
-	void initCoordinatesMap();
-	uint8_t getSelectedLayer(Matrix *pressedKeysMatrix);
-
 public:
 	KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);
 
-	virtual KeyCode ***getKeyMap();
-	virtual Coordinates **getCoordinatesMap();
-	virtual uint8_t getRowCount();
-	virtual uint8_t getColumnCount();
+	uint8_t getSelectedLayer(Matrix *pressedKeysMatrix);
 	virtual uint8_t getLayersCount();
+	virtual KeyCode *** createKeyMap();
 };
 
 #endif

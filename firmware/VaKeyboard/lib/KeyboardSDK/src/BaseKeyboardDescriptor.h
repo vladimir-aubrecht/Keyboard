@@ -4,7 +4,7 @@
 #include "KeyCodes.h"
 #include "Matrix/Matrix.h"
 
-class IKeyboardDescriptor
+class BaseKeyboardDescriptor
 {
 public:
 	struct Coordinates
@@ -32,33 +32,22 @@ public:
 		}
 	};
 
-	virtual KeyCode ***getKeyMap() = 0;
-	virtual Coordinates **getCoordinatesMap() = 0;
-	virtual uint8_t getRowCount() = 0;
-	virtual uint8_t getColumnCount() = 0;
+	virtual KeyCode *** createKeyMap() = 0;
 	virtual uint8_t getLayersCount() = 0;
 	virtual uint8_t getSelectedLayer(Matrix *pressedKeysMatrix) = 0;
-	KeyType getKeyType(uint8_t layer, uint8_t row, uint8_t column)
-	{
-		if (layer == 1 && row == 0)
-		{
-			auto keyCode = this->getKeyMap()[1][row][column];
 
-			switch (keyCode)
-			{
-			case KK_PREVIOUS:
-			case KK_NEXT:
-			case KK_PLAY_PAUSE:
-			case KK_VOLUME_MUTE:
-			case KK_VOLUME_DOWN:
-			case KK_VOLUME_UP:
-				return KeyType::MEDIA;
+	BaseKeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);
+	uint8_t getRowCount();
+	uint8_t getColumnCount();
+	Coordinates **getCoordinatesMap();
+	KeyCode ***getKeyMap();
+	KeyType getKeyType(uint8_t layer, uint8_t row, uint8_t column);
 
-			default:
-				return KeyType::KEY;
-			}
-		}
+protected:
+	uint8_t numberOfRows;
+	uint8_t numberOfColumns;
 
-		return KeyType::KEY;
-	}
+	KeyCode ***keymaps;
+	Coordinates ** coordMap;
+	Coordinates ** createCoordinatesMap(KeyCode ***keymaps);
 };

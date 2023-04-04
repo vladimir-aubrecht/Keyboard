@@ -15,7 +15,7 @@ KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_
     Tca9548a* tca = new Tca9548a(0x70, wire, this->logger);
     this->rgbLedDriver = new RgbLedDriver(logger, this->numberOfRows, this->numberOfColumns, tca);
 
-    IKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
+    BaseKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
     
     this->actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
     this->primaryKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);

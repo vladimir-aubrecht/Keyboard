@@ -2,7 +2,7 @@
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	IBatteryDriver *batteryDriver,
-	IKeyboardDescriptor *keyboardDescriptor,
+	BaseKeyboardDescriptor *keyboardDescriptor,
 	ILogger *logger)
 {
 }
@@ -27,7 +27,7 @@ void BluetoothKeyboardDriver::ResetState()
 
 }
 
-BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
     return NULL;
 }
