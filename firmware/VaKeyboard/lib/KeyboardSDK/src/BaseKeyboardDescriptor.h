@@ -36,7 +36,6 @@ public:
 	virtual uint8_t getLayersCount() = 0;
 	virtual uint8_t getSelectedLayer(Matrix *pressedKeysMatrix) = 0;
 
-	BaseKeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);
 	uint8_t getRowCount();
 	uint8_t getColumnCount();
 	Coordinates **getCoordinatesMap();
@@ -49,5 +48,7 @@ protected:
 
 	KeyCode ***keymaps;
 	Coordinates ** coordMap;
+
+	BaseKeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns);
 	Coordinates ** createCoordinatesMap(KeyCode ***keymaps);
 };

@@ -12,118 +12,48 @@
 #include "Drivers/TKL/V2/KeyboardSDK.h"
 #endif
 
+#include "Features/BluetoothFeature.h"
+#include "Features/RGBLedFeature.h"
+
 ActionEvaluator *actionEvaluator = NULL;
 KeyboardSDK* keyboardSDK = NULL;
 
-bool enforcedDisabledLeds = false;
-bool isActionInProgress = false;
+BluetoothFeature* bluetoothFeature = NULL;
+RGBLedFeature* rgbLedFeature = NULL;
 
-void resumeLeds()
+void triggerBtReset()
 {
-	enforcedDisabledLeds = false;
-	isActionInProgress = false;
+	bluetoothFeature->triggerReset();
 }
 
-bool triggerBtReset()
+void toggleConnection()
 {
-	// logger->logDebug(F("Resetting BT pairing..."));
-	keyboardSDK->GetActiveKeyboardDriver()->ResetPairing();
-
-	return true;
+	bluetoothFeature->toggleConnection();
 }
 
-bool toggleConnection()
+void toggleLeds()
 {
-	// logger->logDebug(F("Toggling connection..."));
-
-	enforcedDisabledLeds = true;
-	keyboardSDK->GetRGBLedDriver()->turnOff();
-	keyboardSDK->GetActiveKeyboardDriver()->ResetState();
-
-	if (((SelectiveKeyboardDriver*)keyboardSDK->GetActiveKeyboardDriver())->SwapKeyboards() == keyboardSDK->GetPrimaryKeyboardDriver())
-	{
-		actionEvaluator->registerTemporaryTimerAction(
-			1000, []()
-			{ keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, 2, 0x00ffffff); },
-			resumeLeds);
-	}
-	else
-	{
-		actionEvaluator->registerTemporaryTimerAction(
-			1000, []()
-			{ keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, 3, 0x00ffffff); },
-			resumeLeds);
-	}
-
-	return false;
+	rgbLedFeature->toggle();
 }
 
-bool toggleLeds()
+void randomizeColors()
 {
-	// logger->logDebug(F("Toggling LEDs..."));
-	enforcedDisabledLeds = !keyboardSDK->GetRGBLedDriver()->toggle();
-
-	return true;
+	rgbLedFeature->randomizeColors();
 }
 
-bool randomizeColors()
+void turnOnLeds()
 {
-	// logger->logDebug(F("Toggling randomize colors..."));
-	keyboardSDK->GetRGBLedDriver()->randomizeColors();
-
-	return true;
+	rgbLedFeature->turnOn();
 }
 
-bool turnOnLeds()
+void turnOffLeds()
 {
-	if (enforcedDisabledLeds)
-	{
-		return true;
-	}
-
-	// logger->logDebug(F("Toggling LEDs on..."));
-
-	keyboardSDK->GetRGBLedDriver()->turnOn();
-
-	return true;
+	rgbLedFeature->turnOff();
 }
 
-bool turnOffLeds()
+void showBatteryLevel()
 {
-	// logger->logDebug(F("Toggling LEDs off..."));
-	keyboardSDK->GetRGBLedDriver()->turnOff();
-
-	return true;
-}
-
-bool showBatteryLevel()
-{
-	// logger->logDebug(F("Toggling show battery..."));
-
-	enforcedDisabledLeds = true;
-	turnOffLeds();
-
-	actionEvaluator->registerTemporaryTimerAction(
-		2000, []()
-		{ keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, ( keyboardSDK->GetBatteryDriver()->readBatteryLevel() / 10) + 1, 0x00ffffff); },
-		resumeLeds);
-
-	return false;
-}
-
-template <bool (*func)()>
-void callWithGuard()
-{
-	if (isActionInProgress)
-	{
-		return;
-	}
-	isActionInProgress = true;
-
-	if (func())
-	{
-		isActionInProgress = false;
-	}
+	rgbLedFeature->showBatteryLevel();
 }
 
 void setup()
@@ -134,29 +64,33 @@ void setup()
 	Wire.begin();
 
 	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire);
-	
+
+	rgbLedFeature = new RGBLedFeature(keyboardSDK);
+	bluetoothFeature = new BluetoothFeature(keyboardSDK, rgbLedFeature);
+
 	actionEvaluator = keyboardSDK->GetActionEvaluator();
+
 
 	#ifdef TKL
 
 	if (BluetoothKeyboardDriver::GetInstance() != NULL) {
-		actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 3, new KeyCode[3]{::KK_ESC, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-		actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 3, new KeyCode[3]{::KK_F2, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+		actionEvaluator->registerMatrixAction(triggerBtReset, 3, new KeyCode[3]{::KK_ESC, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+		actionEvaluator->registerMatrixAction(toggleConnection, 3, new KeyCode[3]{::KK_F2, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	}
 
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 3, new KeyCode[3]{::KK_F1, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 3, new KeyCode[3]{::KK_F3, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 3, new KeyCode[3]{::KK_F4, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
+	actionEvaluator->registerMatrixAction(toggleLeds, 3, new KeyCode[3]{::KK_F1, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(randomizeColors, 3, new KeyCode[3]{::KK_F3, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerMatrixAction(showBatteryLevel, 3, new KeyCode[3]{::KK_F4, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
+	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
 	#endif
 
 	#ifdef NUMPAD
-	actionEvaluator->registerMatrixAction(callWithGuard<triggerBtReset>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_SUBTRACT});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleConnection>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_1});
-	actionEvaluator->registerMatrixAction(callWithGuard<toggleLeds>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_0});
-	actionEvaluator->registerMatrixAction(callWithGuard<randomizeColors>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_DOT});
-	actionEvaluator->registerMatrixAction(callWithGuard<showBatteryLevel>, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_ENTER});
-	actionEvaluator->registerTimerAction(90000UL, 0UL, callWithGuard<turnOffLeds>, callWithGuard<turnOnLeds>);
+	actionEvaluator->registerMatrixAction(triggerBtReset, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_SUBTRACT});
+	actionEvaluator->registerMatrixAction(toggleConnection, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_1});
+	actionEvaluator->registerMatrixAction(toggleLeds, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_0});
+	actionEvaluator->registerMatrixAction(randomizeColors, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_PAD_DOT});
+	actionEvaluator->registerMatrixAction(showBatteryLevel, 2, new KeyCode[2]{::KK_NUM_LOCK, ::KK_ENTER});
+	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds>, turnOnLeds);
 	#endif
 	// logger->logDebug(F("\nSetup is done!"));
 }
