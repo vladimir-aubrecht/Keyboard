@@ -2,8 +2,8 @@
 
 #pragma once
 
-#include "Chips/Is31fl3743a.h"
-#include "Chips/Tca9548a.h"
+#include "HAL/Chips/Is31fl3743a.h"
+#include "HAL/Chips/Tca9548a.h"
 #include "HAL/IRGBLedDriver.h"
 
 class RgbLedDriver : public IRGBLedDriver

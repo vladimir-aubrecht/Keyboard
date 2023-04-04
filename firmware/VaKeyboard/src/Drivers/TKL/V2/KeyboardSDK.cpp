@@ -1,6 +1,6 @@
 #if defined(TKL) && defined(V2)
 #include "KeyboardSDK.h"
-#include "Chips/Tca9548a.h"
+#include "HAL/Chips/Tca9548a.h"
 #include "../KeyboardDescriptor.h"
 #include "PinDriver.h"
 #include "RgbLedDriver.h"
