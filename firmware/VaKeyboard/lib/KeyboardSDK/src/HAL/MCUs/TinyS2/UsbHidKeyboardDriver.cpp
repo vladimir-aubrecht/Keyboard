@@ -50,28 +50,4 @@ void UsbHidKeyboardDriver::ResetState()
 	keyboard.releaseAll();
 }
 
-uint8_t UsbHidKeyboardDriver::ScanForModificators(Matrix *matrix, KeyCode **keymapProvider)
-{
-	uint8_t modificators = 0;
-
-	for (uint8_t row = 0; row < matrix->numberOfRows; row++)
-	{
-		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
-		{
-			auto currentKey = keymapProvider[row][column];
-
-			uint8_t isScannedPress = matrix->getBit(row, column);
-
-			if (isScannedPress)
-			{
-				if (currentKey >= 0xE0) // modificator keys
-				{
-					uint8_t bit = (1 << (currentKey - 0xE0));
-					modificators |= bit;
-				}
-			}
-		}
-	}
-}
-
 #endif

@@ -1,16 +1,16 @@
 #pragma once
 
-#ifdef ARDUINO_MICRO
-
-#include "../IKeyboardDriver.h"
+#include "HAL/IKeyboardDriver.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
 
-#include "Drivers/IBatteryDriver.h"
+#include "HAL/IBatteryDriver.h"
 #include "IKeyboardDescriptor.h"
+
 
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
+
 public:
 	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 
@@ -22,5 +22,3 @@ public:
 	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, IKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 	static BluetoothKeyboardDriver* GetInstance();
 };
-
-#endif

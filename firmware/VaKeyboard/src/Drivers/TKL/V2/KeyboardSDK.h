@@ -3,7 +3,7 @@
 
 #include "Wire.h"
 #include "IKeyboardSDK.h"
-#include "Drivers/IRGBLedDriver.h"
+#include "HAL/IRGBLedDriver.h"
 #include "Logger/ILogger.h"
 #include "KeyPressProcessor.h"
 

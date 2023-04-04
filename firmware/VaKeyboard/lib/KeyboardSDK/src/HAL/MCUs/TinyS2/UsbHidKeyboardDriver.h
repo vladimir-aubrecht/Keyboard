@@ -1,15 +1,16 @@
 #pragma once
 
-#ifdef ARDUINO_MICRO
+#ifdef TINYS2
 
-#include "../IKeyboardDriver.h"
+#include "HAL/IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
+#include "USB.h"
+#include "USBHIDKeyboard.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
-	bool isKeyMenuHold = false;	// Temporary hack, will be replaced by status matrix extracted from bluetooth keyboard one layer upper (matrix after debouncing is needed...)
 
 public:
 	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);

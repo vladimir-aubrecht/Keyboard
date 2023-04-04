@@ -2,7 +2,7 @@
 #include "KeyboardSDK.h"
 #include "PinDriver.h"
 #include "RgbLedDriver.h"
-#include "../../../Chips/Tca9548a.h"
+#include "Chips/Tca9548a.h"
 #include "../KeyboardDescriptor.h"
 
 KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire)

@@ -3,9 +3,9 @@
 #pragma once
 
 #include <Arduino.h>
-#include "../../../Chips/Max7301.h"
+#include "Chips/Max7301.h"
 
-#include "Drivers/IPinDriver.h"
+#include "HAL/IPinDriver.h"
 #include "Logger/ILogger.h"
 
 class PinDriver : public IPinDriver

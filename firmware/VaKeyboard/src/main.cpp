@@ -1,7 +1,5 @@
 #include <Arduino.h>
 
-#include "Drivers/SelectiveKeyboardDriver.h"
-
 #if defined(NUMPAD) && defined(V2)
 #include "Drivers/Numpad/V2/KeyboardSDK.h"
 #endif

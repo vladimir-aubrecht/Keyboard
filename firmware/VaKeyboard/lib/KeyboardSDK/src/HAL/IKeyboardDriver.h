@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Arduino.h>
-#include "../Matrix/Matrix.h"
+#include "Matrix/Matrix.h"
 #include "KeyCodes.h"
 
 class IKeyboardDriver

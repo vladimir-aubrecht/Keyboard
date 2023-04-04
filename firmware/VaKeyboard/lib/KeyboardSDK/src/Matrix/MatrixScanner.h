@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Drivers/IPinDriver.h"
+#include "HAL/IPinDriver.h"
 #include "Matrix.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"

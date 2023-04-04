@@ -1,6 +1,4 @@
-#ifdef TINYS2
-
-#include "BluetoothKeyboardDriver.h"
+#include "EmptyBluetoothKeyboardDriver.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	IBatteryDriver *batteryDriver,
@@ -38,5 +36,3 @@ BluetoothKeyboardDriver* BluetoothKeyboardDriver::GetInstance()
 {
 	return NULL;
 }
-
-#endif

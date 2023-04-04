@@ -1,6 +1,6 @@
 #pragma once
 #include <Arduino.h>
-#include "../IKeyboardDescriptor.h"
+#include "IKeyboardDescriptor.h"
 
 class MatrixDebouncer
 {

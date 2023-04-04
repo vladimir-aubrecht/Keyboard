@@ -1,9 +1,9 @@
 #pragma once
 
-#ifdef ARDUINO_MICRO
+#ifdef FEATHER32U4
 
 #include <arduino.h>
-#include "../IBatteryDriver.h"
+#include "HAL/IBatteryDriver.h"
 
 class BatteryDriver : public IBatteryDriver
 {

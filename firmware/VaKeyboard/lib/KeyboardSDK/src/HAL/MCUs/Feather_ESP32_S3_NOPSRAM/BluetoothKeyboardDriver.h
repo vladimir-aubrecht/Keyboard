@@ -1,23 +1,22 @@
 #pragma once
 
-#ifdef PORTENTA_H7
+#ifdef FEATHER_ESP32_S3_NOPSRAM
 
-#include "../IKeyboardDriver.h"
+#include "HAL/IKeyboardDriver.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
 
-#include "Drivers/IBatteryDriver.h"
+#include "HAL/IBatteryDriver.h"
 #include "IKeyboardDescriptor.h"
 
-#include "Mbed_BLE_HID.h"
 //#include "services/HIDKeyboardService.h"
 
 
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
-	static BluetoothKeyboardDriver* instance;
 	//ILogger *logger;
+	static BluetoothKeyboardDriver* instance;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;
 	IKeyboardDescriptor *keyboardDescriptor = NULL;

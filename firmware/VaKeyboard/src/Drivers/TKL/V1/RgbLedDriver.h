@@ -3,8 +3,8 @@
 #pragma once
 
 
-#include "../../../Chips/Is31fl3743a.h"
-#include "Drivers/IRGBLedDriver.h"
+#include "Chips/Is31fl3743a.h"
+#include "HAL/IRGBLedDriver.h"
 
 class RgbLedDriver : public IRGBLedDriver
 {

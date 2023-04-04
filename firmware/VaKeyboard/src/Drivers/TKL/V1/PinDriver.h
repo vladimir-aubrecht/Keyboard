@@ -6,7 +6,7 @@
 #include <Arduino.h>
 #include <Adafruit_MCP23X17.h>
 
-#include "Drivers/IPinDriver.h"
+#include "HAL/IPinDriver.h"
 #include "Logger/ILogger.h"
 
 class PinDriver : public IPinDriver

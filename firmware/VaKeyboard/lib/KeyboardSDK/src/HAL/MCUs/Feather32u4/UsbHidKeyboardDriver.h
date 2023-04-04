@@ -1,19 +1,15 @@
 #pragma once
 
-#ifdef TINYS2
+#ifdef FEATHER32U4
 
-#include "../IKeyboardDriver.h"
+#include "HAL/IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
-#include "USB.h"
-#include "USBHIDKeyboard.h"
 
 class UsbHidKeyboardDriver : public IKeyboardDriver
 {
 private:
 	IKeyboardDescriptor *keyboardDescriptor = NULL;
-
-private:
-	uint8_t ScanForModificators(Matrix *matrix, KeyCode **keymapProvider);
+	bool isKeyMenuHold = false;	// Temporary hack, will be replaced by status matrix extracted from bluetooth keyboard one layer upper (matrix after debouncing is needed...)
 
 public:
 	UsbHidKeyboardDriver(IKeyboardDescriptor *keyboardDescriptor);

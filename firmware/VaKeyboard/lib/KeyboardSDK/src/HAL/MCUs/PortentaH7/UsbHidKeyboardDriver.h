@@ -2,7 +2,7 @@
 
 #ifdef PORTENTA_H7
 
-#include "../IKeyboardDriver.h"
+#include "HAL/IKeyboardDriver.h"
 #include "IKeyboardDescriptor.h"
 
 
