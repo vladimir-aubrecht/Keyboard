@@ -26,6 +26,16 @@ KeyCode ***BaseKeyboardDescriptor::getKeyMap()
     return keymaps;
 }
 
+FeatureMacro** BaseKeyboardDescriptor::getFeatureMacros()
+{
+    return this->featureMacros;
+}
+
+uint8_t BaseKeyboardDescriptor::getFeatureMacroCount()
+{
+    return this->featureMacroCount;
+}
+
 KeyType BaseKeyboardDescriptor::getKeyType(uint8_t layer, uint8_t row, uint8_t column)
 {
     if (layer == 1 && row == 0)	// This is hack as I mostly test on Feather32u4 and I don't have enough of flash storage to send whole map ...

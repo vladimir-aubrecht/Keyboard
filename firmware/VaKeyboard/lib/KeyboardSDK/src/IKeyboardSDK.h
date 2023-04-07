@@ -1,5 +1,6 @@
 #pragma once
 #include "KeyPressProcessor.h"
+#include "MacroEvaluator.h"
 #include "HAL/IRGBLedDriver.h"
 #include "HAL/IBatteryDriver.h"
 
@@ -14,14 +15,20 @@ class IKeyboardSDK
         IKeyboardDriver* primaryKeyboardDriver = NULL;
         IKeyboardDriver* activeKeyboardDriver = NULL;
         IRGBLedDriver* rgbLedDriver = NULL;
-        ActionEvaluator* actionEvaluator = NULL;
         KeyPressProcessor* keypressProcessor = NULL;
+        MacroEvaluator* macroEvaluator = NULL;
+        FeatureScheduller* featureScheduller = NULL;
 
 
     public:
-        ActionEvaluator* GetActionEvaluator()
+        FeatureScheduller* GetFeatureScheduller()
         {
-            return this->actionEvaluator;
+            return this->featureScheduller;
+        }
+
+        MacroEvaluator* GetMacroEvaluator()
+        {
+            return this->macroEvaluator;
         }
 
         KeyPressProcessor* GetKeyPressProcessor()

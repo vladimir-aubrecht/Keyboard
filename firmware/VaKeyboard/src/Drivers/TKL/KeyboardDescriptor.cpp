@@ -1,11 +1,29 @@
 #if defined(TKL)
 
 #include "KeyboardDescriptor.h"
+#include "Features/BluetoothFeature.h"
+#include "Features/RGBLedFeature.h"
 
 KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns) : BaseKeyboardDescriptor(numberOfRows, numberOfColumns)
 {
 	this->keymaps = this->createKeyMap();
 	this->coordMap = this->createCoordinatesMap(this->keymaps);
+	this->featureMacros = this->createFeatureMacros();
+
+}
+
+FeatureMacro** KeyboardDescriptor::createFeatureMacros()
+{
+	this->featureMacroCount = 5;
+
+	featureMacros = new FeatureMacro*[this->featureMacroCount] {
+		new FeatureMacro(RGBLedFeatures::RGBLedToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F1}),
+		new FeatureMacro(RGBLedFeatures::RGBLedRandomizeColors, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F3}),
+		new FeatureMacro(RGBLedFeatures::RGBLedShowBatteryLevel, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F4}),
+		new FeatureMacro(RGBLedFeatures::RGBLedDelayTurnOff, 10000, 1),
+		new FeatureMacro(BluetoothFeatures::BluetoothReset, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_ESC}),
+		new FeatureMacro(BluetoothFeatures::BluetoothToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F2}),
+	};
 }
 
 KeyCode *** KeyboardDescriptor::createKeyMap()

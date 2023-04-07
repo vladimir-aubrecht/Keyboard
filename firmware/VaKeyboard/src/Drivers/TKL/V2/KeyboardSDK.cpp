@@ -17,7 +17,8 @@ KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_
 
     BaseKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
     
-    this->actionEvaluator = new ActionEvaluator(keyboardDescriptor, logger);
+    this->featureScheduller = new FeatureScheduller();
+    this->macroEvaluator = new MacroEvaluator(keyboardDescriptor, this->featureScheduller);
     this->primaryKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
     this->activeKeyboardDriver = this->primaryKeyboardDriver;
 
@@ -35,7 +36,7 @@ KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_
 		new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
 		this->activeKeyboardDriver,
 		keyboardDescriptor,
-		this->actionEvaluator,
+        this->macroEvaluator,
 		this->logger);
 
 }

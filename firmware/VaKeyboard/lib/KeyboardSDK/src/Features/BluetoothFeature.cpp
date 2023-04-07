@@ -1,12 +1,8 @@
 #include "BluetoothFeature.h"
 
-IKeyboardSDK* BluetoothFeature::keyboardSDK = NULL;
-RGBLedFeature* BluetoothFeature::rgbLedFeature = NULL;
-
-BluetoothFeature::BluetoothFeature(IKeyboardSDK* keyboardSDK, RGBLedFeature* rgbLedFeature)
+BluetoothFeature::BluetoothFeature(IKeyboardSDK* keyboardSDK)
 {
     this->keyboardSDK = keyboardSDK;
-    this->rgbLedFeature = rgbLedFeature;
 }
 
 void BluetoothFeature::toggleConnection()
@@ -18,33 +14,41 @@ void BluetoothFeature::toggleConnection()
 
     this->blockFeatureProcessing();
 
-    this->rgbLedFeature->enforceOff();
-
 	this->keyboardSDK->GetActiveKeyboardDriver()->ResetState();
 
 	if (((SelectiveKeyboardDriver*)keyboardSDK->GetActiveKeyboardDriver())->SwapKeyboards() == keyboardSDK->GetPrimaryKeyboardDriver())
 	{
-        this->keyboardSDK->GetActionEvaluator()->registerTemporaryTimerAction(
-			1000, []()
-			{ keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, 2, 0x00ffffff); },
-			noTriggerKeyboardBlink);
+        this->keyboardSDK->GetFeatureScheduller()->setTtlSinceTime(RGBLedFeatures::RGBLedBlinkUSBSelection, millis(), 1000);
 	}
 	else
 	{
-		this->keyboardSDK->GetActionEvaluator()->registerTemporaryTimerAction(
-			1000, []()
-			{ keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, 3, 0x00ffffff); },
-			noTriggerKeyboardBlink);
+        this->keyboardSDK->GetFeatureScheduller()->setTtlSinceTime(RGBLedFeatures::RGBLedBlinkBTSelection, millis(), 1000);
 	}
-}
-
-void BluetoothFeature::noTriggerKeyboardBlink()
-{
-    RGBLedFeature::rollbackPreviousLedStateEnforcement();
-    BluetoothFeature::enableFeatureProcessing();
+    
+    this->keyboardSDK->GetFeatureScheduller()->setActivationTime(RGBLedFeatures::RGBLedResume, millis() + 1000);
 }
 
 void BluetoothFeature::triggerReset()
 {
     this->keyboardSDK->GetActiveKeyboardDriver()->ResetPairing();
+}
+
+void BluetoothFeature::evaluate(uint8_t featureId, unsigned long activationTime, uint16_t duration)
+{
+    if (BluetoothKeyboardDriver::GetInstance() != NULL)
+    {
+        switch (featureId)
+        {
+        case BluetoothFeatures::BluetoothToggle:
+            this->toggleConnection();
+            break;
+        
+        case BluetoothFeatures::BluetoothReset:
+            this->triggerReset();
+            break;
+
+        default:
+            break;
+        }
+    }
 }

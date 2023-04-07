@@ -4,7 +4,7 @@ bool BaseFeature::areFeaturesDisabledFlag = false;
 
 BaseFeature::BaseFeature()
 {
-
+    
 }
 
 bool BaseFeature::areFeaturesDisabled()

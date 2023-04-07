@@ -6,6 +6,21 @@ KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfCol
 {
 	this->keymaps = this->createKeyMap();
 	this->coordMap = this->createCoordinatesMap(this->keymaps);
+	this->featureMacros = this->createFeatureMacros();
+}
+
+FeatureMacro** KeyboardDescriptor::createFeatureMacros()
+{
+	this->featureMacroCount = 5;
+
+	featureMacros = new FeatureMacro*[this->featureMacroCount] {
+		new FeatureMacro(RGBLedFeatures::RGBLedToggle, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_0 }),
+		new FeatureMacro(RGBLedFeatures::RGBLedRandomizeColors, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_DOT }),
+		new FeatureMacro(RGBLedFeatures::RGBLedShowBatteryLevel, 2, new KeyCode[2] { KK_NUM_LOCK, KK_ENTER }),
+		new FeatureMacro(RGBLedFeatures::RGBLedDelayTurnOff, 10000, 1),
+		new FeatureMacro(BluetoothFeatures::BluetoothReset, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_SUBTRACT }),
+		new FeatureMacro(BluetoothFeatures::BluetoothToggle, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_1 }),
+	};
 }
 
 KeyCode *** KeyboardDescriptor::createKeyMap()

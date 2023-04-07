@@ -1,9 +1,5 @@
 #include "RGBLedFeature.h"
 
-IKeyboardSDK* RGBLedFeature::keyboardSDK = NULL;
-bool RGBLedFeature::enforceDisabledLeds = false;
-bool RGBLedFeature::previousEnforceDisabledLeds = false;
-
 RGBLedFeature::RGBLedFeature(IKeyboardSDK* keyboardSDK)
 {
     this->keyboardSDK = keyboardSDK;
@@ -33,14 +29,16 @@ void RGBLedFeature::enforceOn()
 {
     this->previousEnforceDisabledLeds = this->enforceDisabledLeds;
     this->enforceDisabledLeds = false;
-    this->turnOn();
+    
+    this->keyboardSDK->GetRGBLedDriver()->turnOn();
 }
 
 void RGBLedFeature::enforceOff()
 {
     this->previousEnforceDisabledLeds = this->enforceDisabledLeds;
     this->enforceDisabledLeds = true;
-    this->turnOff();
+
+    this->keyboardSDK->GetRGBLedDriver()->turnOff();
 }
 
 void RGBLedFeature::randomizeColors()
@@ -75,12 +73,15 @@ void RGBLedFeature::showBatteryLevel()
 
     enforceOff();
 
-	this->keyboardSDK->GetActionEvaluator()->registerTemporaryTimerAction(2000, triggerBatteryBlink, noTriggerBatteryBlink);
+    this->keyboardSDK->GetFeatureScheduller()->setTtlSinceTime(RGBLedFeatures::RGBLedBlinkBattery, millis(), 2000);
+    this->keyboardSDK->GetFeatureScheduller()->setActivationTime(RGBLedFeatures::RGBLedResume, millis() + 2000);
 }
 
-void RGBLedFeature::triggerBatteryBlink()
+void RGBLedFeature::blinkKey(uint8_t keyColumn)
 {
-    keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, ( keyboardSDK->GetBatteryDriver()->readBatteryLevel() / 10) + 1, 0x00ffffff); 
+    this->enforceOff();
+
+    keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, keyColumn, 0x00ffffff);
 }
 
 void RGBLedFeature::rollbackPreviousLedStateEnforcement()
@@ -88,9 +89,73 @@ void RGBLedFeature::rollbackPreviousLedStateEnforcement()
     enforceDisabledLeds = previousEnforceDisabledLeds;
 }
 
-void RGBLedFeature::noTriggerBatteryBlink()
+void RGBLedFeature::resume()
 {
     RGBLedFeature::rollbackPreviousLedStateEnforcement();
     RGBLedFeature::enableFeatureProcessing();
 }
 
+void RGBLedFeature::evaluate(uint8_t featureId, unsigned long activationTime, uint16_t duration)
+{
+    switch (featureId)
+    {
+    case RGBLedFeatures::RGBLedTurnOn:
+        this->turnOn();
+        break;
+
+    case RGBLedFeatures::RGBLedTurnOff:
+        this->turnOn();
+        break;
+
+    case RGBLedFeatures::RGBLedToggle:
+        this->toggle();
+        break;
+
+    case RGBLedFeatures::RGBLedRandomizeColors:
+        this->randomizeColors();
+        break;
+
+    case RGBLedFeatures::RGBLedShowBatteryLevel:
+        this->showBatteryLevel();
+        break;
+
+    case RGBLedFeatures::RGBLedBlinkBattery:
+        keyboardSDK->GetRGBLedDriver()->blink(0xff, 0, ( keyboardSDK->GetBatteryDriver()->readBatteryLevel() / 10) + 1, 0x00ffffff); 
+        break;
+
+    case RGBLedFeatures::RGBLedResume:
+        this->resume();
+        break;
+
+    case RGBLedFeatures::RGBLedBlinkUSBSelection:
+        this->blinkKey(2);
+        break;
+
+    case RGBLedFeatures::RGBLedBlinkBTSelection:
+        this->blinkKey(3);
+        break;
+
+    case BaseFeatures::BaseKeyPress:
+        lastKeyPressTime = millis();
+        break;
+
+    case RGBLedFeatures::RGBLedDelayTurnOff:
+        if (lastKeyPressTime > 0)
+        {
+            if (this->lastKeyPressTime + duration < millis())
+            {
+                enforceOff();
+            }
+            else
+            {
+                enforceOn();
+            }
+
+            this->keyboardSDK->GetFeatureScheduller()->setActivationTime(RGBLedFeatures::RGBLedTurnOff, this->lastKeyPressTime + duration);
+        }
+        break;
+    
+    default:
+        break;
+    }
+}
