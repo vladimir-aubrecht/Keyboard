@@ -26,22 +26,23 @@ void setup()
 
 	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire);
 
-	auto rgbLedFeature = new RGBLedFeature(keyboardSDK);
+	/*auto rgbLedFeature = new RGBLedFeature(keyboardSDK);
 	auto bluetoothFeature = new BluetoothFeature(keyboardSDK);
 
 	auto macroEvaluator = keyboardSDK->GetMacroEvaluator();
 	macroEvaluator->registerFeature(rgbLedFeature);
-	macroEvaluator->registerFeature(bluetoothFeature);
+	macroEvaluator->registerFeature(bluetoothFeature);*/
 }
 
 void loop()
 {
-	keyboardSDK->GetKeyPressProcessor()->scan();
+	//keyboardSDK->GetKeyPressProcessor()->scan();
+	Serial.println("test\n");
 
-	uint8_t batteryLevel = keyboardSDK->GetBatteryDriver()->readBatteryLevel();
+	// uint8_t batteryLevel = keyboardSDK->GetBatteryDriver()->readBatteryLevel();
 
-	if (batteryLevel < 15)
-	{
-		keyboardSDK->GetRGBLedDriver()->setColor(0, 0, 0xff, 0, 0);
-	}
+	// if (batteryLevel < 15)
+	// {
+	// 	keyboardSDK->GetRGBLedDriver()->setColor(0, 0, 0xff, 0, 0);
+	// }
 }

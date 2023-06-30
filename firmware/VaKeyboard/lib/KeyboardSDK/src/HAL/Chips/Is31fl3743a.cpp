@@ -44,7 +44,7 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 
 	Adafruit_BusIO_Register CONF(i2c_dev, 0x00);
 	CONF.write(this->columnMask); // normal mode + enabled columns
-	
+return;	
 	Adafruit_BusIO_Register PDU(i2c_dev, 0x02);
 	PDU.write(0b00110011);
 

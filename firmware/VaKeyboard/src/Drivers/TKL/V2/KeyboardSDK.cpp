@@ -15,29 +15,29 @@ KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_
     Tca9548a* tca = new Tca9548a(0x70, wire, this->logger);
     this->rgbLedDriver = new RgbLedDriver(logger, this->numberOfRows, this->numberOfColumns, tca);
 
-    BaseKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
+    //BaseKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
     
-    this->featureScheduller = new FeatureScheduller();
-    this->macroEvaluator = new MacroEvaluator(keyboardDescriptor, this->featureScheduller);
-    this->primaryKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
-    this->activeKeyboardDriver = this->primaryKeyboardDriver;
+    // this->featureScheduller = new FeatureScheduller();
+    // this->macroEvaluator = new MacroEvaluator(keyboardDescriptor, this->featureScheduller);
+    // this->primaryKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
+    // this->activeKeyboardDriver = this->primaryKeyboardDriver;
 
-    IKeyboardDriver* btKeyboardDriver = BluetoothKeyboardDriver::Create(batteryDriver, keyboardDescriptor, this->logger);
+    // IKeyboardDriver* btKeyboardDriver = BluetoothKeyboardDriver::Create(batteryDriver, keyboardDescriptor, this->logger);
 
-    if (btKeyboardDriver != NULL)
-    {
-        this->activeKeyboardDriver = new SelectiveKeyboardDriver(this->activeKeyboardDriver, btKeyboardDriver);
-    }
+    // if (btKeyboardDriver != NULL)
+    // {
+    //     this->activeKeyboardDriver = new SelectiveKeyboardDriver(this->activeKeyboardDriver, btKeyboardDriver);
+    // }
 
-    IPinDriver* pinDriver = new PinDriver(new Max7301(csPin, mosiPin, sclkPin, misoPin), logger);
+    // IPinDriver* pinDriver = new PinDriver(new Max7301(csPin, mosiPin, sclkPin, misoPin), logger);
 
-    this->keypressProcessor = new KeyPressProcessor(
-		new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger),
-		new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
-		this->activeKeyboardDriver,
-		keyboardDescriptor,
-        this->macroEvaluator,
-		this->logger);
+    // this->keypressProcessor = new KeyPressProcessor(
+	// 	new MatrixScanner(pinDriver, numberOfRows, numberOfColumns, logger),
+	// 	new MatrixEvaluator(new MatrixDebouncer(keyboardDescriptor, 2)),
+	// 	this->activeKeyboardDriver,
+	// 	keyboardDescriptor,
+    //     this->macroEvaluator,
+	// 	this->logger);
 
 }
 
