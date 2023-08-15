@@ -9,15 +9,9 @@
 class RgbLedDriver : public IRGBLedDriver
 {
 private:
-	Is31fl3743a *controller1 = NULL;
-	Is31fl3743a *controller2 = NULL;
-	Is31fl3743a *controller3 = NULL;
-	Is31fl3743a *controller4 = NULL;
-	Is31fl3743a *controller5 = NULL;
-	Is31fl3743a *controller6 = NULL;
-	Is31fl3743a *controller7 = NULL;
-	Is31fl3743a *controller8 = NULL;
-	Is31fl3743a *controller9 = NULL;
+	Is31fl3743a **controllers = NULL;
+	uint8_t controllersCount = 9;
+	Tca9548a* tca = NULL;
 	ILogger *logger = NULL;
 	uint8_t rowsCount = 0;
 	uint8_t columnCount = 0;

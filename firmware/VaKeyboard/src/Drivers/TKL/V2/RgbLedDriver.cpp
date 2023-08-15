@@ -7,26 +7,28 @@ RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCou
 	this->logger = logger;
 	this->rowsCount = rowsCount;
 	this->columnCount = columnCount;
+	this->tca = tca;
 
 	tca->selectChannel(0);
 
-	uint8_t maxCurrent = 0x1F;
-	this->controller1 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller2 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller3 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller4 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	uint8_t maxCurrent = 0x2F;
+	this->controllers = new Is31fl3743a*[this->controllersCount];
+	this->controllers[0] = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[1] = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[2] = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[3] = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
 
 	tca->selectChannel(1);
 
-	this->controller5 = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller6 = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller7 = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
-	this->controller8 = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[4] = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[5] = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[6] = new Is31fl3743a(0x2C, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
+	this->controllers[7] = new Is31fl3743a(0x2F, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
 
 	tca->selectChannel(2);
-	this->controller9 = new Is31fl3743a(0x20, &Wire, logger, 0b10101001, 6, 1, maxCurrent);
+	this->controllers[8] = new Is31fl3743a(0x20, &Wire, logger, 0b10101001, 6, 1, maxCurrent);
 
-}
+}                                                                               
 
 void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color)
 {
@@ -40,14 +42,9 @@ void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t 
 
 void RgbLedDriver::setColor(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity)
 {
-	if (y < 9)
-	{
-		controller1->setLedIntensities(x, y, redIntensity, greenIntensity, blueIntensity);
-	}
-	else
-	{
-		controller2->setLedIntensities(x, y - 9, redIntensity, greenIntensity, blueIntensity);
-	}
+	uint8_t index = y / 2;
+	this->tca->selectChannel(index / 4);
+	this->controllers[index]->setLedIntensities(x, y % 2, redIntensity, greenIntensity, blueIntensity);
 }
 
 void RgbLedDriver::randomizeColors()
@@ -68,26 +65,28 @@ void RgbLedDriver::randomizeColors()
 
 void RgbLedDriver::turnOn()
 {
-	if (this->controller1->getGlobalIntensity() == 0)
+	for (uint8_t i = 0; i < this->controllersCount; i++)
 	{
-		this->controller1->setGlobalIntensity(0xff);
-	}
-
-	if (this->controller2->getGlobalIntensity() == 0)
-	{
-		this->controller2->setGlobalIntensity(0xff);
+		this->tca->selectChannel(i / 4);
+		if (this->controllers[i]->getGlobalIntensity() == 0)
+		{
+			this->controllers[i]->setGlobalIntensity(0xff);
+		}
 	}
 }
 
 void RgbLedDriver::turnOff()
 {
-	this->controller1->setGlobalIntensity(0);
-	this->controller2->setGlobalIntensity(0);
+	for (uint8_t i = 0; i < this->controllersCount; i++)
+	{
+		this->tca->selectChannel(i / 4);
+		this->controllers[i]->setGlobalIntensity(0);
+	}
 }
 
 bool RgbLedDriver::toggle()
 {
-	if (this->controller1->getGlobalIntensity() > 0)
+	if (this->controllers[0]->getGlobalIntensity() > 0)
 	{
 		turnOff();
 		return false;

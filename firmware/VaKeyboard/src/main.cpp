@@ -81,7 +81,7 @@ void setup()
 	actionEvaluator->registerMatrixAction(toggleLeds, 3, new KeyCode[3]{::KK_F1, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(randomizeColors, 3, new KeyCode[3]{::KK_F3, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
 	actionEvaluator->registerMatrixAction(showBatteryLevel, 3, new KeyCode[3]{::KK_F4, ::KK_LEFT_CTRL, ::KK_LEFT_GUI});
-	actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
+	//actionEvaluator->registerTimerAction(90000UL, 0UL, turnOffLeds, turnOnLeds);
 	#endif
 
 	#ifdef NUMPAD
