@@ -52,7 +52,7 @@ return;
 	TS.write(0b00000110);	// temperature control: > 120 C will decrease current to LEDs to 55%.
 
 	Adafruit_BusIO_Register SS(i2c_dev, 0x25);
-	SS.write(0b00000001); // configure timing to 1200 us
+	SS.write(0b00000011); // configure timing to 660 us
 }
 
 uint8_t Is31fl3743a::getGlobalIntensity()
@@ -102,7 +102,6 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 
 void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity)
 {
-	return;
 	Adafruit_BusIO_Register CRWL(this->i2c_dev, 0xFE);
 	Adafruit_BusIO_Register CR(this->i2c_dev, 0xFD);
 
