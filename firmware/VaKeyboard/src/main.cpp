@@ -36,13 +36,13 @@ void setup()
 
 void loop()
 {
-	//keyboardSDK->GetKeyPressProcessor()->scan();
+	keyboardSDK->GetKeyPressProcessor()->scan();
 	Serial.println("test\n");
 
-	// uint8_t batteryLevel = keyboardSDK->GetBatteryDriver()->readBatteryLevel();
+	uint8_t batteryLevel = keyboardSDK->GetBatteryDriver()->readBatteryLevel();
 
-	// if (batteryLevel < 15)
-	// {
-	// 	keyboardSDK->GetRGBLedDriver()->setColor(0, 0, 0xff, 0, 0);
-	// }
+	if (batteryLevel < 15)
+	{
+		keyboardSDK->GetRGBLedDriver()->setColor(0, 0, 0xff, 0, 0);
+	}
 }
