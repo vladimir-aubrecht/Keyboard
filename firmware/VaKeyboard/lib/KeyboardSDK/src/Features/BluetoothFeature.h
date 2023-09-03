@@ -20,5 +20,5 @@ class BluetoothFeature : public BaseFeature
     public:
         BluetoothFeature(IKeyboardSDK* keyboardSDK);
 
-        virtual void evaluate(uint8_t featureId, unsigned long activationTime, uint16_t duration);
+        virtual void evaluate(uint8_t featureId);
 };

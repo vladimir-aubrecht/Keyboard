@@ -2,21 +2,34 @@
 #include "Matrix/Matrix.h"
 #include "BaseKeyboardDescriptor.h"
 #include "Features/BaseFeature.h"
-#include "Features/FeatureScheduller.h"
 
 class MacroEvaluator
 {
     private:
         BaseKeyboardDescriptor* keyboardDescriptor;
         BaseFeature** registeredFeatures = NULL;
-        FeatureScheduller* featureScheduller = NULL;
-        uint8_t registeredFeatureCount;
+        uint8_t registeredFeatureCount = 0;
 
-        void evaluateAllFeatures(uint8_t featureId, unsigned long activationTime, uint16_t duration);
+        void evaluateAllFeatures(uint8_t featureId);
 
     public:
-        MacroEvaluator(BaseKeyboardDescriptor* keyboardDescriptor, FeatureScheduller* featureScheduller);
+        struct MacroEvaluatorContext
+        {
+            public:
+                unsigned long LastKeyPressTime;
+
+                MacroEvaluatorContext()
+                {
+                    LastKeyPressTime = millis();
+                }
+
+        };
+ 
+        MacroEvaluator(BaseKeyboardDescriptor* keyboardDescriptor);
 
         bool evaluate(Matrix *matrix);
         void registerFeature(BaseFeature* feature);
+
+    private:
+        MacroEvaluatorContext* context;
 };

@@ -29,7 +29,7 @@ void KeyPressProcessor::scan()
 
 		if (!this->macroEvaluator->evaluate(matrix))
 		{
-			this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix);
+		 	this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix);
 		}
 
 		// sendKeyTime = millis();

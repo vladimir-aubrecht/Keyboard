@@ -40,10 +40,9 @@ Matrix *MatrixScanner::scanKeyPressMatrix()
 
 	// if (this->logger->isEnabled())
 	//{
-	  char *sm = Convertors::toString(matrix);
-		Serial.println(sm);
+	//  char *sm = Convertors::toString(matrix);
 	//  this->logger->logDebug(sm);
-	  delete sm;
+	//  delete sm;
 	//}
 
 	return matrix;

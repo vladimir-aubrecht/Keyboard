@@ -17,15 +17,8 @@ class IKeyboardSDK
         IRGBLedDriver* rgbLedDriver = NULL;
         KeyPressProcessor* keypressProcessor = NULL;
         MacroEvaluator* macroEvaluator = NULL;
-        FeatureScheduller* featureScheduller = NULL;
-
 
     public:
-        FeatureScheduller* GetFeatureScheduller()
-        {
-            return this->featureScheduller;
-        }
-
         MacroEvaluator* GetMacroEvaluator()
         {
             return this->macroEvaluator;

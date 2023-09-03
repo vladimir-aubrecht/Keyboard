@@ -1,9 +1,9 @@
 #include "MacroEvaluator.h"
 
-MacroEvaluator::MacroEvaluator(BaseKeyboardDescriptor* keyboardDescriptor, FeatureScheduller* featureScheduller)
+MacroEvaluator::MacroEvaluator(BaseKeyboardDescriptor* keyboardDescriptor)
 {
     this->keyboardDescriptor = keyboardDescriptor;
-    this->featureScheduller = featureScheduller;
+    this->context = new MacroEvaluatorContext();
 }
 
 void MacroEvaluator::registerFeature(BaseFeature* feature)
@@ -27,27 +27,19 @@ void MacroEvaluator::registerFeature(BaseFeature* feature)
 
     this->registeredFeatures[this->registeredFeatureCount - 1] = feature;
     
-    uint8_t macroCount = this->keyboardDescriptor->getFeatureMacroCount();
-    FeatureMacro** featureMacro = this->keyboardDescriptor->getFeatureMacros();
-    
-    for (uint8_t i = 0; i < macroCount; i++)
-    {
-        if (featureMacro[i]->activationTime > 0)
-        {
-            this->featureScheduller->setActivationTime(featureMacro[i]->featureId, featureMacro[i]->activationTime);
-        }
-
-        if (featureMacro[i]->duration > 0)
-        {
-            this->featureScheduller->setActivationTime(featureMacro[i]->featureId, featureMacro[i]->duration);
-        }
-    }
-
     delete backup;
 }
 
 bool MacroEvaluator::evaluate(Matrix *matrix)
 {
+    for (uint8_t row = 0; row < matrix->numberOfRows; row++)
+    {
+        if (matrix->matrixData[row] > 0)
+        {
+            this->context->LastKeyPressTime = millis();
+        }
+    }
+
     bool wasAnythingTriggered = false;
 
     auto coordinateMap = this->keyboardDescriptor->getCoordinatesMap();
@@ -58,49 +50,46 @@ bool MacroEvaluator::evaluate(Matrix *matrix)
     {
         auto macro = featureMacro[macroIndex];
 
-        bool isAllPressed = macro->keyCodesCount > 0;
-        for (uint8_t keyCodeIndex = 0; keyCodeIndex < macro->keyCodesCount; keyCodeIndex++)
+        if (macro->keyCodesCount > 0)
         {
-            auto keyCode = macro->keyCodes[keyCodeIndex];
-            bool isPressed = matrix->getBit(coordinateMap[keyCode]->getRow(), coordinateMap[keyCode]->getColumn());
+            bool isAllPressed = true;
+            for (uint8_t keyCodeIndex = 0; keyCodeIndex < macro->keyCodesCount; keyCodeIndex++)
+            {
+                auto keyCode = macro->keyCodes[keyCodeIndex];
+                bool isPressed = matrix->getBit(coordinateMap[keyCode]->getRow(), coordinateMap[keyCode]->getColumn());
 
-            isAllPressed &= isPressed;
+                isAllPressed &= isPressed;
+            }
+
+            if (isAllPressed)
+            {
+                this->evaluateAllFeatures(macro->featureId);
+
+                wasAnythingTriggered = true;
+            }
         }
-
-        if (isAllPressed)
+        else
         {
-            this->evaluateAllFeatures(macro->featureId, macro->activationTime, macro->duration);
+            unsigned long now = millis();
 
-            wasAnythingTriggered = true;
-        }
-    }
-
-    for (uint8_t i = 0; i < this->featureScheduller->getSchedullerSize(); i++)
-    {
-        if (this->featureScheduller->isFeatureActive(i))
-        {
-            auto duration = this->featureScheduller->getFeatureDuration(i);
-            this->evaluateAllFeatures(i, 0, duration);
-            
-            wasAnythingTriggered = true;
-        }
-    }
-
-    for (uint8_t row = 0; row < matrix->numberOfRows; row++)
-    {
-        if (matrix->matrixData[row] > 0)
-        {
-            this->evaluateAllFeatures(BaseFeatures::BaseKeyPress, 0, 0);
+            if (now >= this->context->LastKeyPressTime + macro->activationTimeSinceLastKeyPress)
+            {
+                this->evaluateAllFeatures(macro->featureId);
+            }
+            else
+            {
+                this->evaluateAllFeatures(macro->otherwiseFeatureId);
+            }
         }
     }
 
     return wasAnythingTriggered;
 }
 
-void MacroEvaluator::evaluateAllFeatures(uint8_t featureId, unsigned long activationTime, uint16_t duration)
+void MacroEvaluator::evaluateAllFeatures(uint8_t featureId)
 {
     for (uint8_t i = 0; i < this->registeredFeatureCount; i++)
     {
-        this->registeredFeatures[i]->evaluate(featureId, activationTime, duration);
+        this->registeredFeatures[i]->evaluate(featureId);
     }
 }

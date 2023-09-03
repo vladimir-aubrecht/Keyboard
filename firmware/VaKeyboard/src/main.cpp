@@ -25,7 +25,6 @@ void setup()
 	Wire.begin();
 
 	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire);
-
 	auto rgbLedFeature = new RGBLedFeature(keyboardSDK);
 	auto bluetoothFeature = new BluetoothFeature(keyboardSDK);
 
@@ -37,7 +36,6 @@ void setup()
 void loop()
 {
 	keyboardSDK->GetKeyPressProcessor()->scan();
-	Serial.println("test\n");
 
 	uint8_t batteryLevel = keyboardSDK->GetBatteryDriver()->readBatteryLevel();
 

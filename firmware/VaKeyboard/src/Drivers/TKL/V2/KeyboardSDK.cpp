@@ -8,17 +8,13 @@
 KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire)
 {
     this->logger = logger;
-
-    this->logger = NULL;
     this->batteryDriver = new BatteryDriver();
     
     Tca9548a* tca = new Tca9548a(0x70, wire, this->logger);
     this->rgbLedDriver = new RgbLedDriver(logger, this->numberOfRows, this->numberOfColumns, tca);
 
     BaseKeyboardDescriptor* keyboardDescriptor = new KeyboardDescriptor(numberOfRows, numberOfColumns);
-
-    this->featureScheduller = new FeatureScheduller();
-    this->macroEvaluator = new MacroEvaluator(keyboardDescriptor, this->featureScheduller);
+    this->macroEvaluator = new MacroEvaluator(keyboardDescriptor);
     this->primaryKeyboardDriver = new UsbHidKeyboardDriver(keyboardDescriptor);
     this->activeKeyboardDriver = this->primaryKeyboardDriver;
 
@@ -38,7 +34,6 @@ KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_
 		keyboardDescriptor,
         this->macroEvaluator,
 		this->logger);
-
 }
 
 #endif

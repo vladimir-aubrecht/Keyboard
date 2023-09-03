@@ -14,13 +14,13 @@ KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfCol
 
 FeatureMacro** KeyboardDescriptor::createFeatureMacros()
 {
-	this->featureMacroCount = 5;
+	this->featureMacroCount = 6;
 
-	featureMacros = new FeatureMacro*[this->featureMacroCount] {
+	return new FeatureMacro*[this->featureMacroCount] {
 		new FeatureMacro(RGBLedFeatures::RGBLedToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F1}),
 		new FeatureMacro(RGBLedFeatures::RGBLedRandomizeColors, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F3}),
 		new FeatureMacro(RGBLedFeatures::RGBLedShowBatteryLevel, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F4}),
-		new FeatureMacro(RGBLedFeatures::RGBLedDelayTurnOff, 10000, 1),
+		new FeatureMacro(RGBLedFeatures::RGBLedTurnOff, RGBLedFeatures::RGBLedTurnOn, 10000),
 		new FeatureMacro(BluetoothFeatures::BluetoothReset, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_ESC}),
 		new FeatureMacro(BluetoothFeatures::BluetoothToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F2}),
 	};
@@ -52,7 +52,7 @@ KeyCode *** KeyboardDescriptor::createKeyMap()
 
 uint8_t KeyboardDescriptor::getSelectedLayer(Matrix *pressedKeysMatrix)
 {
-	return pressedKeysMatrix->getBit(coordMap[KK_MENU - 0x76]->getRow(), coordMap[KK_MENU - 0x76]->getColumn());
+	return pressedKeysMatrix->getBit(coordMap[KK_MENU]->getRow(), coordMap[KK_MENU]->getColumn());
 }
 
 uint8_t KeyboardDescriptor::getLayersCount()
