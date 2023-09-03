@@ -8,21 +8,21 @@
 #include "BaseKeyboardDescriptor.h"
 #include "Logger/ILogger.h"
 #include "Logger/NullLogger.h"
-#include "ActionEvaluator.h"
+#include "MacroEvaluator.h"
 
 class KeyPressProcessor
 {
 private:
 	MatrixScanner *matrixScanner;
 	MatrixEvaluator *matrixEvaluator;
-	ActionEvaluator *actionEvaluator;
 	IKeyboardDriver *keyboardDriver;
 	BaseKeyboardDescriptor *keyboardDescriptor;
+	MacroEvaluator* macroEvaluator;
 	//ILogger *logger;
 
 	Matrix *previousMatrix = NULL;
 
 public:
-	KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, BaseKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger);
+	KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, BaseKeyboardDescriptor *keyboardDescriptor, MacroEvaluator* macroEvaluator, ILogger *logger);
 	void scan();
 };

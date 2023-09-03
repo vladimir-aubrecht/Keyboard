@@ -26,6 +26,16 @@ KeyCode ***BaseKeyboardDescriptor::getKeyMap()
     return keymaps;
 }
 
+FeatureMacro** BaseKeyboardDescriptor::getFeatureMacros()
+{
+    return this->featureMacros;
+}
+
+uint8_t BaseKeyboardDescriptor::getFeatureMacroCount()
+{
+    return this->featureMacroCount;
+}
+
 KeyType BaseKeyboardDescriptor::getKeyType(uint8_t layer, uint8_t row, uint8_t column)
 {
     if (layer == 1 && row == 0)	// This is hack as I mostly test on Feather32u4 and I don't have enough of flash storage to send whole map ...
@@ -52,21 +62,18 @@ KeyType BaseKeyboardDescriptor::getKeyType(uint8_t layer, uint8_t row, uint8_t c
 
 BaseKeyboardDescriptor::Coordinates ** BaseKeyboardDescriptor::createCoordinatesMap(KeyCode ***keymaps)
 {
-	Coordinates ** coordMap = new Coordinates*[0xff - 0x76 + 1];	//registering keys from 0x76 up just becaues I don't have enough of memory on Feather 32u4 for now.
+	Coordinates ** coordMap = new Coordinates*[0xff + 1];
 
 	for (uint8_t layer = 0; layer < 1; layer++)
 	{
-		for (uint8_t row = 4; row < this->getRowCount(); row++)	//skipping first row just because I don't have enough of memory on Feather 32u4 for now.
+		for (uint8_t row = 0; row < this->getRowCount(); row++)
 		{
 			for (uint8_t column = 0; column < this->getColumnCount(); column++)
 			{
 				Coordinates* coord = new Coordinates(row, column);
 				auto key = keymaps[layer][row][column];
 
-				if (key >= 0x76)
-				{
-					coordMap[(uint8_t)key - 0x76] = coord;
-				}
+                coordMap[(uint8_t)key] = coord;
 			}	
 		}
 	}

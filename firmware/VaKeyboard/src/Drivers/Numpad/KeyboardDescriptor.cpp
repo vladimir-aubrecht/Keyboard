@@ -1,11 +1,28 @@
 #if defined(NUMPAD)
 
 #include "KeyboardDescriptor.h"
+#include "Features/BluetoothFeature.h"
+#include "Features/RGBLedFeature.h"
 
 KeyboardDescriptor::KeyboardDescriptor(uint8_t numberOfRows, uint8_t numberOfColumns) : BaseKeyboardDescriptor(numberOfRows, numberOfColumns)
 {
 	this->keymaps = this->createKeyMap();
 	this->coordMap = this->createCoordinatesMap(this->keymaps);
+	this->featureMacros = this->createFeatureMacros();
+}
+
+FeatureMacro** KeyboardDescriptor::createFeatureMacros()
+{
+	this->featureMacroCount = 6;
+
+	featureMacros = new FeatureMacro*[this->featureMacroCount] {
+		new FeatureMacro(RGBLedFeatures::RGBLedToggle, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_0 }),
+		new FeatureMacro(RGBLedFeatures::RGBLedRandomizeColors, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_DOT }),
+		new FeatureMacro(RGBLedFeatures::RGBLedShowBatteryLevel, 2, new KeyCode[2] { KK_NUM_LOCK, KK_ENTER }),
+		new FeatureMacro(RGBLedFeatures::RGBLedTurnOff, RGBLedFeatures::RGBLedTurnOn, 10000),
+		new FeatureMacro(BluetoothFeatures::BluetoothReset, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_SUBTRACT }),
+		new FeatureMacro(BluetoothFeatures::BluetoothToggle, 2, new KeyCode[2] { KK_NUM_LOCK, KK_PAD_1 }),
+	};
 }
 
 KeyCode *** KeyboardDescriptor::createKeyMap()

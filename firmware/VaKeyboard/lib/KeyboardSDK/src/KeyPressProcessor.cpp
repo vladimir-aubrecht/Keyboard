@@ -1,12 +1,12 @@
 #include "KeyPressProcessor.h"
 
-KeyPressProcessor::KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, BaseKeyboardDescriptor *keyboardDescriptor, ActionEvaluator *actionEvaluator, ILogger *logger)
+KeyPressProcessor::KeyPressProcessor(MatrixScanner *matrixScanner, MatrixEvaluator *matrixEvaluator, IKeyboardDriver *keyboardDriver, BaseKeyboardDescriptor *keyboardDescriptor, MacroEvaluator* macroEvaluator, ILogger *logger)
 {
 	this->matrixScanner = matrixScanner;
 	this->matrixEvaluator = matrixEvaluator;
-	this->actionEvaluator = actionEvaluator;
 	this->keyboardDriver = keyboardDriver;
 	this->keyboardDescriptor = keyboardDescriptor;
+	this->macroEvaluator = macroEvaluator;
 	//this->logger = logger;
 }
 
@@ -27,12 +27,9 @@ void KeyPressProcessor::scan()
 
 		// diffTime = millis();
 
-		if (!this->actionEvaluator->evaluateMatrixActions(matrix) && !this->actionEvaluator->evaluateTimerAction())
+		if (!this->macroEvaluator->evaluate(matrix))
 		{
-			if (this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix))
-			{
-				this->actionEvaluator->updateTimerActionsTime();
-			}
+		 	this->keyboardDriver->SendKeys(pressedKeysMatrix, releasedKeysMatrix);
 		}
 
 		// sendKeyTime = millis();

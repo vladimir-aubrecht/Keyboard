@@ -14,6 +14,7 @@ public:
 	uint8_t getSelectedLayer(Matrix *pressedKeysMatrix);
 	virtual uint8_t getLayersCount();
 	virtual KeyCode *** createKeyMap();
+	virtual FeatureMacro** createFeatureMacros();
 };
 
 #endif

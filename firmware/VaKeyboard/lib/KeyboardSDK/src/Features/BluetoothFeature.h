@@ -3,17 +3,22 @@
 #include "BaseFeature.h"
 #include "RGBLedFeature.h"
 
+enum BluetoothFeatures : uint8_t
+{
+    BluetoothToggle = 1,
+    BluetoothReset = 2
+};
+
 class BluetoothFeature : public BaseFeature
 {
     private:
-        static IKeyboardSDK* keyboardSDK;
-        static RGBLedFeature* rgbLedFeature;
-
-        static void noTriggerKeyboardBlink();
-
-    public:
-        BluetoothFeature(IKeyboardSDK* keyboardSDK, RGBLedFeature* rgbLedFeature);
+        IKeyboardSDK* keyboardSDK = NULL;
 
         void toggleConnection();
         void triggerReset();
+
+    public:
+        BluetoothFeature(IKeyboardSDK* keyboardSDK);
+
+        virtual void evaluate(uint8_t featureId);
 };

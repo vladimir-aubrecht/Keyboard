@@ -28,6 +28,13 @@
 #include "HAL/MCUs/FullBatteryDriver.h"
 #endif
 
+#ifdef TINYS3
+#include "HAL/MCUs/TinyS3/config.h"
+#include "HAL/MCUs/TinyS3/UsbHidKeyboardDriver.h"
+#include "HAL/MCUs/EmptyBluetoothKeyboardDriver.h"
+#include "HAL/MCUs/FullBatteryDriver.h"
+#endif
+
 #ifdef PORTENTA_H7
 #include "HAL/MCUs/PortentaH7/config.h"
 #include "HAL/MCUs/PortentaH7/UsbHidKeyboardDriver.h"

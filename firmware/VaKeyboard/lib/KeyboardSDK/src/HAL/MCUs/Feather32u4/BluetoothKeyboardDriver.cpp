@@ -158,7 +158,7 @@ uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix)
 
 	for (uint8_t i = 0xE0; i < 0xff; i++)
 	{
-		uint8_t isScannedPress = matrix->getBit(coordMap[i - 0x76]->getRow(), coordMap[i - 0x76]->getColumn());
+		uint8_t isScannedPress = matrix->getBit(coordMap[i]->getRow(), coordMap[i]->getColumn());
 
 	 	if (isScannedPress)
 	 	{
