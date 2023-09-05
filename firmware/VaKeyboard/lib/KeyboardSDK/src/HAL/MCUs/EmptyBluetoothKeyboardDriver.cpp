@@ -1,38 +1,35 @@
 #include "EmptyBluetoothKeyboardDriver.h"
 
-BluetoothKeyboardDriver::BluetoothKeyboardDriver(
-	IBatteryDriver *batteryDriver,
-	BaseKeyboardDescriptor *keyboardDescriptor,
-	ILogger *logger)
+EmptyBluetoothKeyboardDriver::EmptyBluetoothKeyboardDriver()
 {
 }
 
-void BluetoothKeyboardDriver::ResetPairing()
+void EmptyBluetoothKeyboardDriver::ResetPairing()
 {
 
 }
 
-void BluetoothKeyboardDriver::Init()
+void EmptyBluetoothKeyboardDriver::Init()
 {
 	
 }
 
-bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
+bool EmptyBluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
 	return false;
 }
 
-void BluetoothKeyboardDriver::ResetState()
+void EmptyBluetoothKeyboardDriver::ResetState()
 {
 
 }
 
-BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
+EmptyBluetoothKeyboardDriver* EmptyBluetoothKeyboardDriver::Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger)
 {
     return NULL;
 }
 
-BluetoothKeyboardDriver* BluetoothKeyboardDriver::GetInstance()
+EmptyBluetoothKeyboardDriver* EmptyBluetoothKeyboardDriver::GetInstance()
 {
 	return NULL;
 }

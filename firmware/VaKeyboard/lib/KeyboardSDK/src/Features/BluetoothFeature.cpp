@@ -7,7 +7,9 @@ BluetoothFeature::BluetoothFeature(IKeyboardSDK* keyboardSDK)
 
 void BluetoothFeature::toggleConnection()
 {
-	this->keyboardSDK->GetActiveKeyboardDriver()->ResetState();
+	SelectiveKeyboardDriver* kb = ((SelectiveKeyboardDriver*)this->keyboardSDK->GetActiveKeyboardDriver());
+    kb->ResetState();
+    kb->SwapKeyboards();
 }
 
 void BluetoothFeature::triggerReset()

@@ -3,8 +3,8 @@
 #ifdef ARDUINO_MICRO
 #include "HAL/MCUs/Micro/config.h"
 #include "HAL/MCUs/Micro/UsbHidKeyboardDriver.h"
+#include "HAL/MCUs/Micro/BluetoothKeyboardDriver.h"
 #include "HAL/MCUs/FullBatteryDriver.h"
-#include "HAL/MCUs/EmptyBluetoothKeyboardDriver.h"
 #endif
 
 #ifdef FEATHER_ESP32_S3_NOPSRAM
@@ -24,14 +24,14 @@
 #ifdef TINYS2
 #include "HAL/MCUs/TinyS2/config.h"
 #include "HAL/MCUs/TinyS2/UsbHidKeyboardDriver.h"
-#include "HAL/MCUs/EmptyBluetoothKeyboardDriver.h"
+#include "HAL/MCUs/TinyS2/BluetoothKeyboardDriver.h"
 #include "HAL/MCUs/FullBatteryDriver.h"
 #endif
 
 #ifdef TINYS3
 #include "HAL/MCUs/TinyS3/config.h"
 #include "HAL/MCUs/TinyS3/UsbHidKeyboardDriver.h"
-#include "HAL/MCUs/EmptyBluetoothKeyboardDriver.h"
+#include "HAL/MCUs/TinyS3/BluetoothKeyboardDriver.h"
 #include "HAL/MCUs/FullBatteryDriver.h"
 #endif
 

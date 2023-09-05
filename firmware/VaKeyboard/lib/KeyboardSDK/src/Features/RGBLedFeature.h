@@ -6,9 +6,11 @@ enum RGBLedFeatures : uint8_t
 {
     RGBLedTurnOn = 3,
     RGBLedTurnOff = 4,
-    RGBLedToggle = 5,
-    RGBLedRandomizeColors = 6,
-    RGBLedShowBatteryLevel = 7
+    RGBLedSuspend = 5,
+    RGBLedRandomColors = 6,
+    RGBLedBatteryLevel = 7,
+    RGBLedToggle = 8,
+    RGBLedWake = 9
 };
 
 class RGBLedFeature : public BaseFeature
@@ -21,6 +23,9 @@ class RGBLedFeature : public BaseFeature
         void randomizeColors();
         void toggle();
         void showBatteryLevel();
+
+        RGBLedFeatures currentState;
+        RGBLedFeatures stateAtSuspend;
 
     public:
         RGBLedFeature(IKeyboardSDK* keyboardSDK);

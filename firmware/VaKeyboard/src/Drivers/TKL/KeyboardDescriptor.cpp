@@ -18,9 +18,9 @@ FeatureMacro** KeyboardDescriptor::createFeatureMacros()
 
 	return new FeatureMacro*[this->featureMacroCount] {
 		new FeatureMacro(RGBLedFeatures::RGBLedToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F1}),
-		new FeatureMacro(RGBLedFeatures::RGBLedRandomizeColors, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F3}),
-		new FeatureMacro(RGBLedFeatures::RGBLedShowBatteryLevel, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F4}),
-		new FeatureMacro(RGBLedFeatures::RGBLedTurnOff, RGBLedFeatures::RGBLedTurnOn, 10000),
+		new FeatureMacro(RGBLedFeatures::RGBLedRandomColors, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F3}),
+		new FeatureMacro(RGBLedFeatures::RGBLedBatteryLevel, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F4}),
+		new FeatureMacro(RGBLedFeatures::RGBLedSuspend, RGBLedFeatures::RGBLedWake, 5000),
 		new FeatureMacro(BluetoothFeatures::BluetoothReset, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_ESC}),
 		new FeatureMacro(BluetoothFeatures::BluetoothToggle, 3, new KeyCode[3] { KK_LEFT_CTRL, KK_LEFT_GUI, KK_F2}),
 	};

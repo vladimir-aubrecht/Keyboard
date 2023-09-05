@@ -8,17 +8,17 @@
 #include "BaseKeyboardDescriptor.h"
 
 
-class BluetoothKeyboardDriver : public IKeyboardDriver
+class EmptyBluetoothKeyboardDriver : public IKeyboardDriver
 {
 
 public:
-	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	EmptyBluetoothKeyboardDriver();
 
 	virtual void Init();
 	virtual void ResetPairing();
 	virtual void ResetState();
 	virtual bool SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
-	static BluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
-	static BluetoothKeyboardDriver* GetInstance();
+	static EmptyBluetoothKeyboardDriver* Create(IBatteryDriver* batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	static EmptyBluetoothKeyboardDriver* GetInstance();
 };

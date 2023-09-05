@@ -43,19 +43,37 @@ void RGBLedFeature::evaluate(uint8_t featureId)
         this->turnOff();
         break;
 
+    case RGBLedFeatures::RGBLedRandomColors:
+        this->randomizeColors();
+        break;
+
+    case RGBLedFeatures::RGBLedBatteryLevel:
+        this->showBatteryLevel();
+        break;
+
     case RGBLedFeatures::RGBLedToggle:
         this->toggle();
         break;
 
-    case RGBLedFeatures::RGBLedRandomizeColors:
-        this->randomizeColors();
+    case RGBLedFeatures::RGBLedSuspend:
+        this->stateAtSuspend = this->currentState;
+        this->turnOff();
         break;
 
-    case RGBLedFeatures::RGBLedShowBatteryLevel:
-        this->showBatteryLevel();
+    case RGBLedFeatures::RGBLedWake:
+        if (this->currentState == RGBLedFeatures::RGBLedSuspend)
+        {
+            this->evaluate(this->stateAtSuspend);
+            return;
+        }
         break;
 
     default:
         break;
+    }
+
+    if (this->currentState != RGBLedFeatures::RGBLedWake)
+    {
+        this->currentState = (RGBLedFeatures)featureId;
     }
 }
