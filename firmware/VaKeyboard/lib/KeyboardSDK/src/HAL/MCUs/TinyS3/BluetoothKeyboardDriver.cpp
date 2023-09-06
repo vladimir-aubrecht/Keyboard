@@ -17,7 +17,6 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 
 void BluetoothKeyboardDriver::ResetPairing()
 {
-	Init();
 }
 
 void BluetoothKeyboardDriver::Init()
