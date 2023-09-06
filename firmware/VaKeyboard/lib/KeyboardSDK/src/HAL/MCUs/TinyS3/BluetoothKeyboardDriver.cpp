@@ -3,10 +3,12 @@
 #include "BluetoothKeyboardDriver.h"
 
 BluetoothKeyboardDriver::BluetoothKeyboardDriver(
+	BleKeyboard* bleKeyboard,
 	IBatteryDriver *batteryDriver,
 	BaseKeyboardDescriptor *keyboardDescriptor,
 	ILogger *logger)
 {
+	this->bleKeyboard = bleKeyboard;
 	this->keyboardDescriptor = keyboardDescriptor;
 	//this->logger = logger;
 	this->batteryDriver = batteryDriver;
@@ -20,8 +22,7 @@ void BluetoothKeyboardDriver::ResetPairing()
 
 void BluetoothKeyboardDriver::Init()
 {
-	this->bleKeyboard = new BleKeyboard("XBoard", "VASoft", this->batteryDriver->readBatteryLevel());
-	this->bleKeyboard->begin();
+	
 }
 
 bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
@@ -190,7 +191,9 @@ BluetoothKeyboardDriver* BluetoothKeyboardDriver::Create(IBatteryDriver* battery
 {
 	if (BluetoothKeyboardDriver::instance == NULL)
 	{
-		BluetoothKeyboardDriver::instance = new BluetoothKeyboardDriver(batteryDriver, keyboardDescriptor, logger);	
+		BleKeyboard* bleKeyboard = new BleKeyboard("XBoard", "VASoft", batteryDriver->readBatteryLevel());
+		bleKeyboard->begin();
+		BluetoothKeyboardDriver::instance = new BluetoothKeyboardDriver(bleKeyboard, batteryDriver, keyboardDescriptor, logger);	
 	}
 
     return BluetoothKeyboardDriver::instance;

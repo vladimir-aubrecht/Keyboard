@@ -3,6 +3,7 @@
 RGBLedFeature::RGBLedFeature(IKeyboardSDK* keyboardSDK)
 {
     this->keyboardSDK = keyboardSDK;
+    this->currentState = RGBLedFeatures::RGBLedTurnOn;
 }
 
 void RGBLedFeature::turnOff()
@@ -56,8 +57,11 @@ void RGBLedFeature::evaluate(uint8_t featureId)
         break;
 
     case RGBLedFeatures::RGBLedSuspend:
-        this->stateAtSuspend = this->currentState;
-        this->turnOff();
+        if (this->currentState != RGBLedFeatures::RGBLedSuspend)
+        {
+            this->stateAtSuspend = this->currentState;
+            this->turnOff();
+        }
         break;
 
     case RGBLedFeatures::RGBLedWake:
@@ -72,7 +76,7 @@ void RGBLedFeature::evaluate(uint8_t featureId)
         break;
     }
 
-    if (this->currentState != RGBLedFeatures::RGBLedWake)
+    if (featureId != RGBLedFeatures::RGBLedWake)
     {
         this->currentState = (RGBLedFeatures)featureId;
     }

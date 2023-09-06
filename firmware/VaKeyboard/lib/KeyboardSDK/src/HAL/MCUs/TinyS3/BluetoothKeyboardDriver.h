@@ -29,7 +29,7 @@ private:
 	Matrix *UpdateStateMatrix(Matrix *stateMatrix, Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix);
 
 public:
-	BluetoothKeyboardDriver(IBatteryDriver *batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
+	BluetoothKeyboardDriver(BleKeyboard* bleKeyboard, IBatteryDriver *batteryDriver, BaseKeyboardDescriptor *keyboardDescriptor, ILogger *logger);
 
 	virtual void Init();
 	virtual void ResetPairing();
