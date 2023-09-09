@@ -12,16 +12,10 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 	this->keyboardDescriptor = keyboardDescriptor;
 	//this->logger = logger;
 	this->batteryDriver = batteryDriver;
-	Init();
 }
 
 void BluetoothKeyboardDriver::ResetPairing()
 {
-}
-
-void BluetoothKeyboardDriver::Init()
-{
-	
 }
 
 bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
@@ -35,21 +29,8 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 		uint8_t layout = this->keyboardDescriptor->getSelectedLayer(currentStateMatrix);
 
 		auto keymap = this->keyboardDescriptor->getKeyMap()[layout];
-		uint8_t keyCount = ScanForPressedRegularKeys(currentStateMatrix, keymap, buffer);
-		uint8_t modificators = ScanForModificators(currentStateMatrix, keymap);
-
-		for (uint8_t i = 0; i < keyCount; i++)
-		{
-			this->bleKeyboard->press(buffer[i]);
-		}
-
-		if (keyCount == 0 && modificators != 0)
-		{
-			//TODO: send modificators here
-			//this->bleKeyboard->press(buffer[i]);
-		}
-
-		delete buffer;
+		uint8_t modificators = 0;
+		uint8_t keyCount = ScanForPressedKeys(currentStateMatrix, keymap, buffer, &modificators);
 
 		if (keyCount == 0)
 		{
@@ -57,11 +38,35 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 			return false;
 		}
 
+		uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
+
+		if (keyCount % this->maxKeyCountInReport > 0)
+			keysToSendArraySize++;
+
+		uint8_t **keysToSend = new uint8_t *[keysToSendArraySize];
+		SplitToArrayOf(buffer, keyCount, keysToSend, this->maxKeyCountInReport);
+
+		BleKeyReport keyReport;
+		for (uint8_t i = 0; i < keysToSendArraySize && keyCount > 0; i++)
+		{
+			keyReport.modifiers = modificators;
+		 	for (uint8_t k = 0; k < this->maxKeyCountInReport; k++)
+		 	{
+		 		keyReport.keys[k] = keysToSend[i][k];
+		 	}
+
+		 	this->bleKeyboard->sendReport(&keyReport);
+			delete keysToSend[i];
+		}
+
+		delete buffer;
+		delete keysToSend;
+
 		return true;
 	}
 	else
 	{
-		// this->logger->logWarning(F("Keyboard not connected :("));
+		//this->logger->logWarning(F("Keyboard not connected :("));
 		return false;
 	}
 }
@@ -94,9 +99,10 @@ Matrix *BluetoothKeyboardDriver::UpdateStateMatrix(Matrix *stateMatrix, Matrix *
 	return stateMatrix;
 }
 
-uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, KeyCode **keymapProvider, uint8_t *foundKeys)
+uint8_t BluetoothKeyboardDriver::ScanForPressedKeys(Matrix *matrix, KeyCode **keymapProvider, uint8_t *foundKeys, uint8_t *modificators)
 {
 	uint8_t foundKeyCount = 0;
+	(*modificators) = 0;
 
 	for (uint8_t row = 0; row < matrix->numberOfRows; row++)
 	{
@@ -106,53 +112,23 @@ uint8_t BluetoothKeyboardDriver::ScanForPressedRegularKeys(Matrix *matrix, KeyCo
 
 			uint8_t isPressed = matrix->getBit(row, column);
 
-			if (isPressed && currentKey < 0xE0) // without modificator keys, 0xE0 starts modificator key
+			if (isPressed)
 			{
-				foundKeys[foundKeyCount] = currentKey;
-				foundKeyCount++;
-			}
-		}
-	}
-
-	return foundKeyCount;
-}
-
-uint8_t BluetoothKeyboardDriver::ScanForModificators(Matrix *matrix, KeyCode **keymapProvider)
-{
-	uint8_t modificators = 0;
-
-	for (uint8_t row = 0; row < matrix->numberOfRows; row++)
-	{
-		for (uint8_t column = 0; column < matrix->numberOfColumns; column++)
-		{
-			auto currentKey = keymapProvider[row][column];
-
-			uint8_t isScannedPress = matrix->getBit(row, column);
-
-			if (isScannedPress)
-			{
-				if (currentKey >= 0xE0) // modificator keys
+				if (currentKey < 0xE0) // without modificator keys, 0xE0 starts modificator key
+				{
+					foundKeys[foundKeyCount] = currentKey;
+					foundKeyCount++;
+				}
+				else if (currentKey >= 0xE0) // modificator keys
 				{
 					uint8_t bit = (1 << (currentKey - 0xE0));
-					modificators |= bit;
+					(*modificators) |= bit;
 				}
 			}
 		}
 	}
 
-	return modificators;
-}
-
-String BluetoothKeyboardDriver::ConvertToHexCode(uint8_t code)
-{
-	String hexCode = String(code, HEX);
-
-	if (code < 0x10)
-	{
-		hexCode = "0" + hexCode;
-	}
-
-	return hexCode;
+	return foundKeyCount;
 }
 
 void BluetoothKeyboardDriver::SplitToArrayOf(uint8_t *array, uint8_t arrayLength, uint8_t **outputArray, uint8_t innerArrayLength)

@@ -63,6 +63,7 @@ bool MacroEvaluator::evaluate(Matrix *matrix)
 
             if (isAllPressed)
             {
+                delay(80);
                 this->evaluateAllFeatures(macro->featureId);
 
                 wasAnythingTriggered = true;

@@ -65,6 +65,9 @@ void UsbHidKeyboardDriver::ResetPairing()
 
 void UsbHidKeyboardDriver::ResetState()
 {
+	keyboard.begin();	
+	ConsumerControl.begin();
+	USB.begin();
 	keyboard.releaseAll();
 	ConsumerControl.release();
 }
