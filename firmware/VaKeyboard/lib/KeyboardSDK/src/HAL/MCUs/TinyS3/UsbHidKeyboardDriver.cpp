@@ -1,20 +1,27 @@
 #ifdef TINYS3
 
 #include "UsbHidKeyboardDriver.h"
+#include "USBHIDConsumerControl.h"
 
 USBHIDKeyboard keyboard;
+USBHIDConsumerControl ConsumerControl;
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(BaseKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
 
 	keyboard.begin();	
+	ConsumerControl.begin();
 	USB.begin();
 }
 
 bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedKeysMatrix)
 {
-	auto keymap = this->keyboardDescriptor->getKeyMap()[0];
+	isKeyMenuHold |= this->keyboardDescriptor->getSelectedLayer(pressedKeysMatrix);
+	isKeyMenuHold &= ~(this->keyboardDescriptor->getSelectedLayer(releasedKeysMatrix));
+	uint8_t currentLayer = isKeyMenuHold ? 1 : 0;
+
+	auto keymap = this->keyboardDescriptor->getKeyMap()[currentLayer];
 
 	bool isPress = false;
 	for (uint8_t row = 0; row < pressedKeysMatrix->numberOfRows; row++)
@@ -26,14 +33,25 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			uint8_t isPressed = pressedKeysMatrix->getBit(row, column);
 			uint8_t isReleased = releasedKeysMatrix->getBit(row, column);
 
+			auto keyType = this->keyboardDescriptor->getKeyType(currentLayer, row, column);
+
 			if (isPressed)
 			{
 				isPress = true;
-				keyboard.pressRaw((uint8_t)currentKey);
+
+				if (keyType != KeyType::MEDIA)
+				{
+					keyboard.pressRaw((uint8_t)currentKey);
+				}
+				else
+				{
+					ConsumerControl.press((uint8_t)currentKey);
+				}
 			}
 			else if (isReleased)
 			{
 				keyboard.releaseRaw((uint8_t)currentKey);
+				ConsumerControl.release();
 			}
 		}
 	}
@@ -48,6 +66,7 @@ void UsbHidKeyboardDriver::ResetPairing()
 void UsbHidKeyboardDriver::ResetState()
 {
 	keyboard.releaseAll();
+	ConsumerControl.release();
 }
 
 #endif
