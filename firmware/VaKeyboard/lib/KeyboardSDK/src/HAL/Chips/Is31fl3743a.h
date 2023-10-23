@@ -18,6 +18,12 @@ private:
 
 	uint8_t currentGlobalIntensity = 0;
 
+	// Factors are taking luminosity from datasheet of 19-237-R6GHBHC-A04-2T RGB LED and transforming them to same base. Blue is reference value.
+	float redFactor = 2.0;
+	float greenFactor = 3.93;
+	float blueFactor = 1.0;
+
+
 public:
 	Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8_t columnMask, uint8_t rowCount, uint8_t columnCount, uint8_t maxCurrent);
 	void setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, uint8_t greenIntensity, uint8_t blueIntensity);

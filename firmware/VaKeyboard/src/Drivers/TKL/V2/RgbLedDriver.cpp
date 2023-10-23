@@ -11,7 +11,7 @@ RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCou
 
 	tca->selectChannel(0);
 
-	uint8_t maxCurrent = 0x2F;
+	uint8_t maxCurrent = 0x0F;
 	this->controllers = new Is31fl3743a*[this->controllersCount];
 	this->controllers[0] = new Is31fl3743a(0x20, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
 	this->controllers[1] = new Is31fl3743a(0x23, &Wire, logger, 0b10011001, 6, 2, maxCurrent);
@@ -27,7 +27,6 @@ RgbLedDriver::RgbLedDriver(ILogger *logger, uint8_t rowsCount, uint8_t columnCou
 
 	tca->selectChannel(2);
 	this->controllers[8] = new Is31fl3743a(0x20, &Wire, logger, 0b10101001, 6, 1, maxCurrent);
-
 }                                                                               
 
 void RgbLedDriver::blink(uint8_t animationPhase, uint8_t x, uint8_t y, uint32_t color)
