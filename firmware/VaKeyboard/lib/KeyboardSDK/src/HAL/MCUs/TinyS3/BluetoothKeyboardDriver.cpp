@@ -10,7 +10,7 @@ BluetoothKeyboardDriver::BluetoothKeyboardDriver(
 {
 	this->bleKeyboard = bleKeyboard;
 	this->keyboardDescriptor = keyboardDescriptor;
-	//this->logger = logger;
+	this->logger = logger;
 	this->batteryDriver = batteryDriver;
 }
 
@@ -66,7 +66,7 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 	}
 	else
 	{
-		//this->logger->logWarning(F("Keyboard not connected :("));
+		this->logger->logWarning(F("Keyboard not connected :("));
 		return false;
 	}
 }

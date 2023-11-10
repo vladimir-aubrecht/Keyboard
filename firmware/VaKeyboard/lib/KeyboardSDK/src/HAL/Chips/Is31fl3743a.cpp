@@ -7,14 +7,14 @@ Is31fl3743a::Is31fl3743a(uint8_t i2c_addr, TwoWire *wire, ILogger *logger, uint8
 	this->wire = wire;
 	this->rowCount = rowCount;
 	this->columnCount = columnCount;
-	//this->logger = logger;
+	this->logger = logger;
 	this->columnMask = columnMask;
 
 	this->i2c_dev = new Adafruit_I2CDevice(this->i2c_addr, this->wire);
 
 	if (!this->i2c_dev->begin())
 	{
-	// 	//this->logger->logError(F("Failed to initialise IS31FL3743A."));
+		this->logger->logError(F("Failed to initialise IS31FL3743A."));
 		return;
 	}
 
@@ -67,7 +67,7 @@ void Is31fl3743a::setGlobalIntensity(uint8_t intensity)
 
 	if (!this->i2c_dev->begin())
 	{
-	// 	//this->logger->logError(F("Failed to initialise IS31FL3743A."));
+		this->logger->logError(F("Failed to initialise IS31FL3743A."));
 		return;
 	}
 
@@ -113,7 +113,7 @@ void Is31fl3743a::setLedIntensities(uint8_t x, uint8_t y, uint8_t redIntensity, 
 {
 	if (!this->i2c_dev->begin())
 	{
-	// 	//this->logger->logError(F("Failed to initialise IS31FL3743A."));
+	 	this->logger->logError(F("Failed to initialise IS31FL3743A."));
 		return;
 	}
 

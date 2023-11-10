@@ -14,7 +14,7 @@
 class BluetoothKeyboardDriver : public IKeyboardDriver
 {
 private:
-	//ILogger *logger;
+	ILogger *logger;
 	static BluetoothKeyboardDriver* instance;
 	Matrix *currentStateMatrix = NULL;
 	IBatteryDriver *batteryDriver = NULL;

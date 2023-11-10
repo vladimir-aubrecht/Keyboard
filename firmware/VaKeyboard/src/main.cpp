@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include "Logger.h"
 
 #if defined(NUMPAD) && defined(V2)
 #include "Drivers/Numpad/V2/KeyboardSDK.h"
@@ -24,7 +25,7 @@ void setup()
 	Serial.begin(115200);
 	Wire.begin();
 
-	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire);
+	keyboardSDK = new KeyboardSDK(McuConfig::csPin, McuConfig::mosiPin, McuConfig::sclkPin, McuConfig::misoPin, &Wire, new Logger());
 	auto rgbLedFeature = new RGBLedFeature(keyboardSDK);
 	auto bluetoothFeature = new BluetoothFeature(keyboardSDK);
 

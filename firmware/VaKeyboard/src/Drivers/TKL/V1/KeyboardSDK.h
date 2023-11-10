@@ -14,7 +14,7 @@ class KeyboardSDK : public IKeyboardSDK
         const uint8_t numberOfColumns = 17;
 
     public:
-        KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire);
+        KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire, ILogger* logger);
 };
 
 #endif

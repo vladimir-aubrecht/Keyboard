@@ -5,7 +5,7 @@
 #include "PinDriver.h"
 #include "RgbLedDriver.h"
 
-KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire)
+KeyboardSDK::KeyboardSDK(uint8_t csPin, uint8_t mosiPin, uint8_t sclkPin, uint8_t misoPin, TwoWire *wire, ILogger* logger)
 {
     this->logger = logger;
     this->batteryDriver = new BatteryDriver();
