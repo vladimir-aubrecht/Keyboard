@@ -2,13 +2,19 @@
 
 #include "UsbHidKeyboardDriver.h"
 #include "USBHIDConsumerControl.h"
+#include "USBHIDSystemControl.h"
 
 USBHIDKeyboard keyboard;
 USBHIDConsumerControl ConsumerControl;
+USBHIDSystemControl SystemControl;
+
 
 UsbHidKeyboardDriver::UsbHidKeyboardDriver(BaseKeyboardDescriptor *keyboardDescriptor)
 {
 	this->keyboardDescriptor = keyboardDescriptor;
+
+	// Important, default is just self powered and without this line it's not possible to wake up computer from sleep
+	USB.usbAttributes(TUSB_DESC_CONFIG_ATT_SELF_POWERED | TUSB_DESC_CONFIG_ATT_REMOTE_WAKEUP);
 
 	keyboard.begin();	
 	ConsumerControl.begin();
@@ -38,6 +44,8 @@ bool UsbHidKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releasedK
 			if (isPressed)
 			{
 				isPress = true;
+
+				SystemControl.press(SYSTEM_CONTROL_WAKE_HOST);	//TODO: call this only when computer is on sleep...
 
 				if (keyType != KeyType::MEDIA)
 				{
