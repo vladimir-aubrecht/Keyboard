@@ -32,35 +32,51 @@ bool BluetoothKeyboardDriver::SendKeys(Matrix *pressedKeysMatrix, Matrix *releas
 		uint8_t modificators = 0;
 		uint8_t keyCount = ScanForPressedKeys(currentStateMatrix, keymap, buffer, &modificators);
 
-		if (keyCount == 0)
+		if (keyCount == 0 && modificators == 0)
 		{
 			this->bleKeyboard->releaseAll();
 			return false;
 		}
-
-		uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
-
-		if (keyCount % this->maxKeyCountInReport > 0)
-			keysToSendArraySize++;
-
-		uint8_t **keysToSend = new uint8_t *[keysToSendArraySize];
-		SplitToArrayOf(buffer, keyCount, keysToSend, this->maxKeyCountInReport);
-
-		BleKeyReport keyReport;
-		for (uint8_t i = 0; i < keysToSendArraySize && keyCount > 0; i++)
+		
+		if (keyCount > 0)
 		{
-			keyReport.modifiers = modificators;
-		 	for (uint8_t k = 0; k < this->maxKeyCountInReport; k++)
-		 	{
-		 		keyReport.keys[k] = keysToSend[i][k];
-		 	}
+			uint8_t keysToSendArraySize = keyCount / this->maxKeyCountInReport;
 
-		 	this->bleKeyboard->sendReport(&keyReport);
-			delete keysToSend[i];
+			if (keyCount % this->maxKeyCountInReport > 0)
+				keysToSendArraySize++;
+
+			uint8_t **keysToSend = new uint8_t *[keysToSendArraySize];
+			SplitToArrayOf(buffer, keyCount, keysToSend, this->maxKeyCountInReport);
+
+			BleKeyReport keyReport;
+
+			for (uint8_t i = 0; i < keysToSendArraySize; i++)
+			{
+				keyReport.modifiers = modificators;
+				for (uint8_t k = 0; k < this->maxKeyCountInReport; k++)
+				{
+					keyReport.keys[k] = keysToSend[i][k];
+				}
+
+				this->bleKeyboard->sendReport(&keyReport);
+				delete keysToSend[i];
+			}
+
+			delete buffer;
+			delete keysToSend;
 		}
+		else
+		{
+			BleKeyReport keyReport;
+			keyReport.modifiers = modificators;
+			
+			for (uint8_t k = 0; k < this->maxKeyCountInReport; k++)
+			{
+				keyReport.keys[k] = 0;
+			}
 
-		delete buffer;
-		delete keysToSend;
+			this->bleKeyboard->sendReport(&keyReport);
+		}
 
 		return true;
 	}
